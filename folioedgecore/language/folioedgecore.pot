@@ -1,0 +1,3722 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: folioedgecore\n"
+"POT-Creation-Date: 2022-09-20 16:29+0600\n"
+"PO-Revision-Date: 2022-09-03 13:23+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: language\n"
+
+#: addons/widgets/accordion.php:43 addons/widgets/accordion.php:109
+msgid "Accordion"
+msgstr ""
+
+#: addons/widgets/accordion.php:118
+msgid "Title & Description"
+msgstr ""
+
+#: addons/widgets/accordion.php:120
+msgid "Accordion Title"
+msgstr ""
+
+#: addons/widgets/accordion.php:131 addons/widgets/feature-box.php:925
+#: addons/widgets/history.php:1282 addons/widgets/roadmap.php:39
+#: addons/widgets/roadmap.php:492 addons/widgets/service.php:1209
+#: addons/widgets/slide-box.php:819 addons/widgets/switch.php:66
+#: addons/widgets/switch.php:123 addons/widgets/tabs.php:75
+#: addons/widgets/tabs.php:152 addons/widgets/tabs.php:161
+#: addons/widgets/tabs.php:174 addons/widgets/tabs.php:176
+#: addons/widgets/tabs.php:776
+msgid "Content"
+msgstr ""
+
+#: addons/widgets/accordion.php:133
+msgid "Accordion Content"
+msgstr ""
+
+#: addons/widgets/accordion.php:141 addons/widgets/accordion.php:475
+#: addons/widgets/accordion.php:761 addons/widgets/case-studie.php:2121
+#: addons/widgets/history.php:2007 addons/widgets/service.php:1964
+#: addons/widgets/team.php:2379 addons/widgets/testimonial.php:2151
+msgid "Active"
+msgstr ""
+
+#: addons/widgets/accordion.php:143 addons/widgets/button.php:236
+#: addons/widgets/counter.php:233 addons/widgets/feature-box.php:145
+#: addons/widgets/history.php:219 addons/widgets/image-gallery.php:334
+#: addons/widgets/lightbox.php:224 addons/widgets/lightbox.php:235
+#: addons/widgets/progress.php:156 addons/widgets/service.php:210
+#: addons/widgets/slide-box.php:113
+msgid "Show"
+msgstr ""
+
+#: addons/widgets/accordion.php:144 addons/widgets/button.php:237
+#: addons/widgets/counter.php:234 addons/widgets/feature-box.php:146
+#: addons/widgets/history.php:220 addons/widgets/image-gallery.php:335
+#: addons/widgets/lightbox.php:225 addons/widgets/lightbox.php:236
+#: addons/widgets/progress.php:157 addons/widgets/service.php:211
+#: addons/widgets/slide-box.php:114
+msgid "Hide"
+msgstr ""
+
+#: addons/widgets/accordion.php:153
+msgid "Accordion Items"
+msgstr ""
+
+#: addons/widgets/accordion.php:158
+msgid "Accordion #1"
+msgstr ""
+
+#: addons/widgets/accordion.php:159 addons/widgets/accordion.php:163
+msgid ""
+"Click edit button to change this text. Lorem ipsum dolor sit amet, "
+"consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, "
+"pulvinar dapibus leo."
+msgstr ""
+
+#: addons/widgets/accordion.php:162
+msgid "Accordion #2"
+msgstr ""
+
+#: addons/widgets/accordion.php:173 addons/widgets/button.php:208
+#: addons/widgets/counter.php:270 addons/widgets/image-carousel.php:242
+#: addons/widgets/image-gallery.php:172 addons/widgets/progress.php:164
+msgid "View"
+msgstr ""
+
+#: addons/widgets/accordion.php:182
+msgid "Title HTML Tag"
+msgstr ""
+
+#: addons/widgets/accordion.php:201
+msgid "Opened Icon"
+msgstr ""
+
+#: addons/widgets/accordion.php:205 addons/widgets/accordion.php:225
+#: addons/widgets/accordion.php:268 addons/widgets/accordion.php:288
+#: addons/widgets/button.php:151 addons/widgets/button.php:170
+#: addons/widgets/case-studie.php:312 addons/widgets/case-studie.php:331
+#: addons/widgets/counter.php:128 addons/widgets/counter.php:143
+#: addons/widgets/feature-box.php:40 addons/widgets/feature-box.php:59
+#: addons/widgets/feature-box.php:161 addons/widgets/feature-box.php:183
+#: addons/widgets/history.php:142 addons/widgets/history.php:161
+#: addons/widgets/image-carousel.php:545 addons/widgets/lightbox.php:143
+#: addons/widgets/lightbox.php:161 addons/widgets/price.php:54
+#: addons/widgets/price.php:72 addons/widgets/price.php:313
+#: addons/widgets/price.php:328 addons/widgets/price.php:466
+#: addons/widgets/price.php:488 addons/widgets/section-title.php:276
+#: addons/widgets/section-title.php:291 addons/widgets/service.php:133
+#: addons/widgets/service.php:152 addons/widgets/shortcode.php:124
+#: addons/widgets/shortcode.php:139 addons/widgets/slide-box.php:40
+#: addons/widgets/slide-box.php:55 addons/widgets/slider-arrow.php:66
+#: addons/widgets/slider-arrow.php:85 addons/widgets/slider-arrow.php:148
+#: addons/widgets/slider-arrow.php:167 addons/widgets/tabs.php:95
+#: addons/widgets/tabs.php:110 addons/widgets/testimonial.php:258
+#: addons/widgets/testimonial.php:280
+msgid "Image"
+msgstr ""
+
+#: addons/widgets/accordion.php:209 addons/widgets/accordion.php:251
+#: addons/widgets/accordion.php:272 addons/widgets/accordion.php:314
+#: addons/widgets/accordion.php:535 addons/widgets/button.php:155
+#: addons/widgets/button.php:196 addons/widgets/case-studie.php:316
+#: addons/widgets/case-studie.php:357 addons/widgets/counter.php:132
+#: addons/widgets/counter.php:169 addons/widgets/counter.php:553
+#: addons/widgets/feature-box.php:44 addons/widgets/feature-box.php:85
+#: addons/widgets/feature-box.php:165 addons/widgets/feature-box.php:211
+#: addons/widgets/feature-box.php:465 addons/widgets/history.php:146
+#: addons/widgets/history.php:187 addons/widgets/history.php:855
+#: addons/widgets/lightbox.php:147 addons/widgets/lightbox.php:187
+#: addons/widgets/price.php:58 addons/widgets/price.php:100
+#: addons/widgets/price.php:317 addons/widgets/price.php:354
+#: addons/widgets/price.php:470 addons/widgets/price.php:514
+#: addons/widgets/price.php:736 addons/widgets/price.php:1413
+#: addons/widgets/section-title.php:264 addons/widgets/section-title.php:280
+#: addons/widgets/section-title.php:317 addons/widgets/service.php:137
+#: addons/widgets/service.php:178 addons/widgets/service.php:782
+#: addons/widgets/shortcode.php:112 addons/widgets/shortcode.php:128
+#: addons/widgets/shortcode.php:165 addons/widgets/slide-box.php:44
+#: addons/widgets/slide-box.php:81 addons/widgets/slide-box.php:392
+#: addons/widgets/slider-arrow.php:70 addons/widgets/slider-arrow.php:111
+#: addons/widgets/slider-arrow.php:152 addons/widgets/slider-arrow.php:193
+#: addons/widgets/tabs.php:99 addons/widgets/tabs.php:136
+#: addons/widgets/testimonial.php:262 addons/widgets/testimonial.php:308
+msgid "Icon"
+msgstr ""
+
+#: addons/widgets/accordion.php:213 addons/widgets/accordion.php:276
+#: addons/widgets/audio.php:205 addons/widgets/button.php:159
+#: addons/widgets/case-studie.php:233 addons/widgets/case-studie.php:320
+#: addons/widgets/history.php:150 addons/widgets/image-carousel.php:171
+#: addons/widgets/image-carousel.php:184 addons/widgets/image-carousel.php:231
+#: addons/widgets/image-gallery.php:134 addons/widgets/post-slider.php:208
+#: addons/widgets/price.php:181 addons/widgets/price.php:474
+#: addons/widgets/service.php:141 addons/widgets/shortcode.php:908
+#: addons/widgets/team.php:203 addons/widgets/testimonial.php:266
+#: inc/plugin-functions.php:129
+msgid "None"
+msgstr ""
+
+#: addons/widgets/accordion.php:264
+msgid "Closed Icon"
+msgstr ""
+
+#: addons/widgets/accordion.php:331 addons/widgets/price.php:537
+#: addons/widgets/team.php:609 addons/widgets/testimonial.php:624
+msgid "Single Card"
+msgstr ""
+
+#: addons/widgets/accordion.php:339 addons/widgets/accordion.php:544
+#: addons/widgets/accordion.php:840 addons/widgets/audio.php:270
+#: addons/widgets/button.php:256 addons/widgets/case-studie.php:680
+#: addons/widgets/case-studie.php:883 addons/widgets/case-studie.php:1228
+#: addons/widgets/case-studie.php:1737 addons/widgets/case-studie.php:2005
+#: addons/widgets/countdown.php:205 addons/widgets/countdown.php:454
+#: addons/widgets/countdown.php:706 addons/widgets/countdown.php:811
+#: addons/widgets/counter.php:290 addons/widgets/counter.php:562
+#: addons/widgets/counter.php:928 addons/widgets/counter.php:1026
+#: addons/widgets/feature-box.php:267 addons/widgets/feature-box.php:474
+#: addons/widgets/feature-box.php:812 addons/widgets/feature-box.php:933
+#: addons/widgets/feature-box.php:1059 addons/widgets/history.php:596
+#: addons/widgets/history.php:864 addons/widgets/history.php:1187
+#: addons/widgets/history.php:1344 addons/widgets/history.php:1626
+#: addons/widgets/history.php:1894 addons/widgets/image-carousel.php:622
+#: addons/widgets/lightbox.php:528 addons/widgets/post-slider.php:544
+#: addons/widgets/price.php:545 addons/widgets/price.php:1754
+#: addons/widgets/roadmap.php:170 addons/widgets/roadmap.php:397
+#: addons/widgets/section-title.php:546 addons/widgets/service.php:587
+#: addons/widgets/service.php:791 addons/widgets/service.php:1114
+#: addons/widgets/service.php:1216 addons/widgets/service.php:1298
+#: addons/widgets/service.php:1580 addons/widgets/service.php:1848
+#: addons/widgets/shortcode.php:688 addons/widgets/shortcode.php:928
+#: addons/widgets/slide-box.php:894 addons/widgets/slider-arrow.php:432
+#: addons/widgets/tabs.php:65 addons/widgets/tabs.php:495
+#: addons/widgets/tabs.php:692 addons/widgets/team.php:617
+#: addons/widgets/team.php:821 addons/widgets/team.php:1422
+#: addons/widgets/team.php:1692 addons/widgets/team.php:1964
+#: addons/widgets/team.php:2255 addons/widgets/testimonial.php:632
+#: addons/widgets/testimonial.php:841 addons/widgets/testimonial.php:1770
+#: addons/widgets/testimonial.php:2038
+msgid "Normal"
+msgstr ""
+
+#: addons/widgets/accordion.php:346 addons/widgets/accordion.php:682
+#: addons/widgets/accordion.php:864 addons/widgets/accordion.php:1019
+#: addons/widgets/audio.php:420 addons/widgets/button.php:284
+#: addons/widgets/button.php:503 addons/widgets/button.php:595
+#: addons/widgets/button.php:760 addons/widgets/case-studie.php:687
+#: addons/widgets/case-studie.php:890 addons/widgets/case-studie.php:1134
+#: addons/widgets/case-studie.php:1391 addons/widgets/case-studie.php:1577
+#: addons/widgets/case-studie.php:1641 addons/widgets/case-studie.php:1695
+#: addons/widgets/case-studie.php:2068 addons/widgets/countdown.php:212
+#: addons/widgets/countdown.php:461 addons/widgets/countdown.php:730
+#: addons/widgets/countdown.php:835 addons/widgets/counter.php:297
+#: addons/widgets/counter.php:741 addons/widgets/counter.php:953
+#: addons/widgets/counter.php:1051 addons/widgets/feature-box.php:274
+#: addons/widgets/feature-box.php:652 addons/widgets/feature-box.php:836
+#: addons/widgets/feature-box.php:959 addons/widgets/feature-box.php:1191
+#: addons/widgets/history.php:603 addons/widgets/history.php:817
+#: addons/widgets/history.php:1027 addons/widgets/history.php:1211
+#: addons/widgets/history.php:1307 addons/widgets/history.php:1411
+#: addons/widgets/history.php:1957 addons/widgets/image-gallery.php:230
+#: addons/widgets/lightbox.php:330 addons/widgets/lightbox.php:703
+#: addons/widgets/lightbox.php:916 addons/widgets/post-slider.php:551
+#: addons/widgets/price.php:552 addons/widgets/price.php:899
+#: addons/widgets/price.php:1003 addons/widgets/price.php:1057
+#: addons/widgets/price.php:1109 addons/widgets/price.php:1195
+#: addons/widgets/price.php:1266 addons/widgets/price.php:1316
+#: addons/widgets/price.php:1369 addons/widgets/price.php:1576
+#: addons/widgets/price.php:1681 addons/widgets/price.php:1722
+#: addons/widgets/price.php:1802 addons/widgets/price.php:1970
+#: addons/widgets/roadmap.php:177 addons/widgets/roadmap.php:421
+#: addons/widgets/roadmap.php:517 addons/widgets/roadmap.php:570
+#: addons/widgets/section-title.php:553 addons/widgets/section-title.php:767
+#: addons/widgets/section-title.php:870 addons/widgets/section-title.php:964
+#: addons/widgets/section-title.php:1195 addons/widgets/service.php:594
+#: addons/widgets/service.php:954 addons/widgets/service.php:1138
+#: addons/widgets/service.php:1242 addons/widgets/service.php:1365
+#: addons/widgets/service.php:1911 addons/widgets/shortcode.php:577
+#: addons/widgets/shortcode.php:716 addons/widgets/shortcode.php:956
+#: addons/widgets/slide-box.php:564 addons/widgets/slide-box.php:748
+#: addons/widgets/slide-box.php:854 addons/widgets/slide-box.php:1035
+#: addons/widgets/slider-arrow.php:229 addons/widgets/slider-arrow.php:363
+#: addons/widgets/slider-arrow.php:465 addons/widgets/switch.php:184
+#: addons/widgets/switch.php:396 addons/widgets/tabs.php:320
+#: addons/widgets/tabs.php:545 addons/widgets/tabs.php:698
+#: addons/widgets/tabs.php:738 addons/widgets/tabs.php:827
+#: addons/widgets/team.php:624 addons/widgets/team.php:828
+#: addons/widgets/team.php:1099 addons/widgets/team.php:1223
+#: addons/widgets/team.php:1288 addons/widgets/team.php:1342
+#: addons/widgets/team.php:1387 addons/widgets/team.php:1532
+#: addons/widgets/team.php:1802 addons/widgets/team.php:2326
+#: addons/widgets/testimonial.php:639 addons/widgets/testimonial.php:976
+#: addons/widgets/testimonial.php:1390 addons/widgets/testimonial.php:1503
+#: addons/widgets/testimonial.php:1616 addons/widgets/testimonial.php:1699
+#: addons/widgets/testimonial.php:2101
+msgid "Margin"
+msgstr ""
+
+#: addons/widgets/accordion.php:359 addons/widgets/accordion.php:695
+#: addons/widgets/accordion.php:888 addons/widgets/accordion.php:1032
+#: addons/widgets/audio.php:433 addons/widgets/button.php:297
+#: addons/widgets/button.php:523 addons/widgets/button.php:615
+#: addons/widgets/button.php:780 addons/widgets/case-studie.php:700
+#: addons/widgets/case-studie.php:903 addons/widgets/case-studie.php:1147
+#: addons/widgets/case-studie.php:1404 addons/widgets/case-studie.php:1589
+#: addons/widgets/case-studie.php:1653 addons/widgets/case-studie.php:1707
+#: addons/widgets/case-studie.php:1896 addons/widgets/countdown.php:225
+#: addons/widgets/countdown.php:474 addons/widgets/countdown.php:743
+#: addons/widgets/countdown.php:848 addons/widgets/counter.php:310
+#: addons/widgets/counter.php:761 addons/widgets/counter.php:965
+#: addons/widgets/counter.php:1063 addons/widgets/feature-box.php:287
+#: addons/widgets/feature-box.php:665 addons/widgets/feature-box.php:849
+#: addons/widgets/feature-box.php:972 addons/widgets/feature-box.php:1204
+#: addons/widgets/history.php:616 addons/widgets/history.php:830
+#: addons/widgets/history.php:1040 addons/widgets/history.php:1224
+#: addons/widgets/history.php:1320 addons/widgets/history.php:1424
+#: addons/widgets/history.php:1785 addons/widgets/image-carousel.php:629
+#: addons/widgets/lightbox.php:350 addons/widgets/lightbox.php:723
+#: addons/widgets/lightbox.php:936 addons/widgets/post-slider.php:564
+#: addons/widgets/price.php:565 addons/widgets/price.php:912
+#: addons/widgets/price.php:992 addons/widgets/price.php:1046
+#: addons/widgets/price.php:1097 addons/widgets/price.php:1183
+#: addons/widgets/price.php:1255 addons/widgets/price.php:1305
+#: addons/widgets/price.php:1357 addons/widgets/price.php:1589
+#: addons/widgets/price.php:1670 addons/widgets/price.php:1710
+#: addons/widgets/price.php:1790 addons/widgets/price.php:1959
+#: addons/widgets/roadmap.php:190 addons/widgets/roadmap.php:434
+#: addons/widgets/roadmap.php:530 addons/widgets/roadmap.php:583
+#: addons/widgets/section-title.php:566 addons/widgets/section-title.php:787
+#: addons/widgets/section-title.php:890 addons/widgets/section-title.php:983
+#: addons/widgets/section-title.php:1214 addons/widgets/service.php:607
+#: addons/widgets/service.php:967 addons/widgets/service.php:1151
+#: addons/widgets/service.php:1255 addons/widgets/service.php:1378
+#: addons/widgets/service.php:1739 addons/widgets/shortcode.php:590
+#: addons/widgets/shortcode.php:729 addons/widgets/shortcode.php:969
+#: addons/widgets/slide-box.php:169 addons/widgets/slide-box.php:577
+#: addons/widgets/slide-box.php:761 addons/widgets/slide-box.php:867
+#: addons/widgets/slide-box.php:1048 addons/widgets/slider-arrow.php:241
+#: addons/widgets/slider-arrow.php:375 addons/widgets/slider-arrow.php:478
+#: addons/widgets/switch.php:197 addons/widgets/switch.php:409
+#: addons/widgets/tabs.php:333 addons/widgets/tabs.php:558
+#: addons/widgets/tabs.php:814 addons/widgets/team.php:637
+#: addons/widgets/team.php:841 addons/widgets/team.php:1112
+#: addons/widgets/team.php:1235 addons/widgets/team.php:1300
+#: addons/widgets/team.php:1354 addons/widgets/team.php:1400
+#: addons/widgets/team.php:1545 addons/widgets/team.php:1815
+#: addons/widgets/team.php:2144 addons/widgets/testimonial.php:652
+#: addons/widgets/testimonial.php:989 addons/widgets/testimonial.php:1402
+#: addons/widgets/testimonial.php:1516 addons/widgets/testimonial.php:1628
+#: addons/widgets/testimonial.php:1711 addons/widgets/testimonial.php:1929
+msgid "Padding"
+msgstr ""
+
+#: addons/widgets/accordion.php:373 addons/widgets/accordion.php:483
+#: addons/widgets/accordion.php:646 addons/widgets/accordion.php:779
+#: addons/widgets/accordion.php:879 addons/widgets/accordion.php:1046
+#: addons/widgets/audio.php:387 addons/widgets/audio.php:519
+#: addons/widgets/button.php:275 addons/widgets/case-studie.php:714
+#: addons/widgets/case-studie.php:823 addons/widgets/case-studie.php:917
+#: addons/widgets/case-studie.php:1013 addons/widgets/case-studie.php:1126
+#: addons/widgets/case-studie.php:1330 addons/widgets/case-studie.php:1490
+#: addons/widgets/case-studie.php:1798 addons/widgets/case-studie.php:1931
+#: addons/widgets/case-studie.php:2059 addons/widgets/case-studie.php:2129
+#: addons/widgets/countdown.php:239 addons/widgets/countdown.php:394
+#: addons/widgets/countdown.php:488 addons/widgets/countdown.php:644
+#: addons/widgets/counter.php:331 addons/widgets/counter.php:493
+#: addons/widgets/counter.php:680 addons/widgets/counter.php:863
+#: addons/widgets/feature-box.php:301 addons/widgets/feature-box.php:412
+#: addons/widgets/feature-box.php:591 addons/widgets/feature-box.php:751
+#: addons/widgets/history.php:630 addons/widgets/history.php:739
+#: addons/widgets/history.php:843 addons/widgets/history.php:966
+#: addons/widgets/history.php:1126 addons/widgets/history.php:1687
+#: addons/widgets/history.php:1820 addons/widgets/history.php:1948
+#: addons/widgets/history.php:2015 addons/widgets/image-carousel.php:643
+#: addons/widgets/image-carousel.php:759 addons/widgets/lightbox.php:370
+#: addons/widgets/lightbox.php:478 addons/widgets/lightbox.php:663
+#: addons/widgets/lightbox.php:827 addons/widgets/post-slider.php:578
+#: addons/widgets/post-slider.php:689 addons/widgets/price.php:579
+#: addons/widgets/price.php:684 addons/widgets/price.php:838
+#: addons/widgets/price.php:1157 addons/widgets/price.php:1348
+#: addons/widgets/price.php:1515 addons/widgets/price.php:1734
+#: addons/widgets/price.php:1762 addons/widgets/price.php:1877
+#: addons/widgets/roadmap.php:204 addons/widgets/roadmap.php:214
+#: addons/widgets/roadmap.php:325 addons/widgets/section-title.php:580
+#: addons/widgets/section-title.php:687 addons/widgets/section-title.php:834
+#: addons/widgets/service.php:621 addons/widgets/service.php:730
+#: addons/widgets/service.php:893 addons/widgets/service.php:1053
+#: addons/widgets/service.php:1641 addons/widgets/service.php:1774
+#: addons/widgets/service.php:1902 addons/widgets/service.php:1972
+#: addons/widgets/shortcode.php:707 addons/widgets/shortcode.php:947
+#: addons/widgets/slide-box.php:228 addons/widgets/slide-box.php:311
+#: addons/widgets/slide-box.php:503 addons/widgets/slide-box.php:663
+#: addons/widgets/slider-arrow.php:288 addons/widgets/slider-arrow.php:413
+#: addons/widgets/slider-arrow.php:456 addons/widgets/slider-arrow.php:637
+#: addons/widgets/slider-arrow.php:686 addons/widgets/switch.php:211
+#: addons/widgets/switch.php:349 addons/widgets/switch.php:422
+#: addons/widgets/tabs.php:209 addons/widgets/tabs.php:230
+#: addons/widgets/tabs.php:347 addons/widgets/tabs.php:536
+#: addons/widgets/tabs.php:785 addons/widgets/team.php:651
+#: addons/widgets/team.php:761 addons/widgets/team.php:855
+#: addons/widgets/team.php:965 addons/widgets/team.php:1091
+#: addons/widgets/team.php:1379 addons/widgets/team.php:1524
+#: addons/widgets/team.php:1628 addons/widgets/team.php:1794
+#: addons/widgets/team.php:1898 addons/widgets/team.php:2034
+#: addons/widgets/team.php:2180 addons/widgets/team.php:2317
+#: addons/widgets/team.php:2387 addons/widgets/testimonial.php:666
+#: addons/widgets/testimonial.php:775 addons/widgets/testimonial.php:943
+#: addons/widgets/testimonial.php:1312 addons/widgets/testimonial.php:1495
+#: addons/widgets/testimonial.php:1831 addons/widgets/testimonial.php:1964
+#: addons/widgets/testimonial.php:2092 addons/widgets/testimonial.php:2159
+msgid "Background"
+msgstr ""
+
+#: addons/widgets/accordion.php:382 addons/widgets/audio.php:395
+#: addons/widgets/button.php:434 addons/widgets/button.php:828
+#: addons/widgets/case-studie.php:723 addons/widgets/case-studie.php:926
+#: addons/widgets/case-studie.php:1366 addons/widgets/case-studie.php:1980
+#: addons/widgets/countdown.php:248 addons/widgets/countdown.php:497
+#: addons/widgets/counter.php:385 addons/widgets/counter.php:716
+#: addons/widgets/feature-box.php:310 addons/widgets/feature-box.php:627
+#: addons/widgets/feature-box.php:1161 addons/widgets/history.php:639
+#: addons/widgets/history.php:1002 addons/widgets/history.php:1381
+#: addons/widgets/history.php:1869 addons/widgets/image-carousel.php:652
+#: addons/widgets/image-carousel.php:811 addons/widgets/image-gallery.php:346
+#: addons/widgets/lightbox.php:253 addons/widgets/lightbox.php:672
+#: addons/widgets/lightbox.php:956 addons/widgets/post-slider.php:587
+#: addons/widgets/price.php:588 addons/widgets/price.php:874
+#: addons/widgets/price.php:1131 addons/widgets/price.php:1551
+#: addons/widgets/roadmap.php:223 addons/widgets/section-title.php:57
+#: addons/widgets/section-title.php:117 addons/widgets/section-title.php:174
+#: addons/widgets/section-title.php:233 addons/widgets/section-title.php:329
+#: addons/widgets/section-title.php:588 addons/widgets/service.php:630
+#: addons/widgets/service.php:929 addons/widgets/service.php:1335
+#: addons/widgets/service.php:1823 addons/widgets/shortcode.php:177
+#: addons/widgets/slide-box.php:248 addons/widgets/slide-box.php:331
+#: addons/widgets/slide-box.php:539 addons/widgets/slide-box.php:1005
+#: addons/widgets/slider-arrow.php:307 addons/widgets/switch.php:290
+#: addons/widgets/switch.php:431 addons/widgets/tabs.php:426
+#: addons/widgets/tabs.php:461 addons/widgets/team.php:660
+#: addons/widgets/team.php:864 addons/widgets/team.php:2229
+#: addons/widgets/testimonial.php:675 addons/widgets/testimonial.php:951
+#: addons/widgets/testimonial.php:1640 addons/widgets/testimonial.php:1723
+#: addons/widgets/testimonial.php:2013
+msgid "Alignment"
+msgstr ""
+
+#: addons/widgets/accordion.php:386 addons/widgets/accordion.php:658
+#: addons/widgets/audio.php:399 addons/widgets/button.php:438
+#: addons/widgets/button.php:803 addons/widgets/case-studie.php:727
+#: addons/widgets/case-studie.php:930 addons/widgets/case-studie.php:1342
+#: addons/widgets/case-studie.php:1984 addons/widgets/countdown.php:252
+#: addons/widgets/countdown.php:501 addons/widgets/counter.php:389
+#: addons/widgets/counter.php:692 addons/widgets/feature-box.php:314
+#: addons/widgets/feature-box.php:603 addons/widgets/feature-box.php:1165
+#: addons/widgets/feature-box.php:1302 addons/widgets/feature-box.php:1303
+#: addons/widgets/history.php:643 addons/widgets/history.php:978
+#: addons/widgets/history.php:1385 addons/widgets/history.php:1873
+#: addons/widgets/image-carousel.php:379 addons/widgets/image-carousel.php:656
+#: addons/widgets/image-carousel.php:815 addons/widgets/image-gallery.php:350
+#: addons/widgets/lightbox.php:257 addons/widgets/lightbox.php:676
+#: addons/widgets/lightbox.php:960 addons/widgets/post-slider.php:591
+#: addons/widgets/price.php:592 addons/widgets/price.php:850
+#: addons/widgets/price.php:1527 addons/widgets/roadmap.php:227
+#: addons/widgets/section-title.php:61 addons/widgets/section-title.php:121
+#: addons/widgets/section-title.php:178 addons/widgets/section-title.php:237
+#: addons/widgets/section-title.php:333 addons/widgets/section-title.php:592
+#: addons/widgets/service.php:634 addons/widgets/service.php:905
+#: addons/widgets/service.php:1339 addons/widgets/service.php:1827
+#: addons/widgets/shortcode.php:181 addons/widgets/shortcode.php:343
+#: addons/widgets/shortcode.php:344 addons/widgets/shortcode.php:904
+#: addons/widgets/slide-box.php:252 addons/widgets/slide-box.php:335
+#: addons/widgets/slide-box.php:515 addons/widgets/slide-box.php:1009
+#: addons/widgets/slider-arrow.php:311 addons/widgets/switch.php:294
+#: addons/widgets/switch.php:435 addons/widgets/tabs.php:50
+#: addons/widgets/tabs.php:430 addons/widgets/tabs.php:465
+#: addons/widgets/tabs.php:667 addons/widgets/team.php:664
+#: addons/widgets/team.php:868 addons/widgets/team.php:2233
+#: addons/widgets/testimonial.php:679 addons/widgets/testimonial.php:955
+#: addons/widgets/testimonial.php:1087 addons/widgets/testimonial.php:1088
+#: addons/widgets/testimonial.php:1644 addons/widgets/testimonial.php:1727
+#: addons/widgets/testimonial.php:2017
+msgid "Left"
+msgstr ""
+
+#: addons/widgets/accordion.php:390 addons/widgets/audio.php:403
+#: addons/widgets/button.php:442 addons/widgets/button.php:836
+#: addons/widgets/case-studie.php:497 addons/widgets/case-studie.php:731
+#: addons/widgets/case-studie.php:934 addons/widgets/case-studie.php:1374
+#: addons/widgets/case-studie.php:1988 addons/widgets/countdown.php:256
+#: addons/widgets/countdown.php:505 addons/widgets/counter.php:393
+#: addons/widgets/counter.php:724 addons/widgets/feature-box.php:318
+#: addons/widgets/feature-box.php:635 addons/widgets/feature-box.php:1169
+#: addons/widgets/history.php:411 addons/widgets/history.php:647
+#: addons/widgets/history.php:1010 addons/widgets/history.php:1389
+#: addons/widgets/history.php:1877 addons/widgets/image-carousel.php:561
+#: addons/widgets/image-carousel.php:660 addons/widgets/image-carousel.php:819
+#: addons/widgets/image-gallery.php:354 addons/widgets/lightbox.php:261
+#: addons/widgets/lightbox.php:680 addons/widgets/lightbox.php:964
+#: addons/widgets/post-slider.php:361 addons/widgets/post-slider.php:595
+#: addons/widgets/price.php:596 addons/widgets/price.php:882
+#: addons/widgets/price.php:1139 addons/widgets/price.php:1559
+#: addons/widgets/roadmap.php:231 addons/widgets/section-title.php:65
+#: addons/widgets/section-title.php:125 addons/widgets/section-title.php:182
+#: addons/widgets/section-title.php:241 addons/widgets/section-title.php:337
+#: addons/widgets/section-title.php:596 addons/widgets/service.php:402
+#: addons/widgets/service.php:638 addons/widgets/service.php:937
+#: addons/widgets/service.php:1343 addons/widgets/service.php:1831
+#: addons/widgets/shortcode.php:185 addons/widgets/slide-box.php:256
+#: addons/widgets/slide-box.php:339 addons/widgets/slide-box.php:547
+#: addons/widgets/slide-box.php:1013 addons/widgets/slider-arrow.php:315
+#: addons/widgets/switch.php:298 addons/widgets/switch.php:439
+#: addons/widgets/tabs.php:434 addons/widgets/tabs.php:469
+#: addons/widgets/tabs.php:671 addons/widgets/team.php:434
+#: addons/widgets/team.php:668 addons/widgets/team.php:872
+#: addons/widgets/team.php:2237 addons/widgets/testimonial.php:449
+#: addons/widgets/testimonial.php:683 addons/widgets/testimonial.php:959
+#: addons/widgets/testimonial.php:1648 addons/widgets/testimonial.php:1731
+#: addons/widgets/testimonial.php:2021
+msgid "Center"
+msgstr ""
+
+#: addons/widgets/accordion.php:394 addons/widgets/accordion.php:666
+#: addons/widgets/audio.php:407 addons/widgets/button.php:446
+#: addons/widgets/button.php:811 addons/widgets/case-studie.php:735
+#: addons/widgets/case-studie.php:938 addons/widgets/case-studie.php:1350
+#: addons/widgets/case-studie.php:1992 addons/widgets/countdown.php:260
+#: addons/widgets/countdown.php:509 addons/widgets/counter.php:397
+#: addons/widgets/counter.php:700 addons/widgets/feature-box.php:322
+#: addons/widgets/feature-box.php:611 addons/widgets/feature-box.php:1173
+#: addons/widgets/feature-box.php:1302 addons/widgets/feature-box.php:1303
+#: addons/widgets/history.php:651 addons/widgets/history.php:986
+#: addons/widgets/history.php:1393 addons/widgets/history.php:1881
+#: addons/widgets/image-carousel.php:380 addons/widgets/image-carousel.php:664
+#: addons/widgets/image-carousel.php:823 addons/widgets/image-gallery.php:358
+#: addons/widgets/lightbox.php:265 addons/widgets/lightbox.php:684
+#: addons/widgets/lightbox.php:968 addons/widgets/post-slider.php:599
+#: addons/widgets/price.php:600 addons/widgets/price.php:858
+#: addons/widgets/price.php:1535 addons/widgets/roadmap.php:235
+#: addons/widgets/section-title.php:69 addons/widgets/section-title.php:129
+#: addons/widgets/section-title.php:186 addons/widgets/section-title.php:245
+#: addons/widgets/section-title.php:341 addons/widgets/section-title.php:600
+#: addons/widgets/service.php:642 addons/widgets/service.php:913
+#: addons/widgets/service.php:1347 addons/widgets/service.php:1835
+#: addons/widgets/shortcode.php:189 addons/widgets/shortcode.php:343
+#: addons/widgets/shortcode.php:344 addons/widgets/shortcode.php:912
+#: addons/widgets/slide-box.php:260 addons/widgets/slide-box.php:343
+#: addons/widgets/slide-box.php:523 addons/widgets/slide-box.php:1017
+#: addons/widgets/slider-arrow.php:319 addons/widgets/switch.php:302
+#: addons/widgets/switch.php:443 addons/widgets/tabs.php:51
+#: addons/widgets/tabs.php:438 addons/widgets/tabs.php:473
+#: addons/widgets/tabs.php:675 addons/widgets/team.php:672
+#: addons/widgets/team.php:876 addons/widgets/team.php:2241
+#: addons/widgets/testimonial.php:687 addons/widgets/testimonial.php:963
+#: addons/widgets/testimonial.php:1087 addons/widgets/testimonial.php:1088
+#: addons/widgets/testimonial.php:1652 addons/widgets/testimonial.php:1735
+#: addons/widgets/testimonial.php:2025
+msgid "Right"
+msgstr ""
+
+#: addons/widgets/accordion.php:398 addons/widgets/case-studie.php:739
+#: addons/widgets/case-studie.php:942 addons/widgets/countdown.php:264
+#: addons/widgets/countdown.php:513 addons/widgets/counter.php:401
+#: addons/widgets/feature-box.php:326 addons/widgets/feature-box.php:1177
+#: addons/widgets/history.php:655 addons/widgets/history.php:1397
+#: addons/widgets/image-carousel.php:668 addons/widgets/image-carousel.php:827
+#: addons/widgets/image-gallery.php:362 addons/widgets/lightbox.php:269
+#: addons/widgets/lightbox.php:688 addons/widgets/post-slider.php:603
+#: addons/widgets/price.php:604 addons/widgets/roadmap.php:239
+#: addons/widgets/section-title.php:73 addons/widgets/section-title.php:133
+#: addons/widgets/section-title.php:190 addons/widgets/section-title.php:249
+#: addons/widgets/section-title.php:345 addons/widgets/section-title.php:604
+#: addons/widgets/service.php:646 addons/widgets/service.php:1351
+#: addons/widgets/shortcode.php:193 addons/widgets/slide-box.php:264
+#: addons/widgets/slide-box.php:347 addons/widgets/slide-box.php:1021
+#: addons/widgets/slider-arrow.php:323 addons/widgets/switch.php:447
+#: addons/widgets/team.php:676 addons/widgets/team.php:880
+#: addons/widgets/testimonial.php:691 addons/widgets/testimonial.php:1656
+#: addons/widgets/testimonial.php:1739
+msgid "Justified"
+msgstr ""
+
+#: addons/widgets/accordion.php:413 addons/widgets/accordion.php:493
+#: addons/widgets/accordion.php:708 addons/widgets/accordion.php:788
+#: addons/widgets/accordion.php:932 addons/widgets/accordion.php:981
+#: addons/widgets/accordion.php:1055 addons/widgets/audio.php:446
+#: addons/widgets/audio.php:528 addons/widgets/audio.php:689
+#: addons/widgets/audio.php:805 addons/widgets/button.php:543
+#: addons/widgets/button.php:635 addons/widgets/case-studie.php:753
+#: addons/widgets/case-studie.php:833 addons/widgets/case-studie.php:956
+#: addons/widgets/case-studie.php:1023 addons/widgets/case-studie.php:1160
+#: addons/widgets/case-studie.php:1417 addons/widgets/case-studie.php:1499
+#: addons/widgets/case-studie.php:1808 addons/widgets/case-studie.php:1941
+#: addons/widgets/case-studie.php:2081 addons/widgets/countdown.php:278
+#: addons/widgets/countdown.php:404 addons/widgets/countdown.php:527
+#: addons/widgets/countdown.php:654 addons/widgets/counter.php:416
+#: addons/widgets/counter.php:503 addons/widgets/counter.php:781
+#: addons/widgets/counter.php:872 addons/widgets/feature-box.php:340
+#: addons/widgets/feature-box.php:422 addons/widgets/feature-box.php:678
+#: addons/widgets/feature-box.php:760 addons/widgets/feature-box.php:1217
+#: addons/widgets/feature-box.php:1540 addons/widgets/feature-box.php:1605
+#: addons/widgets/history.php:669 addons/widgets/history.php:749
+#: addons/widgets/history.php:1053 addons/widgets/history.php:1135
+#: addons/widgets/history.php:1437 addons/widgets/history.php:1568
+#: addons/widgets/history.php:1697 addons/widgets/history.php:1830
+#: addons/widgets/history.php:1970 addons/widgets/image-carousel.php:682
+#: addons/widgets/lightbox.php:743 addons/widgets/lightbox.php:837
+#: addons/widgets/post-slider.php:617 addons/widgets/post-slider.php:699
+#: addons/widgets/price.php:618 addons/widgets/price.php:694
+#: addons/widgets/price.php:925 addons/widgets/price.php:1208
+#: addons/widgets/price.php:1329 addons/widgets/price.php:1382
+#: addons/widgets/price.php:1602 addons/widgets/price.php:1815
+#: addons/widgets/price.php:1898 addons/widgets/roadmap.php:253
+#: addons/widgets/roadmap.php:345 addons/widgets/section-title.php:617
+#: addons/widgets/section-title.php:697 addons/widgets/service.php:660
+#: addons/widgets/service.php:740 addons/widgets/service.php:980
+#: addons/widgets/service.php:1062 addons/widgets/service.php:1391
+#: addons/widgets/service.php:1522 addons/widgets/service.php:1651
+#: addons/widgets/service.php:1784 addons/widgets/service.php:1924
+#: addons/widgets/shortcode.php:603 addons/widgets/slide-box.php:278
+#: addons/widgets/slide-box.php:361 addons/widgets/slide-box.php:590
+#: addons/widgets/slide-box.php:672 addons/widgets/slide-box.php:1061
+#: addons/widgets/slide-box.php:1146 addons/widgets/slider-arrow.php:256
+#: addons/widgets/slider-arrow.php:388 addons/widgets/slider-arrow.php:491
+#: addons/widgets/slider-arrow.php:648 addons/widgets/slider-arrow.php:697
+#: addons/widgets/switch.php:220 addons/widgets/tabs.php:356
+#: addons/widgets/tabs.php:795 addons/widgets/team.php:691
+#: addons/widgets/team.php:771 addons/widgets/team.php:895
+#: addons/widgets/team.php:975 addons/widgets/team.php:1125
+#: addons/widgets/team.php:1413 addons/widgets/team.php:1558
+#: addons/widgets/team.php:1637 addons/widgets/team.php:1828
+#: addons/widgets/team.php:1907 addons/widgets/team.php:2044
+#: addons/widgets/team.php:2190 addons/widgets/team.php:2339
+#: addons/widgets/testimonial.php:705 addons/widgets/testimonial.php:785
+#: addons/widgets/testimonial.php:1002 addons/widgets/testimonial.php:1321
+#: addons/widgets/testimonial.php:1529 addons/widgets/testimonial.php:1841
+#: addons/widgets/testimonial.php:1974 addons/widgets/testimonial.php:2114
+msgid "Border"
+msgstr ""
+
+#: addons/widgets/accordion.php:420 addons/widgets/accordion.php:500
+#: addons/widgets/accordion.php:715 addons/widgets/accordion.php:795
+#: addons/widgets/accordion.php:940 addons/widgets/accordion.php:1062
+#: addons/widgets/audio.php:453 addons/widgets/audio.php:535
+#: addons/widgets/button.php:363 addons/widgets/case-studie.php:760
+#: addons/widgets/case-studie.php:840 addons/widgets/case-studie.php:963
+#: addons/widgets/case-studie.php:1030 addons/widgets/case-studie.php:1167
+#: addons/widgets/case-studie.php:1424 addons/widgets/case-studie.php:1506
+#: addons/widgets/case-studie.php:1816 addons/widgets/case-studie.php:1949
+#: addons/widgets/case-studie.php:2089 addons/widgets/countdown.php:285
+#: addons/widgets/countdown.php:411 addons/widgets/countdown.php:534
+#: addons/widgets/countdown.php:661 addons/widgets/counter.php:423
+#: addons/widgets/counter.php:510 addons/widgets/counter.php:788
+#: addons/widgets/counter.php:879 addons/widgets/feature-box.php:347
+#: addons/widgets/feature-box.php:429 addons/widgets/feature-box.php:685
+#: addons/widgets/feature-box.php:767 addons/widgets/feature-box.php:1224
+#: addons/widgets/feature-box.php:1547 addons/widgets/feature-box.php:1612
+#: addons/widgets/history.php:676 addons/widgets/history.php:756
+#: addons/widgets/history.php:1060 addons/widgets/history.php:1142
+#: addons/widgets/history.php:1444 addons/widgets/history.php:1575
+#: addons/widgets/history.php:1705 addons/widgets/history.php:1838
+#: addons/widgets/history.php:1978 addons/widgets/image-carousel.php:689
+#: addons/widgets/image-gallery.php:299 addons/widgets/lightbox.php:378
+#: addons/widgets/lightbox.php:486 addons/widgets/lightbox.php:750
+#: addons/widgets/lightbox.php:844 addons/widgets/post-slider.php:624
+#: addons/widgets/post-slider.php:706 addons/widgets/price.php:625
+#: addons/widgets/price.php:701 addons/widgets/price.php:932
+#: addons/widgets/price.php:1216 addons/widgets/price.php:1390
+#: addons/widgets/price.php:1609 addons/widgets/price.php:1823
+#: addons/widgets/price.php:1906 addons/widgets/progress.php:229
+#: addons/widgets/roadmap.php:260 addons/widgets/roadmap.php:352
+#: addons/widgets/section-title.php:624 addons/widgets/section-title.php:704
+#: addons/widgets/service.php:667 addons/widgets/service.php:747
+#: addons/widgets/service.php:987 addons/widgets/service.php:1069
+#: addons/widgets/service.php:1398 addons/widgets/service.php:1529
+#: addons/widgets/service.php:1659 addons/widgets/service.php:1792
+#: addons/widgets/service.php:1932 addons/widgets/shortcode.php:750
+#: addons/widgets/shortcode.php:990 addons/widgets/slide-box.php:285
+#: addons/widgets/slide-box.php:368 addons/widgets/slide-box.php:597
+#: addons/widgets/slide-box.php:679 addons/widgets/slide-box.php:1068
+#: addons/widgets/slide-box.php:1153 addons/widgets/slider-arrow.php:265
+#: addons/widgets/switch.php:280 addons/widgets/tabs.php:416
+#: addons/widgets/tabs.php:579 addons/widgets/tabs.php:803
+#: addons/widgets/team.php:698 addons/widgets/team.php:778
+#: addons/widgets/team.php:902 addons/widgets/team.php:982
+#: addons/widgets/team.php:1132 addons/widgets/team.php:1565
+#: addons/widgets/team.php:1644 addons/widgets/team.php:1835
+#: addons/widgets/team.php:1914 addons/widgets/team.php:2052
+#: addons/widgets/team.php:2198 addons/widgets/team.php:2347
+#: addons/widgets/testimonial.php:712 addons/widgets/testimonial.php:792
+#: addons/widgets/testimonial.php:1009 addons/widgets/testimonial.php:1328
+#: addons/widgets/testimonial.php:1536 addons/widgets/testimonial.php:1849
+#: addons/widgets/testimonial.php:1982 addons/widgets/testimonial.php:2122
+msgid "Border Radius"
+msgstr ""
+
+#: addons/widgets/accordion.php:431 addons/widgets/accordion.php:511
+#: addons/widgets/accordion.php:738 addons/widgets/accordion.php:818
+#: addons/widgets/accordion.php:923 addons/widgets/accordion.php:973
+#: addons/widgets/accordion.php:1073 addons/widgets/audio.php:476
+#: addons/widgets/audio.php:558 addons/widgets/case-studie.php:771
+#: addons/widgets/case-studie.php:851 addons/widgets/case-studie.php:974
+#: addons/widgets/case-studie.php:1041 addons/widgets/case-studie.php:1190
+#: addons/widgets/case-studie.php:1447 addons/widgets/case-studie.php:1529
+#: addons/widgets/countdown.php:296 addons/widgets/countdown.php:422
+#: addons/widgets/countdown.php:545 addons/widgets/countdown.php:672
+#: addons/widgets/counter.php:441 addons/widgets/counter.php:528
+#: addons/widgets/counter.php:819 addons/widgets/counter.php:910
+#: addons/widgets/feature-box.php:358 addons/widgets/feature-box.php:440
+#: addons/widgets/feature-box.php:708 addons/widgets/feature-box.php:790
+#: addons/widgets/feature-box.php:1247 addons/widgets/feature-box.php:1570
+#: addons/widgets/feature-box.php:1635 addons/widgets/history.php:687
+#: addons/widgets/history.php:767 addons/widgets/history.php:1083
+#: addons/widgets/history.php:1165 addons/widgets/history.php:1467
+#: addons/widgets/history.php:1598 addons/widgets/image-carousel.php:700
+#: addons/widgets/image-carousel.php:768 addons/widgets/image-gallery.php:312
+#: addons/widgets/lightbox.php:509 addons/widgets/lightbox.php:781
+#: addons/widgets/lightbox.php:875 addons/widgets/post-slider.php:635
+#: addons/widgets/post-slider.php:717 addons/widgets/price.php:636
+#: addons/widgets/price.php:712 addons/widgets/price.php:955
+#: addons/widgets/price.php:1402 addons/widgets/price.php:1632
+#: addons/widgets/price.php:1835 addons/widgets/price.php:1918
+#: addons/widgets/roadmap.php:271 addons/widgets/roadmap.php:363
+#: addons/widgets/section-title.php:635 addons/widgets/section-title.php:715
+#: addons/widgets/service.php:678 addons/widgets/service.php:758
+#: addons/widgets/service.php:1010 addons/widgets/service.php:1092
+#: addons/widgets/service.php:1421 addons/widgets/service.php:1552
+#: addons/widgets/slide-box.php:296 addons/widgets/slide-box.php:379
+#: addons/widgets/slide-box.php:620 addons/widgets/slide-box.php:702
+#: addons/widgets/slide-box.php:1091 addons/widgets/slide-box.php:1176
+#: addons/widgets/slider-arrow.php:278 addons/widgets/slider-arrow.php:610
+#: addons/widgets/slider-arrow.php:658 addons/widgets/slider-arrow.php:707
+#: addons/widgets/switch.php:228 addons/widgets/tabs.php:364
+#: addons/widgets/team.php:709 addons/widgets/team.php:789
+#: addons/widgets/team.php:913 addons/widgets/team.php:993
+#: addons/widgets/team.php:1155 addons/widgets/team.php:1588
+#: addons/widgets/team.php:1667 addons/widgets/team.php:1858
+#: addons/widgets/team.php:1937 addons/widgets/testimonial.php:723
+#: addons/widgets/testimonial.php:803 addons/widgets/testimonial.php:1032
+#: addons/widgets/testimonial.php:1351 addons/widgets/testimonial.php:1559
+msgid "Box Shadow"
+msgstr ""
+
+#: addons/widgets/accordion.php:440 addons/widgets/accordion.php:518
+#: addons/widgets/case-studie.php:780 addons/widgets/case-studie.php:858
+#: addons/widgets/countdown.php:305 addons/widgets/countdown.php:429
+#: addons/widgets/countdown.php:554 addons/widgets/countdown.php:679
+#: addons/widgets/counter.php:450 addons/widgets/counter.php:535
+#: addons/widgets/feature-box.php:367 addons/widgets/feature-box.php:447
+#: addons/widgets/history.php:696 addons/widgets/history.php:774
+#: addons/widgets/image-carousel.php:709 addons/widgets/image-carousel.php:775
+#: addons/widgets/lightbox.php:408 addons/widgets/post-slider.php:644
+#: addons/widgets/post-slider.php:724 addons/widgets/price.php:643
+#: addons/widgets/price.php:719 addons/widgets/roadmap.php:280
+#: addons/widgets/roadmap.php:370 addons/widgets/section-title.php:644
+#: addons/widgets/section-title.php:722 addons/widgets/service.php:687
+#: addons/widgets/service.php:765 addons/widgets/team.php:718
+#: addons/widgets/team.php:796 addons/widgets/team.php:922
+#: addons/widgets/team.php:1000 addons/widgets/testimonial.php:732
+#: addons/widgets/testimonial.php:810
+msgid "Transform"
+msgstr ""
+
+#: addons/widgets/accordion.php:452 addons/widgets/accordion.php:745
+#: addons/widgets/accordion.php:901 addons/widgets/audio.php:483
+#: addons/widgets/case-studie.php:792 addons/widgets/case-studie.php:982
+#: addons/widgets/case-studie.php:1197 addons/widgets/case-studie.php:1454
+#: addons/widgets/countdown.php:317 addons/widgets/countdown.php:566
+#: addons/widgets/countdown.php:756 addons/widgets/countdown.php:861
+#: addons/widgets/counter.php:462 addons/widgets/counter.php:826
+#: addons/widgets/counter.php:977 addons/widgets/counter.php:1076
+#: addons/widgets/feature-box.php:379 addons/widgets/feature-box.php:715
+#: addons/widgets/feature-box.php:862 addons/widgets/feature-box.php:985
+#: addons/widgets/feature-box.php:1254 addons/widgets/history.php:708
+#: addons/widgets/history.php:1090 addons/widgets/history.php:1237
+#: addons/widgets/history.php:1474 addons/widgets/image-carousel.php:721
+#: addons/widgets/lightbox.php:788 addons/widgets/post-slider.php:656
+#: addons/widgets/price.php:655 addons/widgets/roadmap.php:292
+#: addons/widgets/roadmap.php:447 addons/widgets/section-title.php:656
+#: addons/widgets/service.php:699 addons/widgets/service.php:1017
+#: addons/widgets/service.php:1164 addons/widgets/service.php:1428
+#: addons/widgets/slide-box.php:627 addons/widgets/slide-box.php:774
+#: addons/widgets/slide-box.php:1098 addons/widgets/slider-arrow.php:508
+#: addons/widgets/team.php:730 addons/widgets/team.php:934
+#: addons/widgets/team.php:1162 addons/widgets/team.php:1595
+#: addons/widgets/team.php:1865 addons/widgets/testimonial.php:744
+#: addons/widgets/testimonial.php:1039 addons/widgets/testimonial.php:1566
+msgid "Transition Duration"
+msgstr ""
+
+#: addons/widgets/accordion.php:551 addons/widgets/audio.php:277
+#: addons/widgets/button.php:310 addons/widgets/button.php:693
+#: addons/widgets/case-studie.php:1059 addons/widgets/case-studie.php:1235
+#: addons/widgets/case-studie.php:1827 addons/widgets/case-studie.php:2035
+#: addons/widgets/case-studie.php:2137 addons/widgets/countdown.php:337
+#: addons/widgets/countdown.php:586 addons/widgets/counter.php:340
+#: addons/widgets/counter.php:569 addons/widgets/feature-box.php:481
+#: addons/widgets/feature-box.php:1066 addons/widgets/history.php:871
+#: addons/widgets/history.php:1494 addons/widgets/history.php:1716
+#: addons/widgets/history.php:1924 addons/widgets/history.php:2023
+#: addons/widgets/image-gallery.php:245 addons/widgets/lightbox.php:283
+#: addons/widgets/lightbox.php:432 addons/widgets/lightbox.php:535
+#: addons/widgets/price.php:743 addons/widgets/price.php:1420
+#: addons/widgets/price.php:1843 addons/widgets/section-title.php:806
+#: addons/widgets/section-title.php:910 addons/widgets/section-title.php:1023
+#: addons/widgets/section-title.php:1140 addons/widgets/section-title.php:1233
+#: addons/widgets/service.php:798 addons/widgets/service.php:1448
+#: addons/widgets/service.php:1670 addons/widgets/service.php:1878
+#: addons/widgets/service.php:1980 addons/widgets/shortcode.php:664
+#: addons/widgets/shortcode.php:877 addons/widgets/slide-box.php:182
+#: addons/widgets/slide-box.php:408 addons/widgets/slide-box.php:901
+#: addons/widgets/slider-arrow.php:336 addons/widgets/slider-arrow.php:528
+#: addons/widgets/switch.php:235 addons/widgets/tabs.php:371
+#: addons/widgets/tabs.php:512 addons/widgets/team.php:1024
+#: addons/widgets/team.php:1429 addons/widgets/team.php:1699
+#: addons/widgets/team.php:2063 addons/widgets/team.php:2289
+#: addons/widgets/team.php:2395 addons/widgets/testimonial.php:848
+#: addons/widgets/testimonial.php:1428 addons/widgets/testimonial.php:1860
+#: addons/widgets/testimonial.php:2068 addons/widgets/testimonial.php:2167
+msgid "Width"
+msgstr ""
+
+#: addons/widgets/accordion.php:574 addons/widgets/audio.php:300
+#: addons/widgets/button.php:332 addons/widgets/button.php:716
+#: addons/widgets/case-studie.php:1081 addons/widgets/case-studie.php:1258
+#: addons/widgets/case-studie.php:1850 addons/widgets/case-studie.php:2012
+#: addons/widgets/countdown.php:360 addons/widgets/countdown.php:609
+#: addons/widgets/counter.php:362 addons/widgets/counter.php:596
+#: addons/widgets/feature-box.php:504 addons/widgets/feature-box.php:1089
+#: addons/widgets/history.php:894 addons/widgets/history.php:1517
+#: addons/widgets/history.php:1739 addons/widgets/history.php:1901
+#: addons/widgets/image-gallery.php:268 addons/widgets/lightbox.php:306
+#: addons/widgets/lightbox.php:455 addons/widgets/lightbox.php:562
+#: addons/widgets/price.php:766 addons/widgets/price.php:1443
+#: addons/widgets/section-title.php:1049 addons/widgets/service.php:821
+#: addons/widgets/service.php:1471 addons/widgets/service.php:1693
+#: addons/widgets/service.php:1855 addons/widgets/shortcode.php:641
+#: addons/widgets/shortcode.php:854 addons/widgets/slide-box.php:205
+#: addons/widgets/slide-box.php:431 addons/widgets/slide-box.php:924
+#: addons/widgets/slider-arrow.php:555 addons/widgets/switch.php:257
+#: addons/widgets/tabs.php:393 addons/widgets/team.php:1046
+#: addons/widgets/team.php:1452 addons/widgets/team.php:1722
+#: addons/widgets/team.php:2090 addons/widgets/team.php:2262
+#: addons/widgets/testimonial.php:871 addons/widgets/testimonial.php:1450
+#: addons/widgets/testimonial.php:1883 addons/widgets/testimonial.php:2045
+#: addons/widgets/testimonial.php:2189
+msgid "Height"
+msgstr ""
+
+#: addons/widgets/accordion.php:596 addons/widgets/audio.php:322
+#: addons/widgets/case-studie.php:1103 addons/widgets/case-studie.php:1280
+#: addons/widgets/case-studie.php:1873 addons/widgets/counter.php:622
+#: addons/widgets/feature-box.php:526 addons/widgets/feature-box.php:1112
+#: addons/widgets/history.php:916 addons/widgets/history.php:1762
+#: addons/widgets/lightbox.php:589 addons/widgets/price.php:788
+#: addons/widgets/price.php:1465 addons/widgets/service.php:843
+#: addons/widgets/service.php:1716 addons/widgets/slide-box.php:453
+#: addons/widgets/slide-box.php:947 addons/widgets/slider-arrow.php:582
+#: addons/widgets/team.php:1068 addons/widgets/team.php:1474
+#: addons/widgets/team.php:1744 addons/widgets/team.php:2117
+#: addons/widgets/testimonial.php:893 addons/widgets/testimonial.php:1472
+#: addons/widgets/testimonial.php:1906
+msgid "Line Height"
+msgstr ""
+
+#: addons/widgets/accordion.php:619 addons/widgets/button.php:740
+#: addons/widgets/case-studie.php:1303 addons/widgets/counter.php:649
+#: addons/widgets/history.php:939 addons/widgets/lightbox.php:618
+#: addons/widgets/price.php:811 addons/widgets/price.php:1488
+#: addons/widgets/service.php:866 addons/widgets/slide-box.php:476
+#: addons/widgets/slide-box.php:969 addons/widgets/team.php:1497
+#: addons/widgets/team.php:1767 addons/widgets/testimonial.php:916
+msgid "Font Icon Size"
+msgstr ""
+
+#: addons/widgets/accordion.php:635 addons/widgets/accordion.php:854
+#: addons/widgets/accordion.php:960 addons/widgets/accordion.php:1009
+#: addons/widgets/audio.php:376 addons/widgets/button.php:483
+#: addons/widgets/case-studie.php:1319 addons/widgets/case-studie.php:1547
+#: addons/widgets/case-studie.php:1611 addons/widgets/case-studie.php:1675
+#: addons/widgets/case-studie.php:1744 addons/widgets/case-studie.php:1919
+#: addons/widgets/countdown.php:720 addons/widgets/countdown.php:784
+#: addons/widgets/countdown.php:825 addons/widgets/countdown.php:889
+#: addons/widgets/counter.php:668 addons/widgets/feature-box.php:580
+#: addons/widgets/feature-box.php:826 addons/widgets/feature-box.php:890
+#: addons/widgets/feature-box.php:908 addons/widgets/feature-box.php:948
+#: addons/widgets/feature-box.php:1013 addons/widgets/feature-box.php:1031
+#: addons/widgets/feature-box.php:1141 addons/widgets/feature-box.php:1519
+#: addons/widgets/feature-box.php:1584 addons/widgets/history.php:807
+#: addons/widgets/history.php:955 addons/widgets/history.php:1201
+#: addons/widgets/history.php:1265 addons/widgets/history.php:1296
+#: addons/widgets/history.php:1359 addons/widgets/history.php:1633
+#: addons/widgets/history.php:1808 addons/widgets/image-carousel.php:450
+#: addons/widgets/image-carousel.php:514 addons/widgets/lightbox.php:650
+#: addons/widgets/lightbox.php:904 addons/widgets/price.php:827
+#: addons/widgets/price.php:973 addons/widgets/price.php:1027
+#: addons/widgets/price.php:1080 addons/widgets/price.php:1166
+#: addons/widgets/price.php:1236 addons/widgets/price.php:1286
+#: addons/widgets/price.php:1504 addons/widgets/price.php:1651
+#: addons/widgets/price.php:1771 addons/widgets/price.php:1886
+#: addons/widgets/price.php:1940 addons/widgets/progress.php:251
+#: addons/widgets/progress.php:281 addons/widgets/roadmap.php:411
+#: addons/widgets/roadmap.php:475 addons/widgets/roadmap.php:506
+#: addons/widgets/roadmap.php:559 addons/widgets/section-title.php:359
+#: addons/widgets/section-title.php:757 addons/widgets/section-title.php:860
+#: addons/widgets/section-title.php:954 addons/widgets/section-title.php:1185
+#: addons/widgets/service.php:882 addons/widgets/service.php:1128
+#: addons/widgets/service.php:1192 addons/widgets/service.php:1231
+#: addons/widgets/service.php:1274 addons/widgets/service.php:1313
+#: addons/widgets/service.php:1587 addons/widgets/service.php:1762
+#: addons/widgets/shortcode.php:207 addons/widgets/shortcode.php:567
+#: addons/widgets/slide-box.php:492 addons/widgets/slide-box.php:652
+#: addons/widgets/slide-box.php:738 addons/widgets/slide-box.php:802
+#: addons/widgets/slide-box.php:833 addons/widgets/slide-box.php:985
+#: addons/widgets/slider-arrow.php:445 addons/widgets/slider-arrow.php:625
+#: addons/widgets/slider-arrow.php:674 addons/widgets/switch.php:322
+#: addons/widgets/switch.php:386 addons/widgets/tabs.php:502
+#: addons/widgets/tabs.php:608 addons/widgets/team.php:1192
+#: addons/widgets/team.php:1257 addons/widgets/team.php:1322
+#: addons/widgets/team.php:1513 addons/widgets/team.php:1783
+#: addons/widgets/team.php:1971 addons/widgets/team.php:2167
+#: addons/widgets/testimonial.php:932 addons/widgets/testimonial.php:1370
+#: addons/widgets/testimonial.php:1596 addons/widgets/testimonial.php:1679
+#: addons/widgets/testimonial.php:1777 addons/widgets/testimonial.php:1952
+msgid "Color"
+msgstr ""
+
+#: addons/widgets/accordion.php:654 addons/widgets/button.php:799
+#: addons/widgets/case-studie.php:1338 addons/widgets/counter.php:688
+#: addons/widgets/feature-box.php:599 addons/widgets/history.php:974
+#: addons/widgets/price.php:846 addons/widgets/price.php:1523
+#: addons/widgets/service.php:901 addons/widgets/slide-box.php:511
+#: addons/widgets/tabs.php:663
+msgid "Float"
+msgstr ""
+
+#: addons/widgets/accordion.php:662 addons/widgets/button.php:807
+#: addons/widgets/case-studie.php:1346 addons/widgets/counter.php:696
+#: addons/widgets/feature-box.php:607 addons/widgets/feature-box.php:1417
+#: addons/widgets/history.php:982 addons/widgets/lightbox.php:972
+#: addons/widgets/price.php:854 addons/widgets/price.php:1531
+#: addons/widgets/service.php:909 addons/widgets/shortcode.php:458
+#: addons/widgets/slide-box.php:519 addons/widgets/tabs.php:49
+#: addons/widgets/testimonial.php:1202
+msgid "Top"
+msgstr ""
+
+#: addons/widgets/accordion.php:670 addons/widgets/button.php:815
+#: addons/widgets/case-studie.php:1354 addons/widgets/counter.php:704
+#: addons/widgets/feature-box.php:615 addons/widgets/feature-box.php:1421
+#: addons/widgets/history.php:990 addons/widgets/price.php:862
+#: addons/widgets/price.php:1539 addons/widgets/service.php:917
+#: addons/widgets/shortcode.php:462 addons/widgets/slide-box.php:527
+#: addons/widgets/testimonial.php:1206
+msgid "Bottom"
+msgstr ""
+
+#: addons/widgets/accordion.php:767 addons/widgets/audio.php:508
+#: addons/widgets/button.php:493 addons/widgets/case-studie.php:1479
+#: addons/widgets/case-studie.php:1557 addons/widgets/case-studie.php:1621
+#: addons/widgets/counter.php:851 addons/widgets/feature-box.php:740
+#: addons/widgets/history.php:1115 addons/widgets/history.php:1547
+#: addons/widgets/lightbox.php:815 addons/widgets/service.php:1042
+#: addons/widgets/service.php:1501 addons/widgets/slide-box.php:1125
+#: addons/widgets/team.php:1203 addons/widgets/team.php:1268
+#: addons/widgets/team.php:1617 addons/widgets/team.php:1887
+#: addons/widgets/testimonial.php:1301
+msgid "Hover Color"
+msgstr ""
+
+#: addons/widgets/accordion.php:831 addons/widgets/case-studie.php:183
+#: addons/widgets/case-studie.php:237 addons/widgets/case-studie.php:266
+#: addons/widgets/case-studie.php:1604 addons/widgets/counter.php:259
+#: addons/widgets/counter.php:1019 addons/widgets/experiences.php:115
+#: addons/widgets/feature-box.php:803 addons/widgets/history.php:199
+#: addons/widgets/history.php:1178 addons/widgets/image-carousel.php:232
+#: addons/widgets/post-slider.php:158 addons/widgets/post-slider.php:212
+#: addons/widgets/price.php:126 addons/widgets/price.php:965
+#: addons/widgets/progress.php:111 addons/widgets/progress.php:243
+#: addons/widgets/roadmap.php:46 addons/widgets/roadmap.php:388
+#: addons/widgets/service.php:190 addons/widgets/service.php:1105
+#: addons/widgets/slide-box.php:715 addons/widgets/tabs.php:82
+#: addons/widgets/team.php:153 addons/widgets/team.php:207
+msgid "Title"
+msgstr ""
+
+#: addons/widgets/accordion.php:953 addons/widgets/audio.php:502
+#: addons/widgets/button.php:385 addons/widgets/case-studie.php:815
+#: addons/widgets/case-studie.php:1005 addons/widgets/case-studie.php:1473
+#: addons/widgets/case-studie.php:1912 addons/widgets/countdown.php:386
+#: addons/widgets/countdown.php:636 addons/widgets/countdown.php:777
+#: addons/widgets/countdown.php:882 addons/widgets/counter.php:485
+#: addons/widgets/counter.php:845 addons/widgets/counter.php:996
+#: addons/widgets/counter.php:1095 addons/widgets/feature-box.php:402
+#: addons/widgets/feature-box.php:734 addons/widgets/feature-box.php:883
+#: addons/widgets/feature-box.php:1006 addons/widgets/feature-box.php:1578
+#: addons/widgets/history.php:731 addons/widgets/history.php:1109
+#: addons/widgets/history.php:1258 addons/widgets/history.php:1541
+#: addons/widgets/history.php:1801 addons/widgets/image-carousel.php:752
+#: addons/widgets/lightbox.php:809 addons/widgets/post-slider.php:679
+#: addons/widgets/price.php:676 addons/widgets/price.php:1869
+#: addons/widgets/roadmap.php:315 addons/widgets/roadmap.php:468
+#: addons/widgets/section-title.php:679 addons/widgets/service.php:722
+#: addons/widgets/service.php:1036 addons/widgets/service.php:1185
+#: addons/widgets/service.php:1268 addons/widgets/service.php:1495
+#: addons/widgets/service.php:1755 addons/widgets/shortcode.php:1012
+#: addons/widgets/slide-box.php:1119 addons/widgets/slider-arrow.php:618
+#: addons/widgets/tabs.php:601 addons/widgets/tabs.php:732
+#: addons/widgets/team.php:753 addons/widgets/team.php:957
+#: addons/widgets/team.php:1611 addons/widgets/team.php:1881
+#: addons/widgets/team.php:2160 addons/widgets/testimonial.php:767
+#: addons/widgets/testimonial.php:1295 addons/widgets/testimonial.php:1945
+msgid "Hover"
+msgstr ""
+
+#: addons/widgets/accordion.php:995 addons/widgets/case-studie.php:285
+#: addons/widgets/case-studie.php:1667 addons/widgets/experiences.php:125
+#: addons/widgets/history.php:208 addons/widgets/image-carousel.php:234
+#: addons/widgets/lightbox.php:214 addons/widgets/lightbox.php:890
+#: addons/widgets/price.php:525 addons/widgets/price.php:1932
+#: addons/widgets/roadmap.php:54 addons/widgets/roadmap.php:56
+#: addons/widgets/section-title.php:207 addons/widgets/section-title.php:215
+#: addons/widgets/section-title.php:1170 addons/widgets/service.php:199
+#: addons/widgets/switch.php:162 addons/widgets/switch.php:371
+#: addons/widgets/team.php:256 addons/widgets/team.php:1314
+msgid "Description"
+msgstr ""
+
+#: addons/widgets/audio.php:17
+msgid "Audio Player"
+msgstr ""
+
+#: addons/widgets/audio.php:44
+msgid "General Options"
+msgstr ""
+
+#: addons/widgets/audio.php:52
+msgid "Audio Source"
+msgstr ""
+
+#: addons/widgets/audio.php:56 addons/widgets/audio.php:65
+msgid "Upload Audio"
+msgstr ""
+
+#: addons/widgets/audio.php:57 addons/widgets/audio.php:77
+msgid "Audio Link"
+msgstr ""
+
+#: addons/widgets/audio.php:79
+msgid "https://example.com/music-name.mp3"
+msgstr ""
+
+#: addons/widgets/audio.php:98 addons/widgets/case-studie.php:477
+#: addons/widgets/history.php:391 addons/widgets/image-carousel.php:269
+#: addons/widgets/post-slider.php:341 addons/widgets/service.php:382
+#: addons/widgets/team.php:414 addons/widgets/testimonial.php:429
+msgid "Autoplay"
+msgstr ""
+
+#: addons/widgets/audio.php:100
+msgid ""
+"Note: Mobile browsers don’t allow autoplay for Audio. Some desktop or laptop "
+"browsers also automatically block videos from automatically playing or may "
+"automatically mute the audio."
+msgstr ""
+
+#: addons/widgets/audio.php:101 addons/widgets/audio.php:115
+#: addons/widgets/audio.php:129 addons/widgets/audio.php:143
+#: addons/widgets/audio.php:171 addons/widgets/audio.php:248
+#: addons/widgets/image-carousel.php:156 addons/widgets/image-carousel.php:215
+#: addons/widgets/image-carousel.php:273 addons/widgets/image-carousel.php:287
+#: addons/widgets/image-carousel.php:305 addons/widgets/image-carousel.php:337
+#: addons/widgets/image-gallery.php:147 addons/widgets/price.php:39
+#: addons/widgets/price.php:115 addons/widgets/price.php:141
+#: addons/widgets/price.php:167 addons/widgets/price.php:261
+#: addons/widgets/price.php:392 addons/widgets/price.php:423
+msgid "Yes"
+msgstr ""
+
+#: addons/widgets/audio.php:102 addons/widgets/audio.php:116
+#: addons/widgets/audio.php:130 addons/widgets/audio.php:144
+#: addons/widgets/audio.php:172 addons/widgets/audio.php:249
+#: addons/widgets/image-carousel.php:155 addons/widgets/image-carousel.php:216
+#: addons/widgets/image-carousel.php:274 addons/widgets/image-carousel.php:288
+#: addons/widgets/image-carousel.php:306 addons/widgets/image-carousel.php:338
+#: addons/widgets/image-gallery.php:148 addons/widgets/price.php:40
+#: addons/widgets/price.php:116 addons/widgets/price.php:142
+#: addons/widgets/price.php:168 addons/widgets/price.php:262
+#: addons/widgets/price.php:393 addons/widgets/price.php:424
+msgid "No"
+msgstr ""
+
+#: addons/widgets/audio.php:112
+msgid "Muted"
+msgstr ""
+
+#: addons/widgets/audio.php:114
+msgid ""
+"Enable this to start playback muted. This is also usefull if you experience "
+"autoplay is not working from your browser."
+msgstr ""
+
+#: addons/widgets/audio.php:126 addons/widgets/case-studie.php:468
+#: addons/widgets/history.php:382 addons/widgets/post-slider.php:332
+#: addons/widgets/service.php:373 addons/widgets/team.php:405
+#: addons/widgets/testimonial.php:420
+msgid "Loop"
+msgstr ""
+
+#: addons/widgets/audio.php:128
+msgid "Loop the current media. "
+msgstr ""
+
+#: addons/widgets/audio.php:140
+msgid "Display Time As Countdown"
+msgstr ""
+
+#: addons/widgets/audio.php:142
+msgid ""
+"Display the current time as a countdown rather than an incremental counter."
+msgstr ""
+
+#: addons/widgets/audio.php:154
+msgid "Seek Time"
+msgstr ""
+
+#: addons/widgets/audio.php:156
+msgid "The time, in seconds, to seek when a user hits fast forward or rewind."
+msgstr ""
+
+#: addons/widgets/audio.php:168
+msgid "Display Seek Tooltip"
+msgstr ""
+
+#: addons/widgets/audio.php:170
+msgid ""
+"Display a seek tooltip to indicate on click where the media would seek to."
+msgstr ""
+
+#: addons/widgets/audio.php:181
+msgid "Initial Speed"
+msgstr ""
+
+#: addons/widgets/audio.php:185
+msgid "0.5"
+msgstr ""
+
+#: addons/widgets/audio.php:186
+msgid "0.75"
+msgstr ""
+
+#: addons/widgets/audio.php:187 addons/widgets/feature-box.php:99
+#: addons/widgets/feature-box.php:226
+msgid "1"
+msgstr ""
+
+#: addons/widgets/audio.php:188
+msgid "1.25"
+msgstr ""
+
+#: addons/widgets/audio.php:189
+msgid "1.5"
+msgstr ""
+
+#: addons/widgets/audio.php:198
+msgid "Preload"
+msgstr ""
+
+#: addons/widgets/audio.php:199
+msgid ""
+"Specifies how the the audio should be loaded when the page loads. <a target="
+"\"_blank\" href=\"https://www.w3schools.com/tags/att_audio_preload.asp"
+"\">Learn More</a>"
+msgstr ""
+
+#: addons/widgets/audio.php:203
+msgid "Auto"
+msgstr ""
+
+#: addons/widgets/audio.php:204
+msgid "Metadata"
+msgstr ""
+
+#: addons/widgets/audio.php:214
+msgid "Control Options"
+msgstr ""
+
+#: addons/widgets/audio.php:216
+msgid "Add/Remove your prefered audio control options"
+msgstr ""
+
+#: addons/widgets/audio.php:219 addons/widgets/audio.php:261
+msgid "Play Icon"
+msgstr ""
+
+#: addons/widgets/audio.php:220 addons/widgets/progress.php:42
+#: addons/widgets/progress.php:104 addons/widgets/progress.php:174
+msgid "Progress Bar"
+msgstr ""
+
+#: addons/widgets/audio.php:221
+msgid "Mute Icon"
+msgstr ""
+
+#: addons/widgets/audio.php:222 addons/widgets/audio.php:698
+msgid "Volume Bar"
+msgstr ""
+
+#: addons/widgets/audio.php:223
+msgid "Settings Icon"
+msgstr ""
+
+#: addons/widgets/audio.php:224
+msgid "Airplay Icon"
+msgstr ""
+
+#: addons/widgets/audio.php:225
+msgid "Download Button"
+msgstr ""
+
+#: addons/widgets/audio.php:237
+msgid "Debugging"
+msgstr ""
+
+#: addons/widgets/audio.php:245
+msgid "Debug Mode"
+msgstr ""
+
+#: addons/widgets/audio.php:247
+msgid ""
+"Enable it when the player does not work properly. When debug is enable, the "
+"browser will show the informations about this player in the browser console. "
+"This is helpful for developer."
+msgstr ""
+
+#: addons/widgets/audio.php:345 addons/widgets/feature-box.php:549
+#: addons/widgets/image-carousel.php:430 addons/widgets/image-carousel.php:494
+#: addons/widgets/progress-cirlce.php:200 addons/widgets/section-title.php:371
+#: addons/widgets/shortcode.php:219
+msgid "Size"
+msgstr ""
+
+#: addons/widgets/audio.php:570
+msgid "Seek Progress Bar"
+msgstr ""
+
+#: addons/widgets/audio.php:578 addons/widgets/audio.php:706
+msgid "Bar Pointer Color"
+msgstr ""
+
+#: addons/widgets/audio.php:592
+msgid "Bar Color 1"
+msgstr ""
+
+#: addons/widgets/audio.php:593
+msgid ""
+"Use RGB color with some opacity. E.g: rgba(255,68,115,0.60). Otherwise "
+"buffer color will now show."
+msgstr ""
+
+#: addons/widgets/audio.php:607
+msgid "Bar Color 2"
+msgstr ""
+
+#: addons/widgets/audio.php:619
+msgid "Buffered Bar Color"
+msgstr ""
+
+#: addons/widgets/audio.php:632
+msgid "Volume Icon"
+msgstr ""
+
+#: addons/widgets/audio.php:640 addons/widgets/audio.php:756
+msgid "BG Color"
+msgstr ""
+
+#: addons/widgets/audio.php:652 addons/widgets/audio.php:768
+#: addons/widgets/button.php:673 addons/widgets/price.php:366
+#: addons/widgets/tabs.php:239
+msgid "Icon Color"
+msgstr ""
+
+#: addons/widgets/audio.php:664 addons/widgets/audio.php:780
+msgid "Hover BG Color"
+msgstr ""
+
+#: addons/widgets/audio.php:676 addons/widgets/audio.php:792
+#: addons/widgets/button.php:683
+msgid "Hover Icon Color"
+msgstr ""
+
+#: addons/widgets/audio.php:720 addons/widgets/progress-cirlce.php:154
+#: addons/widgets/progress.php:183
+msgid "Bar Color"
+msgstr ""
+
+#: addons/widgets/audio.php:732
+msgid "Bar Empty Color"
+msgstr ""
+
+#: addons/widgets/audio.php:747
+msgid "Setting Icon"
+msgstr ""
+
+#: addons/widgets/audio.php:814
+msgid "Others"
+msgstr ""
+
+#: addons/widgets/audio.php:823
+msgid "Timer Color"
+msgstr ""
+
+#: addons/widgets/audio.php:886
+msgid "No Audio File Selected/Uploaded"
+msgstr ""
+
+#: addons/widgets/button.php:42 addons/widgets/button.php:101
+#: addons/widgets/button.php:248 addons/widgets/history.php:1335
+#: addons/widgets/lightbox.php:519 addons/widgets/price.php:415
+#: addons/widgets/price.php:1702 addons/widgets/price.php:1743
+#: addons/widgets/service.php:1289 addons/widgets/shortcode.php:838
+#: addons/widgets/slide-box.php:111
+msgid "Button"
+msgstr ""
+
+#: addons/widgets/button.php:108 addons/widgets/countdown.php:802
+#: addons/widgets/history.php:229 addons/widgets/price.php:246
+#: addons/widgets/price.php:1279 addons/widgets/service.php:220
+#: addons/widgets/slide-box.php:122 addons/widgets/switch.php:53
+#: addons/widgets/switch.php:109 addons/widgets/switch.php:314
+msgid "Label"
+msgstr ""
+
+#: addons/widgets/button.php:118 addons/widgets/feature-box.php:48
+#: addons/widgets/feature-box.php:97 addons/widgets/feature-box.php:169
+#: addons/widgets/feature-box.php:224 addons/widgets/price.php:377
+#: addons/widgets/price.php:1643 addons/widgets/slider-arrow.php:74
+#: addons/widgets/slider-arrow.php:122 addons/widgets/slider-arrow.php:124
+#: addons/widgets/slider-arrow.php:156 addons/widgets/slider-arrow.php:204
+#: addons/widgets/slider-arrow.php:206
+msgid "Text"
+msgstr ""
+
+#: addons/widgets/button.php:123
+msgid "Hello World!"
+msgstr ""
+
+#: addons/widgets/button.php:124
+msgid "type your button text..."
+msgstr ""
+
+#: addons/widgets/button.php:131 addons/widgets/feature-box.php:237
+#: addons/widgets/history.php:241 addons/widgets/image-carousel.php:180
+#: addons/widgets/image-carousel.php:194 addons/widgets/image-gallery.php:128
+#: addons/widgets/price.php:446 addons/widgets/service.php:232
+#: addons/widgets/slide-box.php:134
+msgid "Link"
+msgstr ""
+
+#: addons/widgets/button.php:136 addons/widgets/feature-box.php:120
+#: addons/widgets/feature-box.php:239 addons/widgets/history.php:243
+#: addons/widgets/image-carousel.php:196 addons/widgets/lightbox.php:201
+#: addons/widgets/service.php:234 addons/widgets/slide-box.php:136
+msgid "https://your-link.com"
+msgstr ""
+
+#: addons/widgets/button.php:147 addons/widgets/counter.php:124
+#: addons/widgets/feature-box.php:36 addons/widgets/history.php:138
+#: addons/widgets/lightbox.php:139 addons/widgets/price.php:50
+#: addons/widgets/price.php:309 addons/widgets/price.php:462
+#: addons/widgets/section-title.php:272 addons/widgets/shortcode.php:120
+#: addons/widgets/slide-box.php:36 addons/widgets/slider-arrow.php:62
+#: addons/widgets/slider-arrow.php:144 addons/widgets/tabs.php:91
+msgid "Icon Type"
+msgstr ""
+
+#: addons/widgets/button.php:217
+msgid "Button ID"
+msgstr ""
+
+#: addons/widgets/button.php:223
+msgid "Add your custom id WITHOUT the Pound key. e.g: my-id"
+msgstr ""
+
+#: addons/widgets/button.php:225
+msgid ""
+"Please make sure the ID is unique and not used elsewhere on the page this "
+"form is displayed. This field allows <code>A-z 0-9</code> & underscore chars "
+"without spaces."
+msgstr ""
+
+#: addons/widgets/button.php:234
+msgid "Lightbox Enable"
+msgstr ""
+
+#: addons/widgets/button.php:263 addons/widgets/button.php:392
+#: addons/widgets/counter.php:934 addons/widgets/counter.php:1002
+#: addons/widgets/counter.php:1032 addons/widgets/counter.php:1101
+#: addons/widgets/image-carousel.php:841 addons/widgets/image-gallery.php:379
+#: addons/widgets/progress-cirlce.php:243 addons/widgets/shortcode.php:695
+#: addons/widgets/shortcode.php:779 addons/widgets/shortcode.php:935
+#: addons/widgets/shortcode.php:1019
+msgid "Text Color"
+msgstr ""
+
+#: addons/widgets/button.php:404 addons/widgets/shortcode.php:1031
+msgid "Hover Background"
+msgstr ""
+
+#: addons/widgets/button.php:413 addons/widgets/shortcode.php:800
+#: addons/widgets/shortcode.php:1040 addons/widgets/tabs.php:630
+msgid "Border Color"
+msgstr ""
+
+#: addons/widgets/button.php:465
+msgid "Text Style"
+msgstr ""
+
+#: addons/widgets/button.php:556
+msgid "Label Style"
+msgstr ""
+
+#: addons/widgets/button.php:574
+msgid "Label Color"
+msgstr ""
+
+#: addons/widgets/button.php:584
+msgid "Hover Label Color"
+msgstr ""
+
+#: addons/widgets/button.php:642 addons/widgets/image-gallery.php:330
+msgid "Display"
+msgstr ""
+
+#: addons/widgets/button.php:646
+msgid "Block"
+msgstr ""
+
+#: addons/widgets/button.php:647
+msgid "Inline Block"
+msgstr ""
+
+#: addons/widgets/button.php:648
+msgid "Flex"
+msgstr ""
+
+#: addons/widgets/button.php:649
+msgid "Inline Flex"
+msgstr ""
+
+#: addons/widgets/button.php:663
+msgid "Icon Style"
+msgstr ""
+
+#: addons/widgets/button.php:832 addons/widgets/case-studie.php:1370
+#: addons/widgets/counter.php:720 addons/widgets/feature-box.php:631
+#: addons/widgets/history.php:1006 addons/widgets/image-carousel.php:557
+#: addons/widgets/price.php:878 addons/widgets/price.php:1135
+#: addons/widgets/price.php:1555 addons/widgets/service.php:933
+#: addons/widgets/slide-box.php:543
+msgid "Start"
+msgstr ""
+
+#: addons/widgets/button.php:840 addons/widgets/case-studie.php:1378
+#: addons/widgets/counter.php:728 addons/widgets/feature-box.php:639
+#: addons/widgets/history.php:1014 addons/widgets/image-carousel.php:565
+#: addons/widgets/price.php:886 addons/widgets/price.php:1143
+#: addons/widgets/price.php:1563 addons/widgets/service.php:941
+#: addons/widgets/slide-box.php:551
+msgid "End"
+msgstr ""
+
+#: addons/widgets/button.php:844
+msgid "Space Between"
+msgstr ""
+
+#: addons/widgets/case-studie.php:13 addons/widgets/case-studie.php:44
+#: inc/case-studies-post-type.php:29
+msgid "Case Studie"
+msgstr ""
+
+#: addons/widgets/case-studie.php:51 addons/widgets/roadmap.php:77
+#: addons/widgets/tabs.php:190
+msgid "Style"
+msgstr ""
+
+#: addons/widgets/case-studie.php:55 addons/widgets/case-studie.php:112
+#: addons/widgets/history.php:97 addons/widgets/post-slider.php:118
+#: addons/widgets/service.php:97 addons/widgets/team.php:98
+#: addons/widgets/testimonial.php:55 addons/widgets/testimonial.php:114
+msgid "One"
+msgstr ""
+
+#: addons/widgets/case-studie.php:56 addons/widgets/case-studie.php:113
+#: addons/widgets/history.php:98 addons/widgets/post-slider.php:119
+#: addons/widgets/service.php:98 addons/widgets/team.php:99
+#: addons/widgets/testimonial.php:56 addons/widgets/testimonial.php:115
+msgid "Two"
+msgstr ""
+
+#: addons/widgets/case-studie.php:57 addons/widgets/case-studie.php:114
+#: addons/widgets/history.php:99 addons/widgets/post-slider.php:120
+#: addons/widgets/service.php:99 addons/widgets/team.php:100
+#: addons/widgets/testimonial.php:57 addons/widgets/testimonial.php:116
+msgid "Three"
+msgstr ""
+
+#: addons/widgets/case-studie.php:58 addons/widgets/case-studie.php:115
+#: addons/widgets/history.php:100 addons/widgets/post-slider.php:121
+#: addons/widgets/service.php:100 addons/widgets/team.php:101
+#: addons/widgets/testimonial.php:58 addons/widgets/testimonial.php:117
+msgid "Four"
+msgstr ""
+
+#: addons/widgets/case-studie.php:65 addons/widgets/history.php:51
+#: addons/widgets/post-slider.php:54 addons/widgets/service.php:51
+#: addons/widgets/team.php:51 addons/widgets/testimonial.php:68
+msgid "Slider"
+msgstr ""
+
+#: addons/widgets/case-studie.php:67 addons/widgets/case-studie.php:129
+#: addons/widgets/case-studie.php:144 addons/widgets/case-studie.php:160
+#: addons/widgets/history.php:114 addons/widgets/post-slider.php:56
+#: addons/widgets/post-slider.php:135 addons/widgets/service.php:114
+#: addons/widgets/team.php:53 addons/widgets/team.php:130
+#: addons/widgets/testimonial.php:131
+msgid "On"
+msgstr ""
+
+#: addons/widgets/case-studie.php:68 addons/widgets/case-studie.php:130
+#: addons/widgets/case-studie.php:145 addons/widgets/case-studie.php:161
+#: addons/widgets/history.php:115 addons/widgets/post-slider.php:57
+#: addons/widgets/post-slider.php:136 addons/widgets/service.php:115
+#: addons/widgets/team.php:54 addons/widgets/team.php:131
+#: addons/widgets/testimonial.php:132
+msgid "Off"
+msgstr ""
+
+#: addons/widgets/case-studie.php:77 addons/widgets/history.php:62
+#: addons/widgets/post-slider.php:83 addons/widgets/service.php:62
+#: addons/widgets/team.php:63 addons/widgets/testimonial.php:79
+msgid "Column"
+msgstr ""
+
+#: addons/widgets/case-studie.php:81 addons/widgets/history.php:66
+#: addons/widgets/post-slider.php:87 addons/widgets/service.php:66
+#: addons/widgets/team.php:67 addons/widgets/testimonial.php:83
+msgid "One Column"
+msgstr ""
+
+#: addons/widgets/case-studie.php:85 addons/widgets/history.php:70
+#: addons/widgets/post-slider.php:91 addons/widgets/service.php:70
+#: addons/widgets/team.php:71 addons/widgets/testimonial.php:87
+msgid "Two Columns"
+msgstr ""
+
+#: addons/widgets/case-studie.php:89 addons/widgets/history.php:74
+#: addons/widgets/post-slider.php:95 addons/widgets/service.php:74
+#: addons/widgets/team.php:75 addons/widgets/testimonial.php:91
+msgid "Three Columns"
+msgstr ""
+
+#: addons/widgets/case-studie.php:93 addons/widgets/history.php:78
+#: addons/widgets/post-slider.php:99 addons/widgets/service.php:78
+#: addons/widgets/team.php:79 addons/widgets/testimonial.php:95
+msgid "Four Columns"
+msgstr ""
+
+#: addons/widgets/case-studie.php:108 addons/widgets/history.php:93
+#: addons/widgets/post-slider.php:114 addons/widgets/service.php:93
+#: addons/widgets/team.php:94 addons/widgets/testimonial.php:110
+msgid "Grid Space"
+msgstr ""
+
+#: addons/widgets/case-studie.php:116 addons/widgets/history.php:101
+#: addons/widgets/post-slider.php:122 addons/widgets/service.php:101
+#: addons/widgets/team.php:102 addons/widgets/testimonial.php:59
+#: addons/widgets/testimonial.php:118
+msgid "Five"
+msgstr ""
+
+#: addons/widgets/case-studie.php:127 addons/widgets/history.php:112
+#: addons/widgets/post-slider.php:133 addons/widgets/service.php:112
+#: addons/widgets/team.php:128 addons/widgets/testimonial.php:129
+msgid "Masonry"
+msgstr ""
+
+#: addons/widgets/case-studie.php:142
+msgid "Random Image Size"
+msgstr ""
+
+#: addons/widgets/case-studie.php:158
+msgid "Load More"
+msgstr ""
+
+#: addons/widgets/case-studie.php:173 addons/widgets/post-slider.php:148
+#: addons/widgets/team.php:143 inc/case-studies-post-type.php:76
+#: inc/case-studies-post-type.php:83 inc/service-post-type.php:76
+#: inc/service-post-type.php:83 inc/team-post-type.php:76
+#: inc/team-post-type.php:83
+msgid "Categories"
+msgstr ""
+
+#: addons/widgets/case-studie.php:193 addons/widgets/post-slider.php:168
+#: addons/widgets/team.php:163
+msgid "Limit"
+msgstr ""
+
+#: addons/widgets/case-studie.php:203 addons/widgets/post-slider.php:178
+#: addons/widgets/team.php:173
+msgid "Custom order"
+msgstr ""
+
+#: addons/widgets/case-studie.php:213 addons/widgets/post-slider.php:188
+#: addons/widgets/team.php:183
+msgid "Order"
+msgstr ""
+
+#: addons/widgets/case-studie.php:217 addons/widgets/post-slider.php:192
+#: addons/widgets/team.php:187
+msgid "Descending"
+msgstr ""
+
+#: addons/widgets/case-studie.php:218 addons/widgets/post-slider.php:193
+#: addons/widgets/team.php:188
+msgid "Ascending"
+msgstr ""
+
+#: addons/widgets/case-studie.php:229 addons/widgets/post-slider.php:204
+#: addons/widgets/team.php:199
+msgid "Orderby"
+msgstr ""
+
+#: addons/widgets/case-studie.php:234 addons/widgets/post-slider.php:209
+#: addons/widgets/team.php:204
+msgid "ID"
+msgstr ""
+
+#: addons/widgets/case-studie.php:235 addons/widgets/post-slider.php:210
+#: addons/widgets/team.php:205
+msgid "Date"
+msgstr ""
+
+#: addons/widgets/case-studie.php:236 addons/widgets/post-slider.php:211
+#: addons/widgets/team.php:206 addons/widgets/team.php:236
+#: addons/widgets/team.php:1185 addons/widgets/testimonial.php:162
+#: addons/widgets/testimonial.php:1589
+msgid "Name"
+msgstr ""
+
+#: addons/widgets/case-studie.php:238 addons/widgets/post-slider.php:213
+#: addons/widgets/team.php:208
+msgid "Comment count"
+msgstr ""
+
+#: addons/widgets/case-studie.php:239 addons/widgets/image-gallery.php:163
+#: addons/widgets/post-slider.php:214 addons/widgets/team.php:209
+msgid "Random"
+msgstr ""
+
+#: addons/widgets/case-studie.php:249 addons/widgets/team.php:219
+msgid "Show Image"
+msgstr ""
+
+#: addons/widgets/case-studie.php:275 addons/widgets/case-studie.php:1540
+msgid "Category"
+msgstr ""
+
+#: addons/widgets/case-studie.php:295 addons/widgets/team.php:266
+msgid "Description Length"
+msgstr ""
+
+#: addons/widgets/case-studie.php:308 addons/widgets/case-studie.php:1219
+msgid "Link Arrow"
+msgstr ""
+
+#: addons/widgets/case-studie.php:371 addons/widgets/history.php:285
+#: addons/widgets/post-slider.php:235 addons/widgets/service.php:276
+#: addons/widgets/team.php:308 addons/widgets/testimonial.php:323
+msgid "Slider Option"
+msgstr ""
+
+#: addons/widgets/case-studie.php:380 addons/widgets/case-studie.php:1722
+#: addons/widgets/history.php:294 addons/widgets/history.php:1611
+#: addons/widgets/post-slider.php:244 addons/widgets/service.php:285
+#: addons/widgets/service.php:1565 addons/widgets/team.php:317
+#: addons/widgets/team.php:1949 addons/widgets/testimonial.php:332
+#: addons/widgets/testimonial.php:1755
+msgid "Arrow"
+msgstr ""
+
+#: addons/widgets/case-studie.php:390 addons/widgets/history.php:304
+#: addons/widgets/post-slider.php:254 addons/widgets/service.php:295
+#: addons/widgets/team.php:327 addons/widgets/testimonial.php:342
+msgid "Custom Arrow"
+msgstr ""
+
+#: addons/widgets/case-studie.php:403 addons/widgets/history.php:317
+#: addons/widgets/post-slider.php:267 addons/widgets/service.php:308
+#: addons/widgets/team.php:340 addons/widgets/testimonial.php:355
+msgid "Arrows ID"
+msgstr ""
+
+#: addons/widgets/case-studie.php:405 addons/widgets/history.php:319
+#: addons/widgets/post-slider.php:269 addons/widgets/service.php:310
+#: addons/widgets/team.php:342 addons/widgets/testimonial.php:357
+msgid "Take arrow id from \"Custom Navigation\" addons and paste here!"
+msgstr ""
+
+#: addons/widgets/case-studie.php:416 addons/widgets/history.php:330
+#: addons/widgets/post-slider.php:280 addons/widgets/service.php:321
+#: addons/widgets/team.php:353 addons/widgets/testimonial.php:368
+msgid "Previus Icon"
+msgstr ""
+
+#: addons/widgets/case-studie.php:429 addons/widgets/history.php:343
+#: addons/widgets/post-slider.php:293 addons/widgets/service.php:334
+#: addons/widgets/team.php:366 addons/widgets/testimonial.php:381
+msgid "Next Arrow"
+msgstr ""
+
+#: addons/widgets/case-studie.php:442 addons/widgets/history.php:356
+#: addons/widgets/post-slider.php:306 addons/widgets/service.php:347
+#: addons/widgets/team.php:379 addons/widgets/testimonial.php:394
+msgid "Paginate"
+msgstr ""
+
+#: addons/widgets/case-studie.php:452 addons/widgets/history.php:366
+#: addons/widgets/image-carousel.php:347 addons/widgets/post-slider.php:316
+#: addons/widgets/service.php:357 addons/widgets/team.php:389
+#: addons/widgets/testimonial.php:404
+msgid "Effect"
+msgstr ""
+
+#: addons/widgets/case-studie.php:456 addons/widgets/history.php:370
+#: addons/widgets/image-carousel.php:351 addons/widgets/post-slider.php:320
+#: addons/widgets/service.php:361 addons/widgets/team.php:393
+#: addons/widgets/testimonial.php:408
+msgid "Slide"
+msgstr ""
+
+#: addons/widgets/case-studie.php:457 addons/widgets/history.php:371
+#: addons/widgets/image-carousel.php:352 addons/widgets/post-slider.php:321
+#: addons/widgets/service.php:362 addons/widgets/team.php:394
+#: addons/widgets/testimonial.php:409
+msgid "Fade"
+msgstr ""
+
+#: addons/widgets/case-studie.php:458 addons/widgets/history.php:372
+#: addons/widgets/post-slider.php:322 addons/widgets/service.php:363
+#: addons/widgets/team.php:395 addons/widgets/testimonial.php:410
+msgid "Cube"
+msgstr ""
+
+#: addons/widgets/case-studie.php:459 addons/widgets/history.php:373
+#: addons/widgets/post-slider.php:323 addons/widgets/service.php:364
+#: addons/widgets/team.php:396 addons/widgets/testimonial.php:411
+msgid "Coverflow"
+msgstr ""
+
+#: addons/widgets/case-studie.php:460 addons/widgets/history.php:374
+#: addons/widgets/post-slider.php:324 addons/widgets/service.php:365
+#: addons/widgets/team.php:397 addons/widgets/testimonial.php:412
+msgid "Flip"
+msgstr ""
+
+#: addons/widgets/case-studie.php:487 addons/widgets/history.php:401
+#: addons/widgets/post-slider.php:351 addons/widgets/service.php:392
+#: addons/widgets/team.php:424 addons/widgets/testimonial.php:439
+msgid "Autoplay Delay"
+msgstr ""
+
+#: addons/widgets/case-studie.php:508 addons/widgets/case-studie.php:560
+#: addons/widgets/case-studie.php:603 addons/widgets/case-studie.php:646
+#: addons/widgets/history.php:422 addons/widgets/history.php:474
+#: addons/widgets/history.php:517 addons/widgets/history.php:560
+#: addons/widgets/post-slider.php:372 addons/widgets/post-slider.php:424
+#: addons/widgets/post-slider.php:467 addons/widgets/post-slider.php:510
+#: addons/widgets/service.php:413 addons/widgets/service.php:465
+#: addons/widgets/service.php:508 addons/widgets/service.php:551
+#: addons/widgets/team.php:445 addons/widgets/team.php:497
+#: addons/widgets/team.php:540 addons/widgets/team.php:583
+#: addons/widgets/testimonial.php:460 addons/widgets/testimonial.php:512
+#: addons/widgets/testimonial.php:555 addons/widgets/testimonial.php:598
+msgid "Slider Items"
+msgstr ""
+
+#: addons/widgets/case-studie.php:520 addons/widgets/case-studie.php:572
+#: addons/widgets/case-studie.php:615 addons/widgets/case-studie.php:658
+#: addons/widgets/history.php:434 addons/widgets/history.php:486
+#: addons/widgets/history.php:529 addons/widgets/history.php:572
+#: addons/widgets/post-slider.php:384 addons/widgets/post-slider.php:436
+#: addons/widgets/post-slider.php:479 addons/widgets/post-slider.php:522
+#: addons/widgets/service.php:425 addons/widgets/service.php:477
+#: addons/widgets/service.php:520 addons/widgets/service.php:563
+#: addons/widgets/team.php:457 addons/widgets/team.php:509
+#: addons/widgets/team.php:552 addons/widgets/team.php:595
+#: addons/widgets/testimonial.php:472 addons/widgets/testimonial.php:524
+#: addons/widgets/testimonial.php:567 addons/widgets/testimonial.php:610
+msgid "Center padding"
+msgstr ""
+
+#: addons/widgets/case-studie.php:532 addons/widgets/history.php:446
+#: addons/widgets/post-slider.php:396 addons/widgets/service.php:437
+#: addons/widgets/team.php:469 addons/widgets/testimonial.php:484
+msgid "Slide Speed"
+msgstr ""
+
+#: addons/widgets/case-studie.php:541 addons/widgets/history.php:455
+#: addons/widgets/post-slider.php:405 addons/widgets/service.php:446
+#: addons/widgets/team.php:478 addons/widgets/testimonial.php:493
+msgid "Laptop"
+msgstr ""
+
+#: addons/widgets/case-studie.php:550 addons/widgets/history.php:464
+#: addons/widgets/post-slider.php:414 addons/widgets/service.php:455
+#: addons/widgets/team.php:487 addons/widgets/testimonial.php:502
+msgid "Laptop Resolution"
+msgstr ""
+
+#: addons/widgets/case-studie.php:551 addons/widgets/history.php:465
+#: addons/widgets/post-slider.php:415 addons/widgets/service.php:456
+#: addons/widgets/team.php:488 addons/widgets/testimonial.php:503
+msgid "The resolution to laptop."
+msgstr ""
+
+#: addons/widgets/case-studie.php:584 addons/widgets/history.php:498
+#: addons/widgets/post-slider.php:448 addons/widgets/service.php:489
+#: addons/widgets/team.php:521 addons/widgets/testimonial.php:536
+msgid "Tablet"
+msgstr ""
+
+#: addons/widgets/case-studie.php:593 addons/widgets/history.php:507
+#: addons/widgets/post-slider.php:457 addons/widgets/service.php:498
+#: addons/widgets/team.php:530 addons/widgets/testimonial.php:545
+msgid "Tablet Resolution"
+msgstr ""
+
+#: addons/widgets/case-studie.php:594 addons/widgets/history.php:508
+#: addons/widgets/post-slider.php:458 addons/widgets/service.php:499
+#: addons/widgets/team.php:531 addons/widgets/testimonial.php:546
+msgid "The resolution to tablet."
+msgstr ""
+
+#: addons/widgets/case-studie.php:627 addons/widgets/history.php:541
+#: addons/widgets/post-slider.php:491 addons/widgets/service.php:532
+#: addons/widgets/team.php:564 addons/widgets/testimonial.php:579
+msgid "Mobile Phone"
+msgstr ""
+
+#: addons/widgets/case-studie.php:636 addons/widgets/history.php:550
+#: addons/widgets/post-slider.php:500 addons/widgets/service.php:541
+#: addons/widgets/team.php:573 addons/widgets/testimonial.php:588
+msgid "Mobile Resolution"
+msgstr ""
+
+#: addons/widgets/case-studie.php:637 addons/widgets/history.php:551
+#: addons/widgets/post-slider.php:501 addons/widgets/service.php:542
+#: addons/widgets/team.php:574 addons/widgets/testimonial.php:589
+msgid "The resolution to mobile."
+msgstr ""
+
+#: addons/widgets/case-studie.php:672
+msgid "Single Box"
+msgstr ""
+
+#: addons/widgets/case-studie.php:875
+msgid "Content Box"
+msgstr ""
+
+#: addons/widgets/case-studie.php:1052 addons/widgets/team.php:1017
+msgid "Photo"
+msgstr ""
+
+#: addons/widgets/case-studie.php:1569 addons/widgets/case-studie.php:1633
+#: addons/widgets/case-studie.php:1687 addons/widgets/team.php:1215
+#: addons/widgets/team.php:1280 addons/widgets/team.php:1334
+#: addons/widgets/testimonial.php:1382 addons/widgets/testimonial.php:1608
+#: addons/widgets/testimonial.php:1691
+msgid "Typography"
+msgstr ""
+
+#: addons/widgets/case-studie.php:1754 addons/widgets/history.php:1643
+#: addons/widgets/service.php:1597 addons/widgets/team.php:1982
+#: addons/widgets/testimonial.php:1787
+msgid "Arrow Gap"
+msgstr ""
+
+#: addons/widgets/case-studie.php:1774 addons/widgets/history.php:1663
+#: addons/widgets/service.php:1617 addons/widgets/team.php:2006
+#: addons/widgets/testimonial.php:1807
+msgid "Font Size"
+msgstr ""
+
+#: addons/widgets/case-studie.php:1967 addons/widgets/history.php:1856
+#: addons/widgets/image-carousel.php:465 addons/widgets/service.php:1810
+#: addons/widgets/team.php:2216 addons/widgets/testimonial.php:2000
+msgid "Pagination"
+msgstr ""
+
+#: addons/widgets/case-studie.php:2099 addons/widgets/case-studie.php:2159
+#: addons/widgets/history.php:1988 addons/widgets/history.php:2045
+#: addons/widgets/section-title.php:397 addons/widgets/section-title.php:1003
+#: addons/widgets/service.php:1942 addons/widgets/service.php:2002
+#: addons/widgets/shortcode.php:245 addons/widgets/tabs.php:709
+#: addons/widgets/tabs.php:749 addons/widgets/team.php:2357
+#: addons/widgets/team.php:2421 addons/widgets/testimonial.php:2132
+#: addons/widgets/testimonial.php:2211
+msgid "Opacity (%)"
+msgstr ""
+
+#: addons/widgets/case-studie.php:2352
+msgid "Ready to publish your first case studie?"
+msgstr ""
+
+#: addons/widgets/case-studie.php:2354 addons/widgets/team.php:2568
+msgid "Get started here"
+msgstr ""
+
+#: addons/widgets/countdown.php:17 addons/widgets/countdown.php:41
+msgid "Countdown"
+msgstr ""
+
+#: addons/widgets/countdown.php:48
+msgid "Due Date"
+msgstr ""
+
+#: addons/widgets/countdown.php:60
+msgid "Time Setting"
+msgstr ""
+
+#: addons/widgets/countdown.php:68
+msgid "Day"
+msgstr ""
+
+#: addons/widgets/countdown.php:78 addons/widgets/countdown.php:152
+#: addons/widgets/countdown.php:154
+msgid "Hours"
+msgstr ""
+
+#: addons/widgets/countdown.php:88 addons/widgets/countdown.php:166
+#: addons/widgets/countdown.php:168
+msgid "Minutes"
+msgstr ""
+
+#: addons/widgets/countdown.php:98 addons/widgets/countdown.php:180
+#: addons/widgets/countdown.php:182
+msgid "Seconds"
+msgstr ""
+
+#: addons/widgets/countdown.php:108
+msgid "Label Setting"
+msgstr ""
+
+#: addons/widgets/countdown.php:116
+msgid "Hide Label"
+msgstr ""
+
+#: addons/widgets/countdown.php:126
+msgid "Custom Label"
+msgstr ""
+
+#: addons/widgets/countdown.php:138 addons/widgets/countdown.php:140
+msgid "Days"
+msgstr ""
+
+#: addons/widgets/countdown.php:197
+msgid "Counter Area"
+msgstr ""
+
+#: addons/widgets/countdown.php:446
+msgid "Counter Item"
+msgstr ""
+
+#: addons/widgets/countdown.php:697 addons/widgets/counter.php:921
+msgid "Number"
+msgstr ""
+
+#: addons/widgets/counter.php:42 addons/widgets/counter.php:116
+msgid "Counter"
+msgstr ""
+
+#: addons/widgets/counter.php:181 addons/widgets/range-slider.php:110
+msgid "Starting Number"
+msgstr ""
+
+#: addons/widgets/counter.php:190 addons/widgets/range-slider.php:119
+msgid "Ending Number"
+msgstr ""
+
+#: addons/widgets/counter.php:199 addons/widgets/progress-cirlce.php:134
+#: addons/widgets/range-slider.php:128
+msgid "Number Prefix"
+msgstr ""
+
+#: addons/widgets/counter.php:209 addons/widgets/progress-cirlce.php:144
+#: addons/widgets/range-slider.php:138
+msgid "Number Suffix"
+msgstr ""
+
+#: addons/widgets/counter.php:212 addons/widgets/range-slider.php:141
+msgid "Plus"
+msgstr ""
+
+#: addons/widgets/counter.php:219 addons/widgets/progress-cirlce.php:223
+msgid "Animation Duration"
+msgstr ""
+
+#: addons/widgets/counter.php:230
+msgid "Thousand Separator"
+msgstr ""
+
+#: addons/widgets/counter.php:241
+msgid "Separator"
+msgstr ""
+
+#: addons/widgets/counter.php:262 addons/widgets/counter.php:263
+msgid "Cool Number"
+msgstr ""
+
+#: addons/widgets/counter.php:282 addons/widgets/history.php:588
+#: addons/widgets/post-slider.php:66 addons/widgets/service.php:579
+#: addons/widgets/testimonial.php:51
+msgid "Box Style"
+msgstr ""
+
+#: addons/widgets/experiences.php:35 addons/widgets/experiences.php:87
+msgid "Experiences"
+msgstr ""
+
+#: addons/widgets/experiences.php:95 addons/widgets/experiences.php:99
+msgid "Institute Name"
+msgstr ""
+
+#: addons/widgets/experiences.php:97
+msgid "Enter your institute name."
+msgstr ""
+
+#: addons/widgets/experiences.php:98 addons/widgets/experiences.php:152
+msgid "Google Software Inc"
+msgstr ""
+
+#: addons/widgets/experiences.php:105 addons/widgets/experiences.php:109
+msgid "Session year"
+msgstr ""
+
+#: addons/widgets/experiences.php:107
+msgid "Enter your session year."
+msgstr ""
+
+#: addons/widgets/experiences.php:108 addons/widgets/experiences.php:153
+msgid "Sep 2016 - Aug 2014"
+msgstr ""
+
+#: addons/widgets/experiences.php:117
+msgid "Enter the Experiences title"
+msgstr ""
+
+#: addons/widgets/experiences.php:118 addons/widgets/experiences.php:154
+msgid "Mid Level UI/UX Designer"
+msgstr ""
+
+#: addons/widgets/experiences.php:119
+msgid "Experiences title"
+msgstr ""
+
+#: addons/widgets/experiences.php:127
+msgid "Enter your Experiences description."
+msgstr ""
+
+#: addons/widgets/experiences.php:128 addons/widgets/experiences.php:155
+msgid ""
+"Their creativity, innovation, technological expertise, and project "
+"completion steps were impressive. Project management was professional. We’re "
+"a full-service creative digital marketing agency, collaborating with brands."
+msgstr ""
+
+#: addons/widgets/experiences.php:129
+msgid "Experiences Description"
+msgstr ""
+
+#: addons/widgets/experiences.php:135 addons/widgets/switch.php:357
+msgid "Circle Color"
+msgstr ""
+
+#: addons/widgets/experiences.php:147
+msgid "Repeater List"
+msgstr ""
+
+#: addons/widgets/feature-box.php:14 addons/widgets/feature-box.php:29
+msgid "Feature Box"
+msgstr ""
+
+#: addons/widgets/feature-box.php:108
+msgid "Feature Title"
+msgstr ""
+
+#: addons/widgets/feature-box.php:110 addons/widgets/slide-box.php:95
+msgid "Educations for Children"
+msgstr ""
+
+#: addons/widgets/feature-box.php:111
+msgid "Features Title"
+msgstr ""
+
+#: addons/widgets/feature-box.php:118
+msgid "Title Link"
+msgstr ""
+
+#: addons/widgets/feature-box.php:133
+msgid "Feature Content"
+msgstr ""
+
+#: addons/widgets/feature-box.php:135 addons/widgets/slide-box.php:104
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incidi."
+msgstr ""
+
+#: addons/widgets/feature-box.php:136
+msgid "Features content"
+msgstr ""
+
+#: addons/widgets/feature-box.php:143
+msgid "Read More Button"
+msgstr ""
+
+#: addons/widgets/feature-box.php:157
+msgid "Button Icon Type"
+msgstr ""
+
+#: addons/widgets/feature-box.php:259 addons/widgets/post-slider.php:536
+msgid "Single Item"
+msgstr ""
+
+#: addons/widgets/feature-box.php:901 addons/widgets/feature-box.php:1024
+#: addons/widgets/feature-box.php:1513
+msgid "Box Hover"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1047 addons/widgets/history.php:217
+#: addons/widgets/history.php:231 addons/widgets/service.php:208
+#: addons/widgets/service.php:222 addons/widgets/slide-box.php:124
+#: addons/widgets/slide-box.php:882
+msgid "Read More"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1151 addons/widgets/feature-box.php:1529
+#: addons/widgets/feature-box.php:1594 addons/widgets/history.php:1370
+#: addons/widgets/history.php:1557 addons/widgets/service.php:1324
+#: addons/widgets/service.php:1511 addons/widgets/slide-box.php:995
+#: addons/widgets/slide-box.php:1135 addons/widgets/tabs.php:619
+msgid "Background Color"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1274 addons/widgets/section-title.php:519
+#: addons/widgets/section-title.php:1125 addons/widgets/shortcode.php:315
+#: addons/widgets/testimonial.php:1059
+msgid "Z Index"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1288 addons/widgets/image-carousel.php:413
+#: addons/widgets/image-carousel.php:477 addons/widgets/shortcode.php:329
+#: addons/widgets/team.php:246 addons/widgets/testimonial.php:1073
+#: inc/metabox.php:197
+msgid "Position"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1292 addons/widgets/image-carousel.php:122
+#: addons/widgets/image-carousel.php:139 addons/widgets/image-carousel.php:214
+#: addons/widgets/image-carousel.php:585 addons/widgets/image-gallery.php:146
+#: addons/widgets/image-gallery.php:162 addons/widgets/image-gallery.php:194
+#: addons/widgets/progress.php:129 addons/widgets/shortcode.php:333
+#: addons/widgets/testimonial.php:1077
+msgid "Default"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1293 addons/widgets/shortcode.php:334
+#: addons/widgets/testimonial.php:1078
+msgid "Absolute"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1294 addons/widgets/shortcode.php:335
+#: addons/widgets/testimonial.php:1079
+msgid "Fixed"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1308 addons/widgets/shortcode.php:349
+#: addons/widgets/testimonial.php:1093
+msgid "Horizontal Orientation"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1333 addons/widgets/feature-box.php:1372
+#: addons/widgets/feature-box.php:1435 addons/widgets/feature-box.php:1473
+#: addons/widgets/shortcode.php:374 addons/widgets/shortcode.php:413
+#: addons/widgets/shortcode.php:476 addons/widgets/shortcode.php:514
+#: addons/widgets/testimonial.php:1118 addons/widgets/testimonial.php:1157
+#: addons/widgets/testimonial.php:1220 addons/widgets/testimonial.php:1258
+msgid "Offset"
+msgstr ""
+
+#: addons/widgets/feature-box.php:1411 addons/widgets/shortcode.php:452
+#: addons/widgets/testimonial.php:1196
+msgid "Vertical Orientation"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:36
+msgid "Movement Effects"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:46
+msgid "Translate"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:61
+msgid "Translate X"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:91
+msgid "Translate Y"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:117 addons/widgets/flotingeffect.php:244
+#: addons/widgets/flotingeffect.php:352
+msgid "Duration"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:142 addons/widgets/flotingeffect.php:269
+#: addons/widgets/flotingeffect.php:377
+msgid "Delay"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:166
+msgid "Rotate"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:181
+msgid "Rotate X"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:202
+msgid "Rotate Y"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:223
+msgid "Rotate Z"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:293
+msgid "Scale"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:308
+msgid "Scale X"
+msgstr ""
+
+#: addons/widgets/flotingeffect.php:330
+msgid "Scale Y"
+msgstr ""
+
+#: addons/widgets/history.php:13 addons/widgets/history.php:44
+msgid "History"
+msgstr ""
+
+#: addons/widgets/history.php:129 addons/widgets/history.php:792
+#: addons/widgets/roadmap.php:65 addons/widgets/roadmap.php:545
+msgid "Year"
+msgstr ""
+
+#: addons/widgets/history.php:131
+msgid "2015"
+msgstr ""
+
+#: addons/widgets/history.php:201 addons/widgets/history.php:265
+#: addons/widgets/history.php:269 addons/widgets/history.php:273
+#: addons/widgets/service.php:192 addons/widgets/service.php:256
+#: addons/widgets/service.php:260 addons/widgets/service.php:264
+msgid "Link Building"
+msgstr ""
+
+#: addons/widgets/history.php:210 addons/widgets/history.php:266
+#: addons/widgets/history.php:270 addons/widgets/history.php:274
+#: addons/widgets/service.php:201 addons/widgets/service.php:257
+#: addons/widgets/service.php:261 addons/widgets/service.php:265
+msgid ""
+"Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. "
+"Velit officia consequat duis enim."
+msgstr ""
+
+#: addons/widgets/history.php:260
+msgid "history Items"
+msgstr ""
+
+#: addons/widgets/history.php:2207
+msgid "Please make a history! It is empty."
+msgstr ""
+
+#: addons/widgets/image-carousel.php:45 addons/widgets/image-carousel.php:88
+msgid "Image Carousel"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:95 addons/widgets/image-gallery.php:94
+msgid "Add Images"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:119
+msgid "Slides to Show"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:135
+msgid "Slides to Scroll"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:137
+msgid "Set how many slides are scrolled per swipe."
+msgstr ""
+
+#: addons/widgets/image-carousel.php:151
+msgid "Image Stretch"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:164 addons/widgets/image-carousel.php:390
+msgid "Navigation"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:168
+msgid "Arrows and Dots"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:169 addons/widgets/image-carousel.php:401
+msgid "Arrows"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:170
+msgid "Dots"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:185 addons/widgets/image-gallery.php:132
+msgid "Media File"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:186
+msgid "Custom URL"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:210 addons/widgets/image-gallery.php:142
+msgid "Lightbox"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:227 addons/widgets/image-carousel.php:233
+#: addons/widgets/image-carousel.php:800 addons/widgets/image-gallery.php:322
+msgid "Caption"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:253
+msgid "Additional Options"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:260
+msgid "Lazyload"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:283
+msgid "Pause on Hover"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:301
+msgid "Pause on Interaction"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:318
+msgid "Autoplay Speed"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:333
+msgid "Infinite Loop"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:364
+msgid "Animation Speed"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:375
+msgid "Direction"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:417 addons/widgets/image-carousel.php:482
+msgid "Inside"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:418 addons/widgets/image-carousel.php:481
+msgid "Outside"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:529
+msgid "Active Color"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:553
+msgid "Vertical Align"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:582 addons/widgets/image-gallery.php:191
+msgid "Spacing"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:586 addons/widgets/image-gallery.php:195
+#: addons/widgets/price.php:199
+msgid "Custom"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:598 addons/widgets/image-gallery.php:207
+msgid "Image Spacing"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:985
+msgid "Previous"
+msgstr ""
+
+#: addons/widgets/image-carousel.php:989 addons/widgets/slider-arrow.php:137
+msgid "Next"
+msgstr ""
+
+#: addons/widgets/image-gallery.php:44
+msgid "Basic Gallery"
+msgstr ""
+
+#: addons/widgets/image-gallery.php:87
+msgid "Image Gallery"
+msgstr ""
+
+#: addons/widgets/image-gallery.php:118
+msgid "Columns"
+msgstr ""
+
+#: addons/widgets/image-gallery.php:133
+msgid "Attachment Page"
+msgstr ""
+
+#: addons/widgets/image-gallery.php:159
+msgid "Order By"
+msgstr ""
+
+#: addons/widgets/image-gallery.php:183
+msgid "Images"
+msgstr ""
+
+#: addons/widgets/lightbox.php:42
+msgid "Play Button"
+msgstr ""
+
+#: addons/widgets/lightbox.php:106
+msgid "Play Box"
+msgstr ""
+
+#: addons/widgets/lightbox.php:114
+msgid "Label Format"
+msgstr ""
+
+#: addons/widgets/lightbox.php:118
+msgid "Icon Format"
+msgstr ""
+
+#: addons/widgets/lightbox.php:119
+msgid "Text Format"
+msgstr ""
+
+#: addons/widgets/lightbox.php:127 addons/widgets/price.php:434
+msgid "Button Text"
+msgstr ""
+
+#: addons/widgets/lightbox.php:199
+msgid "Button Link"
+msgstr ""
+
+#: addons/widgets/lightbox.php:222
+msgid "Enable Lightbox"
+msgstr ""
+
+#: addons/widgets/lightbox.php:233
+msgid "Enable Wave"
+msgstr ""
+
+#: addons/widgets/lightbox.php:246 addons/widgets/slide-box.php:154
+msgid "Box"
+msgstr ""
+
+#: addons/widgets/lightbox.php:422
+msgid "Wave"
+msgstr ""
+
+#: addons/widgets/post-slider.php:15
+msgid "Posts"
+msgstr ""
+
+#: addons/widgets/post-slider.php:46
+msgid "Post Settings"
+msgstr ""
+
+#: addons/widgets/post-slider.php:70 addons/widgets/team.php:117
+msgid "Style One"
+msgstr ""
+
+#: addons/widgets/post-slider.php:71 addons/widgets/team.php:118
+msgid "Style Two"
+msgstr ""
+
+#: addons/widgets/post-slider.php:72 addons/widgets/team.php:119
+msgid "Style Three"
+msgstr ""
+
+#: addons/widgets/post-slider.php:73 addons/widgets/team.php:120
+msgid "Style Four"
+msgstr ""
+
+#: addons/widgets/post-slider.php:74
+msgid "Style Five"
+msgstr ""
+
+#: addons/widgets/post-slider.php:75
+msgid "Style Six"
+msgstr ""
+
+#: addons/widgets/post-slider.php:897 addons/widgets/post-slider.php:923
+#: addons/widgets/post-slider.php:955 addons/widgets/post-slider.php:985
+#: addons/widgets/post-slider.php:1011 addons/widgets/post-slider.php:1043
+msgid "Placeholder"
+msgstr ""
+
+#: addons/widgets/post-slider.php:911 addons/widgets/post-slider.php:999
+#: addons/widgets/post-slider.php:1031
+msgid "Read more"
+msgstr ""
+
+#: addons/widgets/price.php:13
+msgid "Price Table"
+msgstr ""
+
+#: addons/widgets/price.php:30
+msgid "Header"
+msgstr ""
+
+#: addons/widgets/price.php:37
+msgid "Enable Icon"
+msgstr ""
+
+#: addons/widgets/price.php:113
+msgid "Enable Title"
+msgstr ""
+
+#: addons/widgets/price.php:128 addons/widgets/price.php:129
+msgid "Basic Plan"
+msgstr ""
+
+#: addons/widgets/price.php:139
+msgid "Enable Sub Title"
+msgstr ""
+
+#: addons/widgets/price.php:152 addons/widgets/price.php:1019
+msgid "Sub Title"
+msgstr ""
+
+#: addons/widgets/price.php:154
+msgid "Enter your sub title"
+msgstr ""
+
+#: addons/widgets/price.php:165
+msgid "Enable Amount"
+msgstr ""
+
+#: addons/widgets/price.php:178
+msgid "Currency Symbol"
+msgstr ""
+
+#: addons/widgets/price.php:182
+msgid "Dollar"
+msgstr ""
+
+#: addons/widgets/price.php:183
+msgid "Euro"
+msgstr ""
+
+#: addons/widgets/price.php:184
+msgid "Baht"
+msgstr ""
+
+#: addons/widgets/price.php:185
+msgid "Franc"
+msgstr ""
+
+#: addons/widgets/price.php:186
+msgid "Guilder"
+msgstr ""
+
+#: addons/widgets/price.php:187
+msgid "Krona"
+msgstr ""
+
+#: addons/widgets/price.php:188
+msgid "Lira"
+msgstr ""
+
+#: addons/widgets/price.php:189
+msgid "Peseta"
+msgstr ""
+
+#: addons/widgets/price.php:190
+msgid "Peso"
+msgstr ""
+
+#: addons/widgets/price.php:191
+msgid "Pound Sterling"
+msgstr ""
+
+#: addons/widgets/price.php:192
+msgid "Real"
+msgstr ""
+
+#: addons/widgets/price.php:193
+msgid "Ruble"
+msgstr ""
+
+#: addons/widgets/price.php:194
+msgid "Rupee"
+msgstr ""
+
+#: addons/widgets/price.php:195
+msgid "Rupee (Indian)"
+msgstr ""
+
+#: addons/widgets/price.php:196
+msgid "Shekel"
+msgstr ""
+
+#: addons/widgets/price.php:197
+msgid "Yen/Yuan"
+msgstr ""
+
+#: addons/widgets/price.php:198
+msgid "Won"
+msgstr ""
+
+#: addons/widgets/price.php:211
+msgid "Custom Symbol"
+msgstr ""
+
+#: addons/widgets/price.php:223
+msgid "Price"
+msgstr ""
+
+#: addons/widgets/price.php:235
+msgid "Period"
+msgstr ""
+
+#: addons/widgets/price.php:237
+msgid "Per month"
+msgstr ""
+
+#: addons/widgets/price.php:248
+#, php-format
+msgid "10% off for yearly subscription"
+msgstr ""
+
+#: addons/widgets/price.php:259
+msgid "Enable Range Slider"
+msgstr ""
+
+#: addons/widgets/price.php:272
+msgid "Divider Number"
+msgstr ""
+
+#: addons/widgets/price.php:285
+msgid "Enter Range Slider ID"
+msgstr ""
+
+#: addons/widgets/price.php:287
+msgid "Paste your \"Range Slider Connector ID\""
+msgstr ""
+
+#: addons/widgets/price.php:301 addons/widgets/price.php:402
+#: addons/widgets/price.php:1339
+msgid "Features"
+msgstr ""
+
+#: addons/widgets/price.php:379
+msgid "Price Title"
+msgstr ""
+
+#: addons/widgets/price.php:390
+msgid "Deactive"
+msgstr ""
+
+#: addons/widgets/price.php:421
+msgid "Enable Button"
+msgstr ""
+
+#: addons/widgets/price.php:436
+msgid "Purchase Now"
+msgstr ""
+
+#: addons/widgets/price.php:527
+msgid "Enter your description"
+msgstr ""
+
+#: addons/widgets/price.php:1072 addons/widgets/range-slider.php:131
+msgid "Symble"
+msgstr ""
+
+#: addons/widgets/price.php:1124
+msgid "Amount"
+msgstr ""
+
+#: addons/widgets/price.php:1229
+msgid "Preiod"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:42 addons/widgets/progress-cirlce.php:116
+msgid "Circle Progress"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:123 addons/widgets/progress.php:141
+#: addons/widgets/progress.php:273
+msgid "Percentage"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:147
+msgid "Suffix"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:163
+msgid "Track Color"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:172
+msgid "Scale Color"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:180
+msgid "Scale Length"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:190
+msgid "Line Width"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:210
+msgid "Line Cap"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:214
+msgid "Round"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:215
+msgid "Square"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:216
+msgid "Butt"
+msgstr ""
+
+#: addons/widgets/progress-cirlce.php:236
+msgid "Percent"
+msgstr ""
+
+#: addons/widgets/progress.php:116
+msgid "Enter your title"
+msgstr ""
+
+#: addons/widgets/progress.php:117
+msgid "My Skill"
+msgstr ""
+
+#: addons/widgets/progress.php:125
+msgid "Type"
+msgstr ""
+
+#: addons/widgets/progress.php:130
+msgid "Info"
+msgstr ""
+
+#: addons/widgets/progress.php:131
+msgid "Success"
+msgstr ""
+
+#: addons/widgets/progress.php:132
+msgid "Warning"
+msgstr ""
+
+#: addons/widgets/progress.php:133
+msgid "Danger"
+msgstr ""
+
+#: addons/widgets/progress.php:152
+msgid "Display Percentage"
+msgstr ""
+
+#: addons/widgets/progress.php:192
+msgid "Bar Background"
+msgstr ""
+
+#: addons/widgets/progress.php:203
+msgid "Bar Height"
+msgstr ""
+
+#: addons/widgets/range-slider.php:42 addons/widgets/range-slider.php:102
+msgid "Range Slider"
+msgstr ""
+
+#: addons/widgets/range-slider.php:148
+msgid "Slider Color"
+msgstr ""
+
+#: addons/widgets/range-slider.php:158
+msgid "Price Table Connector ID"
+msgstr ""
+
+#: addons/widgets/range-slider.php:160
+msgid "Copy this ID to use at your price table \"Range Slider ID\" field."
+msgstr ""
+
+#: addons/widgets/roadmap.php:14
+msgid "Road map "
+msgstr ""
+
+#: addons/widgets/roadmap.php:29
+msgid "Road Map"
+msgstr ""
+
+#: addons/widgets/roadmap.php:48 addons/widgets/tabs.php:84
+msgid "Tab #1"
+msgstr ""
+
+#: addons/widgets/roadmap.php:58 addons/widgets/roadmap.php:138
+#: addons/widgets/roadmap.php:143 addons/widgets/roadmap.php:148
+msgid ""
+"It is a long established fact that a reader will be distracted by the "
+"readable content of a page when looking opposd."
+msgstr ""
+
+#: addons/widgets/roadmap.php:67
+msgid "2010"
+msgstr ""
+
+#: addons/widgets/roadmap.php:84 addons/widgets/tabs.php:197
+msgid "Title Color"
+msgstr ""
+
+#: addons/widgets/roadmap.php:95
+msgid "Content Color"
+msgstr ""
+
+#: addons/widgets/roadmap.php:106
+msgid "Year Color"
+msgstr ""
+
+#: addons/widgets/roadmap.php:117
+msgid "Dot Color"
+msgstr ""
+
+#: addons/widgets/roadmap.php:137 addons/widgets/roadmap.php:142
+#: addons/widgets/roadmap.php:147
+msgid "Startup Agency"
+msgstr ""
+
+#: addons/widgets/roadmap.php:139 addons/widgets/roadmap.php:144
+#: addons/widgets/roadmap.php:149
+msgid "2018"
+msgstr ""
+
+#: addons/widgets/roadmap.php:162
+msgid "Card Box"
+msgstr ""
+
+#: addons/widgets/roadmap.php:335
+msgid "Overlay"
+msgstr ""
+
+#: addons/widgets/section-title.php:14
+msgid "Section Title"
+msgstr ""
+
+#: addons/widgets/section-title.php:29 addons/widgets/section-title.php:37
+#: addons/widgets/section-title.php:741
+msgid "Top Heading"
+msgstr ""
+
+#: addons/widgets/section-title.php:39
+msgid "Top Heading Here."
+msgstr ""
+
+#: addons/widgets/section-title.php:40
+msgid "Type your top title here"
+msgstr ""
+
+#: addons/widgets/section-title.php:47 addons/widgets/section-title.php:108
+#: addons/widgets/section-title.php:165 addons/widgets/section-title.php:224
+msgid "HTML Tag"
+msgstr ""
+
+#: addons/widgets/section-title.php:90 addons/widgets/section-title.php:98
+#: addons/widgets/section-title.php:845
+msgid "Main Heading"
+msgstr ""
+
+#: addons/widgets/section-title.php:100
+msgid "Main Heading Here."
+msgstr ""
+
+#: addons/widgets/section-title.php:101
+msgid "Type your main title here"
+msgstr ""
+
+#: addons/widgets/section-title.php:148 addons/widgets/section-title.php:156
+#: addons/widgets/section-title.php:939
+msgid "Sub Heading"
+msgstr ""
+
+#: addons/widgets/section-title.php:158
+msgid "Sub Heading Here."
+msgstr ""
+
+#: addons/widgets/section-title.php:159
+msgid "Type your sub title here"
+msgstr ""
+
+#: addons/widgets/section-title.php:217
+msgid "Description Content Here."
+msgstr ""
+
+#: addons/widgets/section-title.php:218
+msgid "Type your description here"
+msgstr ""
+
+#: addons/widgets/section-title.php:417 addons/widgets/shortcode.php:262
+msgid "Icon Width"
+msgstr ""
+
+#: addons/widgets/section-title.php:443 addons/widgets/shortcode.php:288
+msgid "Icon Height"
+msgstr ""
+
+#: addons/widgets/section-title.php:469 addons/widgets/section-title.php:1075
+msgid "Horizontal Offset"
+msgstr ""
+
+#: addons/widgets/section-title.php:494 addons/widgets/section-title.php:1100
+msgid "Vertical Offset"
+msgstr ""
+
+#: addons/widgets/section-title.php:538 addons/widgets/slider-arrow.php:222
+msgid "Area Style"
+msgstr ""
+
+#: addons/widgets/service.php:13 addons/widgets/service.php:44
+#: inc/service-post-type.php:29
+msgid "Service"
+msgstr ""
+
+#: addons/widgets/service.php:129
+msgid "Thumbnail Type"
+msgstr ""
+
+#: addons/widgets/service.php:251
+msgid "Service Items"
+msgstr ""
+
+#: addons/widgets/service.php:2161
+msgid "Please make a service! It is empty."
+msgstr ""
+
+#: addons/widgets/shortcode.php:42
+msgid "Form Shortcode"
+msgstr ""
+
+#: addons/widgets/shortcode.php:89
+msgid "Subscribe Form"
+msgstr ""
+
+#: addons/widgets/shortcode.php:96
+msgid "Shortcode"
+msgstr ""
+
+#: addons/widgets/shortcode.php:101
+msgid "Please enter MailChimp form Shortcode."
+msgstr ""
+
+#: addons/widgets/shortcode.php:553
+msgid "Lavel"
+msgstr ""
+
+#: addons/widgets/shortcode.php:610
+msgid "Lavel Custom CSS"
+msgstr ""
+
+#: addons/widgets/shortcode.php:625
+msgid "Input Field"
+msgstr ""
+
+#: addons/widgets/shortcode.php:772 addons/widgets/slider-arrow.php:667
+msgid "Focus"
+msgstr ""
+
+#: addons/widgets/shortcode.php:791
+msgid "focus Background"
+msgstr ""
+
+#: addons/widgets/shortcode.php:821
+msgid "Input Field CSS"
+msgstr ""
+
+#: addons/widgets/shortcode.php:900
+msgid "Button Floating"
+msgstr ""
+
+#: addons/widgets/slide-box.php:14 addons/widgets/slide-box.php:29
+msgid "Slide Icon Box"
+msgstr ""
+
+#: addons/widgets/slide-box.php:93 addons/widgets/slide-box.php:96
+msgid "Slide Title"
+msgstr ""
+
+#: addons/widgets/slide-box.php:102
+msgid "Slide Content"
+msgstr ""
+
+#: addons/widgets/slide-box.php:105
+msgid "Slide content"
+msgstr ""
+
+#: addons/widgets/slide-box.php:162 addons/widgets/slide-box.php:401
+#: addons/widgets/slide-box.php:724
+msgid "Front Side"
+msgstr ""
+
+#: addons/widgets/slide-box.php:237 addons/widgets/slide-box.php:320
+msgid "Overlay Color"
+msgstr ""
+
+#: addons/widgets/slide-box.php:304 addons/widgets/slide-box.php:646
+#: addons/widgets/slide-box.php:795
+msgid "Back Side"
+msgstr ""
+
+#: addons/widgets/slide-box.php:843
+msgid "Back Color"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:15
+msgid "Custom Navigation"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:37
+msgid "Slider Navigation"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:44
+msgid "Arrow ID"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:46
+msgid "Copy this Id and paste at slider \"Target ID\" field."
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:55
+msgid "Prev"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:299 addons/widgets/tabs.php:312
+msgid "Tab Menu"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:395 addons/widgets/slider-arrow.php:498
+msgid "Box Radius"
+msgstr ""
+
+#: addons/widgets/slider-arrow.php:422
+msgid "Tab Menu Item Style"
+msgstr ""
+
+#: addons/widgets/switch.php:13 addons/widgets/switch.php:38
+#: addons/widgets/switch.php:176
+msgid "Switch"
+msgstr ""
+
+#: addons/widgets/switch.php:46 addons/widgets/switch.php:55
+msgid "Left Side"
+msgstr ""
+
+#: addons/widgets/switch.php:62 addons/widgets/switch.php:119
+#: addons/widgets/tabs.php:148
+msgid "Select Content Source"
+msgstr ""
+
+#: addons/widgets/switch.php:67 addons/widgets/switch.php:124
+#: addons/widgets/tabs.php:153
+msgid "Template"
+msgstr ""
+
+#: addons/widgets/switch.php:75 addons/widgets/switch.php:88
+#: addons/widgets/switch.php:90 addons/widgets/switch.php:132
+#: addons/widgets/switch.php:145 addons/widgets/switch.php:147
+#: inc/plugin-functions.php:171
+msgid "Select Template"
+msgstr ""
+
+#: addons/widgets/switch.php:102 addons/widgets/switch.php:111
+msgid "Right Side"
+msgstr ""
+
+#: addons/widgets/switch.php:164
+msgid "Save 60%"
+msgstr ""
+
+#: addons/widgets/switch.php:339
+msgid "Toggle"
+msgstr ""
+
+#: addons/widgets/tabs.php:13 addons/widgets/tabs.php:38
+msgid "Tabs"
+msgstr ""
+
+#: addons/widgets/tabs.php:45
+msgid "Menu Position"
+msgstr ""
+
+#: addons/widgets/tabs.php:59
+msgid "Menu Style"
+msgstr ""
+
+#: addons/widgets/tabs.php:63
+msgid "Style 1"
+msgstr ""
+
+#: addons/widgets/tabs.php:64
+msgid "Style 2"
+msgstr ""
+
+#: addons/widgets/tabs.php:218
+msgid "Title Active Color"
+msgstr ""
+
+#: addons/widgets/tabs.php:251
+msgid "Icon Size"
+msgstr ""
+
+#: addons/widgets/tabs.php:271
+msgid "Active Icon Color"
+msgstr ""
+
+#: addons/widgets/tabs.php:290
+msgid "Title #1"
+msgstr ""
+
+#: addons/widgets/tabs.php:291 addons/widgets/tabs.php:295
+#: addons/widgets/tabs.php:299
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+"Duis aute irure dolor in repre in voluptate."
+msgstr ""
+
+#: addons/widgets/tabs.php:294
+msgid "Title #2"
+msgstr ""
+
+#: addons/widgets/tabs.php:298
+msgid "Title #3"
+msgstr ""
+
+#: addons/widgets/tabs.php:454
+msgid "Tab Button"
+msgstr ""
+
+#: addons/widgets/tabs.php:654
+msgid "Button Icon"
+msgstr ""
+
+#: addons/widgets/team.php:13 addons/widgets/team.php:44
+msgid "Team"
+msgstr ""
+
+#: addons/widgets/team.php:113
+msgid "Grid Style"
+msgstr ""
+
+#: addons/widgets/team.php:279
+msgid "Content Column"
+msgstr ""
+
+#: addons/widgets/team.php:296
+msgid "Social Menu"
+msgstr ""
+
+#: addons/widgets/team.php:813
+msgid "Content Area"
+msgstr ""
+
+#: addons/widgets/team.php:1250
+msgid "position"
+msgstr ""
+
+#: addons/widgets/team.php:1369
+msgid "Social"
+msgstr ""
+
+#: addons/widgets/team.php:1680
+msgid "Social Toggle"
+msgstr ""
+
+#: addons/widgets/team.php:2566
+msgid "Ready to publish your first team member?"
+msgstr ""
+
+#: addons/widgets/testimonial.php:13 addons/widgets/testimonial.php:44
+msgid "Testimonial"
+msgstr ""
+
+#: addons/widgets/testimonial.php:146
+msgid "Client Photo"
+msgstr ""
+
+#: addons/widgets/testimonial.php:164
+msgid "Carolina Monntoya"
+msgstr ""
+
+#: addons/widgets/testimonial.php:171 addons/widgets/testimonial.php:1672
+msgid "Designation"
+msgstr ""
+
+#: addons/widgets/testimonial.php:173
+msgid "Managing Director"
+msgstr ""
+
+#: addons/widgets/testimonial.php:180
+msgid "Client Said"
+msgstr ""
+
+#: addons/widgets/testimonial.php:182 addons/widgets/testimonial.php:233
+#: addons/widgets/testimonial.php:239 addons/widgets/testimonial.php:245
+msgid ""
+"Massa eget egestas purus viverra accumsan in nisl nisi. Aliquam faucibus "
+"purus in massa nibh tellus tempor nec lorem"
+msgstr ""
+
+#: addons/widgets/testimonial.php:189
+msgid "Rating"
+msgstr ""
+
+#: addons/widgets/testimonial.php:206
+msgid "Client Logo"
+msgstr ""
+
+#: addons/widgets/testimonial.php:224
+msgid "Testimonial Items"
+msgstr ""
+
+#: addons/widgets/testimonial.php:231
+msgid "Alex John"
+msgstr ""
+
+#: addons/widgets/testimonial.php:232 addons/widgets/testimonial.php:238
+#: addons/widgets/testimonial.php:244
+msgid "Voluntter"
+msgstr ""
+
+#: addons/widgets/testimonial.php:237
+msgid "J ack lamps"
+msgstr ""
+
+#: addons/widgets/testimonial.php:243
+msgid "Lona Shiro"
+msgstr ""
+
+#: addons/widgets/testimonial.php:254
+msgid "Quote Icon Type"
+msgstr ""
+
+#: addons/widgets/testimonial.php:828
+msgid "Quote"
+msgstr ""
+
+#: addons/widgets/testimonial.php:1363
+msgid "Client Say"
+msgstr ""
+
+#: addons/widgets/testimonial.php:1418
+msgid "Thumbnail"
+msgstr ""
+
+#: addons/widgets/testimonial.php:2336
+msgid "Please make a testimonial! It is empty."
+msgstr ""
+
+#: inc/case-studies-post-type.php:28 inc/case-studies-post-type.php:39
+msgid "Case Studies"
+msgstr ""
+
+#: inc/case-studies-post-type.php:30 inc/case-studies-post-type.php:31
+msgid "Add Case Studie"
+msgstr ""
+
+#: inc/case-studies-post-type.php:32
+msgid "Edit Case Studie"
+msgstr ""
+
+#: inc/case-studies-post-type.php:33
+msgid "New Case Studie"
+msgstr ""
+
+#: inc/case-studies-post-type.php:34
+msgid "View Case Studie"
+msgstr ""
+
+#: inc/case-studies-post-type.php:35
+msgid "Search Through Case Studie"
+msgstr ""
+
+#: inc/case-studies-post-type.php:36
+msgid "No Case Studie found"
+msgstr ""
+
+#: inc/case-studies-post-type.php:37
+msgid "No Case Studie found in Trash"
+msgstr ""
+
+#: inc/case-studies-post-type.php:38
+msgid "Parent Case Studie:"
+msgstr ""
+
+#: inc/case-studies-post-type.php:42
+msgid "Add a Case Studie item"
+msgstr ""
+
+#: inc/case-studies-post-type.php:75 inc/service-post-type.php:75
+#: inc/team-post-type.php:75
+msgid "Search Categories"
+msgstr ""
+
+#: inc/case-studies-post-type.php:77 inc/service-post-type.php:77
+#: inc/team-post-type.php:77
+msgid "Parent Category"
+msgstr ""
+
+#: inc/case-studies-post-type.php:78 inc/service-post-type.php:78
+#: inc/team-post-type.php:78
+msgid "Parent Category:"
+msgstr ""
+
+#: inc/case-studies-post-type.php:79 inc/service-post-type.php:79
+#: inc/team-post-type.php:79
+msgid "Edit Category"
+msgstr ""
+
+#: inc/case-studies-post-type.php:80 inc/service-post-type.php:80
+#: inc/team-post-type.php:80
+msgid "Update Category"
+msgstr ""
+
+#: inc/case-studies-post-type.php:81 inc/service-post-type.php:81
+#: inc/team-post-type.php:81
+msgid "Add New Category"
+msgstr ""
+
+#: inc/case-studies-post-type.php:82 inc/service-post-type.php:82
+#: inc/team-post-type.php:82
+msgid "New Category"
+msgstr ""
+
+#: inc/metabox.php:10
+msgid "Add more meta"
+msgstr ""
+
+#: inc/metabox.php:21
+msgid "Extra Meta {#}"
+msgstr ""
+
+#: inc/metabox.php:22
+msgid "Add another meta"
+msgstr ""
+
+#: inc/metabox.php:23
+msgid "Remove meta"
+msgstr ""
+
+#: inc/metabox.php:47
+msgid "Extra Button Label"
+msgstr ""
+
+#: inc/metabox.php:54
+msgid "Extra Button URL"
+msgstr ""
+
+#: inc/metabox.php:64 widgets/social-menu.php:9
+msgid "Social Profile"
+msgstr ""
+
+#: inc/metabox.php:70 inc/metabox.php:203 widgets/profile.php:104
+#: widgets/social-menu.php:67
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/metabox.php:76 inc/metabox.php:209 widgets/profile.php:108
+#: widgets/social-menu.php:71
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/metabox.php:82 inc/metabox.php:215 widgets/profile.php:112
+#: widgets/social-menu.php:75
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/metabox.php:88 inc/metabox.php:221 widgets/profile.php:116
+#: widgets/social-menu.php:79
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/metabox.php:94 widgets/social-menu.php:87
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/metabox.php:103
+msgid "Page Options"
+msgstr ""
+
+#: inc/metabox.php:108
+msgid "Onepage Template:"
+msgstr ""
+
+#: inc/metabox.php:111
+msgid "Will this page use as a onepage template?"
+msgstr ""
+
+#: inc/metabox.php:114
+msgid "Onepage Scroll"
+msgstr ""
+
+#: inc/metabox.php:117
+msgid "To get a id selected scroll?"
+msgstr ""
+
+#: inc/metabox.php:120
+msgid "Remove Container"
+msgstr ""
+
+#: inc/metabox.php:123
+msgid "Remove the default page container to use elementor container."
+msgstr ""
+
+#: inc/metabox.php:126
+msgid "Remove Page Header:"
+msgstr ""
+
+#: inc/metabox.php:129
+msgid "Check this field if you want remove page header on this page."
+msgstr ""
+
+#: inc/metabox.php:132
+msgid "Remove Footer Area:"
+msgstr ""
+
+#: inc/metabox.php:135
+msgid "Check this field if you want remove footer widgets on this page."
+msgstr ""
+
+#: inc/metabox.php:138
+msgid "Page Background Image"
+msgstr ""
+
+#: inc/metabox.php:139
+msgid "Upload an image or enter an URL."
+msgstr ""
+
+#: inc/metabox.php:159
+msgid "Additional Fields"
+msgstr ""
+
+#: inc/metabox.php:164
+msgid "Photo Gallery"
+msgstr ""
+
+#: inc/metabox.php:165
+msgid ""
+"This field for gallery images. This gallery show for select gallery format."
+msgstr ""
+
+#: inc/metabox.php:169
+msgid "Add images"
+msgstr ""
+
+#: inc/metabox.php:175
+msgid "Embed Video"
+msgstr ""
+
+#: inc/metabox.php:176
+msgid ""
+"Enter a youtube, twitter, or instagram URL. Supports services listed at "
+msgstr ""
+
+#: inc/metabox.php:176
+msgid "This video show for select video format"
+msgstr ""
+
+#: inc/metabox.php:182
+msgid "Embed Audio"
+msgstr ""
+
+#: inc/metabox.php:183
+msgid ""
+"Enter a SoundCloud, Mixcloud, or ReverbNation etc URL. Supports services "
+"listed at "
+msgstr ""
+
+#: inc/metabox.php:183
+msgid "This audio show for select audio format"
+msgstr ""
+
+#: inc/metabox.php:192
+msgid "Team Details"
+msgstr ""
+
+#: inc/plugin-functions.php:9
+msgid "H1"
+msgstr ""
+
+#: inc/plugin-functions.php:10
+msgid "H2"
+msgstr ""
+
+#: inc/plugin-functions.php:11
+msgid "H3"
+msgstr ""
+
+#: inc/plugin-functions.php:12
+msgid "H4"
+msgstr ""
+
+#: inc/plugin-functions.php:13
+msgid "H5"
+msgstr ""
+
+#: inc/plugin-functions.php:14
+msgid "H6"
+msgstr ""
+
+#: inc/plugin-functions.php:15
+msgid "p"
+msgstr ""
+
+#: inc/plugin-functions.php:16
+msgid "div"
+msgstr ""
+
+#: inc/plugin-functions.php:17
+msgid "span"
+msgstr ""
+
+#: inc/plugin-functions.php:169
+msgid "Do not Saved Templates."
+msgstr ""
+
+#: inc/plugin-functions.php:183
+msgid "You are currently here!"
+msgstr ""
+
+#: inc/plugin-functions.php:300
+msgid "Author archive for "
+msgstr ""
+
+#: inc/plugin-functions.php:338
+msgid "Search query for: "
+msgstr ""
+
+#: inc/plugin-functions.php:342
+msgid "Error 404"
+msgstr ""
+
+#: inc/plugin-functions.php:347
+#, php-format
+msgid " ( Page %s )"
+msgstr ""
+
+#: inc/service-post-type.php:28 inc/service-post-type.php:39
+msgid "Services"
+msgstr ""
+
+#: inc/service-post-type.php:30 inc/service-post-type.php:31
+msgid "Add service"
+msgstr ""
+
+#: inc/service-post-type.php:32
+msgid "Edit service"
+msgstr ""
+
+#: inc/service-post-type.php:33
+msgid "New service"
+msgstr ""
+
+#: inc/service-post-type.php:34
+msgid "View service"
+msgstr ""
+
+#: inc/service-post-type.php:35
+msgid "Search Through service"
+msgstr ""
+
+#: inc/service-post-type.php:36
+msgid "No service found"
+msgstr ""
+
+#: inc/service-post-type.php:37
+msgid "No service found in Trash"
+msgstr ""
+
+#: inc/service-post-type.php:38
+msgid "Parent service:"
+msgstr ""
+
+#: inc/service-post-type.php:42
+msgid "Add a service item"
+msgstr ""
+
+#: inc/team-post-type.php:28 inc/team-post-type.php:29
+#: inc/team-post-type.php:39
+msgid "Team Members"
+msgstr ""
+
+#: inc/team-post-type.php:30 inc/team-post-type.php:31
+msgid "Add team"
+msgstr ""
+
+#: inc/team-post-type.php:32
+msgid "Edit team"
+msgstr ""
+
+#: inc/team-post-type.php:33
+msgid "New team"
+msgstr ""
+
+#: inc/team-post-type.php:34
+msgid "View team"
+msgstr ""
+
+#: inc/team-post-type.php:35
+msgid "Search Through team"
+msgstr ""
+
+#: inc/team-post-type.php:36
+msgid "No team found"
+msgstr ""
+
+#: inc/team-post-type.php:37
+msgid "No team found in Trash"
+msgstr ""
+
+#: inc/team-post-type.php:38
+msgid "Parent team:"
+msgstr ""
+
+#: inc/team-post-type.php:42
+msgid "Add a team Members"
+msgstr ""
+
+#: widgets/popular-post.php:8
+msgid "folioedge Popular Posts"
+msgstr ""
+
+#: widgets/popular-post.php:10
+msgid "folioedge Popular posts widget."
+msgstr ""
+
+#: widgets/popular-post.php:77 widgets/social-menu.php:63
+msgid "Title:"
+msgstr ""
+
+#: widgets/popular-post.php:83
+msgid "Post Title Length:"
+msgstr ""
+
+#: widgets/popular-post.php:89
+msgid "Number of posts to show:"
+msgstr ""
+
+#: widgets/popular-post.php:96
+msgid "Display Post Meta?"
+msgstr ""
+
+#: widgets/popular-post.php:102
+msgid "Display Post Thumbnail?"
+msgstr ""
+
+#: widgets/profile.php:11
+msgid "Author Information"
+msgstr ""
+
+#: widgets/profile.php:13
+msgid "Author information widget."
+msgstr ""
+
+#: widgets/profile.php:39
+msgid "Author Image"
+msgstr ""
+
+#: widgets/profile.php:74
+msgid "Widget Title:"
+msgstr ""
+
+#: widgets/profile.php:78
+msgid "Author Name"
+msgstr ""
+
+#: widgets/profile.php:82
+msgid "Upload Author Image:"
+msgstr ""
+
+#: widgets/profile.php:86
+msgid "No image selected"
+msgstr ""
+
+#: widgets/profile.php:95
+msgid "Add Image"
+msgstr ""
+
+#: widgets/profile.php:99
+msgid "Author Bio"
+msgstr ""
+
+#: widgets/profile.php:120 widgets/social-menu.php:83
+msgid "Youtube URL"
+msgstr ""
+
+#: widgets/profile.php:124
+msgid "Behance URL"
+msgstr ""
+
+#: widgets/profile.php:128
+msgid "Dribbble URL"
+msgstr ""
+
+#: widgets/social-menu.php:11
+msgid "To set your social profile link."
+msgstr ""
+
+#: widgets/social-menu.php:91
+msgid "Flikr URL"
+msgstr ""
+
+#: widgets/social-menu.php:95
+msgid "WhatsApp URL"
+msgstr ""

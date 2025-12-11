@@ -1,0 +1,68 @@
+img {
+    max-width: 100%;
+}
+
+.image_preview {
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 15px;
+    display: block;
+    line-height: 0;
+    margin-top: 10px;
+    -webkit-box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.folioedge-icon:after {
+    content: "FE";
+    font-size: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.icon-grid-1:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url('../images/grid-1.png') no-repeat scroll center center / 14px;
+}
+
+.icon-grid-2:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url('../images/grid-2.png') no-repeat scroll center center / 14px;
+}
+
+.icon-grid-3:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url('../images/grid-3.png') no-repeat scroll center center / 14px;
+}
+
+.icon-grid-4:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url('../images/grid-4.png') no-repeat scroll center center / 14px;
+}
+
+#side-sortables #_folioedge_wc_product_options .cmb-th,
+#_folioedge_wc_product_options .inner-sidebar .cmb-th {
+    padding-bottom: 0;
+}
+
+#_folioedge_wc_product_options .cmb-type-group .cmb-repeatable-group:not(:last-of-type),
+#_folioedge_wc_product_options .cmb-type-group .cmb-row:not(:last-of-type),
+#_folioedge_wc_product_options .cmb2-postbox .cmb-repeatable-group:not(:last-of-type),
+#_folioedge_wc_product_options .cmb2-postbox .cmb-row:not(:last-of-type) {
+    margin: 0;
+}
