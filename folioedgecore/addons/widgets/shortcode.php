@@ -1088,4 +1088,4 @@ class folioedge_Subscribe_Form extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Subscribe_Form );
+Plugin::instance()->widgets_manager->register( new folioedge_Subscribe_Form() );

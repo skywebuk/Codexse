@@ -837,7 +837,7 @@ class folioedge_Elementor_Widget_Tabs extends Widget_Base {
 
     }
 
-    protected function render( $instance = [] ) {
+    protected function render() {
         $settings   = $this->get_settings_for_display();
         $this->add_render_attribute( 'folioedge_tab_attr', 'class', ['folioedge-tabs', 'row g-4' ,'menu-position-'.$settings['menu_position']] );
         $this->add_render_attribute( 'folioedge_tab_menu_attr', 'class', ['folioedge-tab-nav', esc_attr($settings['menu_style'])]);
@@ -888,4 +888,4 @@ class folioedge_Elementor_Widget_Tabs extends Widget_Base {
 <?php
     }
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Elementor_Widget_Tabs );
+Plugin::instance()->widgets_manager->register( new folioedge_Elementor_Widget_Tabs() );

@@ -1141,4 +1141,4 @@ class folioedgecore_Widget_Accordion extends Widget_Base {
 	}
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedgecore_Widget_Accordion );
+Plugin::instance()->widgets_manager->register( new folioedgecore_Widget_Accordion() );

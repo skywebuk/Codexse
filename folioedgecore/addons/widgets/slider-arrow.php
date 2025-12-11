@@ -714,7 +714,7 @@ class folioedge_Elementor_Widget_Slider_Arrow extends Widget_Base {
         $this->end_controls_section();
     }
 
-    protected function render( $instance = [] ) {
+    protected function render() {
         $settings   = $this->get_settings_for_display();
         $html_output = '';
         $this->add_render_attribute( 'folioedge_arrow_attr', 'class', 'folioedge-custom-arrow' );
@@ -747,4 +747,4 @@ class folioedge_Elementor_Widget_Slider_Arrow extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Elementor_Widget_Slider_Arrow );
+Plugin::instance()->widgets_manager->register( new folioedge_Elementor_Widget_Slider_Arrow() );

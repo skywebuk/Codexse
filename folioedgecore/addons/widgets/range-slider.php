@@ -198,4 +198,4 @@ class folioedge_Price_slider extends Widget_Base {
 	}
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Price_slider );
+Plugin::instance()->widgets_manager->register( new folioedge_Price_slider() );

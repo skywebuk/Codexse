@@ -1070,4 +1070,4 @@ class folioedge_Post_Widget extends Widget_Base {
 }// End Class
 
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Post_Widget );
+Plugin::instance()->widgets_manager->register( new folioedge_Post_Widget() );

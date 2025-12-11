@@ -2440,7 +2440,7 @@ class folioedge_team_Widget extends Widget_Base {
             $this->end_controls_tabs();
         $this->end_controls_section();
     }
-    protected function render( $instance = [] ) {
+    protected function render() {
         $settings = $this->get_settings_for_display();
         $custom_order_ck    = $this->get_settings_for_display('custom_order');
         $orderby            = $this->get_settings_for_display('orderby');
@@ -2652,4 +2652,4 @@ class folioedge_team_Widget extends Widget_Base {
         echo '</div>';
     }
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_team_Widget );
+Plugin::instance()->widgets_manager->register( new folioedge_team_Widget() );

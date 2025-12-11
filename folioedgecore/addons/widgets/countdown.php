@@ -902,7 +902,7 @@ class folioedgecore_Elementor_Widget_Countdown extends Widget_Base {
         
     }
 
-    protected function render( $instance = [] ) {
+    protected function render() {
 
         $settings   = $this->get_settings_for_display();
         $data_options = [];
@@ -930,4 +930,4 @@ class folioedgecore_Elementor_Widget_Countdown extends Widget_Base {
 }
 
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedgecore_Elementor_Widget_Countdown );
+Plugin::instance()->widgets_manager->register( new folioedgecore_Elementor_Widget_Countdown() );

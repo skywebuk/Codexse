@@ -2021,7 +2021,7 @@ class folioedge_service_widget extends Widget_Base {
             $this->end_controls_tabs();
         $this->end_controls_section();
     }
-    protected function render( $instance = [] ) {
+    protected function render() {
         $column = '';
         $settings   = $this->get_settings_for_display();
         $this->add_render_attribute( 'wrapper_attributes', 'class', 'service-box-area' );
@@ -2163,4 +2163,4 @@ class folioedge_service_widget extends Widget_Base {
         echo '</div>';        
     }
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_service_widget );
+Plugin::instance()->widgets_manager->register( new folioedge_service_widget() );

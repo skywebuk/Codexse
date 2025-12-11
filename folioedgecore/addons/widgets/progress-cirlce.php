@@ -283,4 +283,4 @@ class folioedge_Cirlce_Progress extends Widget_Base {
         echo '<div '.$this->get_render_attribute_string( 'wrapper_attributes' ).' data-percent="'.esc_attr($settings['number_percentage']).'"><h3 class="percent"><span class="prefix">'.esc_html($settings['prefix']).'</span><span class="cont"></span><span class="suffix">'.esc_html($settings['suffix']).'</span></h3></div>';
     } 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Cirlce_Progress );
+Plugin::instance()->widgets_manager->register( new folioedge_Cirlce_Progress() );

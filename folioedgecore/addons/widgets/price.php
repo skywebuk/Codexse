@@ -2001,7 +2001,7 @@ private function get_currency_symbol( $symbol_name ) {
     return isset( $symbols[ $symbol_name ] ) ? $symbols[ $symbol_name ] : '';
 }
 
-protected function render( $instance = [] ) {
+protected function render() {
 
     $settings   = $this->get_settings_for_display();
     $button_content = '';
@@ -2112,4 +2112,4 @@ protected function render( $instance = [] ) {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Elementor_Widget_Pricing_Table );
+Plugin::instance()->widgets_manager->register( new folioedge_Elementor_Widget_Pricing_Table() );

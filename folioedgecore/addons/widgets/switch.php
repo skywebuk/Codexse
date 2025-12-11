@@ -458,7 +458,7 @@ class Folioedge_Elementor_Widget_Switch extends Widget_Base {
 
     }
 
-    protected function render( $instance = [] ) {
+    protected function render() {
         $settings   = $this->get_settings_for_display();
 
         $data = '';
@@ -504,4 +504,4 @@ class Folioedge_Elementor_Widget_Switch extends Widget_Base {
         
     }
 }
-Plugin::instance()->widgets_manager->register_widget_type( new Folioedge_Elementor_Widget_Switch );
+Plugin::instance()->widgets_manager->register( new Folioedge_Elementor_Widget_Switch() );

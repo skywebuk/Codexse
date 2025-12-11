@@ -2227,7 +2227,7 @@ class folioedge_Testimonial_Widget extends Widget_Base {
             $this->end_controls_tabs();
         $this->end_controls_section();
     }
-    protected function render( $instance = [] ) {
+    protected function render() {
         $column = '';
         $settings   = $this->get_settings_for_display();
         $this->add_render_attribute( 'wrapper_attributes', 'class', 'testimonial-box-area' );
@@ -2468,4 +2468,4 @@ class folioedge_Testimonial_Widget extends Widget_Base {
     }
     
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Testimonial_Widget );
+Plugin::instance()->widgets_manager->register( new folioedge_Testimonial_Widget() );

@@ -1040,4 +1040,4 @@ class folioedge_Play_Box_Widget extends Widget_Base {
         
     }
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Play_Box_Widget );
+Plugin::instance()->widgets_manager->register( new folioedge_Play_Box_Widget() );

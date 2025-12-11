@@ -1257,7 +1257,7 @@ class folioedge_Elementor_Widget_Section_Title extends Widget_Base {
         
     }
 
-    protected function render( $instance = [] ) {
+    protected function render() {
         $html_output = '';
         $settings   = $this->get_settings_for_display();
 
@@ -1331,4 +1331,4 @@ class folioedge_Elementor_Widget_Section_Title extends Widget_Base {
 }
 
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Elementor_Widget_Section_Title );
+Plugin::instance()->widgets_manager->register( new folioedge_Elementor_Widget_Section_Title() );

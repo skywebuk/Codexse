@@ -339,4 +339,4 @@ class Folioedge_Progress_Widget extends Widget_Base {
         
 	}
 }
-Plugin::instance()->widgets_manager->register_widget_type( new Folioedge_Progress_Widget );
+Plugin::instance()->widgets_manager->register( new Folioedge_Progress_Widget() );

@@ -593,7 +593,7 @@ class folioedge_road_map_widget extends Widget_Base{
         
     }
     
-    protected function render( $instance = [] ) {
+    protected function render() {
         $settings   = $this->get_settings_for_display();
         $this->add_render_attribute( 'roadmap_attr', 'class', 'roadmap-area' );
         $this->add_render_attribute( 'roadmap_menu_attr', 'class', 'roadmap-nav');
@@ -621,4 +621,4 @@ class folioedge_road_map_widget extends Widget_Base{
     }
 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_road_map_widget );
+Plugin::instance()->widgets_manager->register( new folioedge_road_map_widget() );

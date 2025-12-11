@@ -1153,4 +1153,4 @@ class folioedge_Counter_Widget extends Widget_Base {
             </div>
         </div>
 <?php } }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Counter_Widget );
+Plugin::instance()->widgets_manager->register( new folioedge_Counter_Widget() );

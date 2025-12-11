@@ -904,4 +904,4 @@ class folioedge_Arrow_Button extends Widget_Base {
 	}
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_Arrow_Button );
+Plugin::instance()->widgets_manager->register( new folioedge_Arrow_Button() );

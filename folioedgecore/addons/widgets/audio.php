@@ -888,4 +888,4 @@ class Folioedge_Audio_Player extends Widget_Base {
         endif;
     }
 }
-Plugin::instance()->widgets_manager->register_widget_type( new Folioedge_Audio_Player );
+Plugin::instance()->widgets_manager->register( new Folioedge_Audio_Player() );

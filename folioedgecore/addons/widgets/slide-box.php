@@ -1249,4 +1249,4 @@ class Folioedge_Slide_Box extends Widget_Base{
 	}
 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new Folioedge_Slide_Box );
+Plugin::instance()->widgets_manager->register( new Folioedge_Slide_Box() );

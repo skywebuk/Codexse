@@ -1,126 +1,160 @@
 <?php
+/**
+ * Elementor Widgets Controller
+ *
+ * @package Folioedgecore
+ * @since 2.0.0
+ */
 
-    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
 
+/**
+ * Class Folioedgecore_Widgets_Controller
+ *
+ * Handles registration and loading of all Elementor widgets
+ */
+class Folioedgecore_Widgets_Controller {
 
-    class folioedgecore_Widgets_Control{ 
-        public function __construct(){
-            $this->folioedgecore_Widgets_Control();
-        }        
-        public function folioedgecore_Widgets_Control(){            
-            if ( file_exists( __DIR__ . '/widgets/section-title.php' ) ) {
-                require_once __DIR__ . '/widgets/section-title.php';
-            } 
-            
-            if ( file_exists( __DIR__ . '/widgets/accordion.php' ) ) {
-                require_once __DIR__ . '/widgets/accordion.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/slider-arrow.php' ) ) {
-                require_once __DIR__ . '/widgets/slider-arrow.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/progress-cirlce.php' ) ) {
-                require_once __DIR__ . '/widgets/progress-cirlce.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/countdown.php' ) ) {
-                require_once __DIR__ . '/widgets/countdown.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/button.php' ) ) {
-                require_once __DIR__ . '/widgets/button.php';
-            }
-                        
-            if ( file_exists( __DIR__ . '/widgets/feature-box.php' ) ) {
-                require_once __DIR__ . '/widgets/feature-box.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/testimonial.php' ) ) {
-                require_once __DIR__ . '/widgets/testimonial.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/service.php' ) ) {
-                require_once __DIR__ . '/widgets/service.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/flotingeffect.php' ) ) {
-                require_once __DIR__ . '/widgets/flotingeffect.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/post-slider.php' ) ) {
-                require_once __DIR__ . '/widgets/post-slider.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/team.php' ) ) {
-                require_once __DIR__ . '/widgets/team.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/counter.php' ) ) {
-                require_once __DIR__ . '/widgets/counter.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/lightbox.php' ) ) {
-                require_once __DIR__ . '/widgets/lightbox.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/shortcode.php' ) ) {
-                require_once __DIR__ . '/widgets/shortcode.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/tabs.php' ) ) {
-                require_once __DIR__ . '/widgets/tabs.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/range-slider.php' ) ) {
-                require_once __DIR__ . '/widgets/range-slider.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/price.php' ) ) {
-                require_once __DIR__ . '/widgets/price.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/case-studie.php' ) ) {
-                require_once __DIR__ . '/widgets/case-studie.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/history.php' ) ) {
-                require_once __DIR__ . '/widgets/history.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/slide-box.php' ) ) {
-                require_once __DIR__ . '/widgets/slide-box.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/roadmap.php' ) ) {
-                require_once __DIR__ . '/widgets/roadmap.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/progress.php' ) ) {
-                require_once __DIR__ . '/widgets/progress.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/image-gallery.php' ) ) {
-                require_once __DIR__ . '/widgets/image-gallery.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/experiences.php' ) ) {
-                require_once __DIR__ . '/widgets/experiences.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/image-carousel.php' ) ) {
-                require_once __DIR__ . '/widgets/image-carousel.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/switch.php' ) ) {
-                require_once __DIR__ . '/widgets/switch.php';
-            }
-            
-            if ( file_exists( __DIR__ . '/widgets/audio.php' ) ) {
-                require_once __DIR__ . '/widgets/audio.php';
-            }
+    /**
+     * Instance
+     *
+     * @var Folioedgecore_Widgets_Controller|null
+     */
+    private static $instance = null;
+
+    /**
+     * Widget files to load
+     *
+     * @var array
+     */
+    private $widgets = array(
+        'section-title',
+        'accordion',
+        'slider-arrow',
+        'progress-cirlce',
+        'countdown',
+        'button',
+        'feature-box',
+        'testimonial',
+        'service',
+        'post-slider',
+        'team',
+        'counter',
+        'lightbox',
+        'shortcode',
+        'tabs',
+        'range-slider',
+        'price',
+        'case-studie',
+        'history',
+        'slide-box',
+        'roadmap',
+        'progress',
+        'image-gallery',
+        'experiences',
+        'image-carousel',
+        'switch',
+        'audio',
+    );
+
+    /**
+     * Extension files to load (not widgets)
+     *
+     * @var array
+     */
+    private $extensions = array(
+        'flotingeffect',
+    );
+
+    /**
+     * Get Instance
+     *
+     * @return Folioedgecore_Widgets_Controller
+     */
+    public static function instance() {
+        if ( is_null( self::$instance ) ) {
+            self::$instance = new self();
         }
-        
+        return self::$instance;
     }
 
-new folioedgecore_Widgets_Control();
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->load_widgets();
+        $this->load_extensions();
+    }
+
+    /**
+     * Load widget files
+     */
+    private function load_widgets() {
+        $widgets_dir = __DIR__ . '/widgets/';
+
+        foreach ( $this->widgets as $widget ) {
+            $widget_file = $widgets_dir . $widget . '.php';
+
+            if ( file_exists( $widget_file ) ) {
+                require_once $widget_file;
+            }
+        }
+    }
+
+    /**
+     * Load extension files (non-widget Elementor extensions)
+     */
+    private function load_extensions() {
+        $widgets_dir = __DIR__ . '/widgets/';
+
+        foreach ( $this->extensions as $extension ) {
+            $extension_file = $widgets_dir . $extension . '.php';
+
+            if ( file_exists( $extension_file ) ) {
+                require_once $extension_file;
+            }
+        }
+    }
+
+    /**
+     * Get all widget class names
+     *
+     * @return array
+     */
+    public function get_widget_classes() {
+        return array(
+            'folioedge_Elementor_Widget_Section_Title',
+            'folioedge_Elementor_Widget_Accordion',
+            'folioedge_slider_arrow_widget',
+            'folioedge_progress_circle_widget',
+            'folioedge_countdown_widget',
+            'folioedge_button_widget',
+            'folioedge_feature_box_widget',
+            'folioedge_testimonial_widget',
+            'folioedge_service_widget',
+            'folioedge_post_slider_widget',
+            'folioedge_team_widget',
+            'folioedge_counter_widget',
+            'folioedge_lightbox_widget',
+            'folioedge_shortcode_widget',
+            'folioedge_tabs_widget',
+            'folioedge_range_slider_widget',
+            'folioedge_price_widget',
+            'folioedge_case_studie_widget',
+            'folioedge_history_widget',
+            'folioedge_slide_box_widget',
+            'folioedge_roadmap_widget',
+            'folioedge_progress_widget',
+            'folioedge_image_gallery_widget',
+            'folioedge_experiences_widget',
+            'folioedge_image_carousel_widget',
+            'folioedge_switch_widget',
+            'folioedge_audio_widget',
+        );
+    }
+}
+
+// Initialize the widgets controller
+Folioedgecore_Widgets_Controller::instance();

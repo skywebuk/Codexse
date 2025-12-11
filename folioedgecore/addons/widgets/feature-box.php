@@ -1698,4 +1698,4 @@ class folioedge_feature_Box extends Widget_Base{
 	}
 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new folioedge_feature_Box );
+Plugin::instance()->widgets_manager->register( new folioedge_feature_Box() );

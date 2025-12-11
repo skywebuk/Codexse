@@ -1,294 +1,374 @@
 <?php
+/**
+ * Custom Metaboxes using CMB2
+ *
+ * @package Folioedgecore
+ * @since 2.0.0
+ */
 
-    add_action( 'cmb2_admin_init', 'folioedge_register_post_metabox' );    
-    function folioedge_register_post_metabox() {        
-        $prefix = '_folioedge_';
-        
-        /*-- User-Meta-Box-Fields --*/
-        $folioedge_wc_meta = new_cmb2_box(array(
-            'id'            => $prefix . 'wc_product_options',
-            'title'         => esc_html__('Add more meta', 'folioedgecore' ),
-            'object_types'  => array( 'product' ),
-            'context'       => 'side',
-		    'priority'      => 'low',
-        ));
-                
-        $wc_meta_option = $folioedge_wc_meta->add_field( array(
-            'id'          => $prefix . 'wc_meta_repeat_group',
-            'type'        => 'group',
-            // 'repeatable'  => false, // use false if you want non-repeatable group
-            'options'     => array(
-                'group_title'       => __( 'Extra Meta {#}', 'folioedgecore' ), // since version 1.1.4, {#} gets replaced by row number
-                'add_button'        => __( 'Add another meta', 'folioedgecore' ),
-                'remove_button'     => __( 'Remove meta', 'folioedgecore' ),
-                'sortable'          => true,
-                // 'closed'         => true, // true to have the groups closed by default
-                // 'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'folioedgecore' ), // Performs confirmation before removing group.
-            ),
-        ) );
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
-        // Id's for group's fields only need to be unique for the group. Prefix is not needed.
-        $folioedge_wc_meta->add_group_field( $wc_meta_option, array(
-            'name' => 'Title',
-            'id'   => $prefix . 'wc_meta_title',
-            'type' => 'text',
-            // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-        ) );
+/**
+ * Register custom metaboxes
+ */
+add_action( 'cmb2_admin_init', 'folioedge_register_post_metabox' );
 
-        // Id's for group's fields only need to be unique for the group. Prefix is not needed.
-        $folioedge_wc_meta->add_group_field( $wc_meta_option, array(
-            'name' => 'Value',
-            'id'   => $prefix . 'wc_meta_value',
-            'type' => 'textarea',
-            // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-        ) );
-                
-        $folioedge_wc_meta->add_field( array(
-            'name' => esc_html__( 'Extra Button Label', 'folioedgecore' ),
-            'id'   => $prefix . 'wc_ex_button_label',
-            'type' => 'text_medium',
-            //'default' => esc_html__( 'Live Preview', 'folioedgecore' ),
-        ) );
-        
-        $folioedge_wc_meta->add_field( array(
-            'name' => esc_html__( 'Extra Button URL', 'folioedgecore' ),
-            'id'   => $prefix . 'wc_ex_button_url',
-            'type' => 'text_url',
-            //'default' => '#',
-        ) );
+/**
+ * Register all metaboxes
+ */
+function folioedge_register_post_metabox() {
+    $prefix = '_folioedge_';
 
-        
-        /*-- User-Meta-Box-Fields --*/
-        $folioedge_user_meta = new_cmb2_box(array(
-            'id'            => $prefix . 'user_options',
-            'title'         => esc_html__('Social Profile', 'folioedgecore' ),
-            'object_types'  => array( 'user' ),
-            'priority'      => 'high',
-        ));
-        
-        $folioedge_user_meta->add_field( array(
-            'name' => esc_html__('Facebook URL', 'folioedgecore' ),
-            'id'   => $prefix . 'user_facebook',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_user_meta->add_field( array(
-            'name' => esc_html__('Twitter URL', 'folioedgecore' ),
-            'id'   => $prefix . 'user_twitter',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_user_meta->add_field( array(
-            'name' => esc_html__('Linkedin URL', 'folioedgecore' ),
-            'id'   => $prefix . 'user_linkedin',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_user_meta->add_field( array(
-            'name' => esc_html__('Instagram URL', 'folioedgecore' ),
-            'id'   => $prefix . 'user_instagram',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_user_meta->add_field( array(
-            'name' => esc_html__('Pinterest URL', 'folioedgecore' ),
-            'id'   => $prefix . 'user_pinterest',
-            'type' => 'text_url',
-        ) );
-        
-        
-        /*-- Page-Meta-Box-Fields --*/
-        $folioedge_page_meta = new_cmb2_box(array(
-            'id'            => $prefix . 'page_options',
-            'title'         => esc_html__('Page Options', 'folioedgecore' ),
-            'object_types'  => array( 'page', 'service', 'project', 'team' )
-        ));  
-                
-        $folioedge_page_meta->add_field(array(
-            'name'    => esc_html__('Onepage Template:', 'folioedgecore' ),
-            'id'      => $prefix . 'one_page_template',
-            'type'    => 'checkbox',
-            'desc' => esc_html__('Will this page use as a onepage template?', 'folioedgecore' )
-        ));        
-        $folioedge_page_meta->add_field(array(
-            'name'    => esc_html__('Onepage Scroll', 'folioedgecore' ),
-            'id'      => $prefix . 'one_page_scroll',
-            'type'    => 'checkbox',
-            'desc' => esc_html__('To get a id selected scroll?', 'folioedgecore' )
-        ));        
-        $folioedge_page_meta->add_field(array(
-            'name'    => esc_html__('Remove Container', 'folioedgecore' ),
-            'id'      => $prefix . 'remove_page_container',
-            'type'    => 'checkbox',
-            'desc' => esc_html__('Remove the default page container to use elementor container.', 'folioedgecore' )
-        ));        
-        $folioedge_page_meta->add_field(array(
-            'name'    => esc_html__('Remove Page Header:', 'folioedgecore' ),
-            'id'      => $prefix . 'page_header',
-            'type'    => 'checkbox',
-            'desc' => esc_html__('Check this field if you want remove page header on this page.', 'folioedgecore' )
-        ));
-       $folioedge_page_meta->add_field(array(
-            'name'    => esc_html__('Remove Footer Area:', 'folioedgecore' ),
-            'id'      => $prefix . 'footer_widget',
-            'type'    => 'checkbox',
-            'desc' => esc_html__('Check this field if you want remove footer widgets on this page.', 'folioedgecore' )
-        ));
-        $folioedge_page_meta->add_field( array(
-            'name'    => esc_html__('Page Background Image', 'folioedgecore' ),
-            'desc'    => esc_html__('Upload an image or enter an URL.', 'folioedgecore' ),
-            'id'      => $prefix . 'page_background',
-            'type'    => 'file',
-            'text'    => array(
-                'add_upload_file_text' => 'Add Background'
-            ),
-            'query_args' => array(
-                 'type' => array(
-                     'image/gif',
-                     'image/jpeg',
-                     'image/png',
-                 ),
-            ),
-            'preview_size' => 'medium',
-        ) );
-    
-                
-        /*-- Post-Meta-Box-Content --*/
-        $folioedge_post_meta = new_cmb2_box( array(
-            'id'           => $prefix.'post_metabox',
-            'title'        => esc_html__('Additional Fields', 'folioedgecore' ),
-            'object_types' => array( 'post' ), // post type
-        ) );
-        
-        $folioedge_post_meta->add_field( array(
-                'name'       => esc_html__( 'Photo Gallery',  'folioedgecore'  ),
-                'desc'       => esc_html__( 'This field for gallery images. This gallery show for select gallery format.',  'folioedgecore'  ),
-                'id'         => $prefix . 'post_gallery',
-                'type'       => 'file_list',
-                'text' => array(
-                    'add_upload_files_text' => esc_html__('Add images', 'folioedgecore' ), // default: "Add or Upload Files"
-                ),
-            )
-        );
-        
-        $folioedge_post_meta->add_field( array(
-            'name' => esc_html__('Embed Video', 'folioedgecore' ),
-            'desc' => esc_html__('Enter a youtube, twitter, or instagram URL. Supports services listed at ', 'folioedgecore' ).'<a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a> '.esc_html__('This video show for select video format', 'folioedgecore' ),
-            'id'   => $prefix . 'post_video_embed',
-            'type' => 'oembed',
-        ) );
-        
-        $folioedge_post_meta->add_field( array(
-            'name' => esc_html__('Embed Audio', 'folioedgecore' ),
-            'desc' => esc_html__('Enter a SoundCloud, Mixcloud, or ReverbNation etc URL. Supports services listed at ', 'folioedgecore' ).'<a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a> '.esc_html__('This audio show for select audio format', 'folioedgecore' ),
-            'id'   => $prefix . 'post_audio_embed',
-            'type' => 'oembed',
-        ) );
-        
-        
-        /*-- Post-Meta-Box-Content --*/
-        $folioedge_team = new_cmb2_box( array(
-            'id'           => $prefix.'team_metabox',
-            'title'        => esc_html__('Team Details', 'folioedgecore' ),
-            'object_types' => array( 'team' ), // post type
-        ) );
-            
-        $folioedge_team->add_field( array(
-            'name' => esc_html__('Position', 'folioedgecore' ),
-            'id'   => $prefix . 'team_position',
-            'type' => 'text_medium',
-        ) );
-        
-        $folioedge_team->add_field( array(
-            'name' => esc_html__('Facebook URL', 'folioedgecore' ),
-            'id'   => $prefix . 'team_facebook',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_team->add_field( array(
-            'name' => esc_html__('Twitter URL', 'folioedgecore' ),
-            'id'   => $prefix . 'team_twitter',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_team->add_field( array(
-            'name' => esc_html__('Linkedin URL', 'folioedgecore' ),
-            'id'   => $prefix . 'team_linkedin',
-            'type' => 'text_url',
-        ) );
-        
-        $folioedge_team->add_field( array(
-            'name' => esc_html__('Instagram URL', 'folioedgecore' ),
-            'id'   => $prefix . 'team_instagram',
-            'type' => 'text_url',
-        ) );
-        
-
-
-
+    // WooCommerce Product Meta Box (only if WooCommerce is active)
+    if ( class_exists( 'WooCommerce' ) ) {
+        folioedge_register_wc_product_metabox( $prefix );
     }
-    
-    if( !function_exists("folioedge_gallery_photo_list") ){
-      function folioedge_gallery_photo_list( $gallery_images, $img_size = 'large' ) {
-          if( empty($gallery_images) ){
-              return false;
-          }
-            // Get the list of gallery
-            $data = '<div class="photo_slider swiper-container post-media">';
-            $data .= '<div class="swiper-wrapper">';
-            // Loop through them and output an image
-            foreach ( (array) $gallery_images[0] as $image_id => $image_url ) {
-                $data .= '<div class="swiper-slide" >';
-                $data .= '<div class="gallery-item" >';
-                $data .= wp_get_attachment_image( $image_id, $img_size );
-                $data .= '</div>';
-                $data .= '</div>';
-            }
-            $data .= '</div>';
-            $data .= '<div class="slider_arrows post_slider_arrow">';
-            $data .= '<button class="slider_arrow arrow_prev"><i class="fal fa-arrow-left"></i></button>';
-            $data .= '<button class="slider_arrow arrow_next"><i class="fal fa-arrow-right"></i></button>';
-            $data .= '</div>';
-            //$data .= '<div class="swiper-pagination"></div>';
-            $data .= '</div>';
-          return $data;
+
+    // User Meta Box
+    folioedge_register_user_metabox( $prefix );
+
+    // Page Meta Box
+    folioedge_register_page_metabox( $prefix );
+
+    // Post Meta Box
+    folioedge_register_post_metabox_fields( $prefix );
+
+    // Team Meta Box
+    folioedge_register_team_metabox( $prefix );
+}
+
+/**
+ * Register WooCommerce Product Metabox
+ *
+ * @param string $prefix Meta key prefix
+ */
+function folioedge_register_wc_product_metabox( $prefix ) {
+    $folioedge_wc_meta = new_cmb2_box( array(
+        'id'            => $prefix . 'wc_product_options',
+        'title'         => esc_html__( 'Product Addons', 'folioedgecore' ),
+        'object_types'  => array( 'product' ),
+        'context'       => 'side',
+        'priority'      => 'low',
+    ) );
+
+    // Repeatable group for extra meta
+    $wc_meta_option = $folioedge_wc_meta->add_field( array(
+        'id'          => $prefix . 'wc_meta_repeat_group',
+        'type'        => 'group',
+        'options'     => array(
+            'group_title'   => esc_html__( 'Extra Meta {#}', 'folioedgecore' ),
+            'add_button'    => esc_html__( 'Add another meta', 'folioedgecore' ),
+            'remove_button' => esc_html__( 'Remove meta', 'folioedgecore' ),
+            'sortable'      => true,
+        ),
+    ) );
+
+    $folioedge_wc_meta->add_group_field( $wc_meta_option, array(
+        'name' => esc_html__( 'Title', 'folioedgecore' ),
+        'id'   => $prefix . 'wc_meta_title',
+        'type' => 'text',
+    ) );
+
+    $folioedge_wc_meta->add_group_field( $wc_meta_option, array(
+        'name' => esc_html__( 'Value', 'folioedgecore' ),
+        'id'   => $prefix . 'wc_meta_value',
+        'type' => 'textarea_small',
+    ) );
+
+    $folioedge_wc_meta->add_field( array(
+        'name' => esc_html__( 'Extra Button Label', 'folioedgecore' ),
+        'id'   => $prefix . 'wc_ex_button_label',
+        'type' => 'text_medium',
+        'desc' => esc_html__( 'Text for the extra button on product page', 'folioedgecore' ),
+    ) );
+
+    $folioedge_wc_meta->add_field( array(
+        'name' => esc_html__( 'Extra Button URL', 'folioedgecore' ),
+        'id'   => $prefix . 'wc_ex_button_url',
+        'type' => 'text_url',
+        'desc' => esc_html__( 'URL for the extra button', 'folioedgecore' ),
+    ) );
+}
+
+/**
+ * Register User Metabox
+ *
+ * @param string $prefix Meta key prefix
+ */
+function folioedge_register_user_metabox( $prefix ) {
+    $folioedge_user_meta = new_cmb2_box( array(
+        'id'            => $prefix . 'user_options',
+        'title'         => esc_html__( 'Social Profile', 'folioedgecore' ),
+        'object_types'  => array( 'user' ),
+        'priority'      => 'high',
+    ) );
+
+    $social_fields = array(
+        'facebook'  => esc_html__( 'Facebook URL', 'folioedgecore' ),
+        'twitter'   => esc_html__( 'Twitter URL', 'folioedgecore' ),
+        'linkedin'  => esc_html__( 'LinkedIn URL', 'folioedgecore' ),
+        'instagram' => esc_html__( 'Instagram URL', 'folioedgecore' ),
+        'pinterest' => esc_html__( 'Pinterest URL', 'folioedgecore' ),
+    );
+
+    foreach ( $social_fields as $key => $label ) {
+        $folioedge_user_meta->add_field( array(
+            'name' => $label,
+            'id'   => $prefix . 'user_' . $key,
+            'type' => 'text_url',
+        ) );
+    }
+}
+
+/**
+ * Register Page Metabox
+ *
+ * @param string $prefix Meta key prefix
+ */
+function folioedge_register_page_metabox( $prefix ) {
+    $folioedge_page_meta = new_cmb2_box( array(
+        'id'            => $prefix . 'page_options',
+        'title'         => esc_html__( 'Page Options', 'folioedgecore' ),
+        'object_types'  => array( 'page', 'service', 'project', 'team' ),
+    ) );
+
+    $folioedge_page_meta->add_field( array(
+        'name' => esc_html__( 'Onepage Template', 'folioedgecore' ),
+        'id'   => $prefix . 'one_page_template',
+        'type' => 'checkbox',
+        'desc' => esc_html__( 'Will this page use as a onepage template?', 'folioedgecore' ),
+    ) );
+
+    $folioedge_page_meta->add_field( array(
+        'name' => esc_html__( 'Onepage Scroll', 'folioedgecore' ),
+        'id'   => $prefix . 'one_page_scroll',
+        'type' => 'checkbox',
+        'desc' => esc_html__( 'Enable smooth scroll to ID selected sections?', 'folioedgecore' ),
+    ) );
+
+    $folioedge_page_meta->add_field( array(
+        'name' => esc_html__( 'Remove Container', 'folioedgecore' ),
+        'id'   => $prefix . 'remove_page_container',
+        'type' => 'checkbox',
+        'desc' => esc_html__( 'Remove the default page container to use Elementor container.', 'folioedgecore' ),
+    ) );
+
+    $folioedge_page_meta->add_field( array(
+        'name' => esc_html__( 'Remove Page Header', 'folioedgecore' ),
+        'id'   => $prefix . 'page_header',
+        'type' => 'checkbox',
+        'desc' => esc_html__( 'Check this field if you want to remove page header on this page.', 'folioedgecore' ),
+    ) );
+
+    $folioedge_page_meta->add_field( array(
+        'name' => esc_html__( 'Remove Footer Area', 'folioedgecore' ),
+        'id'   => $prefix . 'footer_widget',
+        'type' => 'checkbox',
+        'desc' => esc_html__( 'Check this field if you want to remove footer widgets on this page.', 'folioedgecore' ),
+    ) );
+
+    $folioedge_page_meta->add_field( array(
+        'name'       => esc_html__( 'Page Background Image', 'folioedgecore' ),
+        'desc'       => esc_html__( 'Upload an image or enter a URL.', 'folioedgecore' ),
+        'id'         => $prefix . 'page_background',
+        'type'       => 'file',
+        'text'       => array(
+            'add_upload_file_text' => esc_html__( 'Add Background', 'folioedgecore' ),
+        ),
+        'query_args' => array(
+            'type' => array(
+                'image/gif',
+                'image/jpeg',
+                'image/png',
+                'image/webp',
+            ),
+        ),
+        'preview_size' => 'medium',
+    ) );
+}
+
+/**
+ * Register Post Metabox
+ *
+ * @param string $prefix Meta key prefix
+ */
+function folioedge_register_post_metabox_fields( $prefix ) {
+    $folioedge_post_meta = new_cmb2_box( array(
+        'id'            => $prefix . 'post_metabox',
+        'title'         => esc_html__( 'Additional Fields', 'folioedgecore' ),
+        'object_types'  => array( 'post' ),
+    ) );
+
+    $folioedge_post_meta->add_field( array(
+        'name' => esc_html__( 'Photo Gallery', 'folioedgecore' ),
+        'desc' => esc_html__( 'This field is for gallery images. This gallery shows for gallery post format.', 'folioedgecore' ),
+        'id'   => $prefix . 'post_gallery',
+        'type' => 'file_list',
+        'text' => array(
+            'add_upload_files_text' => esc_html__( 'Add images', 'folioedgecore' ),
+        ),
+    ) );
+
+    $folioedge_post_meta->add_field( array(
+        'name' => esc_html__( 'Embed Video', 'folioedgecore' ),
+        'desc' => sprintf(
+            /* translators: %s: WordPress Embeds URL */
+            esc_html__( 'Enter a YouTube, Twitter, or Instagram URL. Supports services listed at %s. This video shows for video post format.', 'folioedgecore' ),
+            '<a href="https://wordpress.org/documentation/article/embeds/" target="_blank">WordPress Embeds</a>'
+        ),
+        'id'   => $prefix . 'post_video_embed',
+        'type' => 'oembed',
+    ) );
+
+    $folioedge_post_meta->add_field( array(
+        'name' => esc_html__( 'Embed Audio', 'folioedgecore' ),
+        'desc' => sprintf(
+            /* translators: %s: WordPress Embeds URL */
+            esc_html__( 'Enter a SoundCloud, Mixcloud, or ReverbNation URL. Supports services listed at %s. This audio shows for audio post format.', 'folioedgecore' ),
+            '<a href="https://wordpress.org/documentation/article/embeds/" target="_blank">WordPress Embeds</a>'
+        ),
+        'id'   => $prefix . 'post_audio_embed',
+        'type' => 'oembed',
+    ) );
+}
+
+/**
+ * Register Team Metabox
+ *
+ * @param string $prefix Meta key prefix
+ */
+function folioedge_register_team_metabox( $prefix ) {
+    $folioedge_team = new_cmb2_box( array(
+        'id'            => $prefix . 'team_metabox',
+        'title'         => esc_html__( 'Team Details', 'folioedgecore' ),
+        'object_types'  => array( 'team' ),
+    ) );
+
+    $folioedge_team->add_field( array(
+        'name' => esc_html__( 'Position', 'folioedgecore' ),
+        'id'   => $prefix . 'team_position',
+        'type' => 'text_medium',
+        'desc' => esc_html__( 'Job title or position', 'folioedgecore' ),
+    ) );
+
+    $team_social_fields = array(
+        'facebook'  => esc_html__( 'Facebook URL', 'folioedgecore' ),
+        'twitter'   => esc_html__( 'Twitter URL', 'folioedgecore' ),
+        'linkedin'  => esc_html__( 'LinkedIn URL', 'folioedgecore' ),
+        'instagram' => esc_html__( 'Instagram URL', 'folioedgecore' ),
+    );
+
+    foreach ( $team_social_fields as $key => $label ) {
+        $folioedge_team->add_field( array(
+            'name' => $label,
+            'id'   => $prefix . 'team_' . $key,
+            'type' => 'text_url',
+        ) );
+    }
+}
+
+/**
+ * Gallery Photo List Output
+ *
+ * @param array  $gallery_images Gallery images array
+ * @param string $img_size Image size
+ * @return string|false
+ */
+if ( ! function_exists( 'folioedge_gallery_photo_list' ) ) {
+    function folioedge_gallery_photo_list( $gallery_images, $img_size = 'large' ) {
+        if ( empty( $gallery_images ) ) {
+            return false;
         }
+
+        $output = '<div class="photo_slider swiper-container post-media">';
+        $output .= '<div class="swiper-wrapper">';
+
+        // Handle both array formats
+        $images = is_array( $gallery_images[0] ) ? $gallery_images[0] : $gallery_images;
+
+        foreach ( $images as $image_id => $image_url ) {
+            $output .= '<div class="swiper-slide">';
+            $output .= '<div class="gallery-item">';
+            $output .= wp_get_attachment_image( $image_id, $img_size );
+            $output .= '</div>';
+            $output .= '</div>';
+        }
+
+        $output .= '</div>';
+        $output .= '<div class="slider_arrows post_slider_arrow">';
+        $output .= '<button class="slider_arrow arrow_prev" aria-label="' . esc_attr__( 'Previous', 'folioedgecore' ) . '"><i class="fal fa-arrow-left"></i></button>';
+        $output .= '<button class="slider_arrow arrow_next" aria-label="' . esc_attr__( 'Next', 'folioedgecore' ) . '"><i class="fal fa-arrow-right"></i></button>';
+        $output .= '</div>';
+        $output .= '</div>';
+
+        return $output;
     }
-    
-    if( !function_exists('folioedge_video_embed_content') ){
-        function folioedge_video_embed_content($video_url){
-            if( empty($video_url) ){
-                return false;
-            }
-            ob_start();
-            ?>
-<div class="post-media video-post">
-    <div class="videoPoster" style="background-image: url('<?php echo get_the_post_thumbnail_url('','full'); ?>');">
-        <button type="button" class="video-play-bttn"><i class="fa fa-play"></i></button>
-        <div class="waves-block">
-            <div class="waves wave-1"></div>
-            <div class="waves wave-2"></div>
-            <div class="waves wave-3"></div>
-            <div class="waves wave-4"></div>
+}
+
+/**
+ * Video Embed Content Output
+ *
+ * @param string $video_url Video URL
+ * @return string|false
+ */
+if ( ! function_exists( 'folioedge_video_embed_content' ) ) {
+    function folioedge_video_embed_content( $video_url ) {
+        if ( empty( $video_url ) ) {
+            return false;
+        }
+
+        $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+        $get_embed     = wp_oembed_get( esc_url( $video_url ) );
+
+        if ( ! $get_embed ) {
+            return false;
+        }
+
+        // Add autoplay parameter and lazy loading
+        $get_embed = str_replace( '?', '?autoplay=1&', $get_embed );
+        $get_embed = str_replace( 'src', 'data-src', $get_embed );
+
+        ob_start();
+        ?>
+        <div class="post-media video-post">
+            <div class="videoPoster" style="background-image: url('<?php echo esc_url( $thumbnail_url ); ?>');">
+                <button type="button" class="video-play-bttn" aria-label="<?php esc_attr_e( 'Play video', 'folioedgecore' ); ?>">
+                    <i class="fa fa-play"></i>
+                </button>
+                <div class="waves-block">
+                    <div class="waves wave-1"></div>
+                    <div class="waves wave-2"></div>
+                    <div class="waves wave-3"></div>
+                    <div class="waves wave-4"></div>
+                </div>
+            </div>
+            <?php echo $get_embed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
         </div>
-    </div>
-    <?php $get_embed = wp_oembed_get( esc_url($video_url) );
-                    $get_embed = str_replace( '?','?autoplay=1&', $get_embed );
-                    echo str_replace( 'src','data-src', $get_embed );
-                ?>
-</div>
-<?php 
-            $data = ob_get_contents();
-            ob_end_clean();
-            return $data;
-        }
+        <?php
+        return ob_get_clean();
     }
-    
-    if( !function_exists('folioedge_audio_embed_content') ){
-        function folioedge_audio_embed_content($post_audio_embed_url){
-            if( empty($post_audio_embed_url) ){
-                return false;
-            }
-            return '<div class="post-media audio-post">'.wp_oembed_get( $post_audio_embed_url ).'</div>';
+}
+
+/**
+ * Audio Embed Content Output
+ *
+ * @param string $audio_url Audio URL
+ * @return string|false
+ */
+if ( ! function_exists( 'folioedge_audio_embed_content' ) ) {
+    function folioedge_audio_embed_content( $audio_url ) {
+        if ( empty( $audio_url ) ) {
+            return false;
         }
+
+        $embed = wp_oembed_get( esc_url( $audio_url ) );
+
+        if ( ! $embed ) {
+            return false;
+        }
+
+        return '<div class="post-media audio-post">' . $embed . '</div>';
     }
+}

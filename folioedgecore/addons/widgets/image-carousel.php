@@ -1066,4 +1066,4 @@ class Modify_Widget_Image_Carousel extends Widget_Base {
 }
 
 
-Plugin::instance()->widgets_manager->register_widget_type( new Modify_Widget_Image_Carousel );
+Plugin::instance()->widgets_manager->register( new Modify_Widget_Image_Carousel() );

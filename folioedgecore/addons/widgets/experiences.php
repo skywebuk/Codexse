@@ -197,4 +197,4 @@ class Folioedge_Experiences extends Widget_Base {
 }// End Class
 
 
-Plugin::instance()->widgets_manager->register_widget_type( new Folioedge_Experiences );
+Plugin::instance()->widgets_manager->register( new Folioedge_Experiences() );

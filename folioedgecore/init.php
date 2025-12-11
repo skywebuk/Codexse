@@ -1,110 +1,450 @@
 <?php
-/*
-Plugin Name: Folioedge Core
-Description: Creates an interfaces to manage store / business locations on your website. Useful for showing location based information quickly. Includes both a widget and shortcode for ease of use.
-Version:     1.0.0
-Author:      Ashekur Rahman
-Author URI:  https://www.polothemes.com/
-License:     GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-*/
-if( ! defined( 'ABSPATH' ) ) exit(); // Exit if accessed directly
+/**
+ * Plugin Name: Folioedge Core
+ * Description: Creates interfaces to manage store/business locations on your website. Useful for showing location based information quickly. Includes both a widget and shortcode for ease of use.
+ * Version: 2.0.0
+ * Author: Ashekur Rahman
+ * Author URI: https://www.polothemes.com/
+ * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: folioedgecore
+ * Domain Path: /language/
+ * Requires at least: 5.8
+ * Requires PHP: 7.4
+ */
 
-
-/*-- All-Action-Hooks --*/
-add_action( 'plugins_loaded', 'folioedgecore_plugin_loaded' );
-add_action( 'wp_enqueue_scripts', 'folioedgecore_enqueue_script' );
-add_action( 'admin_enqueue_scripts', 'folioedgecore_admin_scripts' );
-add_action( 'widgets_init', 'folioedgecore_widgets_init' );
-
-/*-- Elementor-Widget-Controls --*/
-add_action( 'elementor/init','folioedgecore_elementor_init', 10 );
-add_action( 'elementor/widgets/widgets_registered', 'folioedgecore_includes_widgets' ); 
-add_action( 'elementor/frontend/after_register_scripts', 'folioedgecore_register_fronted_scripts', 10 );
-add_action( 'elementor/frontend/after_register_styles', 'folioedgecore_register_frontend_styles', 10 );  
-add_action( 'elementor/editor/after_enqueue_styles', 'folioedgecore_admin_scripts', 10 );
-add_action( 'elementor/controls/controls_registered', 'folioedgecore_add_fonts_elementor', 10, 1 ); 
-
-function folioedgecore_add_fonts_elementor($controls_registry){
-    // retrieve fonts list from Elementor
-    $fonts = $controls_registry->get_control( 'font' )->get_settings( 'options' );
-    // add your new custom font
-    $new_fonts = array_merge( [ 'satoshi' => 'system' ], $fonts );
-    $new_fonts = array_merge( [ 'recoleta' => 'system' ], $new_fonts );
-    // return the new list of fonts
-    $controls_registry->get_control( 'font' )->set_settings( 'options', $new_fonts );
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
 }
 
+// Define plugin constants
+define( 'FOLIOEDGECORE_VERSION', '2.0.0' );
+define( 'FOLIOEDGECORE_PATH', plugin_dir_path( __FILE__ ) );
+define( 'FOLIOEDGECORE_URL', plugin_dir_url( __FILE__ ) );
+define( 'FOLIOEDGECORE_ASSETS', FOLIOEDGECORE_URL . 'assets/' );
 
-function folioedgecore_elementor_init(){
-    \Elementor\Plugin::instance()->elements_manager->add_category( 'folioedgecore',[ 'title'  => 'folioedge' ], 1 );
-    require_once( dirname(__FILE__) . '/inc/plugin-icon-manager.php');
+/**
+ * Main Plugin Class
+ */
+final class Folioedgecore {
+
+    /**
+     * Instance
+     *
+     * @var Folioedgecore|null
+     */
+    private static $instance = null;
+
+    /**
+     * Minimum Elementor Version
+     *
+     * @var string
+     */
+    const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
+
+    /**
+     * Minimum PHP Version
+     *
+     * @var string
+     */
+    const MINIMUM_PHP_VERSION = '7.4';
+
+    /**
+     * Get Instance
+     *
+     * @return Folioedgecore
+     */
+    public static function instance() {
+        if ( is_null( self::$instance ) ) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        // Load plugin translations
+        add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+
+        // Include required files
+        add_action( 'plugins_loaded', array( $this, 'include_files' ) );
+
+        // Register sidebar widgets
+        add_action( 'widgets_init', array( $this, 'register_widgets' ) );
+
+        // Enqueue frontend scripts and styles
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
+
+        // Enqueue admin scripts and styles
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ) );
+
+        // Initialize Elementor integration
+        add_action( 'elementor/init', array( $this, 'elementor_init' ) );
+
+        // Register Elementor widgets (new hook since Elementor 3.5)
+        add_action( 'elementor/widgets/register', array( $this, 'register_elementor_widgets' ) );
+
+        // Register frontend scripts for Elementor
+        add_action( 'elementor/frontend/after_register_scripts', array( $this, 'register_frontend_scripts' ) );
+
+        // Register frontend styles for Elementor
+        add_action( 'elementor/frontend/after_register_styles', array( $this, 'register_frontend_styles' ) );
+
+        // Add custom fonts to Elementor
+        add_action( 'elementor/fonts/additional_fonts', array( $this, 'add_custom_fonts' ) );
+
+        // Enqueue admin styles in Elementor editor
+        add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'enqueue_admin_assets' ) );
+
+        // Add SVG upload support
+        add_filter( 'upload_mimes', array( $this, 'allow_svg_upload' ) );
+
+        // WooCommerce integration
+        if ( class_exists( 'WooCommerce' ) ) {
+            add_action( 'woocommerce_product_meta_end', array( $this, 'display_product_extra_meta' ) );
+            add_action( 'woocommerce_single_product_summary', array( $this, 'display_product_extra_button' ), 35 );
+        }
+    }
+
+    /**
+     * Load plugin textdomain
+     */
+    public function load_textdomain() {
+        load_plugin_textdomain(
+            'folioedgecore',
+            false,
+            dirname( plugin_basename( __FILE__ ) ) . '/language/'
+        );
+    }
+
+    /**
+     * Include required files
+     */
+    public function include_files() {
+        require_once FOLIOEDGECORE_PATH . 'inc/plugin-functions.php';
+        require_once FOLIOEDGECORE_PATH . 'inc/metabox.php';
+        require_once FOLIOEDGECORE_PATH . 'inc/service-post-type.php';
+        require_once FOLIOEDGECORE_PATH . 'inc/case-studies-post-type.php';
+        require_once FOLIOEDGECORE_PATH . 'inc/team-post-type.php';
+        require_once FOLIOEDGECORE_PATH . 'widgets/popular-post.php';
+        require_once FOLIOEDGECORE_PATH . 'widgets/social-menu.php';
+        require_once FOLIOEDGECORE_PATH . 'widgets/profile.php';
+    }
+
+    /**
+     * Register sidebar widgets
+     */
+    public function register_widgets() {
+        register_widget( 'folioedge_social_menu' );
+        register_widget( 'folioedge_author_info' );
+        register_widget( 'folioedge_popular_posts' );
+    }
+
+    /**
+     * Enqueue frontend scripts and styles
+     */
+    public function enqueue_frontend_assets() {
+        // Styles
+        wp_enqueue_style(
+            'folioedge-ui-css',
+            FOLIOEDGECORE_ASSETS . 'css/jquery-ui.css',
+            array(),
+            '1.13.0'
+        );
+
+        wp_enqueue_style(
+            'folioedgecore-audio',
+            FOLIOEDGECORE_ASSETS . 'css/audio.css',
+            array(),
+            FOLIOEDGECORE_VERSION
+        );
+
+        wp_enqueue_style(
+            'folioedgecore-main',
+            FOLIOEDGECORE_ASSETS . 'css/main.css',
+            array(),
+            FOLIOEDGECORE_VERSION
+        );
+
+        wp_enqueue_style(
+            'swiper',
+            FOLIOEDGECORE_ASSETS . 'css/swiper-bundle-min.css',
+            array(),
+            '8.4.5'
+        );
+
+        // Scripts
+        wp_register_script(
+            'jquery-easing',
+            FOLIOEDGECORE_ASSETS . 'js/easing-min.js',
+            array( 'jquery' ),
+            '1.3.0',
+            true
+        );
+
+        wp_register_script(
+            'easypiechart',
+            FOLIOEDGECORE_ASSETS . 'js/easypiechart-min.js',
+            array( 'jquery' ),
+            '2.1.7',
+            true
+        );
+
+        wp_register_script(
+            'anime',
+            FOLIOEDGECORE_ASSETS . 'js/anime.js',
+            array( 'jquery' ),
+            '3.2.1',
+            true
+        );
+
+        wp_enqueue_script(
+            'swiper',
+            FOLIOEDGECORE_ASSETS . 'js/swiper-bundle-min.js',
+            array( 'jquery' ),
+            '8.4.5',
+            true
+        );
+
+        wp_enqueue_script(
+            'folioedgecore-active',
+            FOLIOEDGECORE_ASSETS . 'js/plugin-core.js',
+            array( 'jquery' ),
+            FOLIOEDGECORE_VERSION,
+            true
+        );
+    }
+
+    /**
+     * Enqueue admin scripts and styles
+     */
+    public function enqueue_admin_assets() {
+        wp_enqueue_style(
+            'folioedge_admin_style',
+            FOLIOEDGECORE_ASSETS . 'css/plugin-admin.css',
+            array(),
+            FOLIOEDGECORE_VERSION
+        );
+
+        wp_enqueue_script(
+            'folioedge_admin_script',
+            FOLIOEDGECORE_ASSETS . 'js/plugin-admin.js',
+            array( 'jquery' ),
+            FOLIOEDGECORE_VERSION,
+            true
+        );
+    }
+
+    /**
+     * Initialize Elementor integration
+     */
+    public function elementor_init() {
+        // Check Elementor version
+        if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
+            add_action( 'admin_notices', array( $this, 'admin_notice_minimum_elementor_version' ) );
+            return;
+        }
+
+        // Add custom category
+        \Elementor\Plugin::instance()->elements_manager->add_category(
+            'folioedgecore',
+            array(
+                'title' => esc_html__( 'Folioedge', 'folioedgecore' ),
+                'icon' => 'fa fa-plug',
+            ),
+            1
+        );
+
+        // Include icon manager
+        require_once FOLIOEDGECORE_PATH . 'inc/plugin-icon-manager.php';
+    }
+
+    /**
+     * Register Elementor widgets
+     *
+     * @param \Elementor\Widgets_Manager $widgets_manager
+     */
+    public function register_elementor_widgets( $widgets_manager ) {
+        require_once FOLIOEDGECORE_PATH . 'addons/widgets_control.php';
+    }
+
+    /**
+     * Register frontend scripts for Elementor
+     */
+    public function register_frontend_scripts() {
+        wp_register_script(
+            'countdown',
+            FOLIOEDGECORE_ASSETS . 'js/countdown.js',
+            array( 'jquery' ),
+            FOLIOEDGECORE_VERSION,
+            true
+        );
+
+        wp_register_script(
+            'isotope',
+            FOLIOEDGECORE_ASSETS . 'js/isotope-min.js',
+            array( 'jquery' ),
+            '3.0.6',
+            true
+        );
+
+        wp_register_script(
+            'addons-active',
+            FOLIOEDGECORE_ASSETS . 'js/addons-active.js',
+            array( 'jquery' ),
+            FOLIOEDGECORE_VERSION,
+            true
+        );
+
+        wp_register_script(
+            'lity',
+            FOLIOEDGECORE_ASSETS . 'js/lity-min.js',
+            array( 'jquery' ),
+            '2.4.1',
+            true
+        );
+
+        wp_register_script(
+            'bootstrap-js',
+            FOLIOEDGECORE_ASSETS . 'js/bootstrap-min.js',
+            array( 'jquery' ),
+            '5.2.3',
+            true
+        );
+
+        wp_register_script(
+            'plyr',
+            FOLIOEDGECORE_ASSETS . 'js/plyr.min.js',
+            array( 'jquery' ),
+            '3.7.8',
+            true
+        );
+
+        wp_register_script(
+            'polyfilled',
+            FOLIOEDGECORE_ASSETS . 'js/plyr.polyfilled.min.js',
+            array( 'jquery' ),
+            '3.7.8',
+            true
+        );
+    }
+
+    /**
+     * Register frontend styles for Elementor
+     */
+    public function register_frontend_styles() {
+        wp_register_style(
+            'lity',
+            FOLIOEDGECORE_ASSETS . 'css/lity-min.css',
+            array(),
+            '2.4.1'
+        );
+    }
+
+    /**
+     * Add custom fonts to Elementor
+     *
+     * @param array $fonts
+     * @return array
+     */
+    public function add_custom_fonts( $fonts ) {
+        $fonts['Satoshi'] = 'system';
+        $fonts['Recoleta'] = 'system';
+        return $fonts;
+    }
+
+    /**
+     * Allow SVG upload
+     *
+     * @param array $mimes
+     * @return array
+     */
+    public function allow_svg_upload( $mimes ) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    }
+
+    /**
+     * Display product extra meta on single product page
+     */
+    public function display_product_extra_meta() {
+        global $product;
+
+        if ( ! $product ) {
+            return;
+        }
+
+        $product_id = $product->get_id();
+        $extra_meta = get_post_meta( $product_id, '_folioedge_wc_meta_repeat_group', true );
+
+        if ( ! empty( $extra_meta ) && is_array( $extra_meta ) ) {
+            echo '<div class="folioedge-product-extra-meta">';
+            foreach ( $extra_meta as $meta ) {
+                $title = isset( $meta['_folioedge_wc_meta_title'] ) ? $meta['_folioedge_wc_meta_title'] : '';
+                $value = isset( $meta['_folioedge_wc_meta_value'] ) ? $meta['_folioedge_wc_meta_value'] : '';
+
+                if ( ! empty( $title ) && ! empty( $value ) ) {
+                    echo '<div class="extra-meta-item">';
+                    echo '<span class="meta-title">' . esc_html( $title ) . ':</span> ';
+                    echo '<span class="meta-value">' . wp_kses_post( $value ) . '</span>';
+                    echo '</div>';
+                }
+            }
+            echo '</div>';
+        }
+    }
+
+    /**
+     * Display product extra button on single product page
+     */
+    public function display_product_extra_button() {
+        global $product;
+
+        if ( ! $product ) {
+            return;
+        }
+
+        $product_id = $product->get_id();
+        $button_label = get_post_meta( $product_id, '_folioedge_wc_ex_button_label', true );
+        $button_url = get_post_meta( $product_id, '_folioedge_wc_ex_button_url', true );
+
+        if ( ! empty( $button_label ) && ! empty( $button_url ) ) {
+            echo '<div class="folioedge-product-extra-button">';
+            echo '<a href="' . esc_url( $button_url ) . '" class="button alt" target="_blank" rel="noopener noreferrer">';
+            echo esc_html( $button_label );
+            echo '</a>';
+            echo '</div>';
+        }
+    }
+
+    /**
+     * Admin notice for minimum Elementor version
+     */
+    public function admin_notice_minimum_elementor_version() {
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+
+        $message = sprintf(
+            /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'folioedgecore' ),
+            '<strong>' . esc_html__( 'Folioedge Core', 'folioedgecore' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'folioedgecore' ) . '</strong>',
+            self::MINIMUM_ELEMENTOR_VERSION
+        );
+
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+    }
 }
 
-function folioedgecore_includes_widgets(){
-    require_once( dirname(__FILE__).'/addons/widgets_control.php' );
+/**
+ * Initialize the plugin
+ */
+function folioedgecore_init() {
+    return Folioedgecore::instance();
 }
 
-function folioedgecore_register_frontend_styles(){
-    // Add Lity, Used for lightbox popup
-    wp_register_style( 'lity', plugins_url( '/assets/css/lity-min.css', __FILE__ ), array(), '2.3.1' );     
-}
-
-function folioedgecore_register_fronted_scripts(){
-    wp_register_script( 'countdown', plugins_url( '/assets/js/countdown.js', __FILE__ ), array('jquery'), '1.0.0', true );
-    wp_register_script( 'isotope', plugins_url( '/assets/js/isotope-min.js', __FILE__ ), array('jquery'), '1.0.0', true );
-    wp_register_script( 'addons-active', plugins_url( '/assets/js/addons-active.js', __FILE__ ), array('jquery'), '1.0.0', true );
-    // Add Lity, Used for lightbox popup.
-    wp_register_script( 'lity', plugins_url( '/assets/js/lity-min.js', __FILE__ ), array('jquery'), '2.3.1', true );     
-    wp_register_script( 'bootstrap-js', plugins_url( '/assets/js/bootstrap-min.js', __FILE__ ), array('jquery'), '3.4.1', true );     
-    wp_register_script( 'plyr', plugins_url( '/assets/js/plyr.min.js', __FILE__ ), array('jquery'), '3.4.1', true );     
-    wp_register_script( 'polyfilled', plugins_url( '/assets/js/plyr.polyfilled.min.js', __FILE__ ), array('jquery'), '3.4.1', true );     
-}
-
-function folioedgecore_widgets_init(){
-    register_widget( 'folioedge_social_menu' );
-    register_widget( 'folioedge_author_info' );
-    register_widget( 'folioedge_popular_posts' );
-}
-
-function folioedgecore_enqueue_script(){
-    $wp_scripts = wp_scripts();
-    wp_enqueue_style('folioedge-ui-css', plugins_url( '/assets/css/jquery-ui.css', __FILE__ ), false, '1.13.0', false);
-    // Add folioedge Core Style, Used For Stylist Dropdown Select Box
-    wp_enqueue_style( 'folioedgecore-audio', plugins_url( '/assets/css/audio.css', __FILE__ ), array(), '1.0.0' );
-    wp_enqueue_style( 'folioedgecore-main', plugins_url( '/assets/css/main.css', __FILE__ ), array(), '1.0.0' );
-    wp_enqueue_style( 'swiper', plugins_url( '/assets/css/swiper-bundle-min.css', __FILE__ ), array(), '1.0.0' );
-            
-    wp_register_script( 'jquery-easing', plugins_url( '/assets/js/easing-min.js', __FILE__ ), array('jquery'), '1.3.0', true );
-    wp_register_script( 'easypiechart', plugins_url( '/assets/js/easypiechart-min.js', __FILE__ ), array('jquery'), '1.0.0', true );
-    wp_register_script( 'anime', plugins_url( '/assets/js/anime.js', __FILE__ ), array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'swiper', plugins_url( '/assets/js/swiper-bundle-min.js', __FILE__ ), array('jquery'), '1.0.0', true );
-        
-	// folioedgecore-Core-Active-Script
-	wp_enqueue_script( 'folioedgecore-active', plugins_url( '/assets/js/plugin-core.js', __FILE__ ), array('jquery'), '1.0.0', true );
-}
-
-function folioedgecore_plugin_loaded(){
-    load_plugin_textdomain( 'folioedgecore', false, basename(dirname(__FILE__)) . '/language/' );
-    require_once( dirname(__FILE__) . '/inc/plugin-functions.php');
-    require_once( dirname(__FILE__) . '/inc/metabox.php');
-    require_once( dirname(__FILE__) . '/inc/service-post-type.php');
-    require_once( dirname(__FILE__) . '/inc/case-studies-post-type.php');
-    require_once( dirname(__FILE__) . '/inc/team-post-type.php');
-    require_once( dirname(__FILE__) . '/widgets/popular-post.php');
-    require_once( dirname(__FILE__) . '/widgets/social-menu.php');
-    require_once( dirname(__FILE__) . '/widgets/profile.php');
-}
-
-function folioedgecore_admin_scripts(){
-    wp_enqueue_style('folioedge_admin_style',plugins_url( '/assets/css/plugin-admin.css', __FILE__ ),array(),'1.0','all');
-    wp_enqueue_script('folioedge_admin_script', plugins_url( '/assets/js/plugin-admin.js', __FILE__ ) ,array('jquery'),'1.0',true );
-}
-
-function folioedge_add_file_types_to_uploads($file_types){
-	$new_filetypes = array();
-	$new_filetypes['svg'] = 'image/svg+xml';
-	$file_types = array_merge($file_types, $new_filetypes );
-	return $file_types;
-}
-add_action('upload_mimes', 'folioedge_add_file_types_to_uploads');
+// Run the plugin
+folioedgecore_init();
