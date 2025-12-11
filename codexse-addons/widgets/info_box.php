@@ -188,7 +188,7 @@ class Codexse_Addons_Elementor_Widget_Info_Box extends Widget_Base {
                 'label_block' => true,
                 'default' => [
                     'value' => 'cx cx-box-open',
-                    'library' => 'codexse-icon',
+                    'library' => 'codexse-icons',
                 ],
                 'condition' => [
                     'media_type' => 'icon'
