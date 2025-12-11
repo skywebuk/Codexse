@@ -1,0 +1,97 @@
+.codexse-team-item {
+    background-color: white;
+    padding: 24px;
+    -webkit-box-shadow: 0 16px 32px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 16px 32px 0px rgba(0, 0, 0, 0.1);
+}
+
+.codexse-team-item .team-header {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 24px;
+}
+
+.codexse-team-item .team-header .team-social {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: #ededed;
+    border-radius: 99px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0px;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.codexse-team-item:hover .team-header .team-social {
+    opacity: 1;
+    bottom: 32px;
+}
+
+.codexse-team-item .team-header .team-social a {
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: var(--primary-color);
+    background-color: white;
+    border-right: 1px solid var(--border-color);
+}
+
+.codexse-team-item .team-header .team-social a:first-child {
+    padding-left: 5px;
+}
+
+.codexse-team-item .team-header .team-social a:last-child {
+    padding-right: 3px;
+    border: none;
+}
+
+.codexse-team-item .team-header .team-social a:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.codexse-team-item .team-header .thumbnail {
+    overflow: hidden;
+}
+
+.codexse-team-item .team-header .thumbnail img {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+
+.codexse-team-item:hover .team-header .thumbnail img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.codexse-team-item .title {
+    margin-bottom: 6px;
+}
+
+.codexse-team-item .position {
+    color: var(--accent-color);
+}

@@ -1,0 +1,76 @@
+.codexse-food-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.codexse-food-menu .food-menu-item {
+    position: relative;
+    z-index: 1;
+    padding: 32px;
+}
+
+.codexse-food-menu .food-menu-item .food-menu-shape {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.codexse-food-menu .food-menu-item .food-menu-shape.shape-bottom,
+.codexse-food-menu .food-menu-item .food-menu-shape.shape-top {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+    background-repeat: repeat-x;
+    background-size: auto 16px;
+    background-position: left center;
+    background-attachment: scroll;
+    background-image: url('../../images/food-shape-x-one.png');
+}
+
+.codexse-food-menu .food-menu-item .food-menu-shape.shape-bottom {
+    top: auto;
+    bottom: 0px;
+}
+
+
+.codexse-food-menu .food-menu-item .food-menu-shape.shape-left,
+.codexse-food-menu .food-menu-item .food-menu-shape.shape-right {
+    top: 0px;
+    left: 0px;
+    width: 16px;
+    height: 100%;
+    background-repeat: repeat-y;
+    background-size: 16px auto;
+    background-position: top center;
+    background-attachment: scroll;
+    background-image: url('../../images/food-shape-y-one.png');
+}
+
+.codexse-food-menu .food-menu-item .food-menu-shape.shape-left {
+    left: auto;
+    right: 0px;
+}
+
+.codexse-food-menu .food-menu-item .food-menu-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.codexse-food-menu .food-menu-item .food-menu-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-color);
+    float: right;
+    letter-spacing: -0.8px;
+}
+
+.codexse-food-menu .food-menu-item .food-menu-name {
+    margin-bottom: 8px;
+}

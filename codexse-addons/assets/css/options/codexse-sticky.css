@@ -1,0 +1,19 @@
+.sticky-top {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    z-index: 999999 !important;
+}
+
+.admin-bar .sticky-top {
+    top: 32px;
+}
+
+.sticky-bottom {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    z-index: 999999 !important;
+}

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+.codexse-page-wrapper .notice {
+    display: none;
+}
+
+.codexse-page-wrapper p,
+.codexse-page-wrapper {
+    font-family: "Kumbh Sans", serif;
+    font-size: 14px;
+}
+
+.codexse-navigation-wrapper {
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu {
+    padding: 0px 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li a {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 25px 16px;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li a:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li a:after {
+    width: 100%;
+    height: 4px;
+    content: "";
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #0D6DDF;
+    opacity: 0;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li {
+    margin: 0;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li:hover a,
+.codexse-navigation-wrapper .codexse-navigation-menu li a.active {
+    color: #0D6DDF;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li:hover a:after,
+.codexse-navigation-wrapper .codexse-navigation-menu li a.active:after {
+    opacity: 1;
+}
+
+.codexse-navigation-wrapper .codexse-navigation-menu li:hover a:not(.active):after {
+    opacity: .3;
+}
+
+#adminmenu .toplevel_page_codexse .wp-menu-image img {
+    padding-top: 8px;
+}
+
+.codexse-page-wrapper img {
+    max-width: 100%;
+}
+
+.codexse-page-wrapper a,
+.codexse-page-wrapper button {
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.codexse-page-wrapper .header-image {
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.05);
+    line-height: 0em;
+    margin: 0px;
+}
+
+.codexse-page-wrapper.general-template .general-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    padding-top: 30px;
+}
+
+.codexse-page-wrapper.general-template .card {
+    border: none;
+    padding: 50px 40px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+    box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+    -webkit-transition: all 0.03s ease-in-out;
+    -o-transition: all 0.03s ease-in-out;
+    transition: all 0.03s ease-in-out;
+    width: calc(33.33% - 30px);
+    margin: 15px;
+}
+
+.codexse-page-wrapper.general-template .card .card-icon {
+    width: 60px;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    border-radius: 8px;
+    background: #0D6DDF;
+    margin-bottom: 32px;
+}
+
+.codexse-page-wrapper.general-template .card .card-title {
+    font-size: 22px;
+}
+
+.codexse-page-wrapper.general-template .card .card-button {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #0D6DDF;
+    text-decoration: none;
+    border: 1px solid #0D6DDF;
+    padding: 8px 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.codexse-page-wrapper.general-template .card .card-button:hover {
+    background-color: #0D6DDF;
+    color: white;
+}
+
+.codexse-option-form .codexse-header-actions {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.codexse-option-form .codexse-header {
+    padding-right: 340px;
+    position: relative;
+}
+
+.codexse-option-form .codexse-header-actions .header-switch {
+    margin-right: 20px;
+    padding: 12px 12px 12px 16px;
+}
+
+.codexse-option-form .codexse-checkboxs {
+    background-color: white;
+    padding: 12px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px 0px;
+}
+
+.codexse-option-form .codexse-checkboxs .codexse-switcher {
+    width: calc(20% - 24px);
+    margin: 12px;
+}
+
+.codexse-switcher {
+    background-color: white;
+    padding: 12px 12px 12px 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.codexse-switcher .switch-label {
+    font-weight: 600;
+    margin-right: 16px;
+}
+
+.codexse-switcher input {
+    display: none;
+}
+
+.codexse-switcher .switch-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    height: 24px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    padding: 0px 8px;
+    text-transform: uppercase;
+    background-color: white;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1em;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.codexse-switcher input:checked~.switch-toggle {
+    border-color: #0D6DDF;
+    color: #0D6DDF;
+}
+
+.codexse-switcher .switch-toggle::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background-color: #333;
+    z-index: 2;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.codexse-switcher input:checked~.switch-toggle::before {
+    left: 28px;
+    background-color: #0D6DDF;
+}
+
+.codexse-switcher .switch-toggle .switch-text {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    z-index: -1;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.codexse-switcher .switch-toggle .switch-text.on {
+    opacity: 0;
+    right: auto;
+    left: 5px;
+}
+
+.codexse-switcher input:checked~.switch-toggle .switch-text.on {
+    opacity: 1;
+}
+
+.codexse-switcher input:checked~.switch-toggle .switch-text.off {
+    opacity: 0;
+}
+
+.codexse-option-form .codexse-header .header-title {
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.codexse-page-wrapper p {
+    margin: 0 0 15px 0;
+}
+
+.codexse-switcher .switch-label.disable {
+    position: absolute;
+    opacity: 0;
+    margin-right: 10px;
+}
+
+.codexse-switcher input:checked~.switch-label.disable {
+    opacity: 1;
+}
+
+.codexse-switcher input:checked~.switch-label.enable {
+    opacity: 0;
+}
+
+.codexse-button {
+    border: none;
+    background-color: #0D6DDF;
+    padding: 14px 20px;
+    display: inline-block;
+    color: white;
+    text-transform: capitalize;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 1em;
+    white-space: nowrap;
+}
+
+.codexse-button:hover {
+    background-color: #0656b8;
+    color: white;
+}
+
+
+.dashicons-codexse:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    content: "\e900";
+    display: inline-block;
+    font-family: 'codexse' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width: 1200px) {
+    .codexse-page-wrapper.general-template .card {
+        width: calc(50% - 30px);
+        padding: 24px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .codexse-page-wrapper.general-template .card {
+        width: calc(100% - 30px);
+    }
+}

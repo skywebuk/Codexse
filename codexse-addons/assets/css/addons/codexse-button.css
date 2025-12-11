@@ -1,0 +1,119 @@
+.codexse-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1em;
+    white-space: nowrap;
+}
+
+.codexse-button .right-icon {
+    margin-left: 8px;
+}
+
+.codexse-button .left-icon {
+    margin-right: 8px;
+}
+
+.codexse-button.normal-button {
+    padding: 8px 24px;
+    background-color: rgb(var(--accent-color));
+    border: 1px solid rgb(var(--accent-color));
+    color: white;
+    border-radius: 5px;
+    transition: .3s;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+.codexse-button.normal-button:hover {
+    background-color: white;
+    color: rgb(var(--accent-color));
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.codexse-button.cloude-button {
+    padding: 8px 24px;
+    background-color: rgb(var(--accent-color));
+    border: 1px solid rgb(var(--accent-color));
+    color: white;
+    border-radius: 5px;
+    transition: .3s;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.codexse-button.cloude-button:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    -webkit-filter: url(#cloude);
+    filter: url(#cloude);
+    border-radius: 50%;
+    z-index: 5;
+    -webkit-transition: all 1s cubic-bezier(0.1, 0.22, 0.3, 1);
+    transition: all 1s cubic-bezier(0.1, 0.22, 0.3, 1);
+    left: -60%;
+    bottom: -80%;
+    background: white;
+    z-index: -1;
+}
+
+.codexse-button.cloude-button:hover:before{
+    width: 250%;
+    height: 250%;
+}
+
+.codexse-button.cloude-button:hover {
+    color: rgb(var(--accent-color));
+}
+
+
+/* Button Styles */
+.codexse-button.wave-button {
+    padding: 8px 24px;
+    background-color: rgb(var(--accent-color));
+    border: 1px solid rgb(var(--accent-color));
+    color: white;
+    border-radius: 5px;
+    transition: .3s;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Wave Effect - Before Pseudo-Element */
+.codexse-button.wave-button:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    -webkit-filter: url(#wave);
+    filter: url(#wave);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 1s cubic-bezier(0.1, 0.22, 0.3, 1);
+    left: -0%;
+    top: -80%;
+    background: white;
+    opacity: 1;
+}
+
+/* Hover Effect for Wave */
+.codexse-button.wave-button:hover:before {
+    width: 200%;
+    height: 200%;
+    left: -60%;
+    top: -30%;
+}
+
+/* Hover Effect for Button */
+.codexse-button.wave-button:hover {
+    color: rgb(var(--accent-color));
+    border-color: rgb(var(--accent-color));
+    background-color: rgb(var(--accent-color));
+}
+
