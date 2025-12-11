@@ -42,7 +42,7 @@ class Codexse_Addons_Elementor_Widget_Blog extends Widget_Base {
     }
 
     // Register widget controls
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->blog_control_settings();
         $this->blog_item_style_settings();
         $this->blog_item_title_settings();

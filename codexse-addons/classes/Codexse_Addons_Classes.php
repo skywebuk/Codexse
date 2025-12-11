@@ -12,10 +12,10 @@ class Codexse_Addons_Icon_manager extends Icons_Manager {
         if ( ! isset( $value['id'] ) ) {
             return '';
         }
-        error_log( 'Rendering SVG Icon: ' . print_r( $value, true ) );
-        return Codexse_Addons_Functions::elementor_version_check( '>=', '3.5.0' ) ? 
-            \Elementor\Core\Files\File_Types\Svg::get_inline_svg( $value['id'] ) : 
-            \Elementor\Core\Files\Assets\Svg\Svg_Handler::get_inline_svg( $value['id'] );
+
+        return Codexse_Addons_Functions::elementor_version_check( '>=', '3.5.0' )
+            ? \Elementor\Core\Files\File_Types\Svg::get_inline_svg( $value['id'] )
+            : \Elementor\Core\Files\Assets\Svg\Svg_Handler::get_inline_svg( $value['id'] );
     }
 
     private static function render_icon_html( $icon, $attributes = [], $tag = 'i' ) {

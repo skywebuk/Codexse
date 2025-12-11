@@ -35,7 +35,7 @@ class Codexse_Addons_Elementor_Widget_Desktop_Menu extends \Elementor\Widget_Bas
     }
 
     // Register widget controls
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'content_section',
             [

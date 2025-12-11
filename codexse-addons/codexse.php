@@ -44,7 +44,7 @@ final class Codexse_Addons {
     // Define plugin constants
     public function define_constants() {
         if ( ! defined( 'CODEXSE_VERSION' ) ) {
-            define( 'CODEXSE_VERSION', '1.0.1' );
+            define( 'CODEXSE_VERSION', '1.1.0' );
         }
         if ( ! defined( 'CODEXSE_PLUGIN_DIR' ) ) {
             define( 'CODEXSE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -145,23 +145,30 @@ final class Codexse_Addons {
             $message = '<p>' . esc_html__( 'Codexse Addons for Elementor requires "Elementor" plugin to be active. Please install the Elementor plugin to continue.', 'codexse-addons' ) . '</p>';
             $message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, esc_html__( 'Elementor Install Now', 'codexse-addons' ) ) . '</p>';
         }
-        echo '<div class="error"><p>' . $message . '</p></div>'; // Output escaped
+        echo '<div class="notice notice-error">' . wp_kses_post( $message ) . '</div>';
     }
     
     public function admin_notice_minimum_elementor_version() {
-        $message = sprintf( __( '<strong>Codexse Addons for Elementor</strong> requires Elementor version %s or greater.', 'codexse-addons' ), self::MINIMUM_ELEMENTOR_VERSION );
-        echo '<div class="error"><p>' . $message . '</p></div>';
+        $message = sprintf(
+            /* translators: %s: Required Elementor version */
+            esc_html__( 'Codexse Addons for Elementor requires Elementor version %s or greater.', 'codexse-addons' ),
+            self::MINIMUM_ELEMENTOR_VERSION
+        );
+        printf( '<div class="notice notice-error"><p><strong>%s</strong></p></div>', esc_html( $message ) );
     }
 
     public function admin_notice_minimum_php_version() {
-        if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
         $message = sprintf(
-            __( '"%1$s" requires "%2$s" version %3$s or greater.', 'codexse-addons' ),
-            '<strong>' . __( 'Codexse Addons', 'codexse-addons' ) . '</strong>',
-            '<strong>' . __( 'PHP', 'codexse-addons' ) . '</strong>',
-             self::MINIMUM_PHP_VERSION
+            /* translators: 1: Plugin name, 2: PHP, 3: Required PHP version */
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'codexse-addons' ),
+            '<strong>' . esc_html__( 'Codexse Addons', 'codexse-addons' ) . '</strong>',
+            '<strong>' . esc_html__( 'PHP', 'codexse-addons' ) . '</strong>',
+            self::MINIMUM_PHP_VERSION
         );
-        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+        printf( '<div class="notice notice-warning is-dismissible"><p>%s</p></div>', wp_kses_post( $message ) );
     } 
 
     public static function is_plugin_active( $plugin ) {

@@ -37,7 +37,7 @@ class Codexse_Addons_Elementor_Widget_shortcode extends Widget_Base {
         return [ 'shortcode', 'embed', 'code', 'custom shortcode', 'widget shortcode', 'elementor shortcode', 'codexse' ];
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'subscribe_section_start',

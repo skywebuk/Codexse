@@ -6,7 +6,6 @@ class Codexse_Addons_Admin {
         add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
         add_action( 'admin_init', [ $this, 'register_elementor_widgets' ] );
         add_action( 'wp_ajax_codexse_save_setting', [ $this, 'save_elementor_widgets' ] );
-        add_action( 'wp_ajax_nopriv_codexse_save_setting', [ $this, 'save_elementor_widgets' ] );
         add_action( 'admin_head', [ $this, 'hide_admin_notices' ] );
     }
     
@@ -110,30 +109,28 @@ class Codexse_Addons_Admin {
 
     public function save_elementor_widgets() {
         // Check the AJAX nonce for security
-        check_ajax_referer('codexse_settings_nonce', 'nonce');
-        // Get and sanitize the posted data
-        $widgets = isset($_POST['widgets']) ? $_POST['widgets'] : [];
-        $features = isset($_POST['features']) ? $_POST['features'] : [];
-        if (!empty($widgets) && is_array($widgets)) {
-            // Sanitize each element
-            $sanitized_widgets = array_map('sanitize_text_field', $widgets);
-    
-            // Update the option with sanitized data
-            update_option('codexse_widgets', $sanitized_widgets);
-    
-            wp_send_json_success(__('Settings saved successfully!', 'codexse-addons'));
-        } elseif (!empty($features) && is_array($features)) {
-            // Sanitize each element
-            $sanitized_features = array_map('sanitize_text_field', $features);
-    
-            // Update the option with sanitized data
-            update_option('codexse_features', $sanitized_features);
-    
-            wp_send_json_success(__('Settings saved successfully!', 'codexse-addons'));
-        } else {
-            wp_send_json_error(__('Nothing to save.', 'codexse-addons'));
+        check_ajax_referer( 'codexse_settings_nonce', 'nonce' );
+
+        // Check user capability
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( esc_html__( 'You do not have permission to perform this action.', 'codexse-addons' ) );
         }
-        exit;
+
+        // Get and sanitize the posted data
+        $widgets  = isset( $_POST['widgets'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['widgets'] ) ) : array();
+        $features = isset( $_POST['features'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['features'] ) ) : array();
+
+        if ( ! empty( $widgets ) && is_array( $widgets ) ) {
+            update_option( 'codexse_widgets', $widgets );
+            wp_send_json_success( esc_html__( 'Settings saved successfully!', 'codexse-addons' ) );
+        } elseif ( ! empty( $features ) && is_array( $features ) ) {
+            update_option( 'codexse_features', $features );
+            wp_send_json_success( esc_html__( 'Settings saved successfully!', 'codexse-addons' ) );
+        } else {
+            wp_send_json_error( esc_html__( 'Nothing to save.', 'codexse-addons' ) );
+        }
+
+        wp_die();
     }
     
 

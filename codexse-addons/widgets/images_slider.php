@@ -826,7 +826,7 @@ class Codexse_Addons_Elementor_Widget_Images_Slider extends Widget_Base {
         $this->end_controls_section(); // End Testimonial Item Style Section                                                                                                         
     }                                                                                                                                                               
                                                                                                                                                                     
-    protected function render( $instance = [] ) {      
+    protected function render() {      
         $column = "col-lg-4 col-md-6";                                                                                                   
         $settings   = $this->get_settings_for_display();                                                                                                       
 

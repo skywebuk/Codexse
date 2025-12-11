@@ -644,7 +644,7 @@ class Codexse_Addons_Elementor_Widget_Team extends Widget_Base {
         $this->end_controls_section();                                                                                                                            
     }                                                                                                                                                               
         
-    protected function render( $instance = [] ) {
+    protected function render() {
         $column   = "col-lg-4 col-md-6";
         $settings = $this->get_settings_for_display();
 

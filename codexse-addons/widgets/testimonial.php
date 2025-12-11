@@ -1552,7 +1552,7 @@ $this->end_controls_section(); // End Testimonial Item Style Section
         $this->end_controls_section();                                                                                                                            
     }                                                                                                                                                               
                                                                                                                                                                     
-    protected function render( $instance = [] ) {
+    protected function render() {
         $column   = "col-lg-4 col-md-6";
         $settings = $this->get_settings_for_display();
 

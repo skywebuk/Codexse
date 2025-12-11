@@ -42,7 +42,7 @@ class Codexse_Addons_Elementor_Widget_Button extends Widget_Base {
     }
 
     // Register widget controls
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'button_content',
             [
@@ -513,7 +513,7 @@ class Codexse_Addons_Elementor_Widget_Button extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-    protected function render( $instance = [] ) {
+    protected function render() {
         // Get settings for display
         $settings = $this->get_settings_for_display();
         

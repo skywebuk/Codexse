@@ -49,7 +49,7 @@ class Codexse_Addons_Elementor_Widget_Mobile_Menu extends Widget_Base {
     }
 
     // Register widget controls
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'select_menu_options',

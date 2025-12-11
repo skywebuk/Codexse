@@ -31,7 +31,7 @@ class Codexse_Addons_Elementor_Widget_Page_Title extends Widget_Base {
         return [ 'title', 'page title', 'heading', 'codexse' ];
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         // Title Settings Section
         $this->start_controls_section(
             'section_title',
