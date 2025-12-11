@@ -1103,26 +1103,26 @@ class Codexse_Addons_Elementor_Widget_Info_Box extends Widget_Base {
         echo '<div ' . $this->get_render_attribute_string('info_box_wrapper') . '>';
 
             // Media icon/image/lordicon
-            if ( $settings['media_type'] === 'media_image' && ( $settings['media_image']['url'] || $settings['media_image']['id'] ) ) {
+            if ( 'image' === $settings['media_type'] && ( ! empty( $settings['media_image']['url'] ) || ! empty( $settings['media_image']['id'] ) ) ) {
                 echo '<div class="box-icon image-icon">';
-                echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'media_thumbnail', 'media_image' );
+                echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'media_image_size', 'media_image' );
                 echo '</div>';
             } elseif ( 'lordicon' === $settings['media_type'] && ! empty( $json_url ) ) {
                 echo '<div class="box-icon loard-icon">';
-                echo '<lord-icon 
-                        src="' . esc_url( $json_url ) . '" 
-                        trigger="' . esc_attr( $settings['animation_trigger'] ) . '" 
-                        stroke="' . esc_attr( $settings['lord_icon_stroke']['size'] ) . '" 
+                echo '<lord-icon
+                        src="' . esc_url( $json_url ) . '"
+                        trigger="' . esc_attr( $settings['animation_trigger'] ) . '"
+                        stroke="' . esc_attr( $settings['lord_icon_stroke']['size'] ) . '"
                         colors="primary:' . esc_attr( $settings['primary_color'] ) . ',
                                 secondary:' . esc_attr( $settings['secondary_color'] ) . ',
                                 tertiary:' . esc_attr( $settings['tertiary_color'] ) . ',
-                                quaternary:' . esc_attr( $settings['quaternary_color'] ) . '" 
+                                quaternary:' . esc_attr( $settings['quaternary_color'] ) . '"
                         style="width:' . esc_attr( $settings['lord_icon_size']['size'] ) . 'px; height:' . esc_attr( $settings['lord_icon_size']['size'] ) . 'px">
                     </lord-icon>';
                 echo '</div>';
-            } elseif ( ! empty( $settings['media_icons'] ) ) {
+            } elseif ( 'icon' === $settings['media_type'] && ! empty( $settings['media_icons']['value'] ) ) {
                 echo '<div class="box-icon web-icon">';
-                echo \Codexse_Addons_Icon_manager::render_icon( $settings['media_icons'], [ "aria-hidden" => "true" ] );
+                echo \Codexse_Addons_Icon_manager::render_icon( $settings['media_icons'], [ 'aria-hidden' => 'true' ] );
                 echo '</div>';
             }
 
