@@ -94,7 +94,7 @@ class SSL_SMS_Login_Forms {
         }
 
         if (SSL_SMS_Login_Pro::get_option('enable_registration', 'yes') !== 'yes') {
-            return '<p class="ssl-sms-notice">' . esc_html__('Registration is currently disabled.', 'ssl-sms-login-pro') . '</p>';
+            return '<p class="ssl-sms-notice">' . esc_html__('Registration is currently disabled.', 'ssl-sms-login') . '</p>';
         }
 
         $atts = shortcode_atts(array(
@@ -111,7 +111,7 @@ class SSL_SMS_Login_Forms {
      */
     public function shortcode_forgot_password($atts) {
         if (SSL_SMS_Login_Pro::get_option('enable_forgot_password', 'yes') !== 'yes') {
-            return '<p class="ssl-sms-notice">' . esc_html__('Password reset via SMS is currently disabled.', 'ssl-sms-login-pro') . '</p>';
+            return '<p class="ssl-sms-notice">' . esc_html__('Password reset via SMS is currently disabled.', 'ssl-sms-login') . '</p>';
         }
 
         $atts = shortcode_atts(array(
@@ -133,10 +133,10 @@ class SSL_SMS_Login_Forms {
                 <p>%s <strong>%s</strong></p>
                 <a href="%s" class="ssl-sms-btn ssl-sms-btn-secondary">%s</a>
             </div>',
-            esc_html__('You are logged in as', 'ssl-sms-login-pro'),
+            esc_html__('You are logged in as', 'ssl-sms-login'),
             esc_html($current_user->display_name),
             esc_url(wp_logout_url(home_url())),
-            esc_html__('Logout', 'ssl-sms-login-pro')
+            esc_html__('Logout', 'ssl-sms-login')
         );
     }
 
@@ -150,10 +150,10 @@ class SSL_SMS_Login_Forms {
             <?php if ($atts['show_tabs'] === 'yes' && $enable_registration) : ?>
             <div class="ssl-sms-tabs">
                 <button type="button" class="ssl-sms-tab active" data-tab="login">
-                    <?php esc_html_e('Login', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Login', 'ssl-sms-login'); ?>
                 </button>
                 <button type="button" class="ssl-sms-tab" data-tab="register">
-                    <?php esc_html_e('Register', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Register', 'ssl-sms-login'); ?>
                 </button>
             </div>
             <?php endif; ?>
@@ -178,28 +178,28 @@ class SSL_SMS_Login_Forms {
         ?>
         <div class="ssl-sms-form ssl-sms-login-form" data-redirect="<?php echo esc_attr($atts['redirect']); ?>">
             <div class="ssl-sms-form-step ssl-sms-step-mobile active" data-step="1">
-                <h3><?php esc_html_e('Login with Mobile', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Login with Mobile', 'ssl-sms-login'); ?></h3>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-login-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-login-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login'); ?></label>
                     <input type="tel" id="ssl-login-mobile" class="ssl-sms-input"
-                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login-pro'); ?>"
+                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login'); ?>"
                            required />
                 </div>
 
                 <div class="ssl-sms-login-method">
                     <label class="ssl-sms-radio">
                         <input type="radio" name="login_method" value="otp" checked />
-                        <span><?php esc_html_e('Login with OTP', 'ssl-sms-login-pro'); ?></span>
+                        <span><?php esc_html_e('Login with OTP', 'ssl-sms-login'); ?></span>
                     </label>
                     <label class="ssl-sms-radio">
                         <input type="radio" name="login_method" value="password" />
-                        <span><?php esc_html_e('Login with Password', 'ssl-sms-login-pro'); ?></span>
+                        <span><?php esc_html_e('Login with Password', 'ssl-sms-login'); ?></span>
                     </label>
                 </div>
 
                 <div class="ssl-sms-password-field" style="display:none;">
                     <div class="ssl-sms-form-group">
-                        <label for="ssl-login-password"><?php esc_html_e('Password', 'ssl-sms-login-pro'); ?></label>
+                        <label for="ssl-login-password"><?php esc_html_e('Password', 'ssl-sms-login'); ?></label>
                         <input type="password" id="ssl-login-password" class="ssl-sms-input" />
                     </div>
                 </div>
@@ -207,24 +207,24 @@ class SSL_SMS_Login_Forms {
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-send-otp" data-purpose="login">
-                    <?php esc_html_e('Send OTP', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Send OTP', 'ssl-sms-login'); ?>
                 </button>
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-password-login" style="display:none;">
-                    <?php esc_html_e('Login', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Login', 'ssl-sms-login'); ?>
                 </button>
 
                 <?php if (SSL_SMS_Login_Pro::get_option('enable_forgot_password', 'yes') === 'yes') : ?>
                 <p class="ssl-sms-links">
-                    <a href="#" class="ssl-sms-forgot-link"><?php esc_html_e('Forgot Password?', 'ssl-sms-login-pro'); ?></a>
+                    <a href="#" class="ssl-sms-forgot-link"><?php esc_html_e('Forgot Password?', 'ssl-sms-login'); ?></a>
                 </p>
                 <?php endif; ?>
             </div>
 
             <div class="ssl-sms-form-step ssl-sms-step-otp" data-step="2">
-                <h3><?php esc_html_e('Enter OTP', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Enter OTP', 'ssl-sms-login'); ?></h3>
                 <p class="ssl-sms-otp-info"></p>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-login-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-login-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login'); ?></label>
                     <input type="text" id="ssl-login-otp" class="ssl-sms-input ssl-sms-otp-input"
                            maxlength="6" pattern="[0-9]*" inputmode="numeric"
                            placeholder="______" required />
@@ -233,46 +233,46 @@ class SSL_SMS_Login_Forms {
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-verify-otp" data-purpose="login">
-                    <?php esc_html_e('Verify & Login', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Verify & Login', 'ssl-sms-login'); ?>
                 </button>
 
                 <p class="ssl-sms-links">
                     <button type="button" class="ssl-sms-link-btn ssl-sms-resend-otp" disabled>
-                        <?php esc_html_e('Resend OTP', 'ssl-sms-login-pro'); ?>
+                        <?php esc_html_e('Resend OTP', 'ssl-sms-login'); ?>
                     </button>
                     <span class="ssl-sms-timer"></span>
                 </p>
                 <p class="ssl-sms-links">
-                    <a href="#" class="ssl-sms-back-link"><?php esc_html_e('&larr; Back', 'ssl-sms-login-pro'); ?></a>
+                    <a href="#" class="ssl-sms-back-link"><?php esc_html_e('&larr; Back', 'ssl-sms-login'); ?></a>
                 </p>
             </div>
 
             <!-- Forgot Password Section -->
             <div class="ssl-sms-form-step ssl-sms-step-forgot" data-step="forgot">
-                <h3><?php esc_html_e('Forgot Password', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Forgot Password', 'ssl-sms-login'); ?></h3>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-forgot-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-forgot-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login'); ?></label>
                     <input type="tel" id="ssl-forgot-mobile" class="ssl-sms-input"
-                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login-pro'); ?>"
+                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login'); ?>"
                            required />
                 </div>
 
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-send-otp" data-purpose="forgot_password">
-                    <?php esc_html_e('Send OTP', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Send OTP', 'ssl-sms-login'); ?>
                 </button>
 
                 <p class="ssl-sms-links">
-                    <a href="#" class="ssl-sms-back-to-login"><?php esc_html_e('&larr; Back to Login', 'ssl-sms-login-pro'); ?></a>
+                    <a href="#" class="ssl-sms-back-to-login"><?php esc_html_e('&larr; Back to Login', 'ssl-sms-login'); ?></a>
                 </p>
             </div>
 
             <div class="ssl-sms-form-step ssl-sms-step-forgot-otp" data-step="forgot-otp">
-                <h3><?php esc_html_e('Verify OTP', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Verify OTP', 'ssl-sms-login'); ?></h3>
                 <p class="ssl-sms-otp-info"></p>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-forgot-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-forgot-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login'); ?></label>
                     <input type="text" id="ssl-forgot-otp" class="ssl-sms-input ssl-sms-otp-input"
                            maxlength="6" pattern="[0-9]*" inputmode="numeric"
                            placeholder="______" required />
@@ -281,12 +281,12 @@ class SSL_SMS_Login_Forms {
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-verify-forgot-otp">
-                    <?php esc_html_e('Reset Password', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Reset Password', 'ssl-sms-login'); ?>
                 </button>
 
                 <p class="ssl-sms-links">
                     <button type="button" class="ssl-sms-link-btn ssl-sms-resend-otp" data-purpose="forgot_password" disabled>
-                        <?php esc_html_e('Resend OTP', 'ssl-sms-login-pro'); ?>
+                        <?php esc_html_e('Resend OTP', 'ssl-sms-login'); ?>
                     </button>
                     <span class="ssl-sms-timer"></span>
                 </p>
@@ -302,26 +302,26 @@ class SSL_SMS_Login_Forms {
         ?>
         <div class="ssl-sms-form ssl-sms-register-form" data-redirect="<?php echo esc_attr($atts['redirect']); ?>">
             <div class="ssl-sms-form-step ssl-sms-step-mobile active" data-step="1">
-                <h3><?php esc_html_e('Register with Mobile', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Register with Mobile', 'ssl-sms-login'); ?></h3>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-register-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-register-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login'); ?></label>
                     <input type="tel" id="ssl-register-mobile" class="ssl-sms-input"
-                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login-pro'); ?>"
+                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login'); ?>"
                            required />
                 </div>
 
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-send-otp" data-purpose="register">
-                    <?php esc_html_e('Send OTP', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Send OTP', 'ssl-sms-login'); ?>
                 </button>
             </div>
 
             <div class="ssl-sms-form-step ssl-sms-step-otp" data-step="2">
-                <h3><?php esc_html_e('Verify Mobile', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Verify Mobile', 'ssl-sms-login'); ?></h3>
                 <p class="ssl-sms-otp-info"></p>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-register-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-register-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login'); ?></label>
                     <input type="text" id="ssl-register-otp" class="ssl-sms-input ssl-sms-otp-input"
                            maxlength="6" pattern="[0-9]*" inputmode="numeric"
                            placeholder="______" required />
@@ -330,39 +330,39 @@ class SSL_SMS_Login_Forms {
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-verify-otp" data-purpose="register">
-                    <?php esc_html_e('Verify OTP', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Verify OTP', 'ssl-sms-login'); ?>
                 </button>
 
                 <p class="ssl-sms-links">
                     <button type="button" class="ssl-sms-link-btn ssl-sms-resend-otp" disabled>
-                        <?php esc_html_e('Resend OTP', 'ssl-sms-login-pro'); ?>
+                        <?php esc_html_e('Resend OTP', 'ssl-sms-login'); ?>
                     </button>
                     <span class="ssl-sms-timer"></span>
                 </p>
                 <p class="ssl-sms-links">
-                    <a href="#" class="ssl-sms-back-link"><?php esc_html_e('&larr; Back', 'ssl-sms-login-pro'); ?></a>
+                    <a href="#" class="ssl-sms-back-link"><?php esc_html_e('&larr; Back', 'ssl-sms-login'); ?></a>
                 </p>
             </div>
 
             <div class="ssl-sms-form-step ssl-sms-step-details" data-step="3">
-                <h3><?php esc_html_e('Complete Registration', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Complete Registration', 'ssl-sms-login'); ?></h3>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-register-name"><?php esc_html_e('Full Name', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-register-name"><?php esc_html_e('Full Name', 'ssl-sms-login'); ?></label>
                     <input type="text" id="ssl-register-name" class="ssl-sms-input" required />
                 </div>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-register-email"><?php esc_html_e('Email (Optional)', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-register-email"><?php esc_html_e('Email (Optional)', 'ssl-sms-login'); ?></label>
                     <input type="email" id="ssl-register-email" class="ssl-sms-input" />
                 </div>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-register-password"><?php esc_html_e('Password', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-register-password"><?php esc_html_e('Password', 'ssl-sms-login'); ?></label>
                     <input type="password" id="ssl-register-password" class="ssl-sms-input" required />
                 </div>
 
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-complete-register">
-                    <?php esc_html_e('Complete Registration', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Complete Registration', 'ssl-sms-login'); ?>
                 </button>
             </div>
         </div>
@@ -376,26 +376,26 @@ class SSL_SMS_Login_Forms {
         ?>
         <div class="ssl-sms-form ssl-sms-forgot-form" data-redirect="<?php echo esc_attr($atts['redirect']); ?>">
             <div class="ssl-sms-form-step active" data-step="1">
-                <h3><?php esc_html_e('Reset Password', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Reset Password', 'ssl-sms-login'); ?></h3>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-forgot-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-forgot-mobile"><?php esc_html_e('Mobile Number', 'ssl-sms-login'); ?></label>
                     <input type="tel" id="ssl-forgot-mobile" class="ssl-sms-input"
-                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login-pro'); ?>"
+                           placeholder="<?php esc_attr_e('01XXXXXXXXX', 'ssl-sms-login'); ?>"
                            required />
                 </div>
 
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-send-otp" data-purpose="forgot_password">
-                    <?php esc_html_e('Send OTP', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Send OTP', 'ssl-sms-login'); ?>
                 </button>
             </div>
 
             <div class="ssl-sms-form-step" data-step="2">
-                <h3><?php esc_html_e('Enter OTP', 'ssl-sms-login-pro'); ?></h3>
+                <h3><?php esc_html_e('Enter OTP', 'ssl-sms-login'); ?></h3>
                 <p class="ssl-sms-otp-info"></p>
                 <div class="ssl-sms-form-group">
-                    <label for="ssl-forgot-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login-pro'); ?></label>
+                    <label for="ssl-forgot-otp"><?php esc_html_e('OTP Code', 'ssl-sms-login'); ?></label>
                     <input type="text" id="ssl-forgot-otp" class="ssl-sms-input ssl-sms-otp-input"
                            maxlength="6" pattern="[0-9]*" inputmode="numeric"
                            placeholder="______" required />
@@ -404,12 +404,12 @@ class SSL_SMS_Login_Forms {
                 <div class="ssl-sms-message"></div>
 
                 <button type="button" class="ssl-sms-btn ssl-sms-btn-primary ssl-sms-verify-forgot-otp">
-                    <?php esc_html_e('Reset Password', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Reset Password', 'ssl-sms-login'); ?>
                 </button>
 
                 <p class="ssl-sms-links">
                     <button type="button" class="ssl-sms-link-btn ssl-sms-resend-otp" data-purpose="forgot_password" disabled>
-                        <?php esc_html_e('Resend OTP', 'ssl-sms-login-pro'); ?>
+                        <?php esc_html_e('Resend OTP', 'ssl-sms-login'); ?>
                     </button>
                     <span class="ssl-sms-timer"></span>
                 </p>
@@ -428,14 +428,14 @@ class SSL_SMS_Login_Forms {
         $purpose = isset($_POST['purpose']) ? sanitize_text_field(wp_unslash($_POST['purpose'])) : 'login';
 
         if (empty($mobile)) {
-            wp_send_json_error(array('message' => __('Mobile number is required.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Mobile number is required.', 'ssl-sms-login')));
         }
 
         // For registration, check if mobile already exists
         if ($purpose === 'register') {
             $existing_user = $this->get_user_by_mobile($mobile);
             if ($existing_user) {
-                wp_send_json_error(array('message' => __('This mobile number is already registered.', 'ssl-sms-login-pro')));
+                wp_send_json_error(array('message' => __('This mobile number is already registered.', 'ssl-sms-login')));
             }
         }
 
@@ -443,7 +443,7 @@ class SSL_SMS_Login_Forms {
         if ($purpose === 'login' || $purpose === 'forgot_password') {
             $existing_user = $this->get_user_by_mobile($mobile);
             if (!$existing_user) {
-                wp_send_json_error(array('message' => __('No account found with this mobile number.', 'ssl-sms-login-pro')));
+                wp_send_json_error(array('message' => __('No account found with this mobile number.', 'ssl-sms-login')));
             }
         }
 
@@ -467,7 +467,7 @@ class SSL_SMS_Login_Forms {
         $purpose = isset($_POST['purpose']) ? sanitize_text_field(wp_unslash($_POST['purpose'])) : 'login';
 
         if (empty($mobile) || empty($otp)) {
-            wp_send_json_error(array('message' => __('Mobile and OTP are required.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Mobile and OTP are required.', 'ssl-sms-login')));
         }
 
         $result = $this->otp_handler->verify_otp($mobile, $otp, $purpose);
@@ -505,17 +505,17 @@ class SSL_SMS_Login_Forms {
 
         // Validate
         if (empty($mobile) || empty($name) || empty($password)) {
-            wp_send_json_error(array('message' => __('All required fields must be filled.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('All required fields must be filled.', 'ssl-sms-login')));
         }
 
         // Check if OTP was verified
         if (!$this->otp_handler->is_otp_verified($mobile, 'register')) {
-            wp_send_json_error(array('message' => __('Please verify your mobile number first.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Please verify your mobile number first.', 'ssl-sms-login')));
         }
 
         // Check if mobile already registered
         if ($this->get_user_by_mobile($mobile)) {
-            wp_send_json_error(array('message' => __('This mobile number is already registered.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('This mobile number is already registered.', 'ssl-sms-login')));
         }
 
         // Generate username from mobile
@@ -564,7 +564,7 @@ class SSL_SMS_Login_Forms {
         $redirect = SSL_SMS_Login_Pro::get_option('redirect_after_login', '');
 
         wp_send_json_success(array(
-            'message' => __('Registration successful!', 'ssl-sms-login-pro'),
+            'message' => __('Registration successful!', 'ssl-sms-login'),
             'redirect' => !empty($redirect) ? $redirect : home_url(),
         ));
     }
@@ -579,17 +579,17 @@ class SSL_SMS_Login_Forms {
         $password = isset($_POST['password']) ? wp_unslash($_POST['password']) : '';
 
         if (empty($mobile) || empty($password)) {
-            wp_send_json_error(array('message' => __('Mobile and password are required.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Mobile and password are required.', 'ssl-sms-login')));
         }
 
         $user = $this->get_user_by_mobile($mobile);
         if (!$user) {
-            wp_send_json_error(array('message' => __('No account found with this mobile number.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('No account found with this mobile number.', 'ssl-sms-login')));
         }
 
         // Verify password
         if (!wp_check_password($password, $user->user_pass, $user->ID)) {
-            wp_send_json_error(array('message' => __('Incorrect password.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Incorrect password.', 'ssl-sms-login')));
         }
 
         // Log user in
@@ -598,7 +598,7 @@ class SSL_SMS_Login_Forms {
         $redirect = SSL_SMS_Login_Pro::get_option('redirect_after_login', '');
 
         wp_send_json_success(array(
-            'message' => __('Login successful!', 'ssl-sms-login-pro'),
+            'message' => __('Login successful!', 'ssl-sms-login'),
             'redirect' => !empty($redirect) ? $redirect : home_url(),
         ));
     }
@@ -613,7 +613,7 @@ class SSL_SMS_Login_Forms {
         $otp = isset($_POST['otp']) ? sanitize_text_field(wp_unslash($_POST['otp'])) : '';
 
         if (empty($mobile) || empty($otp)) {
-            wp_send_json_error(array('message' => __('Mobile and OTP are required.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Mobile and OTP are required.', 'ssl-sms-login')));
         }
 
         // Verify OTP
@@ -626,7 +626,7 @@ class SSL_SMS_Login_Forms {
         // Get user
         $user = $this->get_user_by_mobile($result['mobile']);
         if (!$user) {
-            wp_send_json_error(array('message' => __('No account found with this mobile number.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('No account found with this mobile number.', 'ssl-sms-login')));
         }
 
         // Generate new password
@@ -640,7 +640,7 @@ class SSL_SMS_Login_Forms {
         $sms_gateway->send_password_reset($result['mobile'], $user->user_login, $new_password);
 
         wp_send_json_success(array(
-            'message' => __('New password has been sent to your mobile number.', 'ssl-sms-login-pro'),
+            'message' => __('New password has been sent to your mobile number.', 'ssl-sms-login'),
         ));
     }
 

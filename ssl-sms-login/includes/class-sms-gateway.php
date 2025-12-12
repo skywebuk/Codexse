@@ -88,7 +88,7 @@ class SSL_SMS_Gateway {
         if (!$this->is_configured()) {
             return array(
                 'success' => false,
-                'message' => __('SMS API is not configured.', 'ssl-sms-login-pro'),
+                'message' => __('SMS API is not configured.', 'ssl-sms-login'),
                 'error_code' => 'api_not_configured'
             );
         }
@@ -98,7 +98,7 @@ class SSL_SMS_Gateway {
         if (!$this->validate_mobile($mobile)) {
             return array(
                 'success' => false,
-                'message' => __('Invalid mobile number format.', 'ssl-sms-login-pro'),
+                'message' => __('Invalid mobile number format.', 'ssl-sms-login'),
                 'error_code' => 'invalid_mobile'
             );
         }
@@ -127,7 +127,7 @@ class SSL_SMS_Gateway {
             $this->log_sms($mobile, $type, 'failed', $response->get_error_message());
             return array(
                 'success' => false,
-                'message' => __('Failed to connect to SMS gateway.', 'ssl-sms-login-pro'),
+                'message' => __('Failed to connect to SMS gateway.', 'ssl-sms-login'),
                 'error_code' => 'connection_error',
                 'error_details' => $response->get_error_message()
             );
@@ -141,13 +141,13 @@ class SSL_SMS_Gateway {
             $this->log_sms($mobile, $type, 'success', $response_body);
             return array(
                 'success' => true,
-                'message' => __('SMS sent successfully.', 'ssl-sms-login-pro'),
+                'message' => __('SMS sent successfully.', 'ssl-sms-login'),
                 'csms_id' => $csms_id
             );
         }
 
         // Handle API errors
-        $error_message = isset($response_data['error_message']) ? $response_data['error_message'] : __('Unknown error', 'ssl-sms-login-pro');
+        $error_message = isset($response_data['error_message']) ? $response_data['error_message'] : __('Unknown error', 'ssl-sms-login');
         $this->log_sms($mobile, $type, 'failed', $response_body);
 
         return array(
@@ -163,7 +163,7 @@ class SSL_SMS_Gateway {
      */
     public function send_otp($mobile, $otp) {
         $expiry = SSL_SMS_Login_Pro::get_option('otp_expiry', 5);
-        $template = SSL_SMS_Login_Pro::get_option('otp_message_template', __('Your OTP is: {otp}. Valid for {expiry} minutes.', 'ssl-sms-login-pro'));
+        $template = SSL_SMS_Login_Pro::get_option('otp_message_template', __('Your OTP is: {otp}. Valid for {expiry} minutes.', 'ssl-sms-login'));
 
         $message = str_replace(
             array('{otp}', '{expiry}'),
@@ -178,7 +178,7 @@ class SSL_SMS_Gateway {
      * Send welcome message
      */
     public function send_welcome($mobile, $username, $password) {
-        $template = SSL_SMS_Login_Pro::get_option('welcome_message_template', __('Welcome! Your username: {username}, Password: {password}', 'ssl-sms-login-pro'));
+        $template = SSL_SMS_Login_Pro::get_option('welcome_message_template', __('Welcome! Your username: {username}, Password: {password}', 'ssl-sms-login'));
 
         $message = str_replace(
             array('{username}', '{password}', '{site_name}'),
@@ -193,7 +193,7 @@ class SSL_SMS_Gateway {
      * Send password reset message
      */
     public function send_password_reset($mobile, $username, $new_password) {
-        $template = SSL_SMS_Login_Pro::get_option('password_reset_template', __('Your new password is: {password}', 'ssl-sms-login-pro'));
+        $template = SSL_SMS_Login_Pro::get_option('password_reset_template', __('Your new password is: {password}', 'ssl-sms-login'));
 
         $message = str_replace(
             array('{username}', '{password}'),
@@ -230,18 +230,18 @@ class SSL_SMS_Gateway {
     public function ajax_send_test_sms() {
         // Verify nonce
         if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'] ?? '')), 'ssl_sms_test_nonce')) {
-            wp_send_json_error(array('message' => __('Security check failed.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Security check failed.', 'ssl-sms-login')));
         }
 
         // Check permissions
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(array('message' => __('Permission denied.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Permission denied.', 'ssl-sms-login')));
         }
 
         $mobile = isset($_POST['mobile']) ? sanitize_text_field(wp_unslash($_POST['mobile'])) : '';
 
         if (empty($mobile)) {
-            wp_send_json_error(array('message' => __('Mobile number is required.', 'ssl-sms-login-pro')));
+            wp_send_json_error(array('message' => __('Mobile number is required.', 'ssl-sms-login')));
         }
 
         // Refresh API credentials
@@ -249,14 +249,14 @@ class SSL_SMS_Gateway {
         $this->sender_id = SSL_SMS_Login_Pro::get_option('sender_id', '');
 
         $test_message = sprintf(
-            __('This is a test message from %s. Your SMS configuration is working!', 'ssl-sms-login-pro'),
+            __('This is a test message from %s. Your SMS configuration is working!', 'ssl-sms-login'),
             get_bloginfo('name')
         );
 
         $result = $this->send_sms($mobile, $test_message, 'test');
 
         if ($result['success']) {
-            wp_send_json_success(array('message' => __('Test SMS sent successfully!', 'ssl-sms-login-pro')));
+            wp_send_json_success(array('message' => __('Test SMS sent successfully!', 'ssl-sms-login')));
         } else {
             wp_send_json_error(array('message' => $result['message']));
         }

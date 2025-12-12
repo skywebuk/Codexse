@@ -27,7 +27,7 @@ class SSL_SMS_Admin_Settings {
     public function __construct() {
         add_action('admin_menu', array($this, 'add_admin_menu'));
         add_action('admin_init', array($this, 'register_settings'));
-        add_filter('plugin_action_links_' . SSL_SMS_LOGIN_PLUGIN_BASENAME, array($this, 'add_settings_link'));
+        add_filter('plugin_action_links_' . SSL_SMS_PLUGIN_BASENAME, array($this, 'add_settings_link'));
     }
 
     /**
@@ -35,8 +35,8 @@ class SSL_SMS_Admin_Settings {
      */
     public function add_admin_menu() {
         add_menu_page(
-            __('SSL SMS Login', 'ssl-sms-login-pro'),
-            __('SMS Login', 'ssl-sms-login-pro'),
+            __('SSL SMS Login', 'ssl-sms-login'),
+            __('SMS Login', 'ssl-sms-login'),
             'manage_options',
             $this->page_slug,
             array($this, 'render_settings_page'),
@@ -46,8 +46,8 @@ class SSL_SMS_Admin_Settings {
 
         add_submenu_page(
             $this->page_slug,
-            __('Settings', 'ssl-sms-login-pro'),
-            __('Settings', 'ssl-sms-login-pro'),
+            __('Settings', 'ssl-sms-login'),
+            __('Settings', 'ssl-sms-login'),
             'manage_options',
             $this->page_slug,
             array($this, 'render_settings_page')
@@ -55,8 +55,8 @@ class SSL_SMS_Admin_Settings {
 
         add_submenu_page(
             $this->page_slug,
-            __('SMS Logs', 'ssl-sms-login-pro'),
-            __('SMS Logs', 'ssl-sms-login-pro'),
+            __('SMS Logs', 'ssl-sms-login'),
+            __('SMS Logs', 'ssl-sms-login'),
             'manage_options',
             'ssl-sms-login-logs',
             array($this, 'render_logs_page')
@@ -67,7 +67,7 @@ class SSL_SMS_Admin_Settings {
      * Add settings link to plugins page
      */
     public function add_settings_link($links) {
-        $settings_link = '<a href="' . admin_url('admin.php?page=' . $this->page_slug) . '">' . __('Settings', 'ssl-sms-login-pro') . '</a>';
+        $settings_link = '<a href="' . admin_url('admin.php?page=' . $this->page_slug) . '">' . __('Settings', 'ssl-sms-login') . '</a>';
         array_unshift($links, $settings_link);
         return $links;
     }
@@ -85,47 +85,47 @@ class SSL_SMS_Admin_Settings {
         // API Settings Section
         add_settings_section(
             'ssl_sms_api_section',
-            __('API Configuration', 'ssl-sms-login-pro'),
+            __('API Configuration', 'ssl-sms-login'),
             array($this, 'render_api_section'),
             $this->page_slug
         );
 
         add_settings_field(
             'api_token',
-            __('API Token', 'ssl-sms-login-pro'),
+            __('API Token', 'ssl-sms-login'),
             array($this, 'render_text_field'),
             $this->page_slug,
             'ssl_sms_api_section',
             array(
                 'field' => 'api_token',
                 'type' => 'password',
-                'description' => __('Enter your SSL Wireless API token.', 'ssl-sms-login-pro'),
+                'description' => __('Enter your SSL Wireless API token.', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'sender_id',
-            __('Sender ID (SID)', 'ssl-sms-login-pro'),
+            __('Sender ID (SID)', 'ssl-sms-login'),
             array($this, 'render_text_field'),
             $this->page_slug,
             'ssl_sms_api_section',
             array(
                 'field' => 'sender_id',
-                'description' => __('Enter your SMS sender ID.', 'ssl-sms-login-pro'),
+                'description' => __('Enter your SMS sender ID.', 'ssl-sms-login'),
             )
         );
 
         // OTP Settings Section
         add_settings_section(
             'ssl_sms_otp_section',
-            __('OTP Configuration', 'ssl-sms-login-pro'),
+            __('OTP Configuration', 'ssl-sms-login'),
             array($this, 'render_otp_section'),
             $this->page_slug
         );
 
         add_settings_field(
             'otp_expiry',
-            __('OTP Expiry (minutes)', 'ssl-sms-login-pro'),
+            __('OTP Expiry (minutes)', 'ssl-sms-login'),
             array($this, 'render_number_field'),
             $this->page_slug,
             'ssl_sms_otp_section',
@@ -134,13 +134,13 @@ class SSL_SMS_Admin_Settings {
                 'min' => 1,
                 'max' => 30,
                 'default' => 5,
-                'description' => __('How long the OTP remains valid.', 'ssl-sms-login-pro'),
+                'description' => __('How long the OTP remains valid.', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'max_otp_attempts',
-            __('Max OTP Attempts', 'ssl-sms-login-pro'),
+            __('Max OTP Attempts', 'ssl-sms-login'),
             array($this, 'render_number_field'),
             $this->page_slug,
             'ssl_sms_otp_section',
@@ -149,13 +149,13 @@ class SSL_SMS_Admin_Settings {
                 'min' => 1,
                 'max' => 10,
                 'default' => 3,
-                'description' => __('Maximum OTP send attempts before blocking.', 'ssl-sms-login-pro'),
+                'description' => __('Maximum OTP send attempts before blocking.', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'block_duration',
-            __('Block Duration (hours)', 'ssl-sms-login-pro'),
+            __('Block Duration (hours)', 'ssl-sms-login'),
             array($this, 'render_number_field'),
             $this->page_slug,
             'ssl_sms_otp_section',
@@ -164,107 +164,107 @@ class SSL_SMS_Admin_Settings {
                 'min' => 1,
                 'max' => 72,
                 'default' => 24,
-                'description' => __('How long to block after max attempts.', 'ssl-sms-login-pro'),
+                'description' => __('How long to block after max attempts.', 'ssl-sms-login'),
             )
         );
 
         // Features Section
         add_settings_section(
             'ssl_sms_features_section',
-            __('Features', 'ssl-sms-login-pro'),
+            __('Features', 'ssl-sms-login'),
             array($this, 'render_features_section'),
             $this->page_slug
         );
 
         add_settings_field(
             'enable_registration',
-            __('Enable Registration', 'ssl-sms-login-pro'),
+            __('Enable Registration', 'ssl-sms-login'),
             array($this, 'render_checkbox_field'),
             $this->page_slug,
             'ssl_sms_features_section',
             array(
                 'field' => 'enable_registration',
-                'description' => __('Allow new user registration via SMS.', 'ssl-sms-login-pro'),
+                'description' => __('Allow new user registration via SMS.', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'enable_login',
-            __('Enable OTP Login', 'ssl-sms-login-pro'),
+            __('Enable OTP Login', 'ssl-sms-login'),
             array($this, 'render_checkbox_field'),
             $this->page_slug,
             'ssl_sms_features_section',
             array(
                 'field' => 'enable_login',
-                'description' => __('Allow users to login via OTP.', 'ssl-sms-login-pro'),
+                'description' => __('Allow users to login via OTP.', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'enable_forgot_password',
-            __('Enable Forgot Password', 'ssl-sms-login-pro'),
+            __('Enable Forgot Password', 'ssl-sms-login'),
             array($this, 'render_checkbox_field'),
             $this->page_slug,
             'ssl_sms_features_section',
             array(
                 'field' => 'enable_forgot_password',
-                'description' => __('Allow password reset via SMS.', 'ssl-sms-login-pro'),
+                'description' => __('Allow password reset via SMS.', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'redirect_after_login',
-            __('Redirect After Login', 'ssl-sms-login-pro'),
+            __('Redirect After Login', 'ssl-sms-login'),
             array($this, 'render_text_field'),
             $this->page_slug,
             'ssl_sms_features_section',
             array(
                 'field' => 'redirect_after_login',
-                'description' => __('URL to redirect after successful login (leave empty for home page).', 'ssl-sms-login-pro'),
+                'description' => __('URL to redirect after successful login (leave empty for home page).', 'ssl-sms-login'),
             )
         );
 
         // Message Templates Section
         add_settings_section(
             'ssl_sms_templates_section',
-            __('Message Templates', 'ssl-sms-login-pro'),
+            __('Message Templates', 'ssl-sms-login'),
             array($this, 'render_templates_section'),
             $this->page_slug
         );
 
         add_settings_field(
             'otp_message_template',
-            __('OTP Message', 'ssl-sms-login-pro'),
+            __('OTP Message', 'ssl-sms-login'),
             array($this, 'render_textarea_field'),
             $this->page_slug,
             'ssl_sms_templates_section',
             array(
                 'field' => 'otp_message_template',
-                'description' => __('Available placeholders: {otp}, {expiry}', 'ssl-sms-login-pro'),
+                'description' => __('Available placeholders: {otp}, {expiry}', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'welcome_message_template',
-            __('Welcome Message', 'ssl-sms-login-pro'),
+            __('Welcome Message', 'ssl-sms-login'),
             array($this, 'render_textarea_field'),
             $this->page_slug,
             'ssl_sms_templates_section',
             array(
                 'field' => 'welcome_message_template',
-                'description' => __('Available placeholders: {username}, {password}, {site_name}', 'ssl-sms-login-pro'),
+                'description' => __('Available placeholders: {username}, {password}, {site_name}', 'ssl-sms-login'),
             )
         );
 
         add_settings_field(
             'password_reset_template',
-            __('Password Reset Message', 'ssl-sms-login-pro'),
+            __('Password Reset Message', 'ssl-sms-login'),
             array($this, 'render_textarea_field'),
             $this->page_slug,
             'ssl_sms_templates_section',
             array(
                 'field' => 'password_reset_template',
-                'description' => __('Available placeholders: {username}, {password}', 'ssl-sms-login-pro'),
+                'description' => __('Available placeholders: {username}, {password}', 'ssl-sms-login'),
             )
         );
     }
@@ -312,28 +312,28 @@ class SSL_SMS_Admin_Settings {
      * Render API section
      */
     public function render_api_section() {
-        echo '<p>' . esc_html__('Configure your SSL Wireless SMS API credentials.', 'ssl-sms-login-pro') . '</p>';
+        echo '<p>' . esc_html__('Configure your SSL Wireless SMS API credentials.', 'ssl-sms-login') . '</p>';
     }
 
     /**
      * Render OTP section
      */
     public function render_otp_section() {
-        echo '<p>' . esc_html__('Configure OTP behavior and security settings.', 'ssl-sms-login-pro') . '</p>';
+        echo '<p>' . esc_html__('Configure OTP behavior and security settings.', 'ssl-sms-login') . '</p>';
     }
 
     /**
      * Render features section
      */
     public function render_features_section() {
-        echo '<p>' . esc_html__('Enable or disable plugin features.', 'ssl-sms-login-pro') . '</p>';
+        echo '<p>' . esc_html__('Enable or disable plugin features.', 'ssl-sms-login') . '</p>';
     }
 
     /**
      * Render templates section
      */
     public function render_templates_section() {
-        echo '<p>' . esc_html__('Customize the SMS messages sent to users.', 'ssl-sms-login-pro') . '</p>';
+        echo '<p>' . esc_html__('Customize the SMS messages sent to users.', 'ssl-sms-login') . '</p>';
     }
 
     /**
@@ -418,12 +418,12 @@ class SSL_SMS_Admin_Settings {
 
             <div class="ssl-sms-admin-header">
                 <div class="ssl-sms-shortcodes-info">
-                    <h3><?php esc_html_e('Available Shortcodes', 'ssl-sms-login-pro'); ?></h3>
+                    <h3><?php esc_html_e('Available Shortcodes', 'ssl-sms-login'); ?></h3>
                     <ul>
-                        <li><code>[ssl_sms_login]</code> - <?php esc_html_e('Complete login/registration form', 'ssl-sms-login-pro'); ?></li>
-                        <li><code>[ssl_sms_login_form]</code> - <?php esc_html_e('Login form only', 'ssl-sms-login-pro'); ?></li>
-                        <li><code>[ssl_sms_register_form]</code> - <?php esc_html_e('Registration form only', 'ssl-sms-login-pro'); ?></li>
-                        <li><code>[ssl_sms_forgot_password]</code> - <?php esc_html_e('Forgot password form', 'ssl-sms-login-pro'); ?></li>
+                        <li><code>[ssl_sms_login]</code> - <?php esc_html_e('Complete login/registration form', 'ssl-sms-login'); ?></li>
+                        <li><code>[ssl_sms_login_form]</code> - <?php esc_html_e('Login form only', 'ssl-sms-login'); ?></li>
+                        <li><code>[ssl_sms_register_form]</code> - <?php esc_html_e('Registration form only', 'ssl-sms-login'); ?></li>
+                        <li><code>[ssl_sms_forgot_password]</code> - <?php esc_html_e('Forgot password form', 'ssl-sms-login'); ?></li>
                     </ul>
                 </div>
             </div>
@@ -432,16 +432,16 @@ class SSL_SMS_Admin_Settings {
                 <?php
                 settings_fields('ssl_sms_login_settings_group');
                 do_settings_sections($this->page_slug);
-                submit_button(__('Save Settings', 'ssl-sms-login-pro'));
+                submit_button(__('Save Settings', 'ssl-sms-login'));
                 ?>
             </form>
 
             <div class="ssl-sms-test-section">
-                <h3><?php esc_html_e('Test SMS', 'ssl-sms-login-pro'); ?></h3>
-                <p><?php esc_html_e('Send a test SMS to verify your API configuration.', 'ssl-sms-login-pro'); ?></p>
-                <input type="text" id="ssl-test-mobile" placeholder="<?php esc_attr_e('Mobile number', 'ssl-sms-login-pro'); ?>" class="regular-text" />
+                <h3><?php esc_html_e('Test SMS', 'ssl-sms-login'); ?></h3>
+                <p><?php esc_html_e('Send a test SMS to verify your API configuration.', 'ssl-sms-login'); ?></p>
+                <input type="text" id="ssl-test-mobile" placeholder="<?php esc_attr_e('Mobile number', 'ssl-sms-login'); ?>" class="regular-text" />
                 <button type="button" id="ssl-send-test-sms" class="button button-secondary">
-                    <?php esc_html_e('Send Test SMS', 'ssl-sms-login-pro'); ?>
+                    <?php esc_html_e('Send Test SMS', 'ssl-sms-login'); ?>
                 </button>
                 <span id="ssl-test-result"></span>
             </div>
@@ -452,14 +452,14 @@ class SSL_SMS_Admin_Settings {
             $('#ssl-send-test-sms').on('click', function() {
                 var mobile = $('#ssl-test-mobile').val();
                 if (!mobile) {
-                    alert('<?php echo esc_js(__('Please enter a mobile number', 'ssl-sms-login-pro')); ?>');
+                    alert('<?php echo esc_js(__('Please enter a mobile number', 'ssl-sms-login')); ?>');
                     return;
                 }
 
                 var $btn = $(this);
                 var $result = $('#ssl-test-result');
 
-                $btn.prop('disabled', true).text('<?php echo esc_js(__('Sending...', 'ssl-sms-login-pro')); ?>');
+                $btn.prop('disabled', true).text('<?php echo esc_js(__('Sending...', 'ssl-sms-login')); ?>');
 
                 $.ajax({
                     url: ajaxurl,
@@ -477,10 +477,10 @@ class SSL_SMS_Admin_Settings {
                         }
                     },
                     error: function() {
-                        $result.html('<span style="color:red;"><?php echo esc_js(__('Connection error', 'ssl-sms-login-pro')); ?></span>');
+                        $result.html('<span style="color:red;"><?php echo esc_js(__('Connection error', 'ssl-sms-login')); ?></span>');
                     },
                     complete: function() {
-                        $btn.prop('disabled', false).text('<?php echo esc_js(__('Send Test SMS', 'ssl-sms-login-pro')); ?>');
+                        $btn.prop('disabled', false).text('<?php echo esc_js(__('Send Test SMS', 'ssl-sms-login')); ?>');
                     }
                 });
             });
@@ -503,7 +503,7 @@ class SSL_SMS_Admin_Settings {
         // Handle delete action
         if (isset($_POST['delete_logs']) && check_admin_referer('ssl_sms_delete_logs')) {
             $wpdb->query("TRUNCATE TABLE $table_name");
-            echo '<div class="notice notice-success"><p>' . esc_html__('Logs cleared successfully.', 'ssl-sms-login-pro') . '</p></div>';
+            echo '<div class="notice notice-success"><p>' . esc_html__('Logs cleared successfully.', 'ssl-sms-login') . '</p></div>';
         }
 
         // Get logs
@@ -521,23 +521,23 @@ class SSL_SMS_Admin_Settings {
         );
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e('SMS Logs', 'ssl-sms-login-pro'); ?></h1>
+            <h1><?php esc_html_e('SMS Logs', 'ssl-sms-login'); ?></h1>
 
             <form method="post" style="margin-bottom: 20px;">
                 <?php wp_nonce_field('ssl_sms_delete_logs'); ?>
                 <input type="submit" name="delete_logs" class="button button-secondary"
-                       value="<?php esc_attr_e('Clear All Logs', 'ssl-sms-login-pro'); ?>"
-                       onclick="return confirm('<?php echo esc_js(__('Are you sure you want to delete all logs?', 'ssl-sms-login-pro')); ?>');" />
+                       value="<?php esc_attr_e('Clear All Logs', 'ssl-sms-login'); ?>"
+                       onclick="return confirm('<?php echo esc_js(__('Are you sure you want to delete all logs?', 'ssl-sms-login')); ?>');" />
             </form>
 
             <table class="wp-list-table widefat fixed striped">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('ID', 'ssl-sms-login-pro'); ?></th>
-                        <th><?php esc_html_e('Mobile Number', 'ssl-sms-login-pro'); ?></th>
-                        <th><?php esc_html_e('Type', 'ssl-sms-login-pro'); ?></th>
-                        <th><?php esc_html_e('Status', 'ssl-sms-login-pro'); ?></th>
-                        <th><?php esc_html_e('Date', 'ssl-sms-login-pro'); ?></th>
+                        <th><?php esc_html_e('ID', 'ssl-sms-login'); ?></th>
+                        <th><?php esc_html_e('Mobile Number', 'ssl-sms-login'); ?></th>
+                        <th><?php esc_html_e('Type', 'ssl-sms-login'); ?></th>
+                        <th><?php esc_html_e('Status', 'ssl-sms-login'); ?></th>
+                        <th><?php esc_html_e('Date', 'ssl-sms-login'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -557,7 +557,7 @@ class SSL_SMS_Admin_Settings {
                         <?php endforeach; ?>
                     <?php else : ?>
                         <tr>
-                            <td colspan="5"><?php esc_html_e('No logs found.', 'ssl-sms-login-pro'); ?></td>
+                            <td colspan="5"><?php esc_html_e('No logs found.', 'ssl-sms-login'); ?></td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

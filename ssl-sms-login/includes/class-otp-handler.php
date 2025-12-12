@@ -160,7 +160,7 @@ class SSL_SMS_OTP_Handler {
         if (!$normalized_mobile) {
             return array(
                 'success' => false,
-                'message' => __('Invalid mobile number format.', 'ssl-sms-login-pro'),
+                'message' => __('Invalid mobile number format.', 'ssl-sms-login'),
                 'error_code' => 'invalid_mobile'
             );
         }
@@ -171,7 +171,7 @@ class SSL_SMS_OTP_Handler {
             return array(
                 'success' => false,
                 'message' => sprintf(
-                    __('Too many attempts. Please try again after %d hours.', 'ssl-sms-login-pro'),
+                    __('Too many attempts. Please try again after %d hours.', 'ssl-sms-login'),
                     $block_duration
                 ),
                 'error_code' => 'blocked'
@@ -183,7 +183,7 @@ class SSL_SMS_OTP_Handler {
         if ($remaining <= 0) {
             return array(
                 'success' => false,
-                'message' => __('Maximum OTP attempts exceeded.', 'ssl-sms-login-pro'),
+                'message' => __('Maximum OTP attempts exceeded.', 'ssl-sms-login'),
                 'error_code' => 'max_attempts'
             );
         }
@@ -197,7 +197,7 @@ class SSL_SMS_OTP_Handler {
                 return array(
                     'success' => false,
                     'message' => sprintf(
-                        __('Please wait %d seconds before requesting a new OTP.', 'ssl-sms-login-pro'),
+                        __('Please wait %d seconds before requesting a new OTP.', 'ssl-sms-login'),
                         $wait_time
                     ),
                     'error_code' => 'cooldown',
@@ -219,7 +219,7 @@ class SSL_SMS_OTP_Handler {
 
             return array(
                 'success' => true,
-                'message' => __('OTP sent successfully.', 'ssl-sms-login-pro'),
+                'message' => __('OTP sent successfully.', 'ssl-sms-login'),
                 'remaining_attempts' => $this->get_remaining_attempts($normalized_mobile),
                 'expiry' => SSL_SMS_Login_Pro::get_option('otp_expiry', 5)
             );
@@ -237,7 +237,7 @@ class SSL_SMS_OTP_Handler {
         if (!$normalized_mobile) {
             return array(
                 'success' => false,
-                'message' => __('Invalid mobile number.', 'ssl-sms-login-pro'),
+                'message' => __('Invalid mobile number.', 'ssl-sms-login'),
                 'error_code' => 'invalid_mobile'
             );
         }
@@ -248,7 +248,7 @@ class SSL_SMS_OTP_Handler {
         if (!$otp_data) {
             return array(
                 'success' => false,
-                'message' => __('OTP expired or not found. Please request a new one.', 'ssl-sms-login-pro'),
+                'message' => __('OTP expired or not found. Please request a new one.', 'ssl-sms-login'),
                 'error_code' => 'otp_expired'
             );
         }
@@ -257,7 +257,7 @@ class SSL_SMS_OTP_Handler {
         if ($otp_data['purpose'] !== $purpose) {
             return array(
                 'success' => false,
-                'message' => __('Invalid OTP for this operation.', 'ssl-sms-login-pro'),
+                'message' => __('Invalid OTP for this operation.', 'ssl-sms-login'),
                 'error_code' => 'wrong_purpose'
             );
         }
@@ -266,7 +266,7 @@ class SSL_SMS_OTP_Handler {
         if (intval($otp_data['otp']) !== intval($otp)) {
             return array(
                 'success' => false,
-                'message' => __('Invalid OTP. Please try again.', 'ssl-sms-login-pro'),
+                'message' => __('Invalid OTP. Please try again.', 'ssl-sms-login'),
                 'error_code' => 'invalid_otp'
             );
         }
@@ -279,7 +279,7 @@ class SSL_SMS_OTP_Handler {
 
         return array(
             'success' => true,
-            'message' => __('OTP verified successfully.', 'ssl-sms-login-pro'),
+            'message' => __('OTP verified successfully.', 'ssl-sms-login'),
             'mobile' => $normalized_mobile
         );
     }

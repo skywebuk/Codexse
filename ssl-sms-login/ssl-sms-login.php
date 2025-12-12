@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: SSL SMS Login Pro
- * Plugin URI: https://codexse.com/plugins/ssl-sms-login-pro
- * Description: Professional SMS-based login and registration system for WordPress using SSL Wireless SMS Gateway. Features OTP verification, mobile number login, forgot password via SMS, and more.
+ * Plugin Name: SSL SMS Login
+ * Plugin URI: https://wordpress.org/plugins/ssl-sms-login
+ * Description: Modern SMS-based login and registration system for WordPress using SSL Wireless SMS Gateway. Features OTP verification, mobile number login, forgot password via SMS, Elementor widget, and 5 beautiful form styles.
  * Version: 1.0.0
- * Author: Codexse
- * Author URI: https://codexse.com
+ * Author: Jeeon
+ * Author URI: https://jeeon.dev
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: ssl-sms-login-pro
+ * Text Domain: ssl-sms-login
  * Domain Path: /languages
  * Requires at least: 5.8
  * Requires PHP: 7.4
@@ -20,15 +20,15 @@ if (!defined('ABSPATH')) {
 }
 
 // Plugin constants
-define('SSL_SMS_LOGIN_VERSION', '1.0.0');
-define('SSL_SMS_LOGIN_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('SSL_SMS_LOGIN_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('SSL_SMS_LOGIN_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('SSL_SMS_VERSION', '1.0.0');
+define('SSL_SMS_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('SSL_SMS_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('SSL_SMS_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
 /**
  * Main Plugin Class
  */
-final class SSL_SMS_Login_Pro {
+final class SSL_SMS_Login {
 
     /**
      * Singleton instance
@@ -65,10 +65,10 @@ final class SSL_SMS_Login_Pro {
      * Load required files
      */
     private function load_dependencies() {
-        require_once SSL_SMS_LOGIN_PLUGIN_DIR . 'includes/class-admin-settings.php';
-        require_once SSL_SMS_LOGIN_PLUGIN_DIR . 'includes/class-sms-gateway.php';
-        require_once SSL_SMS_LOGIN_PLUGIN_DIR . 'includes/class-otp-handler.php';
-        require_once SSL_SMS_LOGIN_PLUGIN_DIR . 'includes/class-login-forms.php';
+        require_once SSL_SMS_PLUGIN_DIR . 'includes/class-admin-settings.php';
+        require_once SSL_SMS_PLUGIN_DIR . 'includes/class-sms-gateway.php';
+        require_once SSL_SMS_PLUGIN_DIR . 'includes/class-otp-handler.php';
+        require_once SSL_SMS_PLUGIN_DIR . 'includes/class-login-forms.php';
     }
 
     /**
@@ -85,6 +85,13 @@ final class SSL_SMS_Login_Pro {
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_assets'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
 
+        // Load Elementor widget
+        add_action('elementor/widgets/register', array($this, 'register_elementor_widgets'));
+        add_action('elementor/elements/categories_registered', array($this, 'add_elementor_category'));
+
+        // Add dynamic CSS
+        add_action('wp_head', array($this, 'output_dynamic_css'));
+
         // Activation and deactivation hooks
         register_activation_hook(__FILE__, array($this, 'activate'));
         register_deactivation_hook(__FILE__, array($this, 'deactivate'));
@@ -95,9 +102,9 @@ final class SSL_SMS_Login_Pro {
      */
     public function load_textdomain() {
         load_plugin_textdomain(
-            'ssl-sms-login-pro',
+            'ssl-sms-login',
             false,
-            dirname(SSL_SMS_LOGIN_PLUGIN_BASENAME) . '/languages'
+            dirname(SSL_SMS_PLUGIN_BASENAME) . '/languages'
         );
     }
 
@@ -117,16 +124,16 @@ final class SSL_SMS_Login_Pro {
     public function enqueue_frontend_assets() {
         wp_enqueue_style(
             'ssl-sms-login-style',
-            SSL_SMS_LOGIN_PLUGIN_URL . 'assets/css/style.css',
+            SSL_SMS_PLUGIN_URL . 'assets/css/style.css',
             array(),
-            SSL_SMS_LOGIN_VERSION
+            SSL_SMS_VERSION
         );
 
         wp_enqueue_script(
             'ssl-sms-login-script',
-            SSL_SMS_LOGIN_PLUGIN_URL . 'assets/js/script.js',
+            SSL_SMS_PLUGIN_URL . 'assets/js/script.js',
             array('jquery'),
-            SSL_SMS_LOGIN_VERSION,
+            SSL_SMS_VERSION,
             true
         );
 
@@ -134,13 +141,13 @@ final class SSL_SMS_Login_Pro {
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('ssl_sms_login_nonce'),
             'i18n' => array(
-                'sending' => __('Sending...', 'ssl-sms-login-pro'),
-                'verifying' => __('Verifying...', 'ssl-sms-login-pro'),
-                'resendIn' => __('Resend in', 'ssl-sms-login-pro'),
-                'seconds' => __('seconds', 'ssl-sms-login-pro'),
-                'resendOtp' => __('Resend OTP', 'ssl-sms-login-pro'),
-                'otpSent' => __('OTP sent successfully!', 'ssl-sms-login-pro'),
-                'error' => __('An error occurred. Please try again.', 'ssl-sms-login-pro'),
+                'sending' => __('Sending...', 'ssl-sms-login'),
+                'verifying' => __('Verifying...', 'ssl-sms-login'),
+                'resendIn' => __('Resend in', 'ssl-sms-login'),
+                'seconds' => __('seconds', 'ssl-sms-login'),
+                'resendOtp' => __('Resend OTP', 'ssl-sms-login'),
+                'otpSent' => __('OTP sent successfully!', 'ssl-sms-login'),
+                'error' => __('An error occurred. Please try again.', 'ssl-sms-login'),
             ),
         ));
     }
@@ -149,16 +156,87 @@ final class SSL_SMS_Login_Pro {
      * Enqueue admin assets
      */
     public function enqueue_admin_assets($hook) {
-        if (strpos($hook, 'ssl-sms-login') === false) {
+        if (strpos($hook, 'ssl-sms') === false) {
             return;
         }
 
+        wp_enqueue_style('wp-color-picker');
+        wp_enqueue_script('wp-color-picker');
+
         wp_enqueue_style(
             'ssl-sms-login-admin-style',
-            SSL_SMS_LOGIN_PLUGIN_URL . 'assets/css/admin-style.css',
+            SSL_SMS_PLUGIN_URL . 'assets/css/admin-style.css',
             array(),
-            SSL_SMS_LOGIN_VERSION
+            SSL_SMS_VERSION
         );
+
+        wp_enqueue_script(
+            'ssl-sms-login-admin-script',
+            SSL_SMS_PLUGIN_URL . 'assets/js/admin-script.js',
+            array('jquery', 'wp-color-picker'),
+            SSL_SMS_VERSION,
+            true
+        );
+    }
+
+    /**
+     * Add Elementor category
+     */
+    public function add_elementor_category($elements_manager) {
+        $elements_manager->add_category(
+            'ssl-sms',
+            array(
+                'title' => __('SSL SMS Login', 'ssl-sms-login'),
+                'icon' => 'fa fa-mobile',
+            )
+        );
+    }
+
+    /**
+     * Register Elementor widgets
+     */
+    public function register_elementor_widgets($widgets_manager) {
+        require_once SSL_SMS_PLUGIN_DIR . 'includes/class-elementor-widget.php';
+        $widgets_manager->register(new SSL_SMS_Elementor_Widget());
+    }
+
+    /**
+     * Output dynamic CSS for custom colors
+     */
+    public function output_dynamic_css() {
+        $primary_color = self::get_option('primary_color', '#2563eb');
+        $secondary_color = self::get_option('secondary_color', '#10b981');
+        $text_color = self::get_option('text_color', '#1f2937');
+        $border_radius = self::get_option('border_radius', '8');
+
+        ?>
+        <style id="ssl-sms-dynamic-css">
+        :root {
+            --ssl-primary: <?php echo esc_attr($primary_color); ?>;
+            --ssl-primary-hover: <?php echo esc_attr($this->adjust_brightness($primary_color, -20)); ?>;
+            --ssl-secondary: <?php echo esc_attr($secondary_color); ?>;
+            --ssl-text: <?php echo esc_attr($text_color); ?>;
+            --ssl-radius: <?php echo esc_attr($border_radius); ?>px;
+        }
+        </style>
+        <?php
+    }
+
+    /**
+     * Adjust color brightness
+     */
+    private function adjust_brightness($hex, $percent) {
+        $hex = ltrim($hex, '#');
+
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
+
+        $r = max(0, min(255, $r + ($r * $percent / 100)));
+        $g = max(0, min(255, $g + ($g * $percent / 100)));
+        $b = max(0, min(255, $b + ($b * $percent / 100)));
+
+        return sprintf('#%02x%02x%02x', $r, $g, $b);
     }
 
     /**
@@ -176,8 +254,14 @@ final class SSL_SMS_Login_Pro {
             'enable_login' => 'yes',
             'enable_forgot_password' => 'yes',
             'redirect_after_login' => '',
-            'otp_message_template' => __('Your OTP is: {otp}. Valid for {expiry} minutes.', 'ssl-sms-login-pro'),
-            'welcome_message_template' => __('Welcome! Your username: {username}, Password: {password}', 'ssl-sms-login-pro'),
+            'form_style' => 'modern',
+            'primary_color' => '#2563eb',
+            'secondary_color' => '#10b981',
+            'text_color' => '#1f2937',
+            'border_radius' => '8',
+            'otp_message_template' => __('Your OTP is: {otp}. Valid for {expiry} minutes.', 'ssl-sms-login'),
+            'welcome_message_template' => __('Welcome to {site_name}! Username: {username}, Password: {password}', 'ssl-sms-login'),
+            'password_reset_template' => __('Your new password for {site_name}: {password}', 'ssl-sms-login'),
         );
 
         if (!get_option('ssl_sms_login_settings')) {
@@ -244,9 +328,9 @@ final class SSL_SMS_Login_Pro {
 /**
  * Initialize plugin
  */
-function ssl_sms_login_pro() {
-    return SSL_SMS_Login_Pro::get_instance();
+function ssl_sms_login() {
+    return SSL_SMS_Login::get_instance();
 }
 
 // Start the plugin
-ssl_sms_login_pro();
+ssl_sms_login();

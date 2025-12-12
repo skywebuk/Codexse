@@ -1,6 +1,6 @@
-=== SSL SMS Login Pro ===
-Contributors: codexse
-Tags: sms login, otp, mobile login, ssl wireless, bangladesh sms
+=== SSL SMS Login ===
+Contributors: jeeon
+Tags: sms login, otp, mobile login, ssl wireless, bangladesh sms, elementor
 Requires at least: 5.8
 Tested up to: 6.4
 Stable tag: 1.0.0
@@ -8,11 +8,11 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Professional SMS-based login and registration system for WordPress using SSL Wireless SMS Gateway.
+Modern SMS-based login and registration system for WordPress using SSL Wireless SMS Gateway with Elementor support.
 
 == Description ==
 
-SSL SMS Login Pro allows your users to register and login using their mobile number with OTP verification through SSL Wireless SMS Gateway (Bangladesh).
+SSL SMS Login allows your users to register and login using their mobile number with OTP verification through SSL Wireless SMS Gateway (Bangladesh).
 
 = Features =
 
@@ -20,10 +20,12 @@ SSL SMS Login Pro allows your users to register and login using their mobile num
 * **Password Login** - Login with mobile number and password
 * **Mobile Registration** - Register with mobile number verification
 * **Forgot Password** - Reset password via SMS
+* **Elementor Widget** - Drag and drop login form widget
+* **5 Form Styles** - Modern, Minimal, Rounded, Bordered, Gradient
+* **Color Settings** - Customize colors from admin panel
 * **Rate Limiting** - Prevent abuse with configurable attempt limits
 * **SMS Logging** - Track all SMS sent through the system
 * **Customizable Messages** - Configure OTP and welcome message templates
-* **Shortcodes** - Easy integration with any page
 
 = Shortcodes =
 
@@ -32,6 +34,14 @@ SSL SMS Login Pro allows your users to register and login using their mobile num
 * `[ssl_sms_register_form]` - Registration form only
 * `[ssl_sms_forgot_password]` - Forgot password form
 
+= Elementor Widget =
+
+The plugin includes an Elementor widget with full customization options:
+* Choose form type (Login, Register, Combined, Forgot Password)
+* Select from 5 beautiful form styles
+* Customize colors, padding, border radius
+* Set custom redirect URL
+
 = Requirements =
 
 * SSL Wireless SMS API account
@@ -39,10 +49,10 @@ SSL SMS Login Pro allows your users to register and login using their mobile num
 
 == Installation ==
 
-1. Upload the plugin files to `/wp-content/plugins/ssl-sms-login-pro/`
+1. Upload the plugin files to `/wp-content/plugins/ssl-sms-login/`
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Go to **SMS Login > Settings** to configure API credentials
-4. Add the shortcode `[ssl_sms_login]` to any page
+4. Add the shortcode `[ssl_sms_login]` to any page or use Elementor widget
 
 == Frequently Asked Questions ==
 
@@ -50,16 +60,13 @@ SSL SMS Login Pro allows your users to register and login using their mobile num
 
 Contact SSL Wireless at https://sslwireless.com to get your API token and sender ID.
 
+= Can I customize the form colors? =
+
+Yes, go to Settings > Appearance to customize primary color, secondary color, text color, and border radius.
+
 = Can I customize the SMS messages? =
 
 Yes, go to Settings > Message Templates to customize OTP, welcome, and password reset messages.
-
-= How do I prevent abuse? =
-
-The plugin includes rate limiting. You can configure:
-* Max OTP attempts (default: 3)
-* Block duration (default: 24 hours)
-* OTP expiry time (default: 5 minutes)
 
 == Changelog ==
 
@@ -68,11 +75,13 @@ The plugin includes rate limiting. You can configure:
 * OTP login and registration
 * Password login with mobile
 * Forgot password via SMS
-* Admin settings panel
+* Elementor widget support
+* 5 form styles
+* Admin color settings
 * SMS logging
 * Rate limiting
 
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of SSL SMS Login Pro.
+Initial release of SSL SMS Login.
