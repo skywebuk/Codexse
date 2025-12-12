@@ -348,6 +348,195 @@ input.ssl-sms-input[type="password"] {
     letter-spacing: 2px;
 }
 
+/* Custom Radio Buttons */
+.ssl-sms-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid var(--ssl-admin-gray-200);
+    background: var(--ssl-admin-gray-50);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ssl-sms-radio:hover {
+    border-color: var(--ssl-admin-gray-300);
+    background: #fff;
+}
+
+.ssl-sms-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ssl-sms-radio-mark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--ssl-admin-gray-300);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.ssl-sms-radio-mark::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ssl-admin-primary);
+    transform: scale(0);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ssl-sms-radio input[type="radio"]:checked + .ssl-sms-radio-mark {
+    border-color: var(--ssl-admin-primary);
+}
+
+.ssl-sms-radio input[type="radio"]:checked + .ssl-sms-radio-mark::after {
+    transform: scale(1);
+}
+
+.ssl-sms-radio input[type="radio"]:focus + .ssl-sms-radio-mark {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.ssl-sms-radio:has(input[type="radio"]:checked) {
+    border-color: var(--ssl-admin-primary);
+    background: rgba(37, 99, 235, 0.04);
+}
+
+.ssl-sms-radio-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ssl-admin-gray-700);
+}
+
+.ssl-sms-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ssl-sms-radio-group.ssl-sms-radio-vertical {
+    flex-direction: column;
+}
+
+/* Custom Checkboxes */
+.ssl-sms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid var(--ssl-admin-gray-200);
+    background: var(--ssl-admin-gray-50);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ssl-sms-checkbox:hover {
+    border-color: var(--ssl-admin-gray-300);
+    background: #fff;
+}
+
+.ssl-sms-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ssl-sms-checkbox-mark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--ssl-admin-gray-300);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.ssl-sms-checkbox-mark::after {
+    content: '';
+    width: 6px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 2px;
+}
+
+.ssl-sms-checkbox input[type="checkbox"]:checked + .ssl-sms-checkbox-mark {
+    background: linear-gradient(135deg, var(--ssl-admin-primary) 0%, #1d4ed8 100%);
+    border-color: var(--ssl-admin-primary);
+}
+
+.ssl-sms-checkbox input[type="checkbox"]:checked + .ssl-sms-checkbox-mark::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.ssl-sms-checkbox input[type="checkbox"]:focus + .ssl-sms-checkbox-mark {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.ssl-sms-checkbox:has(input[type="checkbox"]:checked) {
+    border-color: var(--ssl-admin-primary);
+    background: rgba(37, 99, 235, 0.04);
+}
+
+.ssl-sms-checkbox-content {
+    flex: 1;
+}
+
+.ssl-sms-checkbox-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ssl-admin-gray-700);
+    display: block;
+}
+
+.ssl-sms-checkbox-desc {
+    font-size: 13px;
+    color: var(--ssl-admin-gray-500);
+    margin-top: 2px;
+    display: block;
+}
+
+.ssl-sms-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Simple inline checkbox/radio without box */
+.ssl-sms-checkbox-simple,
+.ssl-sms-radio-simple {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.ssl-sms-checkbox-simple:hover .ssl-sms-checkbox-mark,
+.ssl-sms-radio-simple:hover .ssl-sms-radio-mark {
+    border-color: var(--ssl-admin-primary);
+}
+
 /* Field Grid */
 .ssl-sms-field-grid {
     display: grid;
