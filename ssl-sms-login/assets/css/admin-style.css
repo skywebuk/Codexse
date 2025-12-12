@@ -4,98 +4,811 @@
  * @package SSL_SMS_Login
  */
 
-/* Admin Header */
-.ssl-sms-admin-header {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #ccd0d4;
-    border-radius: 4px;
-}
-
-.ssl-sms-shortcodes-info h3 {
-    margin-top: 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-.ssl-sms-shortcodes-info ul {
+/* Reset & Variables */
+.ssl-sms-wrap {
+    --ssl-admin-primary: #2563eb;
+    --ssl-admin-primary-hover: #1d4ed8;
+    --ssl-admin-success: #10b981;
+    --ssl-admin-error: #ef4444;
+    --ssl-admin-warning: #f59e0b;
+    --ssl-admin-info: #3b82f6;
+    --ssl-admin-gray-50: #f9fafb;
+    --ssl-admin-gray-100: #f3f4f6;
+    --ssl-admin-gray-200: #e5e7eb;
+    --ssl-admin-gray-300: #d1d5db;
+    --ssl-admin-gray-400: #9ca3af;
+    --ssl-admin-gray-500: #6b7280;
+    --ssl-admin-gray-600: #4b5563;
+    --ssl-admin-gray-700: #374151;
+    --ssl-admin-gray-800: #1f2937;
+    --ssl-admin-gray-900: #111827;
+    --ssl-admin-radius: 8px;
+    --ssl-admin-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --ssl-admin-shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
-.ssl-sms-shortcodes-info li {
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
+.ssl-sms-wrap * {
+    box-sizing: border-box;
 }
 
-.ssl-sms-shortcodes-info li:last-child {
+/* Header */
+.ssl-sms-header {
+    background: linear-gradient(135deg, var(--ssl-admin-primary) 0%, #1e40af 100%);
+    margin: -10px -20px 0;
+    padding: 25px 30px;
+    color: #fff;
+}
+
+.ssl-sms-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.ssl-sms-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ssl-sms-logo .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.ssl-sms-logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.ssl-sms-version {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Navigation Tabs */
+.ssl-sms-nav {
+    display: flex;
+    gap: 4px;
+    background: #fff;
+    margin: 0 -20px;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--ssl-admin-gray-200);
+    box-shadow: var(--ssl-admin-shadow);
+}
+
+.ssl-sms-nav-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    color: var(--ssl-admin-gray-600);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s ease;
+}
+
+.ssl-sms-nav-tab:hover {
+    color: var(--ssl-admin-primary);
+    background: var(--ssl-admin-gray-50);
+}
+
+.ssl-sms-nav-tab.active {
+    color: var(--ssl-admin-primary);
+    border-bottom-color: var(--ssl-admin-primary);
+    background: var(--ssl-admin-gray-50);
+}
+
+.ssl-sms-nav-tab .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Content Area */
+.ssl-sms-content {
+    padding: 30px 0;
+    max-width: 900px;
+}
+
+/* Cards */
+.ssl-sms-card {
+    background: #fff;
+    border-radius: var(--ssl-admin-radius);
+    box-shadow: var(--ssl-admin-shadow);
+    margin-bottom: 24px;
+    border: 1px solid var(--ssl-admin-gray-200);
+    overflow: hidden;
+}
+
+.ssl-sms-card-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--ssl-admin-gray-100);
+    background: var(--ssl-admin-gray-50);
+}
+
+.ssl-sms-card-header h2 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ssl-admin-gray-800);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ssl-sms-card-header h2 .dashicons {
+    color: var(--ssl-admin-primary);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.ssl-sms-card-header p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ssl-admin-gray-500);
+}
+
+.ssl-sms-card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ssl-sms-card-body {
+    padding: 24px;
+}
+
+.ssl-sms-card-body-table {
+    padding: 0;
+}
+
+.ssl-sms-card-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--ssl-admin-gray-100);
+    background: var(--ssl-admin-gray-50);
+}
+
+/* Form Fields */
+.ssl-sms-field {
+    margin-bottom: 24px;
+}
+
+.ssl-sms-field:last-child {
+    margin-bottom: 0;
+}
+
+.ssl-sms-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ssl-admin-gray-700);
+}
+
+.ssl-sms-input,
+.ssl-sms-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid var(--ssl-admin-gray-300);
+    border-radius: 6px;
+    background: #fff;
+    transition: all 0.2s ease;
+    color: var(--ssl-admin-gray-800);
+}
+
+.ssl-sms-input:focus,
+.ssl-sms-textarea:focus {
+    outline: none;
+    border-color: var(--ssl-admin-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ssl-sms-input::placeholder,
+.ssl-sms-textarea::placeholder {
+    color: var(--ssl-admin-gray-400);
+}
+
+.ssl-sms-input-sm {
+    max-width: 150px;
+}
+
+.ssl-sms-textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.ssl-sms-help {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--ssl-admin-gray-500);
+}
+
+.ssl-sms-help code {
+    background: var(--ssl-admin-gray-100);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+/* Field Grid */
+.ssl-sms-field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+/* Inline Field */
+.ssl-sms-inline-field {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.ssl-sms-inline-field .ssl-sms-input {
+    flex: 1;
+}
+
+/* Buttons */
+.ssl-sms-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.ssl-sms-button .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.ssl-sms-button-primary {
+    background: var(--ssl-admin-primary);
+    color: #fff;
+}
+
+.ssl-sms-button-primary:hover {
+    background: var(--ssl-admin-primary-hover);
+    color: #fff;
+}
+
+.ssl-sms-button-secondary {
+    background: var(--ssl-admin-gray-100);
+    color: var(--ssl-admin-gray-700);
+    border: 1px solid var(--ssl-admin-gray-300);
+}
+
+.ssl-sms-button-secondary:hover {
+    background: var(--ssl-admin-gray-200);
+    color: var(--ssl-admin-gray-800);
+}
+
+.ssl-sms-button-danger {
+    background: var(--ssl-admin-error);
+    color: #fff;
+}
+
+.ssl-sms-button-danger:hover {
+    background: #dc2626;
+    color: #fff;
+}
+
+.ssl-sms-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Submit Button Area */
+.ssl-sms-submit {
+    margin-top: 24px;
+}
+
+.ssl-sms-submit .button-primary {
+    padding: 10px 24px;
+    font-size: 14px;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Toggle Switches */
+.ssl-sms-toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ssl-sms-toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--ssl-admin-gray-100);
+}
+
+.ssl-sms-toggle-item:last-child {
     border-bottom: none;
 }
 
-.ssl-sms-shortcodes-info code {
-    background: #f0f0f1;
-    padding: 4px 8px;
-    border-radius: 3px;
-    font-family: monospace;
+.ssl-sms-toggle-info h4 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ssl-admin-gray-800);
 }
 
-/* Test SMS Section */
-.ssl-sms-test-section {
+.ssl-sms-toggle-info p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ssl-admin-gray-500);
+}
+
+/* Modern Toggle Switch */
+.ssl-sms-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.ssl-sms-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ssl-sms-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--ssl-admin-gray-300);
+    transition: 0.3s;
+    border-radius: 26px;
+}
+
+.ssl-sms-slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
     background: #fff;
-    padding: 20px;
-    margin-top: 30px;
-    border: 1px solid #ccd0d4;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ssl-sms-switch input:checked + .ssl-sms-slider {
+    background: var(--ssl-admin-primary);
+}
+
+.ssl-sms-switch input:checked + .ssl-sms-slider::before {
+    transform: translateX(22px);
+}
+
+/* Color Grid */
+.ssl-sms-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.ssl-sms-color-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.ssl-sms-color-field label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ssl-admin-gray-700);
+}
+
+.ssl-sms-color-picker-wrap {
+    margin-bottom: 6px;
+}
+
+/* Style Grid */
+.ssl-sms-style-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.ssl-sms-style-option {
+    cursor: pointer;
+    text-align: center;
+}
+
+.ssl-sms-style-option input {
+    display: none;
+}
+
+.ssl-sms-style-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    background: var(--ssl-admin-gray-50);
+    border: 2px solid var(--ssl-admin-gray-200);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.ssl-sms-style-option:hover .ssl-sms-style-preview {
+    border-color: var(--ssl-admin-gray-300);
+}
+
+.ssl-sms-style-option.active .ssl-sms-style-preview {
+    border-color: var(--ssl-admin-primary);
+    background: #eff6ff;
+}
+
+.ssl-sms-preview-input {
+    height: 24px;
+    background: #fff;
+    border: 1px solid var(--ssl-admin-gray-300);
     border-radius: 4px;
 }
 
-.ssl-sms-test-section h3 {
-    margin-top: 0;
+.ssl-sms-preview-button {
+    height: 24px;
+    background: var(--ssl-admin-primary);
+    border-radius: 4px;
 }
 
-.ssl-sms-test-section input {
-    margin-right: 10px;
+/* Style Previews */
+.ssl-sms-style-minimal .ssl-sms-preview-input,
+.ssl-sms-style-minimal .ssl-sms-preview-button {
+    border-radius: 0;
 }
 
-#ssl-test-result {
-    margin-left: 10px;
+.ssl-sms-style-rounded .ssl-sms-preview-input,
+.ssl-sms-style-rounded .ssl-sms-preview-button {
+    border-radius: 20px;
 }
 
-/* Logs Table */
-.ssl-status-success {
-    color: #00a32a;
+.ssl-sms-style-bordered .ssl-sms-preview-input {
+    border-width: 2px;
+}
+
+.ssl-sms-style-bordered .ssl-sms-preview-button {
+    background: transparent;
+    border: 2px solid var(--ssl-admin-primary);
+}
+
+.ssl-sms-style-gradient .ssl-sms-preview-button {
+    background: linear-gradient(135deg, var(--ssl-admin-primary) 0%, #7c3aed 100%);
+}
+
+.ssl-sms-style-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
     font-weight: 500;
+    color: var(--ssl-admin-gray-600);
 }
 
-.ssl-status-failed {
-    color: #d63638;
+.ssl-sms-style-option.active .ssl-sms-style-label {
+    color: var(--ssl-admin-primary);
+}
+
+/* Range Slider */
+.ssl-sms-range-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ssl-sms-range {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    background: var(--ssl-admin-gray-200);
+    border-radius: 3px;
+    outline: none;
+}
+
+.ssl-sms-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--ssl-admin-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ssl-sms-range::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--ssl-admin-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ssl-sms-range-value {
+    min-width: 50px;
+    padding: 6px 12px;
+    background: var(--ssl-admin-gray-100);
+    border-radius: 6px;
+    font-size: 13px;
     font-weight: 500;
+    color: var(--ssl-admin-gray-700);
+    text-align: center;
 }
 
-/* Form Sections */
-.form-table th {
-    padding: 20px 10px 20px 0;
+/* Shortcodes */
+.ssl-sms-shortcodes {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.form-table td {
-    padding: 15px 10px;
+.ssl-sms-shortcode-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--ssl-admin-gray-100);
 }
 
-.form-table td p.description {
-    margin-top: 8px;
-    color: #646970;
+.ssl-sms-shortcode-item:last-child {
+    border-bottom: none;
 }
 
-/* Settings Sections */
-h2.title {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #ccd0d4;
+.ssl-sms-shortcode-item code {
+    background: var(--ssl-admin-gray-800);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    min-width: 220px;
 }
 
-h2.title:first-of-type {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
+.ssl-sms-shortcode-item span {
+    color: var(--ssl-admin-gray-600);
+    font-size: 13px;
+}
+
+/* Notice */
+.ssl-sms-notice {
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.ssl-sms-notice.ssl-sms-success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.ssl-sms-notice.ssl-sms-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Table */
+.ssl-sms-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ssl-sms-table thead {
+    background: var(--ssl-admin-gray-50);
+}
+
+.ssl-sms-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ssl-admin-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--ssl-admin-gray-200);
+}
+
+.ssl-sms-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    color: var(--ssl-admin-gray-700);
+    border-bottom: 1px solid var(--ssl-admin-gray-100);
+}
+
+.ssl-sms-table tbody tr:hover {
+    background: var(--ssl-admin-gray-50);
+}
+
+.ssl-sms-table td code {
+    background: var(--ssl-admin-gray-100);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.ssl-sms-empty {
+    text-align: center;
+    color: var(--ssl-admin-gray-500);
+    padding: 40px 20px !important;
+}
+
+/* Badges */
+.ssl-sms-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.ssl-sms-badge-success {
+    background: #ecfdf5;
+    color: #065f46;
+}
+
+.ssl-sms-badge-error {
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+.ssl-sms-badge-info {
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.ssl-sms-badge-warning {
+    background: #fffbeb;
+    color: #92400e;
+}
+
+/* Pagination */
+.ssl-sms-pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.ssl-sms-pagination a,
+.ssl-sms-pagination span {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ssl-sms-pagination a {
+    background: #fff;
+    color: var(--ssl-admin-gray-700);
+    border: 1px solid var(--ssl-admin-gray-300);
+}
+
+.ssl-sms-pagination a:hover {
+    background: var(--ssl-admin-gray-100);
+    color: var(--ssl-admin-gray-800);
+}
+
+.ssl-sms-pagination .current {
+    background: var(--ssl-admin-primary);
+    color: #fff;
+    border: 1px solid var(--ssl-admin-primary);
+}
+
+/* Spinner */
+.spin {
+    animation: ssl-spin 1s linear infinite;
+}
+
+@keyframes ssl-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .ssl-sms-header {
+        margin: -10px -10px 0;
+        padding: 20px;
+    }
+
+    .ssl-sms-header-content {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .ssl-sms-nav {
+        margin: 0 -10px;
+        padding: 0 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ssl-sms-nav-tab {
+        padding: 12px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .ssl-sms-nav-tab .dashicons {
+        display: none;
+    }
+
+    .ssl-sms-content {
+        padding: 20px 0;
+    }
+
+    .ssl-sms-card-header,
+    .ssl-sms-card-body {
+        padding: 16px;
+    }
+
+    .ssl-sms-style-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ssl-sms-inline-field {
+        flex-direction: column;
+    }
+
+    .ssl-sms-shortcode-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ssl-sms-shortcode-item code {
+        min-width: auto;
+    }
+
+    .ssl-sms-card-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .ssl-sms-color-grid {
+        grid-template-columns: 1fr;
+    }
 }
