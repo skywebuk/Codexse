@@ -2,8 +2,8 @@
 Contributors: jeeon
 Tags: sms login, otp, mobile login, ssl wireless, bangladesh sms, elementor
 Requires at least: 5.8
-Tested up to: 6.4
-Stable tag: 1.0.0
+Tested up to: 6.9
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -69,6 +69,12 @@ Yes, go to Settings > Appearance to customize primary color, secondary color, te
 Yes, go to Settings > Message Templates to customize OTP, welcome, and password reset messages.
 
 == Changelog ==
+
+= 1.0.1 =
+* Removed deprecated load_plugin_textdomain() call
+* Updated tested up to WordPress 6.9
+* Modern custom radio button styles for login form
+* Improved admin UI with custom form controls
 
 = 1.0.0 =
 * Initial release
