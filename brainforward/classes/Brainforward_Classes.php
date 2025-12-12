@@ -99,7 +99,6 @@ if (class_exists('WP_Customize_Control')) {
             <?php
         }
     }
-    
+
 }
 
-?>

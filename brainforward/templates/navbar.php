@@ -104,7 +104,7 @@ if ($search !== 'hide') {
             echo '</div>';
             echo '<div class="navbar__search-body">';
                 echo '<form role="search" method="get" class="navbar__search-form" action="' . esc_url(home_url('/')) . '">';
-                    echo '<input type="search" class="navbar__search-input" placeholder="' . esc_attr__('Search here...', 'brainforward') . '" value="' . get_search_query() . '" name="s" />';
+                    echo '<input type="search" class="navbar__search-input" placeholder="' . esc_attr__('Search here...', 'brainforward') . '" value="' . esc_attr(get_search_query()) . '" name="s" />';
                     echo '<button type="submit" class="navbar__search-submit" aria-label="' . esc_attr__('Submit search', 'brainforward') . '">';
                         echo '<i class="ri-search-2-line"></i>';
                     echo '</button>';

@@ -19,9 +19,10 @@ class Brainforward {
 
     // Define theme constants
     private function define_constants() {
-        // Define theme version
+        // Define theme version - dynamically get from style.css
         if ( ! defined( 'BRAINFORWARD_THEME_VERSION' ) ) {
-            define( 'BRAINFORWARD_THEME_VERSION', '1.0.0' );
+            $theme = wp_get_theme();
+            define( 'BRAINFORWARD_THEME_VERSION', $theme->get( 'Version' ) );
         }
 
         // Define theme directory path

@@ -159,4 +159,4 @@ if ( ! class_exists( 'Brainforward_Setup' ) ) {
     // Instantiate the Brainforward_Setup class to initialize the theme setup
     new Brainforward_Setup();
 }
-?>
+

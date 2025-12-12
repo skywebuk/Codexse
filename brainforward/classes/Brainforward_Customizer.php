@@ -411,6 +411,7 @@ class Brainforward_Customizer {
         $wp_customize->add_setting('navbar_button_text_setting',
             array(
                 'default'           => __('Get Started', 'brainforward'),
+                'sanitize_callback' => 'sanitize_text_field',
             )
         );
 
@@ -1374,7 +1375,80 @@ class Brainforward_Customizer {
             'capability'  => 'edit_theme_options',
             'description' => __('Add custom scripts to be included in the theme\'s script file.', 'brainforward'),
             'section'     => 'custom_css', // Parent section set to Additional CSS
-            'priority'    => 999, 
+            'priority'    => 999,
+        ));
+
+        // API & Integration Settings Section
+        $wp_customize->add_section('brainforward_api_section', array(
+            'title'       => __('API & Integrations', 'brainforward'),
+            'capability'  => 'edit_theme_options',
+            'panel'       => 'brainforward_theme_options_panel',
+            'description' => __('Configure API keys and third-party integrations.', 'brainforward'),
+        ));
+
+        // SMS API Token Setting
+        $wp_customize->add_setting('sms_api_token', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+
+        $wp_customize->add_control('sms_api_token', array(
+            'label'       => __('SMS API Token', 'brainforward'),
+            'section'     => 'brainforward_api_section',
+            'type'        => 'text',
+            'description' => __('Enter your SSL Wireless SMS API token.', 'brainforward'),
+        ));
+
+        // SMS Sender ID Setting
+        $wp_customize->add_setting('sms_sender_id', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+
+        $wp_customize->add_control('sms_sender_id', array(
+            'label'       => __('SMS Sender ID', 'brainforward'),
+            'section'     => 'brainforward_api_section',
+            'type'        => 'text',
+            'description' => __('Enter your SMS sender ID (SID).', 'brainforward'),
+        ));
+
+        // Google Tag Manager ID Setting
+        $wp_customize->add_setting('gtm_container_id', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+
+        $wp_customize->add_control('gtm_container_id', array(
+            'label'       => __('Google Tag Manager Container ID', 'brainforward'),
+            'section'     => 'brainforward_api_section',
+            'type'        => 'text',
+            'description' => __('Enter your GTM Container ID (e.g., GTM-XXXXXXX).', 'brainforward'),
+        ));
+
+        // Google Analytics ID Setting
+        $wp_customize->add_setting('ga_measurement_id', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+
+        $wp_customize->add_control('ga_measurement_id', array(
+            'label'       => __('Google Analytics Measurement ID', 'brainforward'),
+            'section'     => 'brainforward_api_section',
+            'type'        => 'text',
+            'description' => __('Enter your GA4 Measurement ID (e.g., G-XXXXXXXXXX).', 'brainforward'),
+        ));
+
+        // Google Site Verification Setting
+        $wp_customize->add_setting('google_site_verification', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+
+        $wp_customize->add_control('google_site_verification', array(
+            'label'       => __('Google Site Verification Code', 'brainforward'),
+            'section'     => 'brainforward_api_section',
+            'type'        => 'text',
+            'description' => __('Enter your Google site verification code.', 'brainforward'),
         ));
 
     }

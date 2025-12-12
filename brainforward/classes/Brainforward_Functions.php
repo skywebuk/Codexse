@@ -153,9 +153,14 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
             set_transient('bf_otp_' . $mobile_hash, $otp, 5 * MINUTE_IN_SECONDS);
 
             $api_url   = 'https://smsplus.sslwireless.com/api/v3/send-sms';
-            $api_token = 'bner3aor-5r3tqdiq-i3xyseqo-1zovfrft-eo741u1e';
-            $sid       = 'BRAIN4WARDBRAND';
-            $csms_id   = 'otp_' . substr(md5(uniqid(rand(), true)), 0, 12);
+            $api_token = get_theme_mod('sms_api_token', '');
+            $sid       = get_theme_mod('sms_sender_id', '');
+
+            if (empty($api_token) || empty($sid)) {
+                wp_send_json_error(['message' => 'SMS API কনফিগার করা হয়নি। অনুগ্রহ করে অ্যাডমিনের সাথে যোগাযোগ করুন।']);
+            }
+
+            $csms_id   = 'otp_' . substr(md5(uniqid(wp_rand(), true)), 0, 12);
             $message   = "আপনার BrainForward OTP হলো: {$otp}";
 
             $body = [
@@ -254,9 +259,14 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
 
             // 🔧 SSL Wireless SMS পাঠানো
             $api_url   = 'https://smsplus.sslwireless.com/api/v3/send-sms';
-            $api_token = 'bner3aor-5r3tqdiq-i3xyseqo-1zovfrft-eo741u1e';
-            $sid       = 'BRAIN4WARDBRAND';
-            $csms_id   = 'otp_' . substr(md5(uniqid(rand(), true)), 0, 12);
+            $api_token = get_theme_mod('sms_api_token', '');
+            $sid       = get_theme_mod('sms_sender_id', '');
+
+            if (empty($api_token) || empty($sid)) {
+                wp_send_json_error(['message' => 'SMS API কনফিগার করা হয়নি। অনুগ্রহ করে অ্যাডমিনের সাথে যোগাযোগ করুন।']);
+            }
+
+            $csms_id   = 'otp_' . substr(md5(uniqid(wp_rand(), true)), 0, 12);
             $message   = "আপনার BrainForward OTP হলো: {$otp}";
 
             $body = [
@@ -458,7 +468,7 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
             ];
 
             $randomWord = $words[array_rand($words)];
-            $number     = rand(10, 99);
+            $number     = wp_rand(10, 99);
 
             return $randomWord . 'Brain@' . $number;
         }
@@ -468,10 +478,14 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
          */
         private function send_sms($mobile, $message) {
             $api_url   = 'https://smsplus.sslwireless.com/api/v3/send-sms';
-            $api_token = 'bner3aor-5r3tqdiq-i3xyseqo-1zovfrft-eo741u1e';
-            $sid       = 'BRAIN4WARDBRAND';
+            $api_token = get_theme_mod('sms_api_token', '');
+            $sid       = get_theme_mod('sms_sender_id', '');
 
-            $csms_id = 'msg_' . substr(md5(uniqid(rand(), true)), 0, 12);
+            if (empty($api_token) || empty($sid)) {
+                return false;
+            }
+
+            $csms_id = 'msg_' . substr(md5(uniqid(wp_rand(), true)), 0, 12);
 
             $body = [
                 'api_token' => $api_token,
@@ -488,11 +502,10 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
             ]);
 
             if (is_wp_error($response)) {
-                error_log('❌ SMS send failed: ' . $response->get_error_message());
-            } else {
-                $data = json_decode(wp_remote_retrieve_body($response), true);
-                error_log('🔹 SMS Response: ' . print_r($data, true));
+                return false;
             }
+
+            return true;
         }
         
         public function footer_contents() {

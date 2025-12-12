@@ -70,7 +70,7 @@ class WooCommerce_Functions {
         return __( 'Confirm Order', 'brainforward' ); // Change 'Confirm Order' to your desired text
     }
 
-    Public function custom_terms_and_conditions_text( $text ) {
+    public function custom_terms_and_conditions_text( $text ) {
         $terms_url  = esc_url( get_permalink( wc_get_page_id( 'terms' ) ) );
         $refund_url = esc_url( home_url( '/refund-policy' ) );
 
@@ -249,8 +249,11 @@ class WooCommerce_Functions {
 
 
     public function update_mini_cart() {
-        echo wc_get_template_part('cart/mini-cart');
-        die();
+        // Verify nonce for security
+        check_ajax_referer('brainforward_mini_cart_nonce', 'nonce');
+
+        wc_get_template_part('cart/mini-cart');
+        wp_die();
     }
 
     public static function mini_cart() {
