@@ -152,12 +152,20 @@ class SSL_SMS_Admin_Settings {
         $active_tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'general';
         ?>
         <div class="wrap ssl-sms-wrap">
+            <!-- Hidden H1 for WordPress notices -->
+            <h1 class="ssl-sms-hidden-title"><?php esc_html_e('SSL SMS Login', 'ssl-sms-login'); ?></h1>
+
+            <!-- WordPress Notices Container -->
+            <div class="ssl-sms-notices">
+                <?php settings_errors(); ?>
+            </div>
+
             <!-- Header -->
             <div class="ssl-sms-header">
                 <div class="ssl-sms-header-content">
                     <div class="ssl-sms-logo">
                         <span class="dashicons dashicons-smartphone"></span>
-                        <h1><?php esc_html_e('SSL SMS Login', 'ssl-sms-login'); ?></h1>
+                        <span class="ssl-sms-title"><?php esc_html_e('SSL SMS Login', 'ssl-sms-login'); ?></span>
                     </div>
                     <div class="ssl-sms-version">
                         <?php echo esc_html(sprintf(__('Version %s', 'ssl-sms-login'), SSL_SMS_VERSION)); ?>

@@ -33,6 +33,43 @@
     box-sizing: border-box;
 }
 
+/* Hidden Title for WordPress notices */
+.ssl-sms-hidden-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Hide ALL notices on this page */
+.ssl-sms-wrap .notice,
+.ssl-sms-wrap .error,
+.ssl-sms-wrap .updated,
+.ssl-sms-wrap .update-nag,
+.ssl-sms-wrap .e-notice,
+.ssl-sms-wrap .settings-error,
+.ssl-sms-wrap + .notice,
+.ssl-sms-wrap + .error,
+.ssl-sms-wrap + .updated,
+.ssl-sms-wrap ~ .notice,
+.ssl-sms-wrap ~ .error,
+.ssl-sms-wrap ~ .updated,
+.ssl-sms-notices {
+    display: none !important;
+}
+
+/* Header Title */
+.ssl-sms-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
 /* Header */
 .ssl-sms-header {
     background: linear-gradient(135deg, var(--ssl-admin-primary) 0%, #1e40af 100%);
@@ -188,6 +225,7 @@
 /* Form Fields */
 .ssl-sms-field {
     margin-bottom: 24px;
+    position: relative;
 }
 
 .ssl-sms-field:last-child {
@@ -196,58 +234,114 @@
 
 .ssl-sms-field label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--ssl-admin-gray-700);
+    letter-spacing: -0.01em;
 }
 
 .ssl-sms-input,
 .ssl-sms-textarea {
     width: 100%;
-    padding: 10px 14px;
-    font-size: 14px;
-    border: 1px solid var(--ssl-admin-gray-300);
-    border-radius: 6px;
-    background: #fff;
-    transition: all 0.2s ease;
+    padding: 14px 18px;
+    font-size: 15px;
+    border: 2px solid var(--ssl-admin-gray-200);
+    border-radius: 10px;
+    background: var(--ssl-admin-gray-50);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--ssl-admin-gray-800);
+    font-weight: 400;
+}
+
+.ssl-sms-input:hover,
+.ssl-sms-textarea:hover {
+    border-color: var(--ssl-admin-gray-300);
+    background: #fff;
 }
 
 .ssl-sms-input:focus,
 .ssl-sms-textarea:focus {
     outline: none;
     border-color: var(--ssl-admin-primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 .ssl-sms-input::placeholder,
 .ssl-sms-textarea::placeholder {
     color: var(--ssl-admin-gray-400);
+    font-weight: 400;
 }
 
 .ssl-sms-input-sm {
     max-width: 150px;
+    padding: 12px 16px;
 }
 
 .ssl-sms-textarea {
-    min-height: 100px;
+    min-height: 120px;
     resize: vertical;
     font-family: inherit;
+    line-height: 1.6;
+}
+
+/* Input with icon */
+.ssl-sms-input-icon-wrap {
+    position: relative;
+}
+
+.ssl-sms-input-icon-wrap .ssl-sms-input {
+    padding-left: 48px;
+}
+
+.ssl-sms-input-icon-wrap .dashicons {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ssl-admin-gray-400);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.ssl-sms-input-icon-wrap:focus-within .dashicons {
+    color: var(--ssl-admin-primary);
 }
 
 .ssl-sms-help {
     display: block;
-    margin-top: 6px;
-    font-size: 12px;
+    margin-top: 8px;
+    font-size: 13px;
     color: var(--ssl-admin-gray-500);
+    line-height: 1.5;
 }
 
 .ssl-sms-help code {
     background: var(--ssl-admin-gray-100);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ssl-admin-gray-600);
+}
+
+/* Number input modern style */
+.ssl-sms-input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.ssl-sms-input[type="number"]::-webkit-outer-spin-button,
+.ssl-sms-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Password input */
+.ssl-sms-input[type="password"] {
+    letter-spacing: 2px;
 }
 
 /* Field Grid */
@@ -272,69 +366,119 @@
 .ssl-sms-button {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
+    letter-spacing: -0.01em;
+    position: relative;
+    overflow: hidden;
+}
+
+.ssl-sms-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.ssl-sms-button:hover::before {
+    opacity: 1;
 }
 
 .ssl-sms-button .dashicons {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
 }
 
 .ssl-sms-button-primary {
-    background: var(--ssl-admin-primary);
+    background: linear-gradient(135deg, var(--ssl-admin-primary) 0%, #1d4ed8 100%);
     color: #fff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
 .ssl-sms-button-primary:hover {
-    background: var(--ssl-admin-primary-hover);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+.ssl-sms-button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
 }
 
 .ssl-sms-button-secondary {
-    background: var(--ssl-admin-gray-100);
+    background: #fff;
     color: var(--ssl-admin-gray-700);
-    border: 1px solid var(--ssl-admin-gray-300);
+    border: 2px solid var(--ssl-admin-gray-200);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .ssl-sms-button-secondary:hover {
-    background: var(--ssl-admin-gray-200);
+    background: var(--ssl-admin-gray-50);
     color: var(--ssl-admin-gray-800);
+    border-color: var(--ssl-admin-gray-300);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .ssl-sms-button-danger {
-    background: var(--ssl-admin-error);
+    background: linear-gradient(135deg, var(--ssl-admin-error) 0%, #dc2626 100%);
     color: #fff;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
 }
 
 .ssl-sms-button-danger:hover {
-    background: #dc2626;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45);
 }
 
 .ssl-sms-button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 /* Submit Button Area */
 .ssl-sms-submit {
-    margin-top: 24px;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ssl-admin-gray-100);
 }
 
 .ssl-sms-submit .button-primary {
-    padding: 10px 24px;
-    font-size: 14px;
+    padding: 14px 32px;
+    font-size: 15px;
+    font-weight: 600;
     height: auto;
-    border-radius: 6px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--ssl-admin-primary) 0%, #1d4ed8 100%);
+    border: none;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ssl-sms-submit .button-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
 }
 
 /* Toggle Switches */
