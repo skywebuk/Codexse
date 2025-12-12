@@ -519,7 +519,7 @@ class SSL_SMS_Login_Forms {
         }
 
         // Generate username from mobile
-        $sms_gateway = ssl_sms_login_pro()->sms_gateway;
+        $sms_gateway = ssl_sms_login()->sms_gateway;
         $normalized_mobile = $sms_gateway->normalize_mobile($mobile);
         $username = 'user_' . substr($normalized_mobile, -8);
 
@@ -636,7 +636,7 @@ class SSL_SMS_Login_Forms {
         wp_set_password($new_password, $user->ID);
 
         // Send password via SMS
-        $sms_gateway = ssl_sms_login_pro()->sms_gateway;
+        $sms_gateway = ssl_sms_login()->sms_gateway;
         $sms_gateway->send_password_reset($result['mobile'], $user->user_login, $new_password);
 
         wp_send_json_success(array(
@@ -648,7 +648,7 @@ class SSL_SMS_Login_Forms {
      * Get user by mobile number
      */
     private function get_user_by_mobile($mobile) {
-        $sms_gateway = ssl_sms_login_pro()->sms_gateway;
+        $sms_gateway = ssl_sms_login()->sms_gateway;
         $normalized_mobile = $sms_gateway->normalize_mobile($mobile);
 
         $users = get_users(array(
