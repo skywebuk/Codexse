@@ -140,9 +140,13 @@
     transition: all 0.2s ease;
 }
 
+.ssl-sms-nav-tab:focus,
+.ssl-sms-nav-tab:active,
 .ssl-sms-nav-tab:hover {
     color: var(--ssl-admin-primary);
     background: var(--ssl-admin-gray-50);
+    outline: none;
+    box-shadow: none;
 }
 
 .ssl-sms-nav-tab.active {
@@ -241,10 +245,10 @@
     letter-spacing: -0.01em;
 }
 
-.ssl-sms-input,
-.ssl-sms-textarea {
+input.ssl-sms-input,
+textarea.ssl-sms-textarea {
     width: 100%;
-    padding: 14px 18px;
+    padding: 9px 18px;
     font-size: 15px;
     border: 2px solid var(--ssl-admin-gray-200);
     border-radius: 10px;
@@ -254,32 +258,32 @@
     font-weight: 400;
 }
 
-.ssl-sms-input:hover,
-.ssl-sms-textarea:hover {
+input.ssl-sms-input:hover,
+textarea.ssl-sms-textarea:hover {
     border-color: var(--ssl-admin-gray-300);
     background: #fff;
 }
 
-.ssl-sms-input:focus,
-.ssl-sms-textarea:focus {
+input.ssl-sms-input:focus,
+textarea.ssl-sms-textarea:focus {
     outline: none;
     border-color: var(--ssl-admin-primary);
     background: #fff;
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
-.ssl-sms-input::placeholder,
-.ssl-sms-textarea::placeholder {
+input.ssl-sms-input::placeholder,
+textarea.ssl-sms-textarea::placeholder {
     color: var(--ssl-admin-gray-400);
     font-weight: 400;
 }
 
-.ssl-sms-input-sm {
+input.ssl-sms-input-sm {
     max-width: 150px;
     padding: 12px 16px;
 }
 
-.ssl-sms-textarea {
+textarea.ssl-sms-textarea {
     min-height: 120px;
     resize: vertical;
     font-family: inherit;
@@ -287,15 +291,15 @@
 }
 
 /* Input with icon */
-.ssl-sms-input-icon-wrap {
+input.ssl-sms-input-icon-wrap {
     position: relative;
 }
 
-.ssl-sms-input-icon-wrap .ssl-sms-input {
+input.ssl-sms-input-icon-wrap input.ssl-sms-input {
     padding-left: 48px;
 }
 
-.ssl-sms-input-icon-wrap .dashicons {
+input.ssl-sms-input-icon-wrap .dashicons {
     position: absolute;
     left: 16px;
     top: 50%;
@@ -306,7 +310,7 @@
     height: 20px;
 }
 
-.ssl-sms-input-icon-wrap:focus-within .dashicons {
+input.ssl-sms-input-icon-wrap:focus-within .dashicons {
     color: var(--ssl-admin-primary);
 }
 
@@ -328,19 +332,19 @@
 }
 
 /* Number input modern style */
-.ssl-sms-input[type="number"] {
+input.ssl-sms-input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
 }
 
-.ssl-sms-input[type="number"]::-webkit-outer-spin-button,
-.ssl-sms-input[type="number"]::-webkit-inner-spin-button {
+input.ssl-sms-input[type="number"]::-webkit-outer-spin-button,
+input.ssl-sms-input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* Password input */
-.ssl-sms-input[type="password"] {
+input.ssl-sms-input[type="password"] {
     letter-spacing: 2px;
 }
 
@@ -358,7 +362,7 @@
     align-items: flex-start;
 }
 
-.ssl-sms-inline-field .ssl-sms-input {
+.ssl-sms-inline-field input.ssl-sms-input {
     flex: 1;
 }
 
@@ -464,7 +468,7 @@
 }
 
 .ssl-sms-submit .button-primary {
-    padding: 14px 32px;
+    padding: 9px 32px;
     font-size: 15px;
     font-weight: 600;
     height: auto;
