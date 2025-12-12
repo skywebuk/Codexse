@@ -4,7 +4,7 @@
  *
  * Handles shortcodes, forms, and AJAX handlers for login/registration
  *
- * @package SSL_SMS_Login_Pro
+ * @package SSL_SMS_Login
  */
 
 if (!defined('ABSPATH')) {
@@ -93,7 +93,7 @@ class SSL_SMS_Login_Forms {
             return $this->get_logged_in_message();
         }
 
-        if (SSL_SMS_Login_Pro::get_option('enable_registration', 'yes') !== 'yes') {
+        if (SSL_SMS_Login::get_option('enable_registration', 'yes') !== 'yes') {
             return '<p class="ssl-sms-notice">' . esc_html__('Registration is currently disabled.', 'ssl-sms-login') . '</p>';
         }
 
@@ -110,7 +110,7 @@ class SSL_SMS_Login_Forms {
      * Forgot password form shortcode
      */
     public function shortcode_forgot_password($atts) {
-        if (SSL_SMS_Login_Pro::get_option('enable_forgot_password', 'yes') !== 'yes') {
+        if (SSL_SMS_Login::get_option('enable_forgot_password', 'yes') !== 'yes') {
             return '<p class="ssl-sms-notice">' . esc_html__('Password reset via SMS is currently disabled.', 'ssl-sms-login') . '</p>';
         }
 
@@ -144,7 +144,7 @@ class SSL_SMS_Login_Forms {
      * Render combined form
      */
     private function render_combined_form($atts) {
-        $enable_registration = SSL_SMS_Login_Pro::get_option('enable_registration', 'yes') === 'yes';
+        $enable_registration = SSL_SMS_Login::get_option('enable_registration', 'yes') === 'yes';
         ?>
         <div class="ssl-sms-form-wrapper" data-redirect="<?php echo esc_attr($atts['redirect']); ?>">
             <?php if ($atts['show_tabs'] === 'yes' && $enable_registration) : ?>
@@ -213,7 +213,7 @@ class SSL_SMS_Login_Forms {
                     <?php esc_html_e('Login', 'ssl-sms-login'); ?>
                 </button>
 
-                <?php if (SSL_SMS_Login_Pro::get_option('enable_forgot_password', 'yes') === 'yes') : ?>
+                <?php if (SSL_SMS_Login::get_option('enable_forgot_password', 'yes') === 'yes') : ?>
                 <p class="ssl-sms-links">
                     <a href="#" class="ssl-sms-forgot-link"><?php esc_html_e('Forgot Password?', 'ssl-sms-login'); ?></a>
                 </p>
@@ -481,7 +481,7 @@ class SSL_SMS_Login_Forms {
                 $user = $this->get_user_by_mobile($result['mobile']);
                 if ($user) {
                     $this->login_user($user);
-                    $redirect = SSL_SMS_Login_Pro::get_option('redirect_after_login', '');
+                    $redirect = SSL_SMS_Login::get_option('redirect_after_login', '');
                     $result['redirect'] = !empty($redirect) ? $redirect : home_url();
                 }
             }
@@ -561,7 +561,7 @@ class SSL_SMS_Login_Forms {
         // Send welcome SMS
         $sms_gateway->send_welcome($normalized_mobile, $username, $password);
 
-        $redirect = SSL_SMS_Login_Pro::get_option('redirect_after_login', '');
+        $redirect = SSL_SMS_Login::get_option('redirect_after_login', '');
 
         wp_send_json_success(array(
             'message' => __('Registration successful!', 'ssl-sms-login'),
@@ -595,7 +595,7 @@ class SSL_SMS_Login_Forms {
         // Log user in
         $this->login_user($user);
 
-        $redirect = SSL_SMS_Login_Pro::get_option('redirect_after_login', '');
+        $redirect = SSL_SMS_Login::get_option('redirect_after_login', '');
 
         wp_send_json_success(array(
             'message' => __('Login successful!', 'ssl-sms-login'),

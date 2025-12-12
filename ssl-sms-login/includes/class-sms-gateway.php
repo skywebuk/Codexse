@@ -4,7 +4,7 @@
  *
  * Handles communication with SSL Wireless SMS API
  *
- * @package SSL_SMS_Login_Pro
+ * @package SSL_SMS_Login
  */
 
 if (!defined('ABSPATH')) {
@@ -32,8 +32,8 @@ class SSL_SMS_Gateway {
      * Constructor
      */
     public function __construct() {
-        $this->api_token = SSL_SMS_Login_Pro::get_option('api_token', '');
-        $this->sender_id = SSL_SMS_Login_Pro::get_option('sender_id', '');
+        $this->api_token = SSL_SMS_Login::get_option('api_token', '');
+        $this->sender_id = SSL_SMS_Login::get_option('sender_id', '');
 
         // Register test SMS AJAX handler
         add_action('wp_ajax_ssl_sms_send_test', array($this, 'ajax_send_test_sms'));
@@ -162,8 +162,8 @@ class SSL_SMS_Gateway {
      * Send OTP
      */
     public function send_otp($mobile, $otp) {
-        $expiry = SSL_SMS_Login_Pro::get_option('otp_expiry', 5);
-        $template = SSL_SMS_Login_Pro::get_option('otp_message_template', __('Your OTP is: {otp}. Valid for {expiry} minutes.', 'ssl-sms-login'));
+        $expiry = SSL_SMS_Login::get_option('otp_expiry', 5);
+        $template = SSL_SMS_Login::get_option('otp_message_template', __('Your OTP is: {otp}. Valid for {expiry} minutes.', 'ssl-sms-login'));
 
         $message = str_replace(
             array('{otp}', '{expiry}'),
@@ -178,7 +178,7 @@ class SSL_SMS_Gateway {
      * Send welcome message
      */
     public function send_welcome($mobile, $username, $password) {
-        $template = SSL_SMS_Login_Pro::get_option('welcome_message_template', __('Welcome! Your username: {username}, Password: {password}', 'ssl-sms-login'));
+        $template = SSL_SMS_Login::get_option('welcome_message_template', __('Welcome! Your username: {username}, Password: {password}', 'ssl-sms-login'));
 
         $message = str_replace(
             array('{username}', '{password}', '{site_name}'),
@@ -193,7 +193,7 @@ class SSL_SMS_Gateway {
      * Send password reset message
      */
     public function send_password_reset($mobile, $username, $new_password) {
-        $template = SSL_SMS_Login_Pro::get_option('password_reset_template', __('Your new password is: {password}', 'ssl-sms-login'));
+        $template = SSL_SMS_Login::get_option('password_reset_template', __('Your new password is: {password}', 'ssl-sms-login'));
 
         $message = str_replace(
             array('{username}', '{password}'),
@@ -245,8 +245,8 @@ class SSL_SMS_Gateway {
         }
 
         // Refresh API credentials
-        $this->api_token = SSL_SMS_Login_Pro::get_option('api_token', '');
-        $this->sender_id = SSL_SMS_Login_Pro::get_option('sender_id', '');
+        $this->api_token = SSL_SMS_Login::get_option('api_token', '');
+        $this->sender_id = SSL_SMS_Login::get_option('sender_id', '');
 
         $test_message = sprintf(
             __('This is a test message from %s. Your SMS configuration is working!', 'ssl-sms-login'),

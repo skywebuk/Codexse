@@ -1,7 +1,7 @@
 /**
  * SSL SMS Login Pro - Frontend JavaScript
  *
- * @package SSL_SMS_Login_Pro
+ * @package SSL_SMS_Login
  */
 
 (function($) {

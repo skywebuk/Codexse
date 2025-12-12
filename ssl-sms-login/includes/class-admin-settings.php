@@ -2,7 +2,7 @@
 /**
  * Admin Settings Class
  *
- * @package SSL_SMS_Login_Pro
+ * @package SSL_SMS_Login
  */
 
 if (!defined('ABSPATH')) {

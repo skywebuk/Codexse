@@ -4,7 +4,7 @@
  *
  * Handles OTP generation, storage, verification, and rate limiting
  *
- * @package SSL_SMS_Login_Pro
+ * @package SSL_SMS_Login
  */
 
 if (!defined('ABSPATH')) {
@@ -60,7 +60,7 @@ class SSL_SMS_OTP_Handler {
      */
     public function get_remaining_attempts($mobile) {
         $mobile_hash = $this->get_mobile_hash($mobile);
-        $max_attempts = SSL_SMS_Login_Pro::get_option('max_otp_attempts', 3);
+        $max_attempts = SSL_SMS_Login::get_option('max_otp_attempts', 3);
         $current_attempts = get_transient($this->transient_prefix . 'attempts_' . $mobile_hash);
 
         if ($current_attempts === false) {
@@ -75,8 +75,8 @@ class SSL_SMS_OTP_Handler {
      */
     private function increment_attempts($mobile) {
         $mobile_hash = $this->get_mobile_hash($mobile);
-        $max_attempts = SSL_SMS_Login_Pro::get_option('max_otp_attempts', 3);
-        $block_duration = SSL_SMS_Login_Pro::get_option('block_duration', 24);
+        $max_attempts = SSL_SMS_Login::get_option('max_otp_attempts', 3);
+        $block_duration = SSL_SMS_Login::get_option('block_duration', 24);
         $current_attempts = get_transient($this->transient_prefix . 'attempts_' . $mobile_hash);
 
         if ($current_attempts === false) {
@@ -119,7 +119,7 @@ class SSL_SMS_OTP_Handler {
      */
     private function store_otp($mobile, $otp, $purpose = 'login') {
         $mobile_hash = $this->get_mobile_hash($mobile);
-        $expiry = SSL_SMS_Login_Pro::get_option('otp_expiry', 5);
+        $expiry = SSL_SMS_Login::get_option('otp_expiry', 5);
 
         $otp_data = array(
             'otp' => $otp,
@@ -167,7 +167,7 @@ class SSL_SMS_OTP_Handler {
 
         // Check if blocked
         if ($this->is_blocked($normalized_mobile)) {
-            $block_duration = SSL_SMS_Login_Pro::get_option('block_duration', 24);
+            $block_duration = SSL_SMS_Login::get_option('block_duration', 24);
             return array(
                 'success' => false,
                 'message' => sprintf(
@@ -221,7 +221,7 @@ class SSL_SMS_OTP_Handler {
                 'success' => true,
                 'message' => __('OTP sent successfully.', 'ssl-sms-login'),
                 'remaining_attempts' => $this->get_remaining_attempts($normalized_mobile),
-                'expiry' => SSL_SMS_Login_Pro::get_option('otp_expiry', 5)
+                'expiry' => SSL_SMS_Login::get_option('otp_expiry', 5)
             );
         }
 
