@@ -42,7 +42,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
      * Get widget categories
      */
     public function get_categories() {
-        return array('jeeon-sms');
+        return array('ssl-sms');
     }
 
     /**
@@ -158,7 +158,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-form' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-form' => 'background-color: {{VALUE}};',
                 ),
             )
         );
@@ -177,7 +177,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                     'unit' => 'px',
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ssl-sms-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
             )
         );
@@ -186,7 +186,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
             Group_Control_Border::get_type(),
             array(
                 'name' => 'container_border',
-                'selector' => '{{WRAPPER}} .jeeon-sms-form',
+                'selector' => '{{WRAPPER}} .ssl-sms-form',
             )
         );
 
@@ -197,7 +197,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', '%'),
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ssl-sms-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
             )
         );
@@ -206,7 +206,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             array(
                 'name' => 'container_box_shadow',
-                'selector' => '{{WRAPPER}} .jeeon-sms-form',
+                'selector' => '{{WRAPPER}} .ssl-sms-form',
             )
         );
 
@@ -228,7 +228,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-input' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-input' => 'background-color: {{VALUE}};',
                 ),
             )
         );
@@ -240,7 +240,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#1f2937',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-input' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-input' => 'color: {{VALUE}};',
                 ),
             )
         );
@@ -252,7 +252,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#d1d5db',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-input' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-input' => 'border-color: {{VALUE}};',
                 ),
             )
         );
@@ -264,7 +264,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#2563eb',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-input:focus' => 'border-color: {{VALUE}}; box-shadow: 0 0 0 3px {{VALUE}}1a;',
+                    '{{WRAPPER}} .ssl-sms-input:focus' => 'border-color: {{VALUE}}; box-shadow: 0 0 0 3px {{VALUE}}1a;',
                 ),
             )
         );
@@ -286,7 +286,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                     'unit' => 'px',
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-input' => 'border-radius: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ssl-sms-input' => 'border-radius: {{SIZE}}{{UNIT}};',
                 ),
             )
         );
@@ -305,7 +305,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                     'unit' => 'px',
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-input' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ssl-sms-input' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
             )
         );
@@ -337,7 +337,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#2563eb',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-btn-primary' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-btn-primary' => 'background-color: {{VALUE}};',
                 ),
             )
         );
@@ -349,7 +349,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-btn-primary' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-btn-primary' => 'color: {{VALUE}};',
                 ),
             )
         );
@@ -370,7 +370,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#1d4ed8',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-btn-primary:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-btn-primary:hover' => 'background-color: {{VALUE}};',
                 ),
             )
         );
@@ -382,7 +382,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-btn-primary:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-btn-primary:hover' => 'color: {{VALUE}};',
                 ),
             )
         );
@@ -408,7 +408,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                     'unit' => 'px',
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-btn' => 'border-radius: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ssl-sms-btn' => 'border-radius: {{SIZE}}{{UNIT}};',
                 ),
                 'separator' => 'before',
             )
@@ -428,7 +428,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                     'unit' => 'px',
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ssl-sms-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
             )
         );
@@ -437,7 +437,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'button_typography',
-                'selector' => '{{WRAPPER}} .jeeon-sms-btn',
+                'selector' => '{{WRAPPER}} .ssl-sms-btn',
             )
         );
 
@@ -462,7 +462,7 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#6b7280',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-tab' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-tab' => 'color: {{VALUE}};',
                 ),
             )
         );
@@ -474,8 +474,8 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#2563eb',
                 'selectors' => array(
-                    '{{WRAPPER}} .jeeon-sms-tab.active' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .jeeon-sms-tab.active::after' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-tab.active' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .ssl-sms-tab.active::after' => 'background-color: {{VALUE}};',
                 ),
             )
         );
@@ -494,8 +494,8 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
         $redirect_url = isset($settings['redirect_url']['url']) ? $settings['redirect_url']['url'] : '';
 
         $classes = array(
-            'jeeon-sms-elementor-widget',
-            'jeeon-sms-style-' . $form_style,
+            'ssl-sms-elementor-widget',
+            'ssl-sms-style-' . $form_style,
         );
 
         ?>
@@ -506,10 +506,10 @@ class SSL_SMS_Elementor_Widget extends Widget_Base {
                     echo do_shortcode('[ssl_sms_login_form redirect="' . esc_attr($redirect_url) . '" style="' . esc_attr($form_style) . '"]');
                     break;
                 case 'register':
-                    echo do_shortcode('[jeeon_sms_register_form redirect="' . esc_attr($redirect_url) . '" style="' . esc_attr($form_style) . '"]');
+                    echo do_shortcode('[ssl_sms_register_form redirect="' . esc_attr($redirect_url) . '" style="' . esc_attr($form_style) . '"]');
                     break;
                 case 'forgot':
-                    echo do_shortcode('[jeeon_sms_forgot_password redirect="' . esc_attr($redirect_url) . '" style="' . esc_attr($form_style) . '"]');
+                    echo do_shortcode('[ssl_sms_forgot_password redirect="' . esc_attr($redirect_url) . '" style="' . esc_attr($form_style) . '"]');
                     break;
                 default:
                     echo do_shortcode('[ssl_sms_login redirect="' . esc_attr($redirect_url) . '" style="' . esc_attr($form_style) . '"]');
