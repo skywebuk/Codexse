@@ -154,24 +154,84 @@
 /* Radio Buttons */
 .ssl-sms-login-method {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 16px;
 }
 
 .ssl-sms-radio {
     display: flex;
     align-items: center;
+    gap: 10px;
     cursor: pointer;
+    position: relative;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid var(--ssl-gray-200);
+    background: var(--ssl-gray-50);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1;
 }
 
-.ssl-sms-radio input {
-    margin-right: 8px;
-    accent-color: var(--ssl-primary);
+.ssl-sms-radio:hover {
+    border-color: var(--ssl-gray-300);
+    background: #fff;
 }
 
-.ssl-sms-radio span {
+.ssl-sms-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ssl-sms-radio-mark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ssl-gray-300);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.ssl-sms-radio-mark::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ssl-primary);
+    transform: scale(0);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ssl-sms-radio input[type="radio"]:checked + .ssl-sms-radio-mark {
+    border-color: var(--ssl-primary);
+}
+
+.ssl-sms-radio input[type="radio"]:checked + .ssl-sms-radio-mark::after {
+    transform: scale(1);
+}
+
+.ssl-sms-radio input[type="radio"]:focus + .ssl-sms-radio-mark {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.ssl-sms-radio:has(input[type="radio"]:checked) {
+    border-color: var(--ssl-primary);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.ssl-sms-radio-label {
     font-size: 14px;
-    color: var(--ssl-gray-600);
+    font-weight: 500;
+    color: var(--ssl-gray-700);
+    transition: color 0.25s ease;
+}
+
+.ssl-sms-radio:has(input[type="radio"]:checked) .ssl-sms-radio-label {
+    color: var(--ssl-primary);
 }
 
 /* Buttons */
@@ -386,8 +446,30 @@
         border-color: var(--ssl-primary);
     }
 
-    .ssl-sms-radio span {
+    .ssl-sms-radio {
+        background: var(--ssl-gray-700);
+        border-color: var(--ssl-gray-600);
+    }
+
+    .ssl-sms-radio:hover {
+        background: var(--ssl-gray-600);
+        border-color: var(--ssl-gray-500);
+    }
+
+    .ssl-sms-radio-mark {
+        border-color: var(--ssl-gray-500);
+    }
+
+    .ssl-sms-radio-label {
         color: var(--ssl-gray-300);
+    }
+
+    .ssl-sms-radio:has(input[type="radio"]:checked) {
+        background: rgba(37, 99, 235, 0.15);
+    }
+
+    .ssl-sms-radio:has(input[type="radio"]:checked) .ssl-sms-radio-label {
+        color: #93c5fd;
     }
 
     .ssl-sms-tab {

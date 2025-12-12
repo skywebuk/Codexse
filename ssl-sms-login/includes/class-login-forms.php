@@ -189,11 +189,13 @@ class SSL_SMS_Login_Forms {
                 <div class="ssl-sms-login-method">
                     <label class="ssl-sms-radio">
                         <input type="radio" name="login_method" value="otp" checked />
-                        <span><?php esc_html_e('Login with OTP', 'ssl-sms-login'); ?></span>
+                        <span class="ssl-sms-radio-mark"></span>
+                        <span class="ssl-sms-radio-label"><?php esc_html_e('Login with OTP', 'ssl-sms-login'); ?></span>
                     </label>
                     <label class="ssl-sms-radio">
                         <input type="radio" name="login_method" value="password" />
-                        <span><?php esc_html_e('Login with Password', 'ssl-sms-login'); ?></span>
+                        <span class="ssl-sms-radio-mark"></span>
+                        <span class="ssl-sms-radio-label"><?php esc_html_e('Login with Password', 'ssl-sms-login'); ?></span>
                     </label>
                 </div>
 
