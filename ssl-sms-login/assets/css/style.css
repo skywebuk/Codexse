@@ -164,17 +164,7 @@
     gap: 10px;
     cursor: pointer;
     position: relative;
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 2px solid var(--ssl-gray-200);
-    background: var(--ssl-gray-50);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     flex: 1;
-}
-
-.ssl-sms-radio:hover {
-    border-color: var(--ssl-gray-300);
-    background: #fff;
 }
 
 .ssl-sms-radio input[type="radio"] {
@@ -228,10 +218,6 @@
     font-weight: 500;
     color: var(--ssl-gray-700);
     transition: color 0.25s ease;
-}
-
-.ssl-sms-radio:has(input[type="radio"]:checked) .ssl-sms-radio-label {
-    color: var(--ssl-primary);
 }
 
 /* Buttons */
@@ -446,16 +432,6 @@
         border-color: var(--ssl-primary);
     }
 
-    .ssl-sms-radio {
-        background: var(--ssl-gray-700);
-        border-color: var(--ssl-gray-600);
-    }
-
-    .ssl-sms-radio:hover {
-        background: var(--ssl-gray-600);
-        border-color: var(--ssl-gray-500);
-    }
-
     .ssl-sms-radio-mark {
         border-color: var(--ssl-gray-500);
     }
@@ -463,15 +439,7 @@
     .ssl-sms-radio-label {
         color: var(--ssl-gray-300);
     }
-
-    .ssl-sms-radio:has(input[type="radio"]:checked) {
-        background: rgba(37, 99, 235, 0.15);
-    }
-
-    .ssl-sms-radio:has(input[type="radio"]:checked) .ssl-sms-radio-label {
-        color: #93c5fd;
-    }
-
+    
     .ssl-sms-tab {
         color: var(--ssl-gray-400);
     }
