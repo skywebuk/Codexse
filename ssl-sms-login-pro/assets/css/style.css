@@ -1,0 +1,405 @@
+/**
+ * SSL SMS Login Pro - Frontend Styles
+ *
+ * @package SSL_SMS_Login_Pro
+ */
+
+/* Variables */
+:root {
+    --ssl-primary: #2563eb;
+    --ssl-primary-hover: #1d4ed8;
+    --ssl-success: #10b981;
+    --ssl-error: #ef4444;
+    --ssl-warning: #f59e0b;
+    --ssl-gray-50: #f9fafb;
+    --ssl-gray-100: #f3f4f6;
+    --ssl-gray-200: #e5e7eb;
+    --ssl-gray-300: #d1d5db;
+    --ssl-gray-400: #9ca3af;
+    --ssl-gray-500: #6b7280;
+    --ssl-gray-600: #4b5563;
+    --ssl-gray-700: #374151;
+    --ssl-gray-800: #1f2937;
+    --ssl-gray-900: #111827;
+    --ssl-border-radius: 8px;
+    --ssl-transition: all 0.2s ease;
+}
+
+/* Form Wrapper */
+.ssl-sms-form-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Tabs */
+.ssl-sms-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--ssl-gray-200);
+    margin-bottom: 24px;
+}
+
+.ssl-sms-tab {
+    flex: 1;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ssl-gray-500);
+    cursor: pointer;
+    position: relative;
+    transition: var(--ssl-transition);
+}
+
+.ssl-sms-tab:hover {
+    color: var(--ssl-gray-700);
+}
+
+.ssl-sms-tab.active {
+    color: var(--ssl-primary);
+}
+
+.ssl-sms-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--ssl-primary);
+}
+
+/* Form */
+.ssl-sms-form {
+    background: #fff;
+    padding: 24px;
+    border-radius: var(--ssl-border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ssl-sms-form h3 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ssl-gray-800);
+}
+
+/* Form Steps */
+.ssl-sms-form-step {
+    display: none;
+}
+
+.ssl-sms-form-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Group */
+.ssl-sms-form-group {
+    margin-bottom: 16px;
+}
+
+.ssl-sms-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ssl-gray-700);
+}
+
+/* Input */
+.ssl-sms-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid var(--ssl-gray-300);
+    border-radius: var(--ssl-border-radius);
+    background: #fff;
+    transition: var(--ssl-transition);
+    box-sizing: border-box;
+}
+
+.ssl-sms-input:focus {
+    outline: none;
+    border-color: var(--ssl-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ssl-sms-input:disabled {
+    background: var(--ssl-gray-100);
+    cursor: not-allowed;
+}
+
+/* OTP Input */
+.ssl-sms-otp-input {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    font-family: monospace;
+}
+
+/* Radio Buttons */
+.ssl-sms-login-method {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ssl-sms-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ssl-sms-radio input {
+    margin-right: 8px;
+    accent-color: var(--ssl-primary);
+}
+
+.ssl-sms-radio span {
+    font-size: 14px;
+    color: var(--ssl-gray-600);
+}
+
+/* Buttons */
+.ssl-sms-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--ssl-border-radius);
+    cursor: pointer;
+    transition: var(--ssl-transition);
+}
+
+.ssl-sms-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ssl-sms-btn-primary {
+    background: var(--ssl-primary);
+    color: #fff;
+}
+
+.ssl-sms-btn-primary:hover:not(:disabled) {
+    background: var(--ssl-primary-hover);
+}
+
+.ssl-sms-btn-secondary {
+    background: var(--ssl-gray-100);
+    color: var(--ssl-gray-700);
+}
+
+.ssl-sms-btn-secondary:hover:not(:disabled) {
+    background: var(--ssl-gray-200);
+}
+
+/* Link Button */
+.ssl-sms-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: var(--ssl-primary);
+    cursor: pointer;
+    transition: var(--ssl-transition);
+}
+
+.ssl-sms-link-btn:hover:not(:disabled) {
+    text-decoration: underline;
+}
+
+.ssl-sms-link-btn:disabled {
+    color: var(--ssl-gray-400);
+    cursor: not-allowed;
+}
+
+/* Links */
+.ssl-sms-links {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.ssl-sms-links a {
+    color: var(--ssl-primary);
+    text-decoration: none;
+}
+
+.ssl-sms-links a:hover {
+    text-decoration: underline;
+}
+
+/* Timer */
+.ssl-sms-timer {
+    color: var(--ssl-gray-500);
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+/* Messages */
+.ssl-sms-message {
+    padding: 12px 16px;
+    border-radius: var(--ssl-border-radius);
+    font-size: 14px;
+    margin-bottom: 16px;
+    display: none;
+}
+
+.ssl-sms-message.show {
+    display: block;
+}
+
+.ssl-sms-message.success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.ssl-sms-message.error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.ssl-sms-message.info {
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+/* OTP Info */
+.ssl-sms-otp-info {
+    font-size: 14px;
+    color: var(--ssl-gray-600);
+    margin-bottom: 16px;
+    padding: 12px;
+    background: var(--ssl-gray-50);
+    border-radius: var(--ssl-border-radius);
+}
+
+/* Logged In */
+.ssl-sms-logged-in {
+    text-align: center;
+    padding: 24px;
+    background: var(--ssl-gray-50);
+    border-radius: var(--ssl-border-radius);
+}
+
+.ssl-sms-logged-in p {
+    margin: 0 0 16px;
+    color: var(--ssl-gray-600);
+}
+
+/* Notice */
+.ssl-sms-notice {
+    padding: 16px;
+    background: var(--ssl-gray-100);
+    border-radius: var(--ssl-border-radius);
+    color: var(--ssl-gray-600);
+    text-align: center;
+}
+
+/* Loading Spinner */
+.ssl-sms-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.ssl-sms-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Password Field Toggle */
+.ssl-sms-password-field {
+    margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .ssl-sms-form-wrapper {
+        padding: 0 16px;
+    }
+
+    .ssl-sms-form {
+        padding: 20px;
+    }
+
+    .ssl-sms-login-method {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .ssl-sms-form {
+        background: var(--ssl-gray-800);
+    }
+
+    .ssl-sms-form h3 {
+        color: var(--ssl-gray-100);
+    }
+
+    .ssl-sms-form-group label {
+        color: var(--ssl-gray-300);
+    }
+
+    .ssl-sms-input {
+        background: var(--ssl-gray-700);
+        border-color: var(--ssl-gray-600);
+        color: var(--ssl-gray-100);
+    }
+
+    .ssl-sms-input:focus {
+        border-color: var(--ssl-primary);
+    }
+
+    .ssl-sms-radio span {
+        color: var(--ssl-gray-300);
+    }
+
+    .ssl-sms-tab {
+        color: var(--ssl-gray-400);
+    }
+
+    .ssl-sms-tab.active {
+        color: var(--ssl-primary);
+    }
+
+    .ssl-sms-otp-info {
+        background: var(--ssl-gray-700);
+        color: var(--ssl-gray-300);
+    }
+}
