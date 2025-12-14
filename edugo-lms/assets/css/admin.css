@@ -1,0 +1,336 @@
+/**
+ * Edugo LMS Admin Styles
+ *
+ * @package Edugo_LMS
+ */
+
+/* ==========================================================================
+   Admin Dashboard
+   ========================================================================== */
+
+.edugo-admin-wrap {
+    margin: 20px 20px 20px 0;
+}
+
+.edugo-admin-dashboard {
+    margin-top: 20px;
+}
+
+/* Stats Grid */
+.edugo-admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.edugo-stat-box {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.edugo-stat-box .edugo-stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.edugo-stat-box .edugo-stat-icon .dashicons {
+    color: #fff;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.edugo-stat-content {
+    margin-bottom: 10px;
+}
+
+.edugo-stat-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e1e1e;
+    line-height: 1.2;
+}
+
+.edugo-stat-label {
+    display: block;
+    font-size: 13px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+.edugo-stat-link {
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* Admin Columns */
+.edugo-admin-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 782px) {
+    .edugo-admin-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+.edugo-admin-box {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.edugo-admin-box h2 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+/* Quick Links */
+.edugo-quick-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.edugo-quick-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.edugo-quick-links a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #1e1e1e;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.edugo-quick-links a:hover {
+    background-color: #f0f0f1;
+}
+
+.edugo-quick-links .dashicons {
+    margin-right: 10px;
+    color: #667eea;
+}
+
+/* Earnings Summary */
+.edugo-earnings-summary {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.edugo-earnings-label {
+    display: block;
+    font-size: 13px;
+    color: #646970;
+    margin-bottom: 5px;
+}
+
+.edugo-earnings-amount {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00a32a;
+}
+
+/* System Info */
+.edugo-system-info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.edugo-system-info tr:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.edugo-system-info td {
+    padding: 10px 0;
+}
+
+.edugo-system-info td:first-child {
+    font-weight: 600;
+    color: #646970;
+}
+
+.edugo-status-active {
+    color: #00a32a;
+}
+
+.edugo-status-inactive {
+    color: #d63638;
+}
+
+/* ==========================================================================
+   Settings Page
+   ========================================================================== */
+
+.edugo-admin-wrap .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.edugo-admin-wrap .form-table th {
+    width: 250px;
+}
+
+/* ==========================================================================
+   Post Meta Boxes
+   ========================================================================== */
+
+.edugo-metabox {
+    padding: 10px;
+}
+
+.edugo-metabox-row {
+    margin-bottom: 15px;
+}
+
+.edugo-metabox-row:last-child {
+    margin-bottom: 0;
+}
+
+.edugo-metabox-row label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.edugo-metabox-row input[type="text"],
+.edugo-metabox-row input[type="number"],
+.edugo-metabox-row input[type="url"],
+.edugo-metabox-row select,
+.edugo-metabox-row textarea {
+    width: 100%;
+}
+
+.edugo-metabox-description {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   Question Builder
+   ========================================================================== */
+
+.edugo-question-options {
+    margin-top: 15px;
+}
+
+.edugo-option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.edugo-option-row input[type="text"] {
+    flex: 1;
+}
+
+.edugo-option-row .button {
+    flex-shrink: 0;
+}
+
+.edugo-add-option {
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   Data Tables
+   ========================================================================== */
+
+.edugo-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.edugo-admin-table th,
+.edugo-admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.edugo-admin-table th {
+    background: #f0f0f1;
+    font-weight: 600;
+}
+
+.edugo-admin-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Status Badges */
+.edugo-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.edugo-status-pending {
+    background-color: #fcf0e0;
+    color: #996800;
+}
+
+.edugo-status-approved,
+.edugo-status-completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.edugo-status-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    .edugo-admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edugo-stat-box {
+        padding: 15px;
+    }
+
+    .edugo-stat-number {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .edugo-admin-stats {
+        grid-template-columns: 1fr;
+    }
+}
