@@ -55,13 +55,19 @@ function bazaar_get_store_listing_url() {
 /**
  * Get dashboard tab URL.
  *
- * @param string $tab Tab slug.
+ * @param string $tab    Tab slug.
+ * @param array  $params Additional query parameters.
  * @return string
  */
-function bazaar_get_dashboard_tab_url( $tab ) {
+function bazaar_get_dashboard_tab_url( $tab, $params = array() ) {
     $dashboard_url = bazaar_get_dashboard_url();
+    $url = add_query_arg( 'tab', $tab, $dashboard_url );
 
-    return add_query_arg( 'tab', $tab, $dashboard_url );
+    if ( ! empty( $params ) ) {
+        $url = add_query_arg( $params, $url );
+    }
+
+    return $url;
 }
 
 /**

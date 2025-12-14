@@ -29,6 +29,7 @@ class Bazaar_Ajax {
 
             // Vendor dashboard actions
             'save_vendor_profile'    => true,
+            'get_sales_chart'        => true,
             'save_product'           => true,
             'delete_product'         => true,
             'update_order_status'    => true,
@@ -146,6 +147,25 @@ class Bazaar_Ajax {
         }
 
         wp_send_json_success( array( 'message' => __( 'Profile updated successfully.', 'bazaar' ) ) );
+    }
+
+    /**
+     * Get sales chart data.
+     */
+    public function get_sales_chart() {
+        check_ajax_referer( 'bazaar_dashboard', 'nonce' );
+
+        $vendor_id = get_current_user_id();
+
+        if ( ! Bazaar_Roles::is_vendor( $vendor_id ) ) {
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'bazaar' ) ) );
+        }
+
+        $period = isset( $_POST['period'] ) ? sanitize_text_field( wp_unslash( $_POST['period'] ) ) : '30days';
+
+        $data = Bazaar_Vendor_Dashboard::get_sales_chart_data( $vendor_id, $period );
+
+        wp_send_json_success( $data );
     }
 
     /**

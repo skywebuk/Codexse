@@ -329,7 +329,13 @@ final class Bazaar {
             include_once BAZAAR_ABSPATH . 'admin/class-bazaar-admin-vendors.php';
             include_once BAZAAR_ABSPATH . 'admin/class-bazaar-admin-withdrawals.php';
             include_once BAZAAR_ABSPATH . 'admin/class-bazaar-admin-reports.php';
+            include_once BAZAAR_ABSPATH . 'admin/class-bazaar-admin-dashboard.php';
         }
+
+        // Supporting classes
+        include_once BAZAAR_ABSPATH . 'includes/class-bazaar-modules.php';
+        include_once BAZAAR_ABSPATH . 'includes/class-bazaar-settings.php';
+        include_once BAZAAR_ABSPATH . 'includes/class-bazaar-tools.php';
 
         // Frontend includes
         if ( ! is_admin() || defined( 'DOING_AJAX' ) ) {

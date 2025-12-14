@@ -62,6 +62,7 @@ class Bazaar_Frontend {
             'bazaar_dashboard',
             array(
                 'ajax_url'                  => admin_url( 'admin-ajax.php' ),
+                'nonce'                     => wp_create_nonce( 'bazaar_dashboard' ),
                 'vendor_profile_nonce'      => wp_create_nonce( 'bazaar_vendor_profile' ),
                 'save_product_nonce'        => wp_create_nonce( 'bazaar_save_product' ),
                 'delete_product_nonce'      => wp_create_nonce( 'bazaar_delete_product' ),

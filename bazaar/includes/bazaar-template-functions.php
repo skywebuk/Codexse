@@ -379,3 +379,34 @@ function bazaar_withdrawal_status_badge( $status ) {
 function bazaar_loading_spinner() {
     echo '<div class="bazaar-loading"><span class="bazaar-spinner"></span></div>';
 }
+
+/**
+ * Get notification icon based on type.
+ *
+ * @param string $type Notification type.
+ * @return string Dashicons class.
+ */
+function bazaar_get_notification_icon( $type ) {
+    $icons = array(
+        'order'      => 'dashicons-cart',
+        'new_order'  => 'dashicons-cart',
+        'review'     => 'dashicons-star-filled',
+        'new_review' => 'dashicons-star-filled',
+        'product'    => 'dashicons-products',
+        'withdrawal' => 'dashicons-money-alt',
+        'withdraw'   => 'dashicons-money-alt',
+        'earning'    => 'dashicons-chart-line',
+        'commission' => 'dashicons-chart-line',
+        'refund'     => 'dashicons-undo',
+        'coupon'     => 'dashicons-tickets-alt',
+        'shipping'   => 'dashicons-car',
+        'message'    => 'dashicons-email',
+        'alert'      => 'dashicons-warning',
+        'system'     => 'dashicons-info',
+        'info'       => 'dashicons-info-outline',
+        'success'    => 'dashicons-yes-alt',
+        'error'      => 'dashicons-dismiss',
+    );
+
+    return isset( $icons[ $type ] ) ? $icons[ $type ] : 'dashicons-bell';
+}
