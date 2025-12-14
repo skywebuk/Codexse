@@ -145,8 +145,21 @@ function bazaar_activation_check() {
             array( 'back_link' => true )
         );
     }
+
+    // All checks passed - run the installation routine
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-bazaar-install.php';
+    Bazaar_Install::install();
 }
 register_activation_hook( __FILE__, 'bazaar_activation_check' );
+
+/**
+ * Deactivation hook.
+ */
+function bazaar_deactivation() {
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-bazaar-install.php';
+    Bazaar_Install::deactivate();
+}
+register_deactivation_hook( __FILE__, 'bazaar_deactivation' );
 
 /**
  * Deactivate Bazaar if WooCommerce is deactivated.
@@ -330,9 +343,6 @@ final class Bazaar {
      * Hook into actions and filters.
      */
     private function init_hooks() {
-        register_activation_hook( BAZAAR_PLUGIN_FILE, array( 'Bazaar_Install', 'install' ) );
-        register_deactivation_hook( BAZAAR_PLUGIN_FILE, array( 'Bazaar_Install', 'deactivate' ) );
-
         add_action( 'plugins_loaded', array( $this, 'on_plugins_loaded' ), -1 );
         add_action( 'init', array( $this, 'init' ), 0 );
         add_action( 'init', array( $this, 'load_textdomain' ) );
@@ -353,11 +363,26 @@ final class Bazaar {
             return;
         }
 
+        // Run install if not yet installed (handles existing activations)
+        $this->maybe_install();
+
         // Initialize modules
         $this->init_modules();
 
         // Declare compatibility with WooCommerce HPOS
         add_action( 'before_woocommerce_init', array( $this, 'declare_hpos_compatibility' ) );
+    }
+
+    /**
+     * Run install if the plugin was activated but install never ran.
+     */
+    private function maybe_install() {
+        if ( ! get_option( 'bazaar_version' ) ) {
+            Bazaar_Install::install();
+        } elseif ( version_compare( get_option( 'bazaar_version' ), BAZAAR_VERSION, '<' ) ) {
+            // Run upgrade routine if needed
+            Bazaar_Install::install();
+        }
     }
 
     /**
