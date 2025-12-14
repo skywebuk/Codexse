@@ -16,19 +16,31 @@ class Bazaar_Admin_Menus {
      * Constructor.
      */
     public function __construct() {
-        add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+        add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
         add_action( 'admin_head', array( $this, 'menu_highlight' ) );
+        add_action( 'admin_head', array( $this, 'add_menu_styles' ) );
     }
 
     /**
      * Add admin menu items.
      */
     public function admin_menu() {
-        // Main menu
+        // Get pending counts for badges
+        $pending_vendors = $this->get_pending_vendors_count();
+        $pending_withdrawals = $this->get_pending_withdrawals_count();
+        $pending_refunds = $this->get_pending_refunds_count();
+        $total_pending = $pending_vendors + $pending_withdrawals + $pending_refunds;
+
+        // Main menu with badge
+        $menu_title = __( 'Bazaar', 'bazaar' );
+        if ( $total_pending > 0 ) {
+            $menu_title .= ' <span class="awaiting-mod update-plugins count-' . $total_pending . '"><span class="pending-count">' . $total_pending . '</span></span>';
+        }
+
         add_menu_page(
             __( 'Bazaar', 'bazaar' ),
-            __( 'Bazaar', 'bazaar' ),
-            'bazaar_manage_marketplace',
+            $menu_title,
+            'manage_woocommerce',
             'bazaar',
             array( $this, 'dashboard_page' ),
             'dashicons-store',
@@ -40,29 +52,71 @@ class Bazaar_Admin_Menus {
             'bazaar',
             __( 'Dashboard', 'bazaar' ),
             __( 'Dashboard', 'bazaar' ),
-            'bazaar_manage_marketplace',
+            'manage_woocommerce',
             'bazaar',
             array( $this, 'dashboard_page' )
         );
 
+        // Withdraw
+        $withdraw_title = __( 'Withdraw', 'bazaar' );
+        if ( $pending_withdrawals > 0 ) {
+            $withdraw_title .= ' <span class="awaiting-mod">' . $pending_withdrawals . '</span>';
+        }
+        add_submenu_page(
+            'bazaar',
+            __( 'Withdraw', 'bazaar' ),
+            $withdraw_title,
+            'manage_woocommerce',
+            'bazaar-withdraw',
+            array( $this, 'withdraw_page' )
+        );
+
+        // Reverse Withdrawal
+        add_submenu_page(
+            'bazaar',
+            __( 'Reverse Withdrawal', 'bazaar' ),
+            __( 'Reverse Withdrawal', 'bazaar' ),
+            'manage_woocommerce',
+            'bazaar-reverse-withdrawal',
+            array( $this, 'reverse_withdrawal_page' )
+        );
+
         // Vendors
+        $vendors_title = __( 'Vendors', 'bazaar' );
+        if ( $pending_vendors > 0 ) {
+            $vendors_title .= ' <span class="awaiting-mod">' . $pending_vendors . '</span>';
+        }
         add_submenu_page(
             'bazaar',
             __( 'Vendors', 'bazaar' ),
-            __( 'Vendors', 'bazaar' ),
-            'bazaar_manage_vendors',
+            $vendors_title,
+            'manage_woocommerce',
             'bazaar-vendors',
             array( $this, 'vendors_page' )
         );
 
-        // Withdrawals
+        // Announcements
         add_submenu_page(
             'bazaar',
-            __( 'Withdrawals', 'bazaar' ),
-            __( 'Withdrawals', 'bazaar' ),
-            'bazaar_manage_withdrawals',
-            'bazaar-withdrawals',
-            array( $this, 'withdrawals_page' )
+            __( 'Announcements', 'bazaar' ),
+            __( 'Announcements', 'bazaar' ),
+            'manage_woocommerce',
+            'bazaar-announcements',
+            array( $this, 'announcements_page' )
+        );
+
+        // Refunds
+        $refunds_title = __( 'Refunds', 'bazaar' );
+        if ( $pending_refunds > 0 ) {
+            $refunds_title .= ' <span class="awaiting-mod">' . $pending_refunds . '</span>';
+        }
+        add_submenu_page(
+            'bazaar',
+            __( 'Refunds', 'bazaar' ),
+            $refunds_title,
+            'manage_woocommerce',
+            'bazaar-refunds',
+            array( $this, 'refunds_page' )
         );
 
         // Reports
@@ -70,9 +124,39 @@ class Bazaar_Admin_Menus {
             'bazaar',
             __( 'Reports', 'bazaar' ),
             __( 'Reports', 'bazaar' ),
-            'bazaar_view_reports',
+            'manage_woocommerce',
             'bazaar-reports',
             array( $this, 'reports_page' )
+        );
+
+        // Modules
+        add_submenu_page(
+            'bazaar',
+            __( 'Modules', 'bazaar' ),
+            __( 'Modules', 'bazaar' ),
+            'manage_woocommerce',
+            'bazaar-modules',
+            array( $this, 'modules_page' )
+        );
+
+        // Tools
+        add_submenu_page(
+            'bazaar',
+            __( 'Tools', 'bazaar' ),
+            __( 'Tools', 'bazaar' ),
+            'manage_woocommerce',
+            'bazaar-tools',
+            array( $this, 'tools_page' )
+        );
+
+        // Help
+        add_submenu_page(
+            'bazaar',
+            __( 'Help', 'bazaar' ),
+            __( 'Help', 'bazaar' ),
+            'manage_woocommerce',
+            'bazaar-help',
+            array( $this, 'help_page' )
         );
 
         // Settings
@@ -80,7 +164,7 @@ class Bazaar_Admin_Menus {
             'bazaar',
             __( 'Settings', 'bazaar' ),
             __( 'Settings', 'bazaar' ),
-            'bazaar_manage_settings',
+            'manage_woocommerce',
             'bazaar-settings',
             array( $this, 'settings_page' )
         );
@@ -92,7 +176,6 @@ class Bazaar_Admin_Menus {
     public function menu_highlight() {
         global $parent_file, $submenu_file, $post_type;
 
-        // Highlight Bazaar menu for relevant pages
         if ( 'product' === $post_type ) {
             if ( isset( $_GET['bazaar_vendor'] ) ) {
                 $parent_file = 'bazaar';
@@ -102,137 +185,148 @@ class Bazaar_Admin_Menus {
     }
 
     /**
+     * Add menu styles.
+     */
+    public function add_menu_styles() {
+        ?>
+        <style>
+            #adminmenu .toplevel_page_bazaar .wp-menu-image:before {
+                content: '\f513';
+            }
+            #adminmenu .toplevel_page_bazaar .awaiting-mod {
+                background: #6366f1;
+            }
+        </style>
+        <?php
+    }
+
+    /**
+     * Get pending vendors count.
+     *
+     * @return int
+     */
+    private function get_pending_vendors_count() {
+        $vendors = get_users( array(
+            'role'       => 'bazaar_vendor',
+            'meta_key'   => '_bazaar_vendor_status',
+            'meta_value' => 'pending',
+            'fields'     => 'ID',
+        ) );
+        return count( $vendors );
+    }
+
+    /**
+     * Get pending withdrawals count.
+     *
+     * @return int
+     */
+    private function get_pending_withdrawals_count() {
+        global $wpdb;
+        $table = $wpdb->prefix . 'bazaar_withdrawals';
+        $table_exists = $wpdb->get_var( "SHOW TABLES LIKE '{$table}'" );
+        if ( ! $table_exists ) {
+            return 0;
+        }
+        return (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table} WHERE status = 'pending'" );
+    }
+
+    /**
+     * Get pending refunds count.
+     *
+     * @return int
+     */
+    private function get_pending_refunds_count() {
+        global $wpdb;
+        $table = $wpdb->prefix . 'bazaar_refunds';
+        $table_exists = $wpdb->get_var( "SHOW TABLES LIKE '{$table}'" );
+        if ( ! $table_exists ) {
+            return 0;
+        }
+        return (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table} WHERE status = 'pending'" );
+    }
+
+    /**
      * Dashboard page.
      */
     public function dashboard_page() {
-        // Get statistics
-        $stats = $this->get_dashboard_stats();
-
         include BAZAAR_ABSPATH . 'admin/views/html-admin-dashboard.php';
+    }
+
+    /**
+     * Withdraw page.
+     */
+    public function withdraw_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-withdraw.php';
+    }
+
+    /**
+     * Reverse Withdrawal page.
+     */
+    public function reverse_withdrawal_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-reverse-withdrawal.php';
     }
 
     /**
      * Vendors page.
      */
     public function vendors_page() {
-        // Get vendors list or single vendor
         $action = isset( $_GET['action'] ) ? sanitize_text_field( wp_unslash( $_GET['action'] ) ) : 'list';
         $vendor_id = isset( $_GET['vendor'] ) ? intval( $_GET['vendor'] ) : 0;
 
-        if ( 'view' === $action && $vendor_id ) {
-            $vendor = Bazaar_Vendor::get_vendor( $vendor_id );
-            include BAZAAR_ABSPATH . 'admin/views/html-admin-vendor-view.php';
+        if ( 'edit' === $action && $vendor_id ) {
+            include BAZAAR_ABSPATH . 'admin/views/html-admin-vendor-edit.php';
         } else {
-            $status = isset( $_GET['status'] ) ? sanitize_text_field( wp_unslash( $_GET['status'] ) ) : '';
-            $paged = isset( $_GET['paged'] ) ? intval( $_GET['paged'] ) : 1;
-            $search = isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( $_GET['s'] ) ) : '';
-
-            $args = array(
-                'number' => 20,
-                'paged'  => $paged,
-            );
-
-            if ( $status ) {
-                $args['status'] = $status;
-            }
-
-            if ( $search ) {
-                $args['search'] = $search;
-            }
-
-            $vendors = Bazaar_Vendor::get_vendors( $args );
-
             include BAZAAR_ABSPATH . 'admin/views/html-admin-vendors.php';
         }
     }
 
     /**
-     * Withdrawals page.
+     * Announcements page.
      */
-    public function withdrawals_page() {
-        $status = isset( $_GET['status'] ) ? sanitize_text_field( wp_unslash( $_GET['status'] ) ) : '';
-        $paged = isset( $_GET['paged'] ) ? intval( $_GET['paged'] ) : 1;
+    public function announcements_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-announcements.php';
+    }
 
-        $withdrawals = Bazaar_Withdrawal::get_all_withdrawals(
-            array(
-                'status'   => $status,
-                'per_page' => 20,
-                'page'     => $paged,
-            )
-        );
-
-        $stats = Bazaar_Withdrawal::get_statistics();
-
-        include BAZAAR_ABSPATH . 'admin/views/html-admin-withdrawals.php';
+    /**
+     * Refunds page.
+     */
+    public function refunds_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-refunds.php';
     }
 
     /**
      * Reports page.
      */
     public function reports_page() {
-        $report_type = isset( $_GET['report'] ) ? sanitize_text_field( wp_unslash( $_GET['report'] ) ) : 'overview';
-        $range = isset( $_GET['range'] ) ? sanitize_text_field( wp_unslash( $_GET['range'] ) ) : 'this_month';
-
-        $date_range = bazaar_get_date_range( $range );
-        $report_data = Bazaar_Admin_Reports::get_report_data( $report_type, $date_range );
-
         include BAZAAR_ABSPATH . 'admin/views/html-admin-reports.php';
+    }
+
+    /**
+     * Modules page.
+     */
+    public function modules_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-modules.php';
+    }
+
+    /**
+     * Tools page.
+     */
+    public function tools_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-tools.php';
+    }
+
+    /**
+     * Help page.
+     */
+    public function help_page() {
+        include BAZAAR_ABSPATH . 'admin/views/html-admin-help.php';
     }
 
     /**
      * Settings page.
      */
     public function settings_page() {
-        $tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'general';
-
-        // Handle save
-        if ( isset( $_POST['bazaar_save_settings'] ) ) {
-            check_admin_referer( 'bazaar_settings' );
-            Bazaar_Admin_Settings::save_settings( $tab );
-            echo Bazaar_Admin::get_notice( __( 'Settings saved.', 'bazaar' ), 'success' );
-        }
-
-        $tabs = Bazaar_Admin_Settings::get_tabs();
-        $settings = Bazaar_Admin_Settings::get_settings( $tab );
-
         include BAZAAR_ABSPATH . 'admin/views/html-admin-settings.php';
-    }
-
-    /**
-     * Get dashboard statistics.
-     *
-     * @return array
-     */
-    private function get_dashboard_stats() {
-        $vendors = Bazaar_Vendor::get_vendors( array( 'number' => -1 ) );
-        $pending_vendors = Bazaar_Vendor::get_vendors( array( 'status' => 'pending', 'number' => -1 ) );
-
-        $date_range = bazaar_get_date_range( 'this_month' );
-        $commission_report = Bazaar_Commission::get_admin_report( $date_range['start'], $date_range['end'] );
-
-        $withdrawal_stats = Bazaar_Withdrawal::get_statistics();
-
-        // Pending products
-        $pending_products = new WP_Query(
-            array(
-                'post_type'      => 'product',
-                'post_status'    => 'pending',
-                'posts_per_page' => -1,
-                'fields'         => 'ids',
-            )
-        );
-
-        return array(
-            'total_vendors'      => $vendors['total'],
-            'pending_vendors'    => $pending_vendors['total'],
-            'gross_sales'        => $commission_report['gross_sales'],
-            'admin_commission'   => $commission_report['admin_commission'],
-            'vendor_earnings'    => $commission_report['vendor_earnings'],
-            'total_orders'       => $commission_report['total_orders'],
-            'pending_withdrawals' => $withdrawal_stats['pending_count'],
-            'pending_withdrawal_amount' => $withdrawal_stats['pending_amount'],
-            'pending_products'   => $pending_products->found_posts,
-        );
     }
 }
 

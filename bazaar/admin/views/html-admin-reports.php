@@ -7,227 +7,131 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$report_types = Bazaar_Admin_Reports::get_report_types();
+// Get current report type
+$report_type = isset( $_GET['type'] ) ? sanitize_text_field( wp_unslash( $_GET['type'] ) ) : 'overview';
+$date_range = isset( $_GET['range'] ) ? sanitize_text_field( wp_unslash( $_GET['range'] ) ) : 'month';
+$vendor_id = isset( $_GET['vendor'] ) ? intval( $_GET['vendor'] ) : 0;
+
+// Get date range
+$dates = Bazaar_Admin_Dashboard::get_date_range( $date_range );
+
+// Get report data based on type
+$report_data = Bazaar_Reports::get_data( $report_type, $dates, $vendor_id );
+
+// Get vendors for filter
+$vendors = get_users( array(
+    'role'    => 'bazaar_vendor',
+    'orderby' => 'display_name',
+    'order'   => 'ASC',
+) );
 ?>
 <div class="wrap bazaar-admin-wrap bazaar-reports">
-    <h1><?php esc_html_e( 'Reports', 'bazaar' ); ?></h1>
-
-    <div class="bazaar-report-filters">
-        <form method="get" class="report-filter-form">
-            <input type="hidden" name="page" value="bazaar-reports" />
-
-            <select name="report">
-                <?php foreach ( $report_types as $type => $label ) : ?>
-                    <option value="<?php echo esc_attr( $type ); ?>" <?php selected( $report_type, $type ); ?>>
-                        <?php echo esc_html( $label ); ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-
-            <select name="range">
-                <option value="today" <?php selected( $range, 'today' ); ?>><?php esc_html_e( 'Today', 'bazaar' ); ?></option>
-                <option value="yesterday" <?php selected( $range, 'yesterday' ); ?>><?php esc_html_e( 'Yesterday', 'bazaar' ); ?></option>
-                <option value="this_week" <?php selected( $range, 'this_week' ); ?>><?php esc_html_e( 'This Week', 'bazaar' ); ?></option>
-                <option value="last_week" <?php selected( $range, 'last_week' ); ?>><?php esc_html_e( 'Last Week', 'bazaar' ); ?></option>
-                <option value="this_month" <?php selected( $range, 'this_month' ); ?>><?php esc_html_e( 'This Month', 'bazaar' ); ?></option>
-                <option value="last_month" <?php selected( $range, 'last_month' ); ?>><?php esc_html_e( 'Last Month', 'bazaar' ); ?></option>
-                <option value="this_year" <?php selected( $range, 'this_year' ); ?>><?php esc_html_e( 'This Year', 'bazaar' ); ?></option>
-                <option value="last_year" <?php selected( $range, 'last_year' ); ?>><?php esc_html_e( 'Last Year', 'bazaar' ); ?></option>
-                <option value="all_time" <?php selected( $range, 'all_time' ); ?>><?php esc_html_e( 'All Time', 'bazaar' ); ?></option>
-            </select>
-
-            <button type="submit" class="button"><?php esc_html_e( 'Filter', 'bazaar' ); ?></button>
-        </form>
+    <div class="bazaar-page-header">
+        <h1><?php esc_html_e( 'Reports', 'bazaar' ); ?></h1>
+        <p class="header-subtitle"><?php esc_html_e( 'Marketplace analytics and insights', 'bazaar' ); ?></p>
     </div>
 
-    <?php if ( 'overview' === $report_type ) : ?>
-        <div class="bazaar-report-summary">
-            <div class="summary-box">
-                <div class="summary-value"><?php echo wc_price( $report_data['summary']['gross_sales'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Gross Sales', 'bazaar' ); ?></div>
+    <!-- Report Navigation -->
+    <div class="bazaar-report-nav">
+        <ul class="report-tabs">
+            <li>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-reports&type=overview' ) ); ?>" class="<?php echo 'overview' === $report_type ? 'active' : ''; ?>">
+                    <span class="dashicons dashicons-chart-area"></span>
+                    <?php esc_html_e( 'Overview', 'bazaar' ); ?>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-reports&type=sales' ) ); ?>" class="<?php echo 'sales' === $report_type ? 'active' : ''; ?>">
+                    <span class="dashicons dashicons-chart-bar"></span>
+                    <?php esc_html_e( 'Sales by Day', 'bazaar' ); ?>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-reports&type=vendors' ) ); ?>" class="<?php echo 'vendors' === $report_type ? 'active' : ''; ?>">
+                    <span class="dashicons dashicons-groups"></span>
+                    <?php esc_html_e( 'Top Vendors', 'bazaar' ); ?>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-reports&type=products' ) ); ?>" class="<?php echo 'products' === $report_type ? 'active' : ''; ?>">
+                    <span class="dashicons dashicons-archive"></span>
+                    <?php esc_html_e( 'Top Products', 'bazaar' ); ?>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-reports&type=commission' ) ); ?>" class="<?php echo 'commission' === $report_type ? 'active' : ''; ?>">
+                    <span class="dashicons dashicons-money-alt"></span>
+                    <?php esc_html_e( 'Commission', 'bazaar' ); ?>
+                </a>
+            </li>
+        </ul>
+
+        <div class="report-filters">
+            <form method="get" class="filter-form">
+                <input type="hidden" name="page" value="bazaar-reports">
+                <input type="hidden" name="type" value="<?php echo esc_attr( $report_type ); ?>">
+
+                <select name="range" class="bazaar-select" onchange="this.form.submit()">
+                    <option value="today" <?php selected( $date_range, 'today' ); ?>><?php esc_html_e( 'Today', 'bazaar' ); ?></option>
+                    <option value="week" <?php selected( $date_range, 'week' ); ?>><?php esc_html_e( 'This Week', 'bazaar' ); ?></option>
+                    <option value="month" <?php selected( $date_range, 'month' ); ?>><?php esc_html_e( 'This Month', 'bazaar' ); ?></option>
+                    <option value="year" <?php selected( $date_range, 'year' ); ?>><?php esc_html_e( 'This Year', 'bazaar' ); ?></option>
+                </select>
+
+                <button type="submit" class="button">
+                    <span class="dashicons dashicons-filter"></span>
+                    <?php esc_html_e( 'Filter', 'bazaar' ); ?>
+                </button>
+
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-reports&type=' . $report_type . '&range=' . $date_range . '&export=csv' ) ); ?>" class="button">
+                    <span class="dashicons dashicons-download"></span>
+                    <?php esc_html_e( 'Export CSV', 'bazaar' ); ?>
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Report Content -->
+    <div class="bazaar-report-content">
+        <!-- Overview Report -->
+        <div class="bazaar-stats-grid large">
+            <div class="bazaar-stat-card">
+                <div class="stat-icon sales"><span class="dashicons dashicons-chart-bar"></span></div>
+                <div class="stat-content">
+                    <span class="stat-value"><?php echo wc_price( $report_data['gross_sales'] ?? 0 ); ?></span>
+                    <span class="stat-label"><?php esc_html_e( 'Gross Sales', 'bazaar' ); ?></span>
+                </div>
             </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo wc_price( $report_data['summary']['admin_commission'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Admin Commission', 'bazaar' ); ?></div>
+            <div class="bazaar-stat-card">
+                <div class="stat-icon commission"><span class="dashicons dashicons-money-alt"></span></div>
+                <div class="stat-content">
+                    <span class="stat-value"><?php echo wc_price( $report_data['admin_commission'] ?? 0 ); ?></span>
+                    <span class="stat-label"><?php esc_html_e( 'Admin Commission', 'bazaar' ); ?></span>
+                </div>
             </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo wc_price( $report_data['summary']['vendor_earnings'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Vendor Earnings', 'bazaar' ); ?></div>
+            <div class="bazaar-stat-card">
+                <div class="stat-icon vendors"><span class="dashicons dashicons-businessman"></span></div>
+                <div class="stat-content">
+                    <span class="stat-value"><?php echo wc_price( $report_data['vendor_earnings'] ?? 0 ); ?></span>
+                    <span class="stat-label"><?php esc_html_e( 'Vendor Earnings', 'bazaar' ); ?></span>
+                </div>
             </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo esc_html( $report_data['summary']['total_orders'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Total Orders', 'bazaar' ); ?></div>
+            <div class="bazaar-stat-card">
+                <div class="stat-icon orders"><span class="dashicons dashicons-cart"></span></div>
+                <div class="stat-content">
+                    <span class="stat-value"><?php echo esc_html( number_format_i18n( $report_data['total_orders'] ?? 0 ) ); ?></span>
+                    <span class="stat-label"><?php esc_html_e( 'Orders', 'bazaar' ); ?></span>
+                </div>
             </div>
         </div>
 
-        <div class="bazaar-report-chart">
-            <h3><?php esc_html_e( 'Sales Overview', 'bazaar' ); ?></h3>
-            <canvas id="bazaar-sales-chart" height="300"></canvas>
-        </div>
-
-        <script>
-        jQuery(document).ready(function($) {
-            var ctx = document.getElementById('bazaar-sales-chart').getContext('2d');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: <?php echo json_encode( $report_data['chart']['labels'] ); ?>,
-                    datasets: [
-                        {
-                            label: '<?php esc_html_e( 'Gross Sales', 'bazaar' ); ?>',
-                            data: <?php echo json_encode( $report_data['chart']['gross'] ); ?>,
-                            borderColor: '#4CAF50',
-                            backgroundColor: 'rgba(76, 175, 80, 0.1)',
-                            fill: true
-                        },
-                        {
-                            label: '<?php esc_html_e( 'Admin Commission', 'bazaar' ); ?>',
-                            data: <?php echo json_encode( $report_data['chart']['commission'] ); ?>,
-                            borderColor: '#2196F3',
-                            backgroundColor: 'rgba(33, 150, 243, 0.1)',
-                            fill: true
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false
-                }
-            });
-        });
-        </script>
-
-        <?php if ( ! empty( $report_data['top_vendors'] ) ) : ?>
-            <div class="bazaar-report-table">
-                <h3><?php esc_html_e( 'Top Vendors', 'bazaar' ); ?></h3>
-                <table class="wp-list-table widefat fixed striped">
-                    <thead>
-                        <tr>
-                            <th><?php esc_html_e( 'Vendor', 'bazaar' ); ?></th>
-                            <th><?php esc_html_e( 'Sales', 'bazaar' ); ?></th>
-                            <th><?php esc_html_e( 'Earnings', 'bazaar' ); ?></th>
-                            <th><?php esc_html_e( 'Orders', 'bazaar' ); ?></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ( $report_data['top_vendors'] as $vendor_data ) : ?>
-                            <?php $vendor = Bazaar_Vendor::get_vendor( $vendor_data->vendor_id ); ?>
-                            <tr>
-                                <td>
-                                    <?php if ( $vendor ) : ?>
-                                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-vendors&action=view&vendor=' . $vendor_data->vendor_id ) ); ?>">
-                                            <?php echo esc_html( $vendor['store_name'] ); ?>
-                                        </a>
-                                    <?php else : ?>
-                                        <?php esc_html_e( 'Unknown', 'bazaar' ); ?>
-                                    <?php endif; ?>
-                                </td>
-                                <td><?php echo wc_price( $vendor_data->sales ); ?></td>
-                                <td><?php echo wc_price( $vendor_data->earnings ); ?></td>
-                                <td><?php echo esc_html( $vendor_data->orders ); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+        <div class="bazaar-dashboard-card chart-card full-width">
+            <div class="card-header">
+                <h2><?php esc_html_e( 'Sales Overview', 'bazaar' ); ?></h2>
             </div>
-        <?php endif; ?>
-
-    <?php elseif ( 'vendors' === $report_type ) : ?>
-        <div class="bazaar-report-summary">
-            <div class="summary-box">
-                <div class="summary-value"><?php echo esc_html( $report_data['total'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Total Vendors', 'bazaar' ); ?></div>
-            </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo esc_html( $report_data['approved'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Approved', 'bazaar' ); ?></div>
-            </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo esc_html( $report_data['pending'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Pending', 'bazaar' ); ?></div>
+            <div class="card-content">
+                <canvas id="bazaar-report-chart" height="350"></canvas>
             </div>
         </div>
-
-        <div class="bazaar-report-table">
-            <h3><?php esc_html_e( 'Vendor Performance', 'bazaar' ); ?></h3>
-            <table class="wp-list-table widefat fixed striped">
-                <thead>
-                    <tr>
-                        <th><?php esc_html_e( 'Vendor', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Email', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Sales', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Earnings', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Orders', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Rating', 'bazaar' ); ?></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ( $report_data['vendors'] as $vendor ) : ?>
-                        <tr>
-                            <td>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-vendors&action=view&vendor=' . $vendor['id'] ) ); ?>">
-                                    <?php echo esc_html( $vendor['name'] ); ?>
-                                </a>
-                            </td>
-                            <td><?php echo esc_html( $vendor['email'] ); ?></td>
-                            <td><?php echo wc_price( $vendor['sales'] ); ?></td>
-                            <td><?php echo wc_price( $vendor['earnings'] ); ?></td>
-                            <td><?php echo esc_html( $vendor['orders'] ); ?></td>
-                            <td>
-                                <?php if ( $vendor['rating']['count'] > 0 ) : ?>
-                                    <?php echo esc_html( $vendor['rating']['average'] ); ?>/5
-                                <?php else : ?>
-                                    -
-                                <?php endif; ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-
-    <?php elseif ( 'commission' === $report_type ) : ?>
-        <div class="bazaar-report-summary">
-            <div class="summary-box">
-                <div class="summary-value"><?php echo wc_price( $report_data['totals']['gross_sales'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Gross Sales', 'bazaar' ); ?></div>
-            </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo wc_price( $report_data['totals']['admin_commission'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Total Commission', 'bazaar' ); ?></div>
-            </div>
-            <div class="summary-box">
-                <div class="summary-value"><?php echo wc_price( $report_data['totals']['vendor_earnings'] ); ?></div>
-                <div class="summary-label"><?php esc_html_e( 'Vendor Earnings', 'bazaar' ); ?></div>
-            </div>
-        </div>
-
-        <div class="bazaar-report-table">
-            <h3><?php esc_html_e( 'Commission by Vendor', 'bazaar' ); ?></h3>
-            <table class="wp-list-table widefat fixed striped">
-                <thead>
-                    <tr>
-                        <th><?php esc_html_e( 'Vendor', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Gross Sales', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Admin Commission', 'bazaar' ); ?></th>
-                        <th><?php esc_html_e( 'Vendor Earning', 'bazaar' ); ?></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ( $report_data['by_vendor'] as $row ) : ?>
-                        <tr>
-                            <td>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=bazaar-vendors&action=view&vendor=' . $row['vendor_id'] ) ); ?>">
-                                    <?php echo esc_html( $row['vendor_name'] ); ?>
-                                </a>
-                            </td>
-                            <td><?php echo wc_price( $row['gross_sales'] ); ?></td>
-                            <td><?php echo wc_price( $row['admin_commission'] ); ?></td>
-                            <td><?php echo wc_price( $row['vendor_earning'] ); ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    <?php endif; ?>
+    </div>
 </div>
