@@ -1,9 +1,0 @@
-.codexse-shortcode-widget {
-    position: relative;
-    z-index: 1;
-}
-
-.codexse-shortcode-widget button {
-    z-index: 2;
-    position: relative;
-}
