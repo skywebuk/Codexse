@@ -223,6 +223,13 @@ class Enrollment_Manager {
 
         $args = wp_parse_args( $args, $defaults );
 
+        // Whitelist allowed orderby columns to prevent SQL injection.
+        $allowed_orderby = array( 'id', 'user_id', 'course_id', 'status', 'enrolled_at', 'completed_at' );
+        $orderby = in_array( $args['orderby'], $allowed_orderby, true ) ? $args['orderby'] : 'enrolled_at';
+
+        // Whitelist allowed order directions.
+        $order = strtoupper( $args['order'] ) === 'ASC' ? 'ASC' : 'DESC';
+
         $sql = "SELECT * FROM {$this->table} WHERE user_id = %d";
         $params = array( $user_id );
 
@@ -231,7 +238,7 @@ class Enrollment_Manager {
             $params[] = $args['status'];
         }
 
-        $sql .= " ORDER BY {$args['orderby']} {$args['order']}";
+        $sql .= " ORDER BY {$orderby} {$order}";
 
         if ( $args['limit'] > 0 ) {
             $sql .= " LIMIT %d OFFSET %d";
@@ -263,6 +270,13 @@ class Enrollment_Manager {
 
         $args = wp_parse_args( $args, $defaults );
 
+        // Whitelist allowed orderby columns to prevent SQL injection.
+        $allowed_orderby = array( 'id', 'user_id', 'course_id', 'status', 'enrolled_at', 'completed_at' );
+        $orderby = in_array( $args['orderby'], $allowed_orderby, true ) ? $args['orderby'] : 'enrolled_at';
+
+        // Whitelist allowed order directions.
+        $order = strtoupper( $args['order'] ) === 'ASC' ? 'ASC' : 'DESC';
+
         $sql = "SELECT * FROM {$this->table} WHERE course_id = %d";
         $params = array( $course_id );
 
@@ -271,7 +285,7 @@ class Enrollment_Manager {
             $params[] = $args['status'];
         }
 
-        $sql .= " ORDER BY {$args['orderby']} {$args['order']}";
+        $sql .= " ORDER BY {$orderby} {$order}";
 
         if ( $args['limit'] > 0 ) {
             $sql .= " LIMIT %d OFFSET %d";

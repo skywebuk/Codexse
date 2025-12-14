@@ -81,7 +81,7 @@
                     }
                 },
                 error: function(xhr) {
-                    $button.removeClass('loading').text('Mark Complete');
+                    $button.removeClass('loading').text(edugoFrontend.i18n.markComplete);
                     EdugoFrontend.showNotice('error', xhr.responseJSON?.message || edugoFrontend.i18n.error);
                 }
             });
@@ -115,7 +115,7 @@
                         $button
                             .removeClass('loading edugo-enroll-btn')
                             .addClass('edugo-start-course')
-                            .text('Start Course')
+                            .text(edugoFrontend.i18n.startCourse)
                             .attr('href', window.location.href);
 
                         EdugoFrontend.showNotice('success', response.message);
@@ -127,7 +127,7 @@
                     }
                 },
                 error: function(xhr) {
-                    $button.removeClass('loading').text('Enroll Now');
+                    $button.removeClass('loading').text(edugoFrontend.i18n.enrollNow);
                     EdugoFrontend.showNotice('error', xhr.responseJSON?.message || edugoFrontend.i18n.error);
                 }
             });

@@ -281,12 +281,12 @@
                         EdugoQuiz.showResults(response.data);
                     } else {
                         alert(response.data.message || edugoFrontend.i18n.error);
-                        $submitBtn.prop('disabled', false).text('Submit Quiz');
+                        $submitBtn.prop('disabled', false).text(edugoFrontend.i18n.submitQuiz);
                     }
                 },
                 error: function() {
                     alert(edugoFrontend.i18n.error);
-                    $submitBtn.prop('disabled', false).text('Submit Quiz');
+                    $submitBtn.prop('disabled', false).text(edugoFrontend.i18n.submitQuiz);
                 }
             });
 
@@ -297,33 +297,34 @@
          * Show quiz results
          */
         showResults: function(data) {
+            const i18n = edugoFrontend.i18n;
             const $results = $(`
                 <div class="edugo-quiz-results">
                     <div class="edugo-quiz-results-header ${data.passed ? 'passed' : 'failed'}">
                         <div class="edugo-results-icon">
                             ${data.passed ? '&#10003;' : '&#10007;'}
                         </div>
-                        <h2>${data.passed ? 'Congratulations!' : 'Keep Learning!'}</h2>
+                        <h2>${data.passed ? i18n.congratulations : i18n.keepLearning}</h2>
                         <p>${data.message}</p>
                     </div>
 
                     <div class="edugo-quiz-results-body">
                         <div class="edugo-results-stat">
-                            <span class="edugo-results-label">Your Score</span>
+                            <span class="edugo-results-label">${i18n.yourScore}</span>
                             <span class="edugo-results-value">${data.score}%</span>
                         </div>
                         <div class="edugo-results-stat">
-                            <span class="edugo-results-label">Correct Answers</span>
+                            <span class="edugo-results-label">${i18n.correctAnswers}</span>
                             <span class="edugo-results-value">${data.correct_answers} / ${data.total_questions}</span>
                         </div>
                         <div class="edugo-results-stat">
-                            <span class="edugo-results-label">Passing Grade</span>
+                            <span class="edugo-results-label">${i18n.passingGrade}</span>
                             <span class="edugo-results-value">${data.passing_grade}%</span>
                         </div>
                     </div>
 
                     <div class="edugo-quiz-results-footer">
-                        <a href="${window.location.href}" class="edugo-button">View Details</a>
+                        <a href="${window.location.href}" class="edugo-button">${i18n.viewDetails}</a>
                     </div>
                 </div>
             `);

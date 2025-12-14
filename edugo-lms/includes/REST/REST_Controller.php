@@ -232,10 +232,19 @@ class REST_Controller {
         $lessons = get_posts( array(
             'post_type'      => 'edugo_lesson',
             'posts_per_page' => -1,
-            'meta_key'       => '_edugo_course_id',
-            'meta_value'     => $course_id,
+            'post_status'    => 'publish',
+            'meta_query'     => array(
+                array(
+                    'key'     => '_edugo_course_id',
+                    'value'   => $course_id,
+                    'compare' => '=',
+                ),
+                array(
+                    'key'  => '_edugo_lesson_order',
+                    'type' => 'NUMERIC',
+                ),
+            ),
             'orderby'        => 'meta_value_num',
-            'meta_key'       => '_edugo_lesson_order',
             'order'          => 'ASC',
         ) );
 

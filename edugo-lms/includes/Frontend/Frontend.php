@@ -77,6 +77,16 @@ class Frontend {
                     'quizSubmitted'    => __( 'Quiz submitted!', 'edugo-lms' ),
                     'confirmSubmit'    => __( 'Are you sure you want to submit?', 'edugo-lms' ),
                     'timeWarning'      => __( 'You have less than 5 minutes remaining!', 'edugo-lms' ),
+                    'markComplete'     => __( 'Mark Complete', 'edugo-lms' ),
+                    'startCourse'      => __( 'Start Course', 'edugo-lms' ),
+                    'enrollNow'        => __( 'Enroll Now', 'edugo-lms' ),
+                    'submitQuiz'       => __( 'Submit Quiz', 'edugo-lms' ),
+                    'congratulations'  => __( 'Congratulations!', 'edugo-lms' ),
+                    'keepLearning'     => __( 'Keep Learning!', 'edugo-lms' ),
+                    'yourScore'        => __( 'Your Score', 'edugo-lms' ),
+                    'correctAnswers'   => __( 'Correct Answers', 'edugo-lms' ),
+                    'passingGrade'     => __( 'Passing Grade', 'edugo-lms' ),
+                    'viewDetails'      => __( 'View Details', 'edugo-lms' ),
                 ),
             )
         );

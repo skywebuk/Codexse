@@ -228,6 +228,10 @@ class WooCommerce_Integration {
      * @return array Modified cart item data.
      */
     public function add_course_cart_data( array $cart_item_data, int $product_id, int $variation_id ): array {
+        if ( ! function_exists( 'wc_get_product' ) ) {
+            return $cart_item_data;
+        }
+
         $product = wc_get_product( $product_id );
 
         if ( $product && $product->get_type() === 'edugo_course' ) {
@@ -261,6 +265,10 @@ class WooCommerce_Integration {
      * @return void
      */
     public function process_course_purchase( int $order_id ): void {
+        if ( ! function_exists( 'wc_get_order' ) ) {
+            return;
+        }
+
         $order = wc_get_order( $order_id );
 
         if ( ! $order ) {
@@ -321,6 +329,10 @@ class WooCommerce_Integration {
      * @return void
      */
     public function process_course_refund( int $order_id ): void {
+        if ( ! function_exists( 'wc_get_order' ) ) {
+            return;
+        }
+
         $order = wc_get_order( $order_id );
 
         if ( ! $order ) {
@@ -448,6 +460,10 @@ class WooCommerce_Integration {
      * @return void
      */
     public function render_purchase_button( int $course_id ): void {
+        if ( ! function_exists( 'wc_get_product' ) ) {
+            return;
+        }
+
         $product_id = get_post_meta( $course_id, '_edugo_wc_product_id', true );
 
         if ( ! $product_id ) {
@@ -480,6 +496,10 @@ class WooCommerce_Integration {
      * @return WC_Product|null Product or null.
      */
     public function get_course_product( int $course_id ) {
+        if ( ! function_exists( 'wc_get_product' ) ) {
+            return null;
+        }
+
         $product_id = get_post_meta( $course_id, '_edugo_wc_product_id', true );
 
         if ( ! $product_id ) {

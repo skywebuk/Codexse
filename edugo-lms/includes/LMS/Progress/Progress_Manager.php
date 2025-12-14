@@ -342,13 +342,17 @@ class Progress_Manager {
      * @return bool True if can retake, false otherwise.
      */
     public function can_retake_quiz( int $user_id, int $quiz_id ): bool {
-        $retake_limit = (int) get_post_meta( $quiz_id, '_edugo_retake_limit', true );
+        // Check if quiz has a specific retake limit set.
+        $quiz_retake_limit = get_post_meta( $quiz_id, '_edugo_retake_limit', true );
 
-        if ( $retake_limit <= 0 ) {
+        // If meta exists and is set (even to 0), use it; otherwise use global option.
+        if ( $quiz_retake_limit !== '' && $quiz_retake_limit !== false ) {
+            $retake_limit = (int) $quiz_retake_limit;
+        } else {
             $retake_limit = (int) get_option( 'edugo_quiz_retake_limit', 3 );
         }
 
-        // 0 means unlimited.
+        // 0 means unlimited retakes.
         if ( $retake_limit === 0 ) {
             return true;
         }
