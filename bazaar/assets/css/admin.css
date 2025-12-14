@@ -162,6 +162,182 @@
     color: var(--bazaar-white);
 }
 
+/* Dashboard Widgets (used in admin dashboard view) */
+.bazaar-dashboard-widgets {
+    margin-bottom: 32px;
+}
+
+.bazaar-widget-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.bazaar-widget {
+    background: var(--bazaar-white);
+    border: 1px solid var(--bazaar-gray-200);
+    border-radius: var(--bazaar-radius-lg);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--bazaar-transition);
+    box-shadow: var(--bazaar-shadow);
+}
+
+.bazaar-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--bazaar-shadow-lg);
+}
+
+.bazaar-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bazaar-primary), var(--bazaar-secondary));
+}
+
+.bazaar-widget-stat {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.bazaar-widget .widget-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--bazaar-radius-lg);
+    background: linear-gradient(135deg, var(--bazaar-primary-light), var(--bazaar-primary));
+    color: var(--bazaar-white);
+    flex-shrink: 0;
+}
+
+.bazaar-widget .widget-icon .dashicons {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+}
+
+.bazaar-widget .widget-content {
+    flex: 1;
+    min-width: 120px;
+}
+
+.bazaar-widget .widget-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--bazaar-gray-900);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+.bazaar-widget .widget-label {
+    font-size: 14px;
+    color: var(--bazaar-gray-500);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.bazaar-widget .widget-subvalue {
+    font-size: 13px;
+    color: var(--bazaar-gray-600);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.bazaar-widget .widget-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, var(--bazaar-warning), #d97706);
+    color: var(--bazaar-white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bazaar-widget .widget-link {
+    width: 100%;
+    display: block;
+    text-align: right;
+    color: var(--bazaar-primary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 12px;
+    transition: var(--bazaar-transition);
+}
+
+.bazaar-widget .widget-link:hover {
+    color: var(--bazaar-primary-dark);
+}
+
+.bazaar-widget-warning::before {
+    background: linear-gradient(90deg, var(--bazaar-warning), #d97706);
+}
+
+.bazaar-widget-warning .widget-icon {
+    background: linear-gradient(135deg, var(--bazaar-warning), #d97706);
+}
+
+/* Dashboard Actions */
+.bazaar-dashboard-actions {
+    background: var(--bazaar-white);
+    border: 1px solid var(--bazaar-gray-200);
+    border-radius: var(--bazaar-radius-lg);
+    padding: 24px;
+    box-shadow: var(--bazaar-shadow);
+}
+
+.bazaar-dashboard-actions h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--bazaar-gray-900);
+    margin: 0 0 20px;
+}
+
+.bazaar-dashboard-actions .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.bazaar-dashboard-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--bazaar-radius);
+    transition: var(--bazaar-transition);
+}
+
+.bazaar-dashboard-actions .button .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.bazaar-dashboard-actions .button-primary {
+    background: linear-gradient(135deg, var(--bazaar-primary), var(--bazaar-primary-dark));
+    border-color: var(--bazaar-primary-dark);
+    color: var(--bazaar-white);
+}
+
+.bazaar-dashboard-actions .button-primary:hover {
+    background: linear-gradient(135deg, var(--bazaar-primary-dark), #4338ca);
+    border-color: #4338ca;
+}
+
 /* Admin Tables */
 .bazaar-table-wrap {
     background: var(--bazaar-white);
@@ -208,8 +384,254 @@
     font-size: 14px;
 }
 
+/* Filters and Search */
+.bazaar-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px 0;
+}
+
+.bazaar-filters .subsubsub {
+    margin: 0;
+    float: none;
+}
+
+.bazaar-filters .subsubsub li {
+    display: inline-block;
+}
+
+.bazaar-filters .subsubsub a {
+    color: var(--bazaar-gray-600);
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: var(--bazaar-radius-sm);
+    transition: var(--bazaar-transition);
+}
+
+.bazaar-filters .subsubsub a:hover {
+    color: var(--bazaar-primary);
+}
+
+.bazaar-filters .subsubsub a.current {
+    color: var(--bazaar-primary);
+    font-weight: 600;
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.bazaar-filters .search-box {
+    display: flex;
+    gap: 8px;
+}
+
+.bazaar-filters .search-box input[type="search"] {
+    padding: 8px 16px;
+    border: 1px solid var(--bazaar-gray-300);
+    border-radius: var(--bazaar-radius);
+    font-size: 14px;
+    min-width: 200px;
+    transition: var(--bazaar-transition);
+}
+
+.bazaar-filters .search-box input[type="search"]:focus {
+    outline: none;
+    border-color: var(--bazaar-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Vendors Table */
+.bazaar-vendors-table {
+    background: var(--bazaar-white);
+    border-radius: var(--bazaar-radius-lg);
+    box-shadow: var(--bazaar-shadow);
+    overflow: hidden;
+}
+
+.bazaar-vendors-table th,
+.bazaar-vendors-table td {
+    padding: 16px;
+    vertical-align: middle;
+}
+
+.bazaar-vendors-table .column-avatar {
+    width: 60px;
+}
+
+.bazaar-vendors-table .column-avatar img {
+    border-radius: 50%;
+}
+
+.bazaar-vendors-table .column-store strong a {
+    color: var(--bazaar-gray-900);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.bazaar-vendors-table .column-store strong a:hover {
+    color: var(--bazaar-primary);
+}
+
+.bazaar-vendors-table .column-store small {
+    color: var(--bazaar-gray-500);
+}
+
+.bazaar-vendors-table .column-actions {
+    white-space: nowrap;
+}
+
+.bazaar-vendors-table .column-actions .button {
+    margin-right: 4px;
+}
+
+.bazaar-vendors-table .column-actions .button.approve {
+    background: var(--bazaar-success);
+    border-color: var(--bazaar-success);
+    color: white;
+}
+
+.bazaar-vendors-table .column-actions .button.reject,
+.bazaar-vendors-table .column-actions .button.disable {
+    background: var(--bazaar-danger);
+    border-color: var(--bazaar-danger);
+    color: white;
+}
+
+.bazaar-vendors-table .column-actions .button.enable {
+    background: var(--bazaar-success);
+    border-color: var(--bazaar-success);
+    color: white;
+}
+
+/* Withdrawal Stats */
+.bazaar-withdrawal-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.bazaar-withdrawal-stats .stat-box {
+    background: var(--bazaar-white);
+    border: 1px solid var(--bazaar-gray-200);
+    border-radius: var(--bazaar-radius-lg);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--bazaar-shadow);
+    transition: var(--bazaar-transition);
+}
+
+.bazaar-withdrawal-stats .stat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--bazaar-shadow-lg);
+}
+
+.bazaar-withdrawal-stats .stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--bazaar-gray-900);
+    line-height: 1;
+}
+
+.bazaar-withdrawal-stats .stat-label {
+    font-size: 14px;
+    color: var(--bazaar-gray-500);
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.bazaar-withdrawal-stats .stat-amount {
+    font-size: 16px;
+    color: var(--bazaar-primary);
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* Withdrawals Table */
+.bazaar-withdrawals-table {
+    background: var(--bazaar-white);
+    border-radius: var(--bazaar-radius-lg);
+    box-shadow: var(--bazaar-shadow);
+    overflow: hidden;
+}
+
+.bazaar-withdrawals-table th,
+.bazaar-withdrawals-table td {
+    padding: 16px;
+    vertical-align: middle;
+}
+
+.bazaar-withdrawals-table .column-id {
+    width: 60px;
+    font-weight: 600;
+}
+
+.bazaar-withdrawals-table .column-amount strong {
+    color: var(--bazaar-gray-900);
+    font-size: 15px;
+}
+
+.bazaar-withdrawals-table .column-actions {
+    white-space: nowrap;
+}
+
+.bazaar-withdrawals-table .column-actions .button {
+    margin-right: 4px;
+}
+
+.bazaar-withdrawals-table .withdrawal-note,
+.bazaar-withdrawals-table .withdrawal-admin-note {
+    background: var(--bazaar-gray-50);
+}
+
+.bazaar-withdrawals-table .withdrawal-note td,
+.bazaar-withdrawals-table .withdrawal-admin-note td {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--bazaar-gray-600);
+}
+
+.bazaar-withdrawals-table .withdrawal-admin-note td {
+    color: var(--bazaar-primary);
+}
+
+/* Withdrawal Status Badges */
+.bazaar-status-badge.withdrawal-pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: #b45309;
+}
+
+.bazaar-status-badge.withdrawal-approved {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0284c7;
+}
+
+.bazaar-status-badge.withdrawal-paid {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+
+.bazaar-status-badge.withdrawal-rejected,
+.bazaar-status-badge.withdrawal-cancelled {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+}
+
+/* Method Details */
+.bazaar-method-details {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.bazaar-method-details strong {
+    color: var(--bazaar-gray-700);
+}
+
 /* Status Badges */
-.status-badge {
+.status-badge,
+.bazaar-status-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -220,7 +642,8 @@
     text-transform: capitalize;
 }
 
-.status-badge::before {
+.status-badge::before,
+.bazaar-status-badge::before {
     content: '';
     width: 6px;
     height: 6px;
@@ -228,7 +651,8 @@
     background: currentColor;
 }
 
-.status-badge.status-pending {
+.status-badge.status-pending,
+.bazaar-status-badge.bazaar-status-pending {
     background: rgba(245, 158, 11, 0.1);
     color: #b45309;
 }
@@ -236,34 +660,45 @@
 .status-badge.status-approved,
 .status-badge.status-active,
 .status-badge.status-completed,
-.status-badge.status-paid {
+.status-badge.status-paid,
+.bazaar-status-badge.bazaar-status-approved,
+.bazaar-status-badge.bazaar-status-active,
+.bazaar-status-badge.bazaar-status-completed,
+.bazaar-status-badge.bazaar-status-paid {
     background: rgba(16, 185, 129, 0.1);
     color: #059669;
 }
 
 .status-badge.status-rejected,
 .status-badge.status-cancelled,
-.status-badge.status-failed {
+.status-badge.status-failed,
+.bazaar-status-badge.bazaar-status-rejected,
+.bazaar-status-badge.bazaar-status-cancelled,
+.bazaar-status-badge.bazaar-status-failed {
     background: rgba(239, 68, 68, 0.1);
     color: #dc2626;
 }
 
-.status-badge.status-processing {
+.status-badge.status-processing,
+.bazaar-status-badge.bazaar-status-processing {
     background: rgba(14, 165, 233, 0.1);
     color: #0284c7;
 }
 
-.status-badge.status-on-hold {
+.status-badge.status-on-hold,
+.bazaar-status-badge.bazaar-status-on-hold {
     background: var(--bazaar-gray-100);
     color: var(--bazaar-gray-600);
 }
 
-.status-badge.status-enabled {
+.status-badge.status-enabled,
+.bazaar-status-badge.bazaar-status-enabled {
     background: rgba(16, 185, 129, 0.1);
     color: #059669;
 }
 
-.status-badge.status-disabled {
+.status-badge.status-disabled,
+.bazaar-status-badge.bazaar-status-disabled {
     background: var(--bazaar-gray-100);
     color: var(--bazaar-gray-500);
 }
