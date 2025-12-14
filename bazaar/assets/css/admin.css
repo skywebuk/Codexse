@@ -1,0 +1,491 @@
+/**
+ * Bazaar Admin Styles
+ *
+ * @package Bazaar
+ */
+
+/* General Admin Styles */
+.bazaar-admin-wrap {
+    margin: 20px 20px 20px 0;
+}
+
+.bazaar-admin-wrap h1 {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.bazaar-admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Dashboard Cards */
+.bazaar-dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-card .card-icon {
+    font-size: 40px;
+    color: #0073aa;
+    margin-bottom: 10px;
+}
+
+.dashboard-card .card-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1d2327;
+    display: block;
+}
+
+.dashboard-card .card-label {
+    font-size: 13px;
+    color: #646970;
+    display: block;
+    margin-top: 5px;
+}
+
+.dashboard-card.card-highlight {
+    background: linear-gradient(135deg, #0073aa, #00a0d2);
+    border-color: #0073aa;
+}
+
+.dashboard-card.card-highlight .card-icon,
+.dashboard-card.card-highlight .card-value,
+.dashboard-card.card-highlight .card-label {
+    color: #fff;
+}
+
+/* Admin Tables */
+.bazaar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+}
+
+.bazaar-table th,
+.bazaar-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+.bazaar-table th {
+    background: #f6f7f7;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.bazaar-table tr:last-child td {
+    border-bottom: none;
+}
+
+.bazaar-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.status-pending {
+    background: #fcf9e8;
+    color: #9d5c00;
+}
+
+.status-badge.status-approved,
+.status-badge.status-active,
+.status-badge.status-completed,
+.status-badge.status-paid {
+    background: #e7f5e7;
+    color: #1e7e1e;
+}
+
+.status-badge.status-rejected,
+.status-badge.status-cancelled,
+.status-badge.status-failed {
+    background: #fce8e8;
+    color: #a00;
+}
+
+.status-badge.status-processing {
+    background: #e8f4fc;
+    color: #0073aa;
+}
+
+.status-badge.status-on-hold {
+    background: #f0f0f1;
+    color: #646970;
+}
+
+/* Vendor Card */
+.vendor-profile-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.vendor-profile-card .vendor-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+.vendor-profile-card .vendor-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vendor-profile-card .vendor-info h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.vendor-profile-card .vendor-info .vendor-email {
+    color: #646970;
+}
+
+.vendor-profile-card .vendor-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.vendor-profile-card .stat-item {
+    text-align: center;
+    padding: 15px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+.vendor-profile-card .stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0073aa;
+    display: block;
+}
+
+.vendor-profile-card .stat-label {
+    font-size: 12px;
+    color: #646970;
+}
+
+/* Settings Tabs */
+.bazaar-settings-tabs {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+}
+
+.bazaar-settings-tabs .nav-tab-wrapper {
+    background: #f6f7f7;
+    border-bottom: 1px solid #ccd0d4;
+    padding: 0;
+    margin: 0;
+}
+
+.bazaar-settings-tabs .nav-tab {
+    float: none;
+    display: inline-block;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin: 0;
+    padding: 15px 20px;
+    background: transparent;
+    font-size: 14px;
+}
+
+.bazaar-settings-tabs .nav-tab:hover {
+    background: #fff;
+}
+
+.bazaar-settings-tabs .nav-tab-active {
+    background: #fff;
+    border-bottom-color: #0073aa;
+    color: #0073aa;
+}
+
+.bazaar-settings-tabs .tab-content {
+    padding: 20px;
+}
+
+/* Form Styles */
+.bazaar-form-table {
+    width: 100%;
+}
+
+.bazaar-form-table th {
+    width: 200px;
+    padding: 15px 10px 15px 0;
+    vertical-align: top;
+    font-weight: 600;
+}
+
+.bazaar-form-table td {
+    padding: 15px 10px;
+}
+
+.bazaar-form-table input[type="text"],
+.bazaar-form-table input[type="email"],
+.bazaar-form-table input[type="number"],
+.bazaar-form-table select,
+.bazaar-form-table textarea {
+    width: 400px;
+    max-width: 100%;
+}
+
+.bazaar-form-table .description {
+    display: block;
+    margin-top: 5px;
+    color: #646970;
+    font-size: 12px;
+}
+
+/* Withdrawal Details */
+.withdrawal-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.withdrawal-details .detail-group {
+    background: #f6f7f7;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.withdrawal-details .detail-label {
+    font-size: 12px;
+    color: #646970;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.withdrawal-details .detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* Charts */
+.bazaar-chart-container {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bazaar-chart-container h3 {
+    margin: 0 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.row-actions {
+    visibility: hidden;
+    padding: 2px 0 0;
+}
+
+.bazaar-table tr:hover .row-actions {
+    visibility: visible;
+}
+
+.row-actions span {
+    display: inline-block;
+}
+
+.row-actions span::after {
+    content: "|";
+    margin: 0 5px;
+    color: #ccd0d4;
+}
+
+.row-actions span:last-child::after {
+    display: none;
+}
+
+/* Modal */
+.bazaar-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bazaar-modal {
+    background: #fff;
+    border-radius: 4px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.bazaar-modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e4e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bazaar-modal-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.bazaar-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #646970;
+}
+
+.bazaar-modal-body {
+    padding: 20px;
+}
+
+.bazaar-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e2e4e7;
+    text-align: right;
+}
+
+/* Notices */
+.bazaar-notice {
+    padding: 15px;
+    border-left: 4px solid #0073aa;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.bazaar-notice.notice-success {
+    border-color: #46b450;
+}
+
+.bazaar-notice.notice-warning {
+    border-color: #ffb900;
+}
+
+.bazaar-notice.notice-error {
+    border-color: #dc3232;
+}
+
+/* Reports */
+.bazaar-reports-filters {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.bazaar-reports-filters label {
+    font-weight: 600;
+}
+
+.bazaar-reports-filters select,
+.bazaar-reports-filters input[type="date"] {
+    margin-left: 5px;
+}
+
+/* Pagination */
+.bazaar-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bazaar-pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px;
+    background: #f6f7f7;
+    border: 1px solid #ccd0d4;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #1d2327;
+}
+
+.bazaar-pagination .page-numbers.current {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+}
+
+.bazaar-pagination .page-numbers:hover:not(.current) {
+    background: #fff;
+    border-color: #0073aa;
+    color: #0073aa;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .bazaar-dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vendor-profile-card .vendor-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .withdrawal-details {
+        grid-template-columns: 1fr;
+    }
+
+    .bazaar-form-table th,
+    .bazaar-form-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .bazaar-form-table th {
+        padding-bottom: 5px;
+    }
+
+    .bazaar-form-table input[type="text"],
+    .bazaar-form-table input[type="email"],
+    .bazaar-form-table input[type="number"],
+    .bazaar-form-table select,
+    .bazaar-form-table textarea {
+        width: 100%;
+    }
+}
