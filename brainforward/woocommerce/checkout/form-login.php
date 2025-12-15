@@ -3,6 +3,7 @@
  * Checkout login form (Tutor LMS integrated)
  *
  * @package WooCommerce\Templates
+ * @version 10.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
