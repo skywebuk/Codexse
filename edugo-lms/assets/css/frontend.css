@@ -1,0 +1,617 @@
+/**
+ * Edugo LMS Frontend Styles
+ *
+ * @package Edugo_LMS
+ */
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+:root {
+    --edugo-primary: #667eea;
+    --edugo-primary-dark: #5a6fd6;
+    --edugo-secondary: #764ba2;
+    --edugo-success: #00a32a;
+    --edugo-warning: #dba617;
+    --edugo-danger: #d63638;
+    --edugo-text: #1e1e1e;
+    --edugo-text-light: #646970;
+    --edugo-border: #dcdcde;
+    --edugo-background: #f0f0f1;
+    --edugo-white: #ffffff;
+    --edugo-radius: 8px;
+    --edugo-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+.edugo-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--edugo-primary) 0%, var(--edugo-secondary) 100%);
+    color: var(--edugo-white);
+    text-decoration: none;
+    border-radius: var(--edugo-radius);
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.edugo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    color: var(--edugo-white);
+}
+
+.edugo-button-small {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.edugo-button-outline {
+    background: transparent;
+    border: 2px solid var(--edugo-primary);
+    color: var(--edugo-primary);
+}
+
+.edugo-button-outline:hover {
+    background: var(--edugo-primary);
+    color: var(--edugo-white);
+}
+
+.edugo-notice {
+    padding: 15px 20px;
+    border-radius: var(--edugo-radius);
+    margin-bottom: 20px;
+}
+
+.edugo-notice-warning {
+    background-color: #fcf0e0;
+    border-left: 4px solid var(--edugo-warning);
+}
+
+.edugo-notice-error {
+    background-color: #f8d7da;
+    border-left: 4px solid var(--edugo-danger);
+}
+
+.edugo-notice-success {
+    background-color: #d4edda;
+    border-left: 4px solid var(--edugo-success);
+}
+
+/* ==========================================================================
+   Course Grid
+   ========================================================================== */
+
+.edugo-courses-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.edugo-columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.edugo-columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.edugo-columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 992px) {
+    .edugo-columns-3,
+    .edugo-columns-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .edugo-courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Course Card */
+.edugo-course-card {
+    background: var(--edugo-white);
+    border-radius: var(--edugo-radius);
+    box-shadow: var(--edugo-shadow);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.edugo-course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.edugo-course-thumbnail {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.edugo-course-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.edugo-course-card:hover .edugo-course-thumbnail img {
+    transform: scale(1.05);
+}
+
+.edugo-no-thumbnail {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--edugo-primary) 0%, var(--edugo-secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edugo-no-thumbnail .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.edugo-badge {
+    position: absolute;
+    top: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.edugo-badge-free {
+    left: 10px;
+    background: var(--edugo-success);
+    color: var(--edugo-white);
+}
+
+.edugo-badge-level {
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--edugo-white);
+}
+
+.edugo-course-content {
+    padding: 20px;
+}
+
+.edugo-course-meta {
+    margin-bottom: 10px;
+}
+
+.edugo-course-category {
+    font-size: 12px;
+    color: var(--edugo-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.edugo-course-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.edugo-course-title a {
+    color: var(--edugo-text);
+    text-decoration: none;
+}
+
+.edugo-course-title a:hover {
+    color: var(--edugo-primary);
+}
+
+.edugo-course-excerpt {
+    font-size: 14px;
+    color: var(--edugo-text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.edugo-course-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--edugo-border);
+    margin-bottom: 15px;
+}
+
+.edugo-course-author img {
+    border-radius: 50%;
+}
+
+.edugo-author-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.edugo-course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edugo-course-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.edugo-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--edugo-text-light);
+}
+
+.edugo-stat .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.edugo-course-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--edugo-primary);
+}
+
+.edugo-price-free {
+    color: var(--edugo-success);
+}
+
+/* ==========================================================================
+   Dashboard
+   ========================================================================== */
+
+.edugo-dashboard {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .edugo-dashboard {
+        flex-direction: column;
+    }
+}
+
+.edugo-dashboard-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+    .edugo-dashboard-sidebar {
+        width: 100%;
+    }
+}
+
+.edugo-user-info {
+    background: var(--edugo-white);
+    border-radius: var(--edugo-radius);
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: var(--edugo-shadow);
+}
+
+.edugo-avatar img {
+    border-radius: 50%;
+    border: 4px solid var(--edugo-primary);
+    margin-bottom: 15px;
+}
+
+.edugo-user-name {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.edugo-user-role {
+    font-size: 13px;
+    color: var(--edugo-text-light);
+}
+
+.edugo-dashboard-nav {
+    background: var(--edugo-white);
+    border-radius: var(--edugo-radius);
+    overflow: hidden;
+    box-shadow: var(--edugo-shadow);
+}
+
+.edugo-dashboard-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.edugo-dashboard-nav li {
+    margin: 0;
+}
+
+.edugo-dashboard-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    color: var(--edugo-text);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.edugo-dashboard-nav a:hover,
+.edugo-dashboard-nav li.active a {
+    background: var(--edugo-background);
+    border-left-color: var(--edugo-primary);
+    color: var(--edugo-primary);
+}
+
+.edugo-dashboard-nav .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.edugo-dashboard-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.edugo-dashboard-header {
+    margin-bottom: 25px;
+}
+
+.edugo-dashboard-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Stats Grid */
+.edugo-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.edugo-stat-card {
+    background: var(--edugo-white);
+    border-radius: var(--edugo-radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--edugo-shadow);
+}
+
+.edugo-stat-card .edugo-stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--edugo-primary) 0%, var(--edugo-secondary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.edugo-stat-card .edugo-stat-icon .dashicons {
+    color: var(--edugo-white);
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.edugo-stat-card .edugo-stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--edugo-text);
+    line-height: 1.2;
+}
+
+.edugo-stat-card .edugo-stat-label {
+    display: block;
+    font-size: 13px;
+    color: var(--edugo-text-light);
+}
+
+/* Dashboard Sections */
+.edugo-dashboard-section {
+    background: var(--edugo-white);
+    border-radius: var(--edugo-radius);
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--edugo-shadow);
+}
+
+.edugo-dashboard-section h3 {
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--edugo-border);
+    font-size: 18px;
+}
+
+.edugo-no-data {
+    text-align: center;
+    color: var(--edugo-text-light);
+    padding: 30px 0;
+}
+
+/* Course List */
+.edugo-course-list {
+    display: grid;
+    gap: 20px;
+}
+
+.edugo-course-list .edugo-course-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.edugo-course-list .edugo-course-thumbnail {
+    width: 150px;
+    flex-shrink: 0;
+    aspect-ratio: auto;
+}
+
+.edugo-course-list .edugo-course-info {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edugo-course-list .edugo-course-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Progress Bar */
+.edugo-progress-bar {
+    height: 8px;
+    background: var(--edugo-background);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.edugo-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--edugo-primary) 0%, var(--edugo-secondary) 100%);
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+.edugo-progress-text {
+    font-size: 13px;
+    color: var(--edugo-text-light);
+}
+
+/* Tables */
+.edugo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.edugo-table th,
+.edugo-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--edugo-border);
+}
+
+.edugo-table th {
+    font-weight: 600;
+    color: var(--edugo-text-light);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.edugo-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status */
+.edugo-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.edugo-status-publish {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.edugo-status-pending {
+    background-color: #fcf0e0;
+    color: #996800;
+}
+
+.edugo-status-draft {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.edugo-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.edugo-pagination a,
+.edugo-pagination span {
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--edugo-white);
+    border: 1px solid var(--edugo-border);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--edugo-text);
+    transition: all 0.2s;
+}
+
+.edugo-pagination a:hover {
+    background: var(--edugo-primary);
+    border-color: var(--edugo-primary);
+    color: var(--edugo-white);
+}
+
+.edugo-pagination .current {
+    background: var(--edugo-primary);
+    border-color: var(--edugo-primary);
+    color: var(--edugo-white);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 576px) {
+    .edugo-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edugo-course-list .edugo-course-card {
+        flex-direction: column;
+    }
+
+    .edugo-course-list .edugo-course-thumbnail {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .edugo-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
