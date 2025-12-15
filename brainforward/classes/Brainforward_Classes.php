@@ -102,3 +102,23 @@ if (class_exists('WP_Customize_Control')) {
 
 }
 
+/**
+ * Fallback function for nav menu when no menu is assigned
+ */
+if (!function_exists('brainforward_mainmenu_demo_content')) {
+    function brainforward_mainmenu_demo_content() {
+        ?>
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-link"><?php esc_html_e('Home', 'brainforward'); ?></a>
+            </li>
+            <?php if (current_user_can('edit_theme_options')) : ?>
+                <li class="nav-item">
+                    <a href="<?php echo esc_url(admin_url('nav-menus.php')); ?>" class="nav-link"><?php esc_html_e('Add Menu', 'brainforward'); ?></a>
+                </li>
+            <?php endif; ?>
+        </ul>
+        <?php
+    }
+}
+

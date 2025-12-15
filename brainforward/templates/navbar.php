@@ -54,9 +54,11 @@ if ($button !== 'hide') {
     $nav_actions .= '<div class="d-none d-sm-inline-block">'.$nav_button.'</div>';
 }
 
-$tutor_profile = Codexse_Toolkit_Functions::codexse_tutor_profile_menu();
-if(!empty($tutor_profile)){
-	$nav_actions .= $tutor_profile;
+if (class_exists('Codexse_Toolkit_Functions') && method_exists('Codexse_Toolkit_Functions', 'codexse_tutor_profile_menu')) {
+	$tutor_profile = Codexse_Toolkit_Functions::codexse_tutor_profile_menu();
+	if (!empty($tutor_profile)) {
+		$nav_actions .= $tutor_profile;
+	}
 }
 
 
@@ -69,7 +71,7 @@ if (!empty($light_logo) && has_custom_logo()) {
 } elseif (!empty($light_logo)) {
     $logo .= '<a href="' . esc_url(home_url('/')) . '"><img src="' . esc_url($light_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '"></a>';
 } else {
-    $logo .= '<h3 class="m-0"><a href="' . esc_url(home_url('/')) . '">' . esc_html(get_bloginfo('title')) . '</a></h3>';
+    $logo .= '<h3 class="m-0"><a href="' . esc_url(home_url('/')) . '">' . esc_html(get_bloginfo('name')) . '</a></h3>';
 }
 
 

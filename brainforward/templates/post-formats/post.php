@@ -49,28 +49,28 @@ $read_more_text = get_theme_mod('blog_read_more_text', __('Read More', 'brainfor
                 <?php if ($date !== 'hide' && Brainforward_Functions::get_post_date()) : ?>
                     <li class="meta-list__item meta-list__date">
                         <i class="ri-calendar-line icon"></i>
-                        <?php echo Brainforward_Functions::get_post_date(); ?>
+                        <?php echo wp_kses_post(Brainforward_Functions::get_post_date()); ?>
                     </li>
                 <?php endif; ?>
 
                 <?php if ($comment !== 'hide' && Brainforward_Functions::get_comment_count()) : ?>
                     <li class="meta-list__item meta-list__comments">
                         <i class="ri-message-2-line icon"></i>
-                        <?php echo Brainforward_Functions::get_comment_count(); ?>
+                        <?php echo esc_html(Brainforward_Functions::get_comment_count()); ?>
                     </li>
                 <?php endif; ?>
 
                 <?php if ($tags !== 'hide' && has_tag() && !is_single()) : ?>
                     <li class="meta-list__item meta-list__tags">
                         <i class="ri-price-tag-2-line icon"></i>
-                        <?php echo get_the_tag_list('', ', '); ?>
+                        <?php echo wp_kses_post(get_the_tag_list('', ', ')); ?>
                     </li>
                 <?php endif; ?>
 
                 <?php if ($category !== 'hide' && get_the_category()) : ?>
                     <li class="meta-list__item meta-list__categories">
                         <i class="ri-folders-line icon"></i>
-                        <?php echo get_the_category_list(', '); ?>
+                        <?php echo wp_kses_post(get_the_category_list(', ')); ?>
                     </li>
                 <?php endif; ?>
 

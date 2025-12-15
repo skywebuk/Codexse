@@ -1,5 +1,5 @@
 <?php
-class Enqueue_Scripts {
+class Brainforward_Enqueue_Scripts {
 
     public function __construct() {
         add_action( 'wp_enqueue_scripts', [$this, 'brainforward_scripts']);
@@ -30,9 +30,9 @@ class Enqueue_Scripts {
 
 
     public function brainforward_scripts() {
-        $body_fonts = get_theme_mod('body_font_family', 'Kumbh Sans');
-        $heading_fonts = get_theme_mod('heading_font_family', 'Kumbh Sans');
-        if (!isset($body_fonts) || !isset($heading_fonts) || $body_fonts == 'default' || $heading_fonts == 'default') {
+        $body_fonts = get_theme_mod('body_font_family_setting', 'Roboto');
+        $heading_fonts = get_theme_mod('heading_font_family_setting', 'Bebas Neue');
+        if (empty($body_fonts) || empty($heading_fonts) || $body_fonts === 'default' || $heading_fonts === 'default') {
             wp_enqueue_style('brainforward-custom-fonts', $this->brainforward_fonts_url(), [], null);
         }
 
@@ -102,4 +102,4 @@ class Enqueue_Scripts {
 }
 
 // Instantiate the class
-new Enqueue_Scripts();
+new Brainforward_Enqueue_Scripts();

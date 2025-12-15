@@ -92,7 +92,7 @@ $format_label = $post_format ? get_post_format_string($post_format) : __('Standa
                                     <div class="post__footer-tags tagcloud">
                                         <?php
                                         // Output tags as a list of links separated by spaces
-                                        echo get_the_tag_list( ' ', '', '' );
+                                        echo wp_kses_post( get_the_tag_list( ' ', '', '' ) );
                                         ?>
                                     </div>
                                 <?php endif; ?>

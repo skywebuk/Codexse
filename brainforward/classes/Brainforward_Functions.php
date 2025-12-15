@@ -382,7 +382,7 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
                 wp_send_json_error(['message' => 'OTP মেয়াদ শেষ হয়েছে বা পাওয়া যায়নি।']);
             }
 
-            if ($otp !== $stored_otp) {
+            if ((string) $otp !== (string) $stored_otp) {
                 // ❌ ভুল OTP হলে ট্রাই ইনক্রিমেন্ট
                 $attempts = (int) get_transient('bf_otp_attempts_' . $mobile_hash);
                 $attempts++;
