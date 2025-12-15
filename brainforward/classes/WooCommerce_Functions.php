@@ -265,9 +265,9 @@ class WooCommerce_Functions {
     }
 
     public function shoping_mini_cart_fragment($fragments) {
-        $fragments['.cart_toggle .cart_count'] = '<span class="cart_count">' . WC()->cart->get_cart_contents_count() . '</span>';
+        $fragments['.cart_toggle .cart_count'] = '<span class="cart_count">' . esc_html(WC()->cart->get_cart_contents_count()) . '</span>';
         ob_start();
-        $this->mini_cart();
+        self::mini_cart();
         $fragments['.shopping_cart_content'] = ob_get_clean();
         return $fragments;
     }

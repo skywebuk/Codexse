@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
     <div class="cart_body">
-        <h4 class="cart_title"><?php _e("Shopping cart","brainforward"); ?></h4>
+        <h4 class="cart_title"><?php esc_html_e("Shopping cart","brainforward"); ?></h4>
         <ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
             <?php
             do_action( 'woocommerce_before_mini_cart_contents' );

@@ -19,7 +19,7 @@
                 get_template_part( 'templates/post-formats/post', 'page' );
                  // End the loop.
                 /* If comments are open or we have at least one comment, load up the comment template.*/
-                if ( get_post_type() && comments_open() || get_comments_number() and $elementor_ready !== 'yes' ) :
+                if ( get_post_type() && ( comments_open() || get_comments_number() ) ) :
                     comments_template();
                 endif;
             }                        

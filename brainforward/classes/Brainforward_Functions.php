@@ -308,7 +308,7 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
 
             // Sanitize input
             $mobile   = sanitize_text_field( $_POST['mobile'] ?? '' );
-            $password = sanitize_text_field( $_POST['password'] ?? '' );
+            $password = isset( $_POST['password'] ) ? wp_unslash( $_POST['password'] ) : '';
 
             if ( empty( $mobile ) || empty( $password ) ) {
                 wp_send_json_error( [ 'message' => 'মোবাইল নম্বর এবং পাসওয়ার্ড উভয়ই প্রয়োজন।' ] );
@@ -737,7 +737,7 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
                 esc_html(get_the_date($format))
             );
             if (get_the_date('Y/m/d')) {
-                return '<a href="' . get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) . '">' . $time_string . '</a>';
+                return '<a href="' . esc_url(get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d'))) . '">' . $time_string . '</a>';
             }
             return false;
         }
@@ -745,8 +745,12 @@ if ( ! class_exists( 'Brainforward_Functions' ) ) {
         /*----- Post_Comments_Function_Modify -----*/
         public static function get_comment_count() {
             if (!post_password_required() && (comments_open() || get_comments_number()) && get_comments_number() > 0) {
-                $comment_count = get_comments_number_text(esc_html__('No comment', 'brainforward'), esc_html__('1 Comment', 'brainforward'), '% ' . esc_html__('Comments', 'brainforward'));
-                return esc_html($comment_count);
+                return get_comments_number_text(
+                    esc_html__('No comment', 'brainforward'),
+                    esc_html__('1 Comment', 'brainforward'),
+                    /* translators: %s: number of comments */
+                    sprintf(esc_html__('%s Comments', 'brainforward'), '%')
+                );
             }
             return false;
         }
