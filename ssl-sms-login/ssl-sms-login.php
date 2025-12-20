@@ -4,8 +4,8 @@
  * Plugin URI: https://wordpress.org/plugins/ssl-sms-login
  * Description: Modern SMS-based login and registration system for WordPress using SSL Wireless SMS Gateway. Features OTP verification, mobile number login, forgot password via SMS, Elementor widget, and 5 beautiful form styles.
  * Version: 1.0.1
- * Author: Jeeon
- * Author URI: https://jeeon.dev
+ * Author: ashekurrahman1
+ * Author URI: https://profiles.wordpress.org/ashekurrahman1/
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ssl-sms-login
