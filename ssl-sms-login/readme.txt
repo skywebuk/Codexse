@@ -1,5 +1,5 @@
 === SSL SMS Login ===
-Contributors: jeeon
+Contributors: ashekurrahman1
 Tags: sms login, otp, mobile login, ssl wireless, bangladesh sms, elementor
 Requires at least: 5.8
 Tested up to: 6.9
