@@ -1,0 +1,243 @@
+/**
+ * MailHive Public Styles
+ *
+ * @package MailHive
+ */
+
+/* Form wrapper */
+.mailhive-form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Form */
+.mailhive-form {
+    width: 100%;
+}
+
+/* Fields */
+.mailhive-field {
+    margin-bottom: 20px;
+}
+
+.mailhive-field:last-child {
+    margin-bottom: 0;
+}
+
+.mailhive-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1d2327;
+}
+
+.mailhive-field input[type="text"],
+.mailhive-field input[type="email"],
+.mailhive-field input[type="tel"],
+.mailhive-field input[type="url"],
+.mailhive-field input[type="number"],
+.mailhive-field textarea,
+.mailhive-field select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1d2327;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mailhive-field input[type="text"]:focus,
+.mailhive-field input[type="email"]:focus,
+.mailhive-field input[type="tel"]:focus,
+.mailhive-field input[type="url"]:focus,
+.mailhive-field input[type="number"]:focus,
+.mailhive-field textarea:focus,
+.mailhive-field select:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.15);
+}
+
+.mailhive-field input::placeholder,
+.mailhive-field textarea::placeholder {
+    color: #94a3b8;
+}
+
+.mailhive-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.mailhive-field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667085' d='M2.5 4.5L6 8l3.5-3.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+/* Checkbox and radio fields */
+.mailhive-field-checkbox label,
+.mailhive-field-radio label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.mailhive-field-checkbox input[type="checkbox"],
+.mailhive-field-radio input[type="radio"] {
+    width: auto;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Submit button */
+.mailhive-submit {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #2271b1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.mailhive-submit:hover {
+    background-color: #135e96;
+}
+
+.mailhive-submit:active {
+    transform: translateY(1px);
+}
+
+.mailhive-submit:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.3);
+}
+
+.mailhive-submit:disabled,
+.mailhive-submit.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.mailhive-submit.loading {
+    position: relative;
+    color: transparent;
+}
+
+.mailhive-submit.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: mailhive-spin 0.8s linear infinite;
+}
+
+@keyframes mailhive-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Messages */
+.mailhive-message {
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mailhive-message.mailhive-success {
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+
+.mailhive-message.mailhive-error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.mailhive-message.mailhive-warning {
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #92400e;
+}
+
+/* Hidden honeypot field */
+.mailhive-hp {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .mailhive-form-wrapper {
+        padding: 0 15px;
+    }
+
+    .mailhive-field input[type="text"],
+    .mailhive-field input[type="email"],
+    .mailhive-field input[type="tel"],
+    .mailhive-field textarea,
+    .mailhive-field select {
+        padding: 10px 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .mailhive-submit {
+        padding: 12px 20px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .mailhive-form-wrapper {
+        color: #f1f5f9;
+    }
+
+    .mailhive-field label {
+        color: #f1f5f9;
+    }
+
+    .mailhive-field input[type="text"],
+    .mailhive-field input[type="email"],
+    .mailhive-field input[type="tel"],
+    .mailhive-field textarea,
+    .mailhive-field select {
+        background-color: #1e293b;
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+
+    .mailhive-field input::placeholder,
+    .mailhive-field textarea::placeholder {
+        color: #64748b;
+    }
+}

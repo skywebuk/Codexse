@@ -1,0 +1,424 @@
+/**
+ * MailHive Admin Styles
+ *
+ * @package MailHive
+ */
+
+/* General */
+.mailhive-wrap {
+    max-width: 1400px;
+}
+
+.mailhive-wrap h1 {
+    margin-bottom: 20px;
+}
+
+/* Stats */
+.mailhive-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.mailhive-stat-box {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.mailhive-stat-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1d2327;
+    line-height: 1.2;
+}
+
+.mailhive-stat-label {
+    display: block;
+    font-size: 13px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+/* Filters */
+.mailhive-filter-form {
+    margin-bottom: 15px;
+}
+
+.mailhive-filters {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mailhive-search-box {
+    display: flex;
+    gap: 5px;
+}
+
+.mailhive-search-box input[type="search"] {
+    min-width: 250px;
+}
+
+/* Table */
+.mailhive-table .column-cb {
+    width: 30px;
+}
+
+.mailhive-table .column-email {
+    width: 25%;
+}
+
+.mailhive-table .column-name {
+    width: 15%;
+}
+
+.mailhive-table .column-status {
+    width: 10%;
+}
+
+.mailhive-table .column-ip {
+    width: 12%;
+}
+
+.mailhive-table .column-date {
+    width: 18%;
+}
+
+.mailhive-table .column-actions {
+    width: 10%;
+}
+
+.mailhive-no-items {
+    text-align: center;
+    padding: 40px 20px;
+    color: #646970;
+}
+
+/* Status badges */
+.mailhive-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.mailhive-status-subscribed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.mailhive-status-unsubscribed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Form Builder */
+.mailhive-form-builder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    .mailhive-form-builder {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mailhive-builder-panel,
+.mailhive-preview-panel {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.mailhive-builder-panel h2,
+.mailhive-preview-panel h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+.mailhive-builder-panel h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Field buttons */
+.mailhive-field-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mailhive-add-field {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px 15px;
+    height: auto;
+}
+
+.mailhive-add-field .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Markup editor */
+#mailhive-form-markup,
+#mailhive-form-css {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    tab-size: 4;
+}
+
+.mailhive-markup-actions {
+    margin-top: 10px;
+}
+
+/* Style options */
+.mailhive-style-options {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.mailhive-style-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mailhive-style-option label {
+    min-width: 120px;
+    font-weight: 500;
+}
+
+.mailhive-style-option input[type="text"] {
+    width: 100px;
+}
+
+.mailhive-style-option input[type="color"] {
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #8c8f94;
+    cursor: pointer;
+}
+
+/* Save actions */
+.mailhive-save-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mailhive-save-status {
+    font-style: italic;
+    color: #00a32a;
+}
+
+/* Preview */
+.mailhive-preview-container {
+    background: #f6f7f7;
+    border: 1px solid #e2e4e7;
+    border-radius: 4px;
+    padding: 30px;
+    margin-top: 15px;
+    min-height: 200px;
+}
+
+.mailhive-preview-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Shortcode info */
+.mailhive-shortcode-info {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-left: 4px solid #2271b1;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mailhive-shortcode-info code {
+    background: #f0f0f1;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+/* Settings */
+.mailhive-settings-form {
+    max-width: 800px;
+}
+
+.mailhive-settings-section {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.mailhive-settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+.mailhive-settings-section h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.mailhive-shortcode-box {
+    background: #f6f7f7;
+    border: 1px solid #e2e4e7;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.mailhive-shortcode-box code {
+    background: transparent;
+    font-size: 13px;
+}
+
+/* Form preview styles (mirroring public styles) */
+#mailhive-preview .mailhive-form {
+    max-width: 100%;
+}
+
+#mailhive-preview .mailhive-field {
+    margin-bottom: 15px;
+}
+
+#mailhive-preview .mailhive-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #1d2327;
+}
+
+#mailhive-preview .mailhive-field input[type="text"],
+#mailhive-preview .mailhive-field input[type="email"],
+#mailhive-preview .mailhive-field input[type="tel"],
+#mailhive-preview .mailhive-field textarea,
+#mailhive-preview .mailhive-field select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#mailhive-preview .mailhive-field input:focus,
+#mailhive-preview .mailhive-field textarea:focus,
+#mailhive-preview .mailhive-field select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+#mailhive-preview .mailhive-field-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+#mailhive-preview .mailhive-field-checkbox input[type="checkbox"] {
+    width: auto;
+}
+
+#mailhive-preview .mailhive-submit {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2271b1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#mailhive-preview .mailhive-submit:hover {
+    background-color: #135e96;
+}
+
+#mailhive-preview .mailhive-message {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+#mailhive-preview .mailhive-message.mailhive-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+#mailhive-preview .mailhive-message.mailhive-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Delete button loading state */
+.mailhive-delete-subscriber.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Bulk action loading */
+#mailhive-bulk-apply.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .mailhive-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mailhive-search-box {
+        width: 100%;
+    }
+
+    .mailhive-search-box input[type="search"] {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .mailhive-style-option {
+        flex-wrap: wrap;
+    }
+
+    .mailhive-style-option label {
+        min-width: 100%;
+    }
+}
