@@ -125,7 +125,7 @@ class MailHive_Admin {
      * @return string
      */
     public function sanitize_form_markup( $markup ) {
-        return wp_kses_post( $markup );
+        return wp_kses( $markup, mailhive()->get_allowed_form_html() );
     }
 
     /**
@@ -226,7 +226,7 @@ class MailHive_Admin {
             wp_send_json_error( array( 'message' => __( 'Permission denied.', 'mailhive' ) ) );
         }
 
-        $markup = isset( $_POST['markup'] ) ? wp_kses_post( wp_unslash( $_POST['markup'] ) ) : '';
+        $markup = isset( $_POST['markup'] ) ? wp_kses( wp_unslash( $_POST['markup'] ), mailhive()->get_allowed_form_html() ) : '';
         $css = isset( $_POST['css'] ) ? wp_strip_all_tags( wp_unslash( $_POST['css'] ) ) : '';
 
         update_option( 'mailhive_form_markup', $markup );

@@ -141,13 +141,99 @@ final class MailHive {
                 <style><?php echo wp_strip_all_tags( $custom_css ); ?></style>
             <?php endif; ?>
             <form class="mailhive-form" method="post">
-                <?php echo wp_kses_post( $form_markup ); ?>
+                <?php echo wp_kses( $form_markup, $this->get_allowed_form_html() ); ?>
                 <input type="hidden" name="mailhive_form_id" value="<?php echo esc_attr( $atts['id'] ); ?>">
             </form>
             <div class="mailhive-message" style="display: none;"></div>
         </div>
         <?php
         return ob_get_clean();
+    }
+
+    /**
+     * Get allowed HTML tags for form markup.
+     *
+     * @return array
+     */
+    public function get_allowed_form_html() {
+        return array(
+            'div'      => array(
+                'class' => true,
+                'id'    => true,
+                'style' => true,
+            ),
+            'label'    => array(
+                'for'   => true,
+                'class' => true,
+            ),
+            'input'    => array(
+                'type'         => true,
+                'id'           => true,
+                'name'         => true,
+                'value'        => true,
+                'placeholder'  => true,
+                'class'        => true,
+                'required'     => true,
+                'checked'      => true,
+                'disabled'     => true,
+                'readonly'     => true,
+                'maxlength'    => true,
+                'minlength'    => true,
+                'pattern'      => true,
+                'autocomplete' => true,
+            ),
+            'textarea' => array(
+                'id'          => true,
+                'name'        => true,
+                'placeholder' => true,
+                'class'       => true,
+                'required'    => true,
+                'rows'        => true,
+                'cols'        => true,
+                'maxlength'   => true,
+            ),
+            'select'   => array(
+                'id'       => true,
+                'name'     => true,
+                'class'    => true,
+                'required' => true,
+                'multiple' => true,
+            ),
+            'option'   => array(
+                'value'    => true,
+                'selected' => true,
+                'disabled' => true,
+            ),
+            'optgroup' => array(
+                'label'    => true,
+                'disabled' => true,
+            ),
+            'button'   => array(
+                'type'     => true,
+                'class'    => true,
+                'id'       => true,
+                'disabled' => true,
+            ),
+            'span'     => array(
+                'class' => true,
+                'id'    => true,
+                'style' => true,
+            ),
+            'p'        => array(
+                'class' => true,
+                'id'    => true,
+                'style' => true,
+            ),
+            'br'       => array(),
+            'strong'   => array(),
+            'em'       => array(),
+            'a'        => array(
+                'href'   => true,
+                'target' => true,
+                'class'  => true,
+                'rel'    => true,
+            ),
+        );
     }
 
     /**
